@@ -7,14 +7,12 @@ UNAME=`uname -s`
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
 alias fn='find . -name'
 
 
 # --------------------------------------
 # LS AND GREP COLORS
 # --------------------------------------
-
 if [ -x /usr/bin/dircolors ]; then
 	alias ls='ls --color=auto'
 	alias grep='grep --color=auto'
@@ -26,7 +24,6 @@ fi
 # --------------------------------------
 # MAC OSX SPECIFIC
 # --------------------------------------
-
 if [ "$UNAME" = Darwin ]; then
 	# add color to ls
 	alias ls='ls -G'
@@ -42,10 +39,19 @@ fi
 # --------------------------------------
 # SET PS1 
 # --------------------------------------
-
 PS1='(\u@\h:\W)\$ '
 case "$TERM" in xterm-*color)
 	PS1='\[\e[31m\](\[\e[m\]\u\[\e[31m\]@\h\[\e[m\]:\[\e[36m\]\W\[\e[31m\])\[\e[36m\]\$ \[\e[m\]'
 esac
 
 
+# --------------------------------------
+# HISTORY
+# --------------------------------------
+# don't put duplicate lines in the history.
+HISTCONTROL=ignoredups:ignorespace
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+HISTSIZE=1000
+HISTFILESIZE=2000
