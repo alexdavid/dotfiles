@@ -12,12 +12,28 @@ alias fn='find . -name'
 
 
 # --------------------------------------
+# LS AND GREP COLORS
+# --------------------------------------
+
+if [ -x /usr/bin/dircolors ]; then
+	alias ls='ls --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
+fi
+
+
+# --------------------------------------
 # MAC OSX SPECIFIC
 # --------------------------------------
 
 if [ "$UNAME" = Darwin ]; then
 	# add color to ls
 	alias ls='ls -G'
+	# add color to grep
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
 
 	export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 fi
