@@ -5,13 +5,23 @@ set -e
 cd
 
 # Backup existing files
-mkdir dotfiles_backup
-mv .bash_profile dotfiles_backup/bash_profile
-mv .gitmodules dotfiles_backup/gitmodules
-mv .bashrc dotfiles_backup/bashrc
-mv .vimrc dotfiles_backup/vimrc
-mv .vim dotfiles_backup/vim
-mv .git dotfiles_backup/git
+backup_dir="dotfiles_backup"
+mkdir $backup_dir
+
+for i in \
+	"bash_profile"\
+	"gitmodules"\
+	"bashrc"\
+	"vimrc"\
+	"vim"\
+	"git"
+do
+	if [ -e ".$i" ]; then
+		echo -e "\e[1;31mMoving .$i to $backup_dir/$i"
+		mv ".$i" "$backup_dir/$i"
+	fi
+done
+
 
 # Pull down repo
 git init
