@@ -17,7 +17,7 @@ for i in \
 	"git"
 do
 	if [ -e ".$i" ]; then
-		echo -e "\e[1;31mMoving .$i to $backup_dir/$i"
+		echo -e "\e[1;31mMoving .$i to $backup_dir/$i\e[m"
 		mv ".$i" "$backup_dir/$i"
 	fi
 done
