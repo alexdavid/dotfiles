@@ -13,7 +13,7 @@ mv .git dotfiles_backup/git
 
 # Pull down repo
 git init
-git remote add origin git@github.com:alexdavid/dotfiles.git
+git remote add origin git://github.com/alexdavid/dotfiles.git
 git fetch
 git branch master origin/master
 git checkout master
@@ -25,3 +25,4 @@ git submodule update --init --recursive
 # Move readme & init.sh to the backup folder
 mv readme dotfiles_backup/
 mv init.sh dotfiles_backup/
+
