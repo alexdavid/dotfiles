@@ -55,3 +55,10 @@ shopt -s histappend
 
 HISTSIZE=1000
 HISTFILESIZE=2000
+
+
+# --------------------------------------
+# ETC
+# --------------------------------------
+# check the window size after each command
+shopt -s checkwinsize
