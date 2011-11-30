@@ -12,6 +12,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias fn='find . -name'
 alias ..='cd ..'
+alias gg='cd ..'
 
 
 # --------------------------------------
@@ -78,3 +79,7 @@ shopt -s checkwinsize
 
 # Source git-completion
 source ~/.bash/git-completion.bash
+
+function g(){
+	cd $* && ls
+}
