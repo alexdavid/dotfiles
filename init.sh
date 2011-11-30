@@ -12,6 +12,7 @@ for i in \
 	"bash_profile"\
 	"gitmodules"\
 	"bashrc"\
+	"bash"\
 	"vimrc"\
 	"vim"\
 	"git"
