@@ -63,3 +63,6 @@ HISTFILESIZE=2000
 # --------------------------------------
 # check the window size after each command
 shopt -s checkwinsize
+
+# Source git-completion
+source ~/.bash/git-completion.bash
