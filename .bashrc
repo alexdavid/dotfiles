@@ -14,6 +14,9 @@ alias fn='find . -name'
 alias ..='cd ..'
 alias gg='cd ..'
 
+# I prefer grep colors to boring pgrep
+alias pgrep='ps -efM | grep'
+
 
 # --------------------------------------
 # LS AND GREP COLORS
