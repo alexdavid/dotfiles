@@ -39,3 +39,6 @@ git submodule update --init --recursive
 mv readme dotfiles_backup/
 mv init.sh dotfiles_backup/
 
+
+# .gitignore_global file
+git config --global core.excludesfile ~/.gitignore_global
