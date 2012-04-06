@@ -89,3 +89,5 @@ source ~/.bash/git-completion.bash
 function g(){
 	cd $* && ls
 }
+
+set -o vi
