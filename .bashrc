@@ -30,6 +30,17 @@ fi
 
 
 # --------------------------------------
+# GIT SHORTCUTS & COLORS
+# --------------------------------------
+git config alias.co checkout
+git config alias.st status
+git config alias.ci commit
+git config alias.br branch
+
+git config color.ui true
+
+
+# --------------------------------------
 # MAC OSX SPECIFIC
 # --------------------------------------
 if [ "$UNAME" = Darwin ]; then

@@ -1,0 +1,4 @@
+git pull
+if [ $? == 0 ]; then
+  git push
+fi
