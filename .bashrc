@@ -3,6 +3,9 @@
 
 UNAME=`uname -s`
 
+# Source all files in the ~/.bash/ directory
+source ~/.bash/*
+
 
 # --------------------------------------
 # ALIASES
@@ -93,9 +96,6 @@ shopt -s checkwinsize
 
 # Add ~/.bin to path
 export PATH=~/.bin:$PATH
-
-# Source git-completion
-source ~/.bash/git-completion.bash
 
 function g(){
 	cd $* && ls
