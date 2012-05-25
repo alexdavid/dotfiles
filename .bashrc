@@ -3,8 +3,10 @@
 
 UNAME=`uname -s`
 
+export PATH=/usr/local/bin:$PATH
+
 # Source all files in the ~/.bash/ directory
-source ~/.bash/*
+for f in ~/.bash/*; do source $f; done
 
 
 # --------------------------------------
@@ -51,6 +53,7 @@ git config alias.co checkout
 git config alias.st status
 git config alias.ci commit
 git config alias.br branch
+git config alias.sm submodule
 
 git config color.ui true
 
@@ -114,3 +117,5 @@ function g(){
 }
 
 set -o vi
+
+[[ -s "/Users/alex/.rvm/scripts/rvm" ]] && source "/Users/alex/.rvm/scripts/rvm"
