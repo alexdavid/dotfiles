@@ -7,7 +7,7 @@ UNAME=`uname -s`
 for f in ~/.bash/*; do source $f; done
 
 # Set PS1
-case "$TERM" in xterm)
+case "$TERM" in xterm*)
   NOCOLOR="\[\e[m\]"
   CWDCOLOR="\[\e[36m\]"
   PRMTCOLOR="\[\e[32m\]"
