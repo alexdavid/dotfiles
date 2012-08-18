@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/alex/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [alias]
 	st = status
 	co = checkout
