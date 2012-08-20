@@ -31,14 +31,7 @@ git fetch
 git branch master origin/master
 git checkout master
 
-# Pull git submodules recursively
-git submodule update --init --recursive
-
 
 # Move readme & init.sh to the backup folder
 mv readme dotfiles_backup/
 mv init.sh dotfiles_backup/
-
-
-# .gitignore_global file
-git config --global core.excludesfile ~/.gitignore_global
