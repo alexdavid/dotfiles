@@ -9,18 +9,18 @@ backup_dir="dotfiles_backup"
 mkdir $backup_dir
 
 for i in \
-	"bash_profile"\
-	"gitmodules"\
-	"bashrc"\
-	"bash"\
-	"vimrc"\
-	"vim"\
-	"git"
+  "bash"\
+  "bin"\
+  "bash_profile"\
+  "bashrc"\
+  "git"
+  "gitconfig"\
+  "gitignore_global"\
 do
-	if [ -e ".$i" ]; then
-		echo -e "\e[1;31mMoving .$i to $backup_dir/$i\e[m"
-		mv ".$i" "$backup_dir/$i"
-	fi
+  if [ -e ".$i" ]; then
+    echo -e "\e[1;31mMoving .$i to $backup_dir/$i\e[m"
+    mv ".$i" "$backup_dir/$i"
+  fi
 done
 
 
