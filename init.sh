@@ -13,9 +13,9 @@ for i in \
   "bin"\
   "bash_profile"\
   "bashrc"\
-  "git"
+  "git"\
   "gitconfig"\
-  "gitignore_global"\
+  "gitignore_global"
 do
   if [ -e ".$i" ]; then
     echo -e "\e[1;31mMoving .$i to $backup_dir/$i\e[m"
