@@ -4,3 +4,5 @@
 	st = status
 	co = checkout
 	a = add
+[color]
+	ui = true
