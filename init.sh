@@ -13,6 +13,7 @@ for i in \
   "bin"\
   "bash_profile"\
   "bashrc"\
+  "config"\
   "git"\
   "gitconfig"\
   "gitignore_global"
