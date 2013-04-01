@@ -16,7 +16,8 @@ for i in \
   "config"\
   "git"\
   "gitconfig"\
-  "gitignore_global"
+  "gitignore_global"\
+  "hushlogin"
 do
   if [ -e ".$i" ]; then
     echo -e "\e[1;31mMoving .$i to $backup_dir/$i\e[m"
@@ -34,5 +35,5 @@ git checkout master
 
 
 # Move readme & init.sh to the backup folder
-mv readme dotfiles_backup/
+mv README.md dotfiles_backup/
 mv init.sh dotfiles_backup/
