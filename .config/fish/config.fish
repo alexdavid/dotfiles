@@ -4,3 +4,6 @@ set fish_greeting ""
 function fish_title
   prompt_pwd
 end
+
+set -x PATH ~/.rbenv/shims $PATH
+rbenv rehash
