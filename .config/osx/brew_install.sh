@@ -11,5 +11,5 @@ brew install \
   postgresql \
   rbenv \
   rename \
-  ruby-build\
+  ruby-build \
   wget
