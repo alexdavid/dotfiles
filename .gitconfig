@@ -1,9 +1,1 @@
-[core]
-  excludesfile = ~/.gitignore_global
-[alias]
-  st = status
-  co = checkout
-  a = add
-  k = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --graph --all
-[color]
-  ui = true
+/Users/alex/.config/git/gitconfig
