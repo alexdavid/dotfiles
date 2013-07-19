@@ -9,14 +9,12 @@ backup_dir="dotfiles_backup"
 mkdir $backup_dir
 
 for i in \
-  "bash"\
   "bin"\
   "bash_profile"\
   "bashrc"\
   "config"\
   "git"\
   "gitconfig"\
-  "gitignore_global"\
   "hushlogin"
 do
   if [ -e ".$i" ]; then
