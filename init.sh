@@ -18,7 +18,7 @@ for i in \
   "hushlogin"
 do
   if [ -e ".$i" ]; then
-    echo -e "\e[1;31mMoving .$i to $backup_dir/$i\e[m"
+    echo -e "[1;31mMoving .$i to $backup_dir/$i[m"
     mv ".$i" "$backup_dir/$i"
   fi
 done
