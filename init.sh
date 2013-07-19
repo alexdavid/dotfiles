@@ -33,5 +33,6 @@ git checkout master
 
 
 # Move readme & init.sh to the backup folder
-mv README.md dotfiles_backup/
-mv init.sh dotfiles_backup/
+rm ~/README.md
+rm ~/init.sh
+rm -rf ~/.git
