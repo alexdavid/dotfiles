@@ -1,1 +1,1 @@
-/Users/alex/.config/bash/bashconfig
+./.config/bash/bashconfig
