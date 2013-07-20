@@ -5,6 +5,7 @@ brew install \
   fish \
   git-extras \
   hub \
+  imagemagick \
   nodejs \
   openssl \
   png2ico \
