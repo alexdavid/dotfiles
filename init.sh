@@ -15,7 +15,8 @@ for i in \
   "config"\
   "git"\
   "gitconfig"\
-  "hushlogin"
+  "hushlogin"\
+  "tmux.conf"
 do
   if [ -e ".$i" ]; then
     echo -e "[1;31mMoving .$i to $backup_dir/$i[m"
