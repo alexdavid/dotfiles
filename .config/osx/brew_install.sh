@@ -11,6 +11,7 @@ brew install \
   png2ico \
   postgresql \
   rbenv \
+  reattach-to-user-namespace \
   rename \
   ruby-build \
   wget
