@@ -18,7 +18,7 @@ for i in \
   "hushlogin"\
   "tmux.conf"
 do
-  if [ -e ".$i" ]; then
+  if [ -e ".$i" -o -h ".$i" ]; then
     echo -e "[1;31mMoving .$i to $backup_dir/$i[m"
     mv ".$i" "$backup_dir/$i"
   fi
