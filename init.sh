@@ -37,3 +37,10 @@ git checkout master
 rm ~/README.md
 rm ~/init.sh
 rm -rf ~/.git
+
+
+# Prompt for name and email for git commits
+read -p "Enter your name for git commits: " git_user
+read -p "Enter your email for git commits: " git_email
+git config --global user.name $git_user
+git config --global user.email git_email
