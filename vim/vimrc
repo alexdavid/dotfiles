@@ -1,0 +1,89 @@
+set rtp+=~/.config/vim
+set shell=bash
+so ~/.config/vim/plugin/shortcuts.vim
+so ~/.config/vim/plugin/vundle.vim
+
+syntax enable " Enable syntax highlighting
+filetype plugin indent on
+
+
+" General
+set backspace=2       " Make backspace delete
+set clipboard=unnamed " Make vim share clipboard with system
+
+
+" Tab indenting
+set tabstop=2
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set ai " Autoindent
+set si " Smart indent
+
+
+" Appearance
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
+set background=dark " Adapt color scheme for dark backgrounds
+set showtabline=2   " Always show tab bar
+set laststatus=2    " Always show the statusline
+set number          " Show line numbers
+set title           " Display filename in title bar
+set cursorline      " Adds highlighted line on current line
+set scrolloff=5     " set minimum space between the cursor and window
+
+
+"Searching
+set hlsearch   " Highlight found searches
+set ignorecase " Ignore case in searched
+set incsearch  " Incrementally search
+
+
+" Misc
+set nobackup        " Don't create backup files
+set spelllang=en_us " Set spell check language
+set nowrap          " Disable line wrapping
+set ttyfast
+set tildeop         " Make tilde use motion commands
+set autoread        " Read changes on a file when it is changed
+
+" Folding
+set foldmethod=syntax
+set foldlevel=99
+
+" NERDTree
+let NERDTreeIgnore=['\~$']
+let NERDTreeChDirMode=2
+let g:nerdtree_tabs_open_on_gui_startup=0
+
+
+" Gitv
+let g:Gitv_OpenHorizontal = 1
+let g:Gitv_TruncateCommitSubjects = 1
+let g:Gitv_DoNotMapCtrlKey = 1
+
+
+" Show Invisibles
+set list
+set listchars=tab:»\ ,eol:¬
+
+" vim-json
+au! BufRead,BufNewFile *.json set filetype=json | set conceallevel=0
+
+" vim-jquery
+au! BufRead,BufNewFile *.js set syntax=jquery
+
+" vim-tabber
+set tabline=%!tabber#TabLine()
+
+" vim-easymotion
+let g:EasyMotion_leader_key = '<Leader>'
+
+
+" Indentaion guides
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_enable_on_vim_startup = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#222222 ctermbg=234
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#292929 ctermbg=234

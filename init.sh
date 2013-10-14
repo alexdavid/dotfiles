@@ -8,6 +8,7 @@ ln -s .config/bash/bashconfig .bash_profile
 ln -s .config/bash/bashconfig .bashrc
 ln -s .config/git/gitconfig .gitconfig
 ln -s .config/tmux/tmux.conf .tmux.conf
+ln -s .config/vim/vimrc       .vimrc
 
 # Create hushlogin
 touch .hushlogin
@@ -18,3 +19,7 @@ read -p "Enter your name for git commits: " git_user
 read -p "Enter your email for git commits: " git_email
 git config --global user.name "$git_user"
 git config --global user.email "$git_email"
+
+
+# Install vim plugins
+vim +BundleInstall! +qall
