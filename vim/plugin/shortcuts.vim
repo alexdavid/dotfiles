@@ -43,15 +43,15 @@ let g:NERDTreeMapOpenSplit="s"
 let g:NERDTreeMapOpenVSplit="v"
 
 " Ctrl-p
-inoremap <C-Space> <C-x><C-o>
-inoremap <C-@> <C-Space>
-let g:ctrlp_map = '<C-@>'
+let g:ctrlp_map = '<C-o>'
 
 " Show Invisibles
 map <silent> <leader>i :set list!<CR>
 
 " Hide highlight
-map <silent> <leader><space> :noh<CR>:match<CR>
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
+map <silent> <C-@> :noh<CR>:match<CR>
 
 " Add reverse J shortcut (useful for CoffeeScript)
 map <silent> <leader>J kddpk==J
