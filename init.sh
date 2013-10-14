@@ -3,6 +3,7 @@
 cd
 
 # Create symlinks
+ln -s .config/bin .bin
 ln -s .config/bash/bashconfig .bash_profile
 ln -s .config/bash/bashconfig .bashrc
 ln -s .config/git/gitconfig .gitconfig
