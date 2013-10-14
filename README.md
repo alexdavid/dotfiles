@@ -1,5 +1,6 @@
 To clone dotfiles into home folder:
 
 ```bash
-$ curl https://raw.github.com/alexdavid/dotfiles/master/init.sh | bash
+$ git clone https://github.com/alexdavid/dotfiles.git .config
+$ ~/.config/init.sh
 ```
