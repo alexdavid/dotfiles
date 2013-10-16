@@ -2,13 +2,13 @@ let mapleader = "\<space>"
 
 
 " Tabs
-nmap <silent> <leader>h :tabprevious<CR>
-nmap <silent> <leader>l :tabnext<CR>
-nmap <silent> <leader>n :tabnew<CR>
+nmap <silent> <c-i> :tabprevious<CR>
+nmap <silent> <c-o> :tabnext<CR>
+nmap <silent> <c-t> :tabnew<CR>
 
 " Move tabs
-nmap <silent> <leader>H :exec 'silent! tabm ' . (tabpagenr()-2)<CR>
-nmap <silent> <leader>L :exec 'silent! tabm ' . tabpagenr()<CR>
+nmap <silent> <leader><c-i> :exec 'silent! tabm ' . (tabpagenr()-2)<CR>
+nmap <silent> <leader><c-o> :exec 'silent! tabm ' . tabpagenr()<CR>
 
 " Indenting
 vmap < <gv
@@ -43,7 +43,7 @@ let g:NERDTreeMapOpenSplit="s"
 let g:NERDTreeMapOpenVSplit="v"
 
 " Ctrl-p
-let g:ctrlp_map = '<C-o>'
+let g:ctrlp_map = '<leader>o'
 
 " Show Invisibles
 map <silent> <leader>i :set list!<CR>
