@@ -2,9 +2,9 @@ let mapleader = "\<space>"
 
 
 " Tabs
-nmap <silent> <c-i> :tabprevious<CR>
-nmap <silent> <c-o> :tabnext<CR>
-nmap <silent> <c-t> :tabnew<CR>
+nmap <silent> <leader>h :tabprevious<CR>
+nmap <silent> <leader>l :tabnext<CR>
+nmap <silent> <leader>n :tabnew<CR>
 
 " Move tabs
 nmap <silent> <leader><c-i> :exec 'silent! tabm ' . (tabpagenr()-2)<CR>
