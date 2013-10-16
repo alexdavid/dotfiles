@@ -28,6 +28,7 @@ nmap gk :Gitv --all<CR>:NERDTreeClose<CR>
 nmap gd :Gdiff<CR>
 nmap gs :Gstatus<CR>:<CR><C-W>K
 nmap gc :Gcommit<CR>:set spell<CR><C-W>Ki
+nmap git :Git 
 
 " Map ` to ~
 noremap ` ~
