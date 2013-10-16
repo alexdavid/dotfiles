@@ -6,8 +6,3 @@ function fish_title
 end
 
 rbenv rehash
-
-
-bind \cv backward-kill-word
-bind \cb backward-word
-bind \cg accept-autosuggestion
