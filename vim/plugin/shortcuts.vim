@@ -50,9 +50,7 @@ let g:ctrlp_map = '<leader>o'
 map <silent> <leader>i :set list!<CR>
 
 " Hide highlight
-inoremap <C-Space> <C-x><C-o>
-inoremap <C-@> <C-Space>
-map <silent> <C-@> :noh<CR>:match<CR>
+map <silent> <leader><space> :noh<CR>:match<CR>
 
 " Add reverse J shortcut (useful for CoffeeScript)
 map <silent> <leader>J kddpk==J
