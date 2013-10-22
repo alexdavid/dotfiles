@@ -1,3 +1,6 @@
 .DS_Store
 *.swp
 logfile
+
+# Redis snapshots
+dump.rdb
