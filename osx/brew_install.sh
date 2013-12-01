@@ -1,5 +1,6 @@
 #!/bin/bash
 brew install \
+  ack \
   automake \
   findutils \
   fish \
