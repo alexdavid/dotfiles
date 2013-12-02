@@ -5,6 +5,7 @@ Bundle 'gmarik/vundle'
 
 Bundle 'alexdavid/nerdtree_icons'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'derekwyatt/vim-scala'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'elzr/vim-json'
 Bundle 'fweep/vim-tabber'
