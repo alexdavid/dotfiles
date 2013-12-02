@@ -21,6 +21,9 @@ fun! DiffUpdate()
   endif
 endfun
 
+" Consistency
+nmap Y y$
+
 autocmd InsertLeave * call DiffUpdate()
 noremap <leader>g :diffget\|diffupdate<CR>
 noremap <leader>p :diffput\|diffupdate<CR>
