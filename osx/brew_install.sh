@@ -7,6 +7,7 @@ brew install \
   git-extras \
   hub \
   imagemagick \
+  mongo \
   nodejs \
   openssl \
   png2ico \
