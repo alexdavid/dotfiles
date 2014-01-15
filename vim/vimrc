@@ -95,7 +95,7 @@ let g:airline_symbols.branch = '⭠'
 function! InitAirlineSections()
   "call airline#parts#define_accent('red', 'red')
   let g:airline_section_b = airline#section#create(['%f','%#__accent_red#%{&modified?"*":""}'])
-  let g:airline_section_c = airline#section#create(['%#__accent_red#%{&readonly?"⭤":"z"}'])
+  let g:airline_section_c = airline#section#create(['%#__accent_red#%{&readonly?"⭤":""}'])
   let g:airline_section_y = airline#section#create(['branch'])
   let g:airline_section_z = airline#section#create(['⭡ ','%l/%L',':','%c'])
 endfunction
