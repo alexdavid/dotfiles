@@ -29,4 +29,7 @@ git config --global user.email "$git_email"
 
 
 # Install vim plugins
+cd ~/.config
+git submodule init
+git submodule update
 vim +BundleInstall! +qall
