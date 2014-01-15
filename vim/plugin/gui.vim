@@ -1,4 +1,3 @@
 if has("gui_running")
+  set guifont=Menlo:h12
 endif
-let g:Powerline_symbols = 'fancy'
-set guifont=Menlo:h12
