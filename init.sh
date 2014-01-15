@@ -32,4 +32,5 @@ git config --global user.email "$git_email"
 cd ~/.config
 git submodule init
 git submodule update
+git submodule foreach git checkout master
 vim +BundleInstall! +qall
