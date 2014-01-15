@@ -31,6 +31,7 @@ set background=dark
 let g:hybrid_use_Xresources = 1
 set showtabline=2   " Always show tab bar
 set laststatus=2    " Always show the statusline
+set ttimeoutlen=50  " Set timeout length
 set number          " Show line numbers
 set title           " Display filename in title bar
 set cursorline      " Adds highlighted line on current line
@@ -82,7 +83,6 @@ let g:EasyMotion_leader_key = '<Leader>'
 
 
 " Airline
-set laststatus=2
 let g:airline_enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = '⮀'
@@ -92,7 +92,14 @@ let g:airline_left_sep='⮀'
 let g:airline_right_sep='⮂'
 let g:airline_symbols = {}
 let g:airline_symbols.branch = '⭠'
-let g:airline_symbols.linenr = '⭡'
+function! InitAirlineSections()
+  "call airline#parts#define_accent('red', 'red')
+  let g:airline_section_b = airline#section#create(['%f','%#__accent_red#%{&modified?"*":""}'])
+  let g:airline_section_c = airline#section#create([''])
+  let g:airline_section_y = airline#section#create(['branch'])
+  let g:airline_section_z = airline#section#create(['⭡ ','%l/%L',':','%c'])
+endfunction
+autocmd VimEnter * call InitAirlineSections()
 
 
 " Tmuxline
