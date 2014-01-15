@@ -1,7 +1,7 @@
 set rtp+=~/.config/vim
 set shell=bash
-so ~/.config/vim/plugin/shortcuts.vim
-so ~/.config/vim/plugin/vundle.vim
+so ~/.config/vim/shortcuts.vim
+so ~/.config/vim/vundle.vim
 
 syntax enable " Enable syntax highlighting
 filetype plugin indent on
@@ -28,7 +28,6 @@ set background=dark
 
 
 " Appearance
-let g:hybrid_use_Xresources = 1
 set showtabline=2   " Always show tab bar
 set laststatus=2    " Always show the statusline
 set ttimeoutlen=50  " Set timeout length
@@ -52,63 +51,12 @@ set ttyfast
 set tildeop         " Make tilde use motion commands
 set autoread        " Read changes on a file when it is changed
 
+
 " Folding
 set foldmethod=syntax
 set foldlevel=99
-
-" NERDTree
-let NERDTreeIgnore=['\~$']
-let NERDTreeChDirMode=2
-let g:nerdtree_tabs_open_on_gui_startup=0
-
-
-" Gitv
-let g:Gitv_OpenHorizontal = 1
-let g:Gitv_TruncateCommitSubjects = 1
-let g:Gitv_DoNotMapCtrlKey = 1
 
 
 " Show Invisibles
 set list
 set listchars=tab:»\ ,eol:¬
-
-" vim-json
-au! BufRead,BufNewFile *.json set filetype=json | set conceallevel=0
-
-" vim-jquery
-au! BufRead,BufNewFile *.js set syntax=jquery
-
-" vim-easymotion
-let g:EasyMotion_leader_key = '<Leader>'
-
-
-" Airline
-let g:airline_enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = '⮀'
-let g:airline#extensions#tabline#left_alt_sep = '⮁'
-let g:airline_powerline_fonts = 1
-let g:airline_left_sep='⮀'
-let g:airline_right_sep='⮂'
-let g:airline_symbols = {}
-let g:airline_symbols.branch = '⭠'
-function! InitAirlineSections()
-  "call airline#parts#define_accent('red', 'red')
-  let g:airline_section_b = airline#section#create(['%f','%#__accent_red#%{&modified?"*":""}'])
-  let g:airline_section_c = airline#section#create(['%#__accent_red#%{&readonly?"⭤":""}'])
-  let g:airline_section_y = airline#section#create(['branch'])
-  let g:airline_section_z = airline#section#create(['⭡ ','%l/%L',':','%c'])
-endfunction
-autocmd VimEnter * call InitAirlineSections()
-
-
-" Tmuxline
-let g:tmuxline_preset = {}
-let g:tmuxline_separators = {}
-let g:tmuxline_separators.left = '⮀'
-let g:tmuxline_separators.left_alt = '⮁'
-let g:tmuxline_separators.right = '⮂'
-let g:tmuxline_separators.right_alt = '⮃'
-let g:tmuxline_separators.space = ' '
-let g:tmuxline_preset.win = '#I #W'
-let g:tmuxline_preset.cwin = '#I #W'
