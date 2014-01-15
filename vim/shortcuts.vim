@@ -49,6 +49,10 @@ let g:NERDTreeMapOpenVSplit="v"
 " Ctrl-p
 let g:ctrlp_map = '<leader>o'
 
+" TComment
+let g:tcommentMapLeaderOp1 = ''
+let g:tcommentMapLeaderOp2 = ''
+
 " Show Invisibles
 map <silent> <leader>i :set list!<CR>
 
