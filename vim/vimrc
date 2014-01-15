@@ -23,8 +23,10 @@ set si " Smart indent
 
 " Colorscheme
 let g:solarized_diffmode="high"
-colorscheme solarized
 set background=dark
+try
+  colorscheme solarized
+endtry
 
 
 " Appearance
