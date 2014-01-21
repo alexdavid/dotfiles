@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  (qlmanage -p "$@" > /dev/null 2>&1 &
+  local ql_pid=$!
+  read -sn 1
+  kill ${ql_pid}) > /dev/null 2>&1
+fi

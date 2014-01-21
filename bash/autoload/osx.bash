@@ -7,14 +7,5 @@ if [ "$UNAME" = Darwin ]; then
   alias egrep='egrep --color=auto'
 
   export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-  # Quicklook from terminal
-  function ql ()
-  {
-    (qlmanage -p "$@" > /dev/null 2>&1 &
-    local ql_pid=$!
-    read -sn 1
-    kill ${ql_pid}) > /dev/null 2>&1
-  }
 fi
 
