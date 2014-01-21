@@ -2,5 +2,7 @@
 
 if grep -q "dark" ~/.config/colors; then echo "light" > ~/.config/colors; else echo "dark" > ~/.config/colors; fi
 
-osascript ~/.config/osx/set_solarized.applescript
+if [ "$UNAME" = Darwin ]; then
+  osascript ~/.config/osx/set_solarized.applescript
+fi
 vim +qall
