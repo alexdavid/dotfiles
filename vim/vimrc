@@ -23,11 +23,12 @@ set si " Smart indent
 
 " Colorscheme
 let g:solarized_diffmode="high"
-set background=dark
 try
   colorscheme solarized
+  execute "set background=".join(readfile($HOME."/.config/colors"))
 catch
-    colorscheme hybrid
+  colorscheme hybrid
+  set background=dark
 endtry
 
 
