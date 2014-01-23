@@ -28,8 +28,12 @@ git config --global user.name "$git_user"
 git config --global user.email "$git_email"
 
 
-# Install vim plugins
 cd ~/.config
+
+# Prevent git from showing new name/email changes in gitconfig
+git update-index --assume-unchanged git/gitconfig
+
+# Install vim plugins
 git submodule init
 git submodule update
 git submodule foreach git checkout master
