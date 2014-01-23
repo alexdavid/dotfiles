@@ -30,8 +30,8 @@ PS1="${PS1}${NOCOLOR} "
 # check the window size after each command
 shopt -s checkwinsize
 
-# Add ~/.bin to path
-export PATH=~/.bin:$PATH
+# Add ~/.config/bin to path
+export PATH=~/.config/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 function g(){
