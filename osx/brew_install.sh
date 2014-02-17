@@ -16,5 +16,6 @@ brew install \
   reattach-to-user-namespace \
   rename \
   ruby-build \
+  tmux \
   vim \
   wget
