@@ -2,13 +2,13 @@ let mapleader = "\<space>"
 
 
 " Tabs
-nmap <silent> <leader>h :tabprevious<CR>
-nmap <silent> <leader>l :tabnext<CR>
+nmap <silent> <leader>, :tabprevious<CR>
+nmap <silent> <leader>. :tabnext<CR>
 nmap <silent> <leader>n :tabnew<CR>
 
 " Move tabs
-nmap <silent> <leader><c-i> :exec 'silent! tabm ' . (tabpagenr()-2)<CR>
-nmap <silent> <leader><c-o> :exec 'silent! tabm ' . tabpagenr()<CR>
+nmap <silent> <leader>< :exec 'silent! tabm ' . (tabpagenr()-2)<CR>
+nmap <silent> <leader>> :exec 'silent! tabm ' . tabpagenr()<CR>
 
 " Indenting
 vmap < <gv
