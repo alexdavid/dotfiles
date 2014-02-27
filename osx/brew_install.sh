@@ -5,6 +5,7 @@ brew install \
   findutils \
   fish \
   git-extras \
+  heroku \
   hub \
   imagemagick \
   mongo \
