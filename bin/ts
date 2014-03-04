@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Switches colorscheme between dark and light
+
 if grep -q "dark" ~/.config/colors; then echo "light" > ~/.config/colors; else echo "dark" > ~/.config/colors; fi
 
 refresh-colors
