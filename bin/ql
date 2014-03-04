@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Quicklook from the terminal in OSX
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   (qlmanage -p "$@" > /dev/null 2>&1 &
   local ql_pid=$!
