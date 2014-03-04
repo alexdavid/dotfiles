@@ -2,6 +2,7 @@ set rtp+=~/.config/vim
 set shell=bash
 so ~/.config/vim/shortcuts.vim
 so ~/.config/vim/vundle.vim
+so ~/.config/vim/colorscheme.vim
 
 syntax enable " Enable syntax highlighting
 filetype plugin indent on
@@ -19,29 +20,6 @@ set shiftwidth=2
 set softtabstop=2
 set ai " Autoindent
 set si " Smart indent
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colorscheme
-fun! RefreshBackground()
-  execute "set background=".join(readfile($HOME."/.config/colors"))
-endfun
-fun! RefreshColors()
-  call RefreshBackground()
-  " Fix issue where airline doesn't refresh when changed by autocmd:
-  AirlineTheme solarized
-endfun
-autocmd CursorHold * call RefreshColors()
-
-try
-  colorscheme solarized
-  let g:solarized_diffmode="high"
-  call RefreshBackground()
-catch
-  colorscheme hybrid
-  set background=dark
-endtry
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 " Appearance
