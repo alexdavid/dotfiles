@@ -6,3 +6,4 @@ function fish_title
 end
 
 rbenv rehash
+refresh-colors
