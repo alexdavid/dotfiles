@@ -32,6 +32,10 @@ cd ~/.config
 # Prevent git from showing new name/email changes in gitconfig
 git update-index --assume-unchanged git/gitconfig
 
+# Prevent git from showing changes in other files that update automatically
+git update-index --assume-unchanged vim/bundle/vundle
+git update-index --assume-unchanged colors
+
 # Install vim plugins
 git submodule init
 git submodule update
