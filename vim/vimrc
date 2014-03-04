@@ -21,15 +21,27 @@ set ai " Autoindent
 set si " Smart indent
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme
-let g:solarized_diffmode="high"
+fun! RefreshBackground()
+  execute "set background=".join(readfile($HOME."/.config/colors"))
+endfun
+fun! RefreshColors()
+  call RefreshBackground()
+  " Fix issue where airline doesn't refresh when changed by autocmd:
+  AirlineTheme solarized
+endfun
+autocmd CursorHold * call RefreshColors()
+
 try
   colorscheme solarized
-  execute "set background=".join(readfile($HOME."/.config/colors"))
+  let g:solarized_diffmode="high"
+  call RefreshBackground()
 catch
   colorscheme hybrid
   set background=dark
 endtry
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 " Appearance

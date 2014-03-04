@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  osascript ~/.config/osx/set_solarized.applescript
+fi

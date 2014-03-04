@@ -2,7 +2,5 @@
 
 if grep -q "dark" ~/.config/colors; then echo "light" > ~/.config/colors; else echo "dark" > ~/.config/colors; fi
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  osascript ~/.config/osx/set_solarized.applescript
-fi
+refresh-colors
 vim +qall
