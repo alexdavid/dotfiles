@@ -3,6 +3,5 @@
 # Updates colors in terminals to reflect contents of ~/.config/colors
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  # iTerm2:
   osascript ~/.config/osx/set_solarized.applescript
 fi
