@@ -1,21 +1,21 @@
 function fish_prompt --description 'Write out the prompt'
 
-  # Just calculate these once, to save a few cycles when displaying the prompt
+  set -l last_status $status
+
   if not set -q __fish_prompt_normal
-      set -g __fish_prompt_normal (set_color normal)
+    set -g __fish_prompt_normal (set_color normal)
   end
 
-  if not set -q __git_cb
-      set __git_cb " ["(set_color green)(git branch ^/dev/null | grep \* | sed 's/* //')(set_color normal)"]"
+  # PWD
+  set_color $fish_color_cwd
+  echo -n (prompt_pwd)
+  set_color normal
+
+  printf '%s ' (__fish_git_prompt)
+
+  if not test $last_status -eq 0
+    set_color $fish_color_error
   end
 
-  if not set -q __fish_prompt_cwd
-      set -g __fish_prompt_cwd (set_color $fish_color_cwd)
-  end
-
-  if set -q TMUX
-    tmux setenv "TMUXPWD_"(tmux display -p "#D" | tr -d "%") (pwd)
-  end
-
-  printf '%s%s%s%s > ' "$__fish_prompt_cwd" (prompt_pwd) "$__fish_prompt_normal" $__git_cb
+  echo -n '> '
 end
