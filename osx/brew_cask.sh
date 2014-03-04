@@ -4,6 +4,7 @@ brew tap phinze/homebrew-cask
 brew install brew-cask
 
 brew cask install \
+  divvy \
   dropbox \
   google-chrome \
   hipchat \
