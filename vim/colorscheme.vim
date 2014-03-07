@@ -25,7 +25,6 @@ endtry
 " Use more contrasty colors for vimdiff
 let g:solarized_diffmode="high"
 
-
 " Highlight trailing whitespace
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
