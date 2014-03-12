@@ -53,9 +53,6 @@ let g:ctrlp_map = '<leader>o'
 let g:tcommentMapLeaderOp1 = ''
 let g:tcommentMapLeaderOp2 = ''
 
-" Show Invisibles
-map <silent> <leader>i :set list!<CR>
-
 " Hide highlight
 map <silent> <leader><space> :noh<CR>:match<CR>
 

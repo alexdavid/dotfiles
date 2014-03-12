@@ -55,4 +55,4 @@ set foldlevel=99
 
 " Show Invisibles
 set list
-set listchars=tab:»\ ,eol:¬
+set listchars=tab:\ »
