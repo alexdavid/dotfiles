@@ -2,6 +2,7 @@
   excludesfile = ~/.config/git/gitignore_global
 [alias]
   st = status
+  bs = branch-status
   co = checkout
   a = add
   k = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --graph --all
