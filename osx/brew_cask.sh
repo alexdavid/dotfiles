@@ -15,3 +15,6 @@ brew cask install \
   sequel-pro \
   true-crypt \
   vlc
+
+# Hide opt folder that brew cask creates
+sudo chflags hidden /opt
