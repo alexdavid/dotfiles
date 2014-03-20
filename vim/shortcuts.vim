@@ -65,6 +65,9 @@ nmap <silent> m' m':execute 'match Search /\%'.line('.').'l/'<CR>
 " Run q macro
 map <silent> <leader>q @q
 
+" Use vim keybindings when running a command
+nmap <silent> <leader>; q:i
+
 " Tab number shortcuts
 nnoremap <silent> <Leader>1        :tabnext 1<CR>
 nnoremap <silent> <Leader>2        :tabnext 2<CR>
