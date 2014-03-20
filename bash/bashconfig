@@ -1,23 +1,10 @@
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
-
 UNAME=`uname -s`
 
 # Source all files in the ~/.bash/ directory
 for f in ~/.config/bash/autoload/*; do source $f; done
-
-# check the window size after each command
-shopt -s checkwinsize
 
 # Set PATH
 export PATH=$(~/.config/bin/get-paths | tr '\n' ':')
 
 # Set PS1 to ~/.config/bin/echo-ps1
 export PROMPT_COMMAND="export PS1=\$(~/.config/bin/echo-ps1 \$?)"
-
-function g(){
-  cd $* && ls
-}
-
-# set bash to VI mode
-set -o vi
