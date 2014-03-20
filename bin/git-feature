@@ -1,2 +1,6 @@
-#!/bin/bash
-git checkout -b $1 && git push -u origin $1
+#!/bin/sh
+
+branch="feature/$1"
+
+git checkout -b $branch
+git push -u origin $branch
