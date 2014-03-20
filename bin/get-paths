@@ -1,3 +1,4 @@
 #!/bin/sh
 
-cat ~/.config/path | sed '/ *#.*$/d' | sed '/^$/d'
+home_dir=$(echo $HOME | sed "s/\//\\\\\//g")
+cat ~/.config/path | sed '/ *#.*$/d' | sed '/^$/d' | sed "s/~/$home_dir/"
