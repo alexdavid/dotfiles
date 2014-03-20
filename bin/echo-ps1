@@ -10,12 +10,17 @@ command_color="\033[m"
 cwd_color="\033[32m"
 git_color="\033[m"
 
-if [[ $last_status != 0 ]]; then
-  prompt_color="\033[31m"
-fi
-
 if git rev-parse --git-dir > /dev/null 2>&1; then
   current_branch_name=" $git_color($current_branch_name)"
 fi
 
-echo "$cwd_color$cwd$current_branch_name $prompt_color> $command_color"
+if [[ $last_status != 0 ]]; then
+  prompt_color="\033[31m"
+fi
+
+prompt=">"
+if [[ "$(id -u)" == 0 ]]; then
+  prompt="#"
+fi
+
+echo "$cwd_color$cwd$current_branch_name $prompt_color$prompt $command_color"
