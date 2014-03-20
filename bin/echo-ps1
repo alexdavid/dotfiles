@@ -10,7 +10,7 @@ command_color="\033[m"
 cwd_color="\033[32m"
 git_color="\033[m"
 
-if [ $last_status != 0 ]; then
+if [[ $last_status != 0 ]]; then
   prompt_color="\033[31m"
 fi
 
