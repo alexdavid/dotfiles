@@ -1,0 +1,3 @@
+#!/bin/sh
+
+cat ~/.config/path | sed '/ *#.*$/d' | sed '/^$/d'

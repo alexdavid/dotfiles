@@ -1,0 +1,21 @@
+# This file defines paths that all shells
+# set the environment variable PATH to.
+#
+# Use the binary ~/.config/bin/get-paths to get
+# a new line separated list of these paths
+
+# Dotfile bin:
+~/.config/bin
+
+# Ruby:
+~/.rbenv/shims
+
+# Node.JS:
+./node_modules/.bin
+
+# System binaries:
+/usr/local/bin
+/usr/bin
+/bin
+/usr/sbin
+/sbin
