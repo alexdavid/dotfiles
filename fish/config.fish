@@ -1,4 +1,10 @@
+# Set paths
 eval set -x PATH (~/.config/bin/get-paths)
+
+# Set aliases
+for val in (get-aliases " ")
+  eval "alias $val"
+end
 
 set fish_greeting ""
 

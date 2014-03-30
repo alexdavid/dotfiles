@@ -1,5 +1,8 @@
 # Set PATH
 export PATH=$(~/.config/bin/get-paths | tr '\n' ':')
 
+# Set aliases
+while read LINE; do eval "alias $LINE"; done < <(get-aliases =)
+
 # Set PS1 to ~/.config/bin/echo-ps1
 precmd () { export PS1="$(~/.config/bin/echo-ps1 $?)" }

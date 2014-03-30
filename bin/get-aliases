@@ -1,13 +1,12 @@
 #!/bin/sh
 
-PRE=$1 # What to print before each line
-SEP=$2 # Separator between the alias and definition
+SEP=$1 # Separator between the alias and definition
 
 # Example:
 # Input in ~/.config/aliases:
 # foo = bar
-# Output from `get-aliases fizz buzz`:
-# fizzfoobuzzbar
+# Output from `get-aliases "->"`:
+# foo->'bar'
 
 
-cat ~/.config/aliases | ~/.config/bin/de-comment | perl -pe "s/^([a-z.]+) *= *(.+)$/$PRE\1$SEP'\2'/"
+cat ~/.config/aliases | ~/.config/bin/de-comment | perl -pe "s/^([a-z.]+) *= *(.+)$/\1$SEP'\2'/"
