@@ -1,3 +1,0 @@
-#!/bin/sh
-
-tmux new 'vim +qall; reattach-to-user-namespace -l $SHELL'
