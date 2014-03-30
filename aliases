@@ -1,4 +1,4 @@
-# This file defines aliases shared between all shells
+# This file defines aliases shared amongst all shells
 #
 # Use the shell script ~/.config/bin/get-aliases to get a
 # formatted list of aliases without comments
