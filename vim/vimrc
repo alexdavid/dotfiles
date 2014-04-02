@@ -44,7 +44,6 @@ set nobackup        " Don't create backup files
 set spelllang=en_us " Set spell check language
 set nowrap          " Disable line wrapping
 set ttyfast
-set tildeop         " Make tilde use motion commands
 set autoread        " Read changes on a file when it is changed
 
 
