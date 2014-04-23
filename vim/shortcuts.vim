@@ -10,6 +10,31 @@ nmap <silent> <leader>n :tabnew<CR>
 nmap <silent> <leader>< :exec 'silent! tabm ' . (tabpagenr()-2)<CR>
 nmap <silent> <leader>> :exec 'silent! tabm ' . tabpagenr()<CR>
 
+" Function Resize - resizes split panes like tmux does:
+" When focus is on the last pane it reverses resizing
+fun! Resize(direction, scalar, notLastCommand, lastCommand)
+  let startWinnr = winnr()
+  exec "normal! " . a:direction
+  if winnr() == startWinnr
+    " We are on the last pane use lastCommand
+    exec "normal! " . a:scalar . "" . a:lastCommand
+  else
+    exec startWinnr . "wincmd w"
+    " We are not on the last pane use notLastCommand
+    exec "normal! " . a:scalar . "" . a:notLastCommand
+  endif
+endfun
+
+nmap <leader>h :call Resize('l', 1, '<', '>')<CR>
+nmap <leader>l :call Resize('l', 1, '>', '<')<CR>
+nmap <leader>j :call Resize('j', 1, '+', '-')<CR>
+nmap <leader>k :call Resize('j', 1, '-', '+')<CR>
+
+nmap <leader>H :call Resize('l', 10, '<', '>')<CR>
+nmap <leader>L :call Resize('l', 10, '>', '<')<CR>
+nmap <leader>J :call Resize('j', 10, '+', '-')<CR>
+nmap <leader>K :call Resize('j', 10, '-', '+')<CR>
+
 " Indenting
 vmap < <gv
 vmap > >gv
@@ -55,9 +80,6 @@ let g:tcommentMapLeaderOp2 = ''
 
 " Hide highlight
 map <silent> <leader><space> :noh<CR>:match<CR>
-
-" Add reverse J shortcut (useful for CoffeeScript)
-map <silent> <leader>J kddpk==J
 
 " Mark line
 nmap <silent> m' m':execute 'match Search /\%'.line('.').'l/'<CR>
