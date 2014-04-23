@@ -71,8 +71,8 @@ let g:NERDTreeMapJumpPrevSibling="<C-p>"
 let g:NERDTreeMapOpenSplit="s"
 let g:NERDTreeMapOpenVSplit="v"
 
-" Ctrl-p
-let g:ctrlp_map = '<leader>o'
+" CommandT
+nmap <leader>o :CommandT<CR>
 
 " TComment
 let g:tcommentMapLeaderOp1 = ''
