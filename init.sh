@@ -42,8 +42,3 @@ git submodule init
 git submodule update
 git submodule foreach git checkout master
 vim +BundleInstall! +qall
-
-# Update build extensions for vim command-t plugin
-cd ~/.config/vim/bundle/command-t/ruby/command-t
-ruby extconf.rb
-make
