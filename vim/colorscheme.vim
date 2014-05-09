@@ -5,9 +5,13 @@ endfun
 
 " Update colors and refresh vim-airline for autocmd
 fun! RefreshColors()
-  call RefreshBackground()
-  " Fix issue where airline doesn't refresh when changed by autocmd:
-  AirlineTheme solarized
+  try
+    AirlineTheme solarized
+    call RefreshBackground()
+    " Fix issue where airline doesn't refresh when changed by autocmd:
+    AirlineTheme solarized
+  catch
+  endtry
 endfun
 
 " Make sure colors are still up to date if the cursor hasn't moved in a while
