@@ -13,3 +13,5 @@
   default = simple
 [merge]
   conflictstyle = diff3
+[include]
+  path = ~/.config/git/gitconfig_user
