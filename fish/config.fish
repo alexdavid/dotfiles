@@ -14,3 +14,10 @@ end
 
 rbenv rehash
 refresh-colors
+
+# Load custom settings for current user
+set local_settings_file ~/.config/fish/config.local.fish
+
+if test -f $local_settings_file
+   . $local_settings_file
+end
