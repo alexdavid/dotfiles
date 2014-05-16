@@ -1,6 +1,7 @@
 #!/bin/bash
 brew install \
   ack \
+  the_silver_searcher \
   automake \
   findutils \
   fish \
