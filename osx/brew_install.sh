@@ -1,7 +1,6 @@
 #!/bin/bash
 brew install \
   ack \
-  the_silver_searcher \
   automake \
   findutils \
   fish \
@@ -18,6 +17,7 @@ brew install \
   reattach-to-user-namespace \
   rename \
   ruby-build \
+  the_silver_searcher \
   tmux \
   vim \
   wget
