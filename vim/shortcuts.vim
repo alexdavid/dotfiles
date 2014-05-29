@@ -58,9 +58,6 @@ nmap gs :Gstatus<CR>:<CR><C-W>K
 nmap gc :Gcommit<CR>:set spell<CR><C-W>Ki
 nmap git :Git 
 
-" Map ` to ~
-noremap ` ~
-
 " Toggle Spell Checking
 map <silent> <leader>s :set spell!<CR>
 
