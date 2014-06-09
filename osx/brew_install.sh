@@ -17,6 +17,7 @@ brew install \
   reattach-to-user-namespace \
   rename \
   ruby-build \
+  the_silver_searcher \
   tmux \
   vim \
   wget
