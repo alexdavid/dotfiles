@@ -6,5 +6,5 @@
 # ~/.config/path with comments stripped
 
 while read LINE; do
-  echo $LINE | sed '/ *#.*$/d' | sed '/^$/d'
+  printf "$LINE" | sed -e 's/ *#.*$//' -e '/^$/d'
 done
