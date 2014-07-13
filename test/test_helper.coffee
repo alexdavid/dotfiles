@@ -12,10 +12,11 @@ mock_term_opts =
 
 GLOBAL.run_command = (command, command_args...) ->
   before (done) ->
-    term = pty.spawn command, command_args, mock_term_opts
+    command_path = path.join __dirname, 'mock_home/.config/bin', command
+    term = pty.spawn command_path, command_args, mock_term_opts
     @command_output = ''
     term.on 'data', (d) => @command_output += d
-    term.on 'end', -> done()
+    term.on 'close', -> done()
 
 
 GLOBAL.write_mock_file = (relative_file_path, data) ->
