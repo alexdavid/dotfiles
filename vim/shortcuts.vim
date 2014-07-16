@@ -35,6 +35,12 @@ nmap <leader>L :call Resize('l', 10, '>', '<')<CR>
 nmap <leader>J :call Resize('j', 10, '+', '-')<CR>
 nmap <leader>K :call Resize('j', 10, '-', '+')<CR>
 
+" Quickfix list mappings
+autocmd BufReadPost quickfix nnoremap <buffer> s <C-W><CR><C-w>K
+autocmd BufReadPost quickfix nnoremap <buffer> v <C-w><CR><C-w>H<C-W>b<C-W>J<C-W>t
+autocmd BufReadPost quickfix nnoremap <buffer> t <C-w><CR><C-w>T
+autocmd BufReadPost quickfix nnoremap <buffer> T <C-w><CR><C-w>TgT<C-W><C-W>
+
 " Indenting
 vmap < <gv
 vmap > >gv
