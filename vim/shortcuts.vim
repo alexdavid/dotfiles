@@ -59,7 +59,8 @@ autocmd InsertLeave * call DiffUpdate()
 noremap <leader>g :diffget 0 \| diffupdate<CR>
 noremap <leader>p :diffput 0 \| diffupdate<CR>
 nmap gk :Gitv --all<CR>:NERDTreeClose<CR>
-nmap gd :Gdiff HEAD<CR><C-W>l:Gdiff<CR>
+nmap gd :Gdiff<CR>
+nmap g3d :Gdiff HEAD<CR><C-W>l:Gdiff<CR>
 nmap gs :Gstatus<CR>:<CR><C-W>K
 nmap gc :Gcommit<CR>:set spell<CR><C-W>Ki
 nmap git :Git 
