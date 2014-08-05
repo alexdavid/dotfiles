@@ -56,3 +56,7 @@ set foldlevel=99
 set list
 set listchars=tab:\ »
 
+" Local Ovverides
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif
