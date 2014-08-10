@@ -1,0 +1,10 @@
+{
+  "name": "dotfiles",
+  "scripts": {
+    "test": "mycha run"
+  },
+  "devDependencies": {
+    "mycha": "latest",
+    "pty.js": "^0.2.4"
+  }
+}

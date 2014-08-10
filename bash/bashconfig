@@ -3,11 +3,11 @@ UNAME=`uname -s`
 # Source all files in the ~/.config/bash/autoload directory
 for f in ~/.config/bash/autoload/*; do source $f; done
 
-# Set aliases
-while read LINE; do eval "alias $LINE"; done < <(get-aliases =)
-
 # Set PATH
 export PATH=$(~/.config/bin/get-paths | tr '\n' ':')
+
+# Set aliases
+while read LINE; do eval "alias $LINE"; done < <(get-aliases =)
 
 # Set PS1 to ~/.config/bin/echo-ps1
 export PROMPT_COMMAND="export PS1=\$(~/.config/bin/echo-ps1 \$?)"
