@@ -15,5 +15,5 @@ gs    = git status
 # etc
 ql    = quicklook
 rs    = rails start
-t     = tmux new "vim +qall; reattach-to-user-namespace -l $SHELL"
+t     = tmux
 ts    = switch-theme
