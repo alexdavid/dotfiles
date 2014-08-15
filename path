@@ -10,9 +10,6 @@
 # Ruby:
 ~/.rbenv/shims
 
-# Node.JS:
-./node_modules/.bin
-
 # System binaries:
 /usr/local/bin
 /usr/bin
