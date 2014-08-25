@@ -1,6 +1,6 @@
 function cd
   builtin cd $argv
-  emit cwd 
+  emit cwd
 end
 
 function __npm_cwd --on-event cwd
@@ -9,7 +9,10 @@ function __npm_cwd --on-event cwd
 
   for i in (seq (count $PATH))
     switch $PATH[$i]
-      case $old_npm_bin; set PATH[$i] $npm_bin
+      case $old_npm_bin
+        if test -d $npm_bin
+          set PATH[$i] $npm_bin
+        end
     end
   end
 end
