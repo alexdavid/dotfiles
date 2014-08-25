@@ -13,7 +13,6 @@ function fish_title
 end
 
 rbenv rehash
-refresh-colors
 
 # Load custom settings for current user
 set local_settings_file ~/config.fish.local

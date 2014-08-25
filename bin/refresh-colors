@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# Updates colors in terminals to reflect contents of ~/.config/colors
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  osascript ~/.config/osx/set_solarized.applescript
-fi
