@@ -6,7 +6,7 @@ Alex's super awesome dotfiles!! [![Build Status](https://travis-ci.org/alexdavid
 
 ### How to Install
 ```sh
-$ git clone git@github.com:alexdavid/dotfiles.git ~/.config
+$ git clone https://github.com/alexdavid/dotfiles.git ~/.config
 $ ~/.config/init.sh
 ```
 
