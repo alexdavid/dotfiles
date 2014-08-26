@@ -16,4 +16,3 @@ gs    = git status
 ql    = quicklook
 rs    = rails start
 t     = tmux
-ts    = switch-theme
