@@ -17,10 +17,8 @@ if which rbenv > /dev/null
 end
 
 # Load custom settings for current user
-set local_settings_file ~/.config/fish/config.local.fish
+set local_settings_file ~/config.fish.local
 
 if test -f $local_settings_file
    . $local_settings_file
 end
-
-refresh-colors
