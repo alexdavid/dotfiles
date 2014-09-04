@@ -4,6 +4,11 @@ so ~/.config/vim/shortcuts.vim
 so ~/.config/vim/vundle.vim
 so ~/.config/vim/colorscheme.vim
 
+" Theme Settings
+if filereadable(expand('~/.vimrc.theme'))
+  source ~/.vimrc.theme
+endif
+
 syntax enable " Enable syntax highlighting
 filetype plugin indent on
 
