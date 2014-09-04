@@ -12,7 +12,9 @@ function fish_title
   prompt_pwd
 end
 
-rbenv rehash
+if which rbenv > /dev/null
+  rbenv rehash
+end
 
 # Load custom settings for current user
 set local_settings_file ~/config.fish.local
