@@ -22,5 +22,3 @@ set local_settings_file ~/config.fish.local
 if test -f $local_settings_file
    . $local_settings_file
 end
-
-refresh-colors
