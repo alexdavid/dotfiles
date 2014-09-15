@@ -25,7 +25,9 @@ set shiftwidth=2
 set softtabstop=2
 set ai " Autoindent
 set si " Smart indent
-set cindent
+
+" Fix indenting problems for coffee
+au FileType coffee set cindent
 
 
 " Appearance
