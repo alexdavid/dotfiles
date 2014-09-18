@@ -1,0 +1,9 @@
+/* 
+* Copy this file to ~/Library/KeyBindings/DefaultKeyBinding.dict
+*/
+
+{
+  "^w" = "deleteWordBackward:";
+  "~f" = "moveWordForward:";
+  "~b" = "moveWordBackward:";
+}
