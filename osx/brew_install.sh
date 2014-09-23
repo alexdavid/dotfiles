@@ -9,7 +9,6 @@ brew install \
   hub \
   imagemagick \
   mongo \
-  nodejs \
   openssl \
   png2ico \
   postgresql \

@@ -2,3 +2,11 @@
 	path = vim/bundle/vundle
 	url = https://github.com/gmarik/vundle.git
 	branch = master
+[submodule "nodejs/ndenv"]
+	path = nodejs/ndenv
+	url = https://github.com/riywo/ndenv.git
+	branch = master
+[submodule "nodejs/node-build"]
+	path = nodejs/node-build
+	url = https://github.com/riywo/node-build.git
+	branch = master
