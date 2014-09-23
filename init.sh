@@ -34,8 +34,10 @@ echo "  email = $git_email" >> git/gitconfig_user
 git update-index --assume-unchanged vim/bundle/vundle
 git update-index --assume-unchanged colors
 
-# Install vim plugins
+# Initialize git submodules
 git submodule init
 git submodule update
 git submodule foreach git checkout master
+
+# Install vim plugins
 vim +BundleInstall! +qall

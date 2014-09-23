@@ -11,6 +11,8 @@
 ~/.rbenv/shims
 
 # Node.JS:
+~/.config/nodejs/ndenv/bin
+~/.config/nodejs/ndenv/shims
 ./node_modules/.bin
 
 # System binaries:
