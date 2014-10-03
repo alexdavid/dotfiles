@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Don't clear screen if vim is running
+if [ $(tmux display-message -p "#{pane_current_command}") == vim ]; then exit; fi
+
+tmux send-keys -R
+tmux clear-history
