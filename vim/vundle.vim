@@ -4,6 +4,7 @@ call vundle#rc('~/.config/vim/bundle')
 Bundle 'gmarik/vundle'
 
 Bundle 'alexdavid/nerdtree_icons'
+Bundle 'alexdavid/vim-min-git-status'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'bruno-/vim-husk'
