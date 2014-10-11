@@ -1,7 +1,7 @@
 set rtp+=~/.config/vim
 set shell=bash
 so ~/.config/vim/shortcuts.vim
-so ~/.config/vim/vundle.vim
+so ~/.config/vim/plugins.vim
 so ~/.config/vim/colorscheme.vim
 
 " Theme Settings
