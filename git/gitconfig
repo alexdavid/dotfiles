@@ -1,7 +1,7 @@
 [core]
   excludesfile = ~/.config/git/gitignore_global
 [alias]
-  st = status
+  st = status --short --branch
   bs = branch-status
   co = checkout
   a = add
