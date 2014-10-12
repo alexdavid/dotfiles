@@ -10,7 +10,7 @@
 # git shortcuts
 gp    = git pull
 gpp   = git pullpush
-gs    = git status
+gs    = git st
 
 # etc
 ql    = quicklook

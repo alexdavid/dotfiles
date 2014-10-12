@@ -2,7 +2,7 @@
   excludesfile = ~/.config/git/gitignore_global
   editor = vim
 [alias]
-  st = status
+  st = status --short --branch
   bs = branch-status
   co = checkout
   a = add
