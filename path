@@ -12,6 +12,7 @@
 
 # Node.JS:
 ./node_modules/.bin
+~/.config/node/node_modules/.bin
 
 # System binaries:
 /usr/local/bin
