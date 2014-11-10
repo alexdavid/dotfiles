@@ -4,11 +4,6 @@ so ~/.config/vim/shortcuts.vim
 so ~/.config/vim/plugins.vim
 so ~/.config/vim/colorscheme.vim
 
-" Theme Settings
-if filereadable(expand('~/.vimrc.theme'))
-  source ~/.vimrc.theme
-endif
-
 syntax enable " Enable syntax highlighting
 filetype plugin indent on
 
@@ -63,6 +58,13 @@ set foldlevel=99
 " Show Invisibles
 set list
 set listchars=tab:\ »
+
+
+" Theme Settings
+if filereadable(expand('~/.vimrc.theme'))
+  source ~/.vimrc.theme
+endif
+
 
 " Local Ovverides
 if filereadable(expand('~/.vimrc.local'))
