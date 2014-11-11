@@ -37,4 +37,9 @@ Plug 'vim-scripts/jQuery'
 Plug 'wavded/vim-stylus'
 Plug 'wting/rust.vim'
 
+
+if filereadable(expand('~/.vimrc.plugins'))
+  source ~/.vimrc.plugins
+endif
+
 call plug#end()
