@@ -15,8 +15,14 @@
 ~/.config/node/node_modules/.bin
 
 # System binaries:
+~/.linuxbrew/bin
+/usr/local/sbin
 /usr/local/bin
+/usr/sbin
 /usr/bin
-/bin
 /usr/sbin
 /sbin
+/bin
+/usr/games
+/usr/local/games
+~/.bin
