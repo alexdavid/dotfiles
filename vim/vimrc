@@ -39,6 +39,7 @@ set scrolloff=5     " set minimum space between the cursor and window
 " Searching
 set hlsearch   " Highlight found searches
 set ignorecase " Ignore case in searched
+set smartcase  " Don't ignore case if searching with caps
 set incsearch  " Incrementally search
 
 
