@@ -1,1 +1,3 @@
 plug.vim
+tmp/*/*
+!.gitkeep
