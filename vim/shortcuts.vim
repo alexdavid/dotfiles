@@ -45,19 +45,20 @@ autocmd BufReadPost quickfix nnoremap <buffer> T <C-w><CR><C-w>TgT<C-W><C-W>
 vmap < <gv
 vmap > >gv
 
-" Vim diff and fugitive
+" Consistency
+nmap Y y$
+
+" Vim diff
 fun! DiffUpdate()
   if &diff
     diffupdate
   endif
 endfun
-
-" Consistency
-nmap Y y$
-
 autocmd InsertLeave * call DiffUpdate()
-noremap <leader>g :diffget 0 \| diffupdate<CR>
-noremap <leader>p :diffput 0 \| diffupdate<CR>
+noremap <leader>g :diffget \| diffupdate<CR>
+noremap <leader>p :diffput \| diffupdate<CR>
+
+" Git/fugitive shortcuts
 nmap gk :Gitv --all<CR>:NERDTreeClose<CR>
 nmap gd :Gdiff<CR>
 nmap g3d :Gdiff HEAD<CR><C-W>l:Gdiff<CR>
