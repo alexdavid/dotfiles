@@ -5,6 +5,7 @@
   st = status --short --branch
   bs = branch-status
   co = checkout
+  cob = checkout -b
   a = add
   k = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --graph --all
   ignore = !echo >> .gitignore
