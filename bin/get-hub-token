@@ -1,0 +1,3 @@
+#!/bin/sh
+
+sed -nE 's/^.*oauth_token: *(.+)$/\1/p' ~/.config/hub
