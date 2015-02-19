@@ -1,10 +1,14 @@
 #!/bin/bash
+
+brew tap Originate/gittown
+
 brew install \
   ack \
   automake \
   findutils \
   fish \
   git-extras \
+  git-town \
   heroku \
   hub \
   imagemagick \
