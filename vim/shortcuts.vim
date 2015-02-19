@@ -59,7 +59,6 @@ noremap <leader>g :diffget \| diffupdate<CR>
 noremap <leader>p :diffput \| diffupdate<CR>
 
 " Git/fugitive shortcuts
-nmap gk :Gitv --all<CR>:NERDTreeClose<CR>
 nmap gd :Gdiff<CR>
 nmap g3d :Gdiff HEAD<CR><C-W>l:Gdiff<CR>
 nmap gs :Gministatus<CR>
