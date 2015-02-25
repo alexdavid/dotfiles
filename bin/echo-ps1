@@ -14,12 +14,12 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
   current_branch_name=" $git_color($current_branch_name)"
 fi
 
-if [[ $last_status != 0 ]]; then
+if [ $last_status -ne 0 ]; then
   prompt_color="\033[31m"
 fi
 
 prompt=">"
-if [[ "$(id -u)" == 0 ]]; then
+if [ "$(id -u)" -eq 0 ]; then
   prompt="#"
 fi
 
