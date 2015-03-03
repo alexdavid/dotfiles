@@ -44,6 +44,8 @@ autocmd BufReadPost quickfix nnoremap <buffer> T <C-w><CR><C-w>TgT<C-W><C-W>
 " Indenting
 vmap < <gv
 vmap > >gv
+nmap > >>
+nmap < <<
 
 " Consistency
 nmap Y y$
