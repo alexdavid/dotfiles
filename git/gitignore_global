@@ -1,6 +1,9 @@
+# OSX
 .DS_Store
-*.swp
-logfile
+.fseventsd
 
-# Redis snapshots
+# Vim
+*.swp
+
+# Redis
 dump.rdb
