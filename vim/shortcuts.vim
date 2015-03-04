@@ -83,8 +83,12 @@ let g:NERDTreeMapOpenVSplit="v"
 let g:ctrlp_map = '<leader>o'
 
 " TComment
+let g:tcommentMapLeader1 = ''
 let g:tcommentMapLeaderOp1 = ''
 let g:tcommentMapLeaderOp2 = ''
+nnoremap <C-_> :TComment<CR>
+vnoremap <C-_> :TCommentMaybeInline<CR>
+inoremap <C-_> <C-o>:TComment<CR>
 
 " Hide highlight
 map <silent> <leader><space> :noh<CR>:match<CR>
