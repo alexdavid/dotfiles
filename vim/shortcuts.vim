@@ -87,7 +87,7 @@ let g:tcommentMapLeader1 = ''
 let g:tcommentMapLeaderOp1 = ''
 let g:tcommentMapLeaderOp2 = ''
 nnoremap <C-_> :TComment<CR>
-vnoremap <C-_> :TCommentMaybeInline<CR>
+vnoremap <C-_> :TCommentMaybeInline<CR>gv<ESC>
 inoremap <C-_> <C-o>:TComment<CR>
 
 " Hide highlight
