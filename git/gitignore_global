@@ -7,3 +7,6 @@
 
 # Redis
 dump.rdb
+
+# Node.js
+npm-debug.log
