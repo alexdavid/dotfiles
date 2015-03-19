@@ -28,7 +28,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/L9'
-Plug 'vim-scripts/jQuery'
 Plug 'wavded/vim-stylus'
 
 
