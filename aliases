@@ -13,6 +13,9 @@ gpp   = git pullpush
 gs    = git st
 
 # etc
-ql    = quicklook
 rs    = rails start
 t     = tmux
+
+# osx crap
+airport = /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
+ql      = quicklook
