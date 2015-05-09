@@ -6,7 +6,7 @@ Alex's super awesome dotfiles!!
 
 ### How to Install
 ```sh
-$ curl https://raw.githubusercontent.com/alexdavid/dotfiles/master/install | bash
+$ bash <(curl https://raw.githubusercontent.com/alexdavid/dotfiles/master/install)
 ```
 
 
