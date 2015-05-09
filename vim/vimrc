@@ -50,11 +50,12 @@ set incsearch  " Incrementally search
 
 
 " Misc
-set nobackup        " Don't create backup files
-set spelllang=en_us " Set spell check language
-set nowrap          " Disable line wrapping
+set nobackup          " Don't create backup files
+set spelllang=en_us   " Set spell check language
+set nowrap            " Disable line wrapping
 set ttyfast
-set autoread        " Read changes on a file when it is changed
+set autoread          " Read changes on a file when it is changed
+set diffopt+=vertical " Force vimdiff to always open vertically
 
 
 " Folding
