@@ -1,4 +1,4 @@
-Alex's super awesome dotfiles!! [![Build Status](https://travis-ci.org/alexdavid/dotfiles.png)](https://travis-ci.org/alexdavid/dotfiles)
+Alex's super awesome dotfiles!!
 ---------------------------------------------
 
 ![Screenshot](https://raw.github.com/alexdavid/dotfiles/master/doc/screenshot.png)
@@ -6,8 +6,7 @@ Alex's super awesome dotfiles!! [![Build Status](https://travis-ci.org/alexdavid
 
 ### How to Install
 ```sh
-$ git clone https://github.com/alexdavid/dotfiles.git ~/.config
-$ ~/.config/init.sh
+$ curl https://raw.githubusercontent.com/alexdavid/dotfiles/master/install | bash
 ```
 
 
