@@ -1,7 +1,7 @@
 # This script is used to clone and install my dotfiles
 # If you already have them cloned in ~/.config then just run ~/.config/init.sh to install them
 #
-# curl https://raw.githubusercontent.com/alexdavid/dotfiles/master/install | bash
+# bash <(curl https://raw.githubusercontent.com/alexdavid/dotfiles/master/install)
 (
   echo
   echo "Testing if you have access to clone GitHub projects over SSH..."
