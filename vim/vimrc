@@ -33,7 +33,7 @@ set number          " Show line numbers
 set title           " Display filename in title bar
 set cursorline      " Adds highlighted line on current line
 set cursorcolumn    " Adds highlighted line on current column
-set scrolloff=5     " set minimum space between the cursor and window
+set scrolloff=1     " set minimum space between the cursor and window
 
 
 " Keep temp files out of CWD
