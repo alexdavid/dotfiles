@@ -11,6 +11,7 @@ filetype plugin indent on
 " General
 set backspace=2       " Make backspace delete
 set clipboard=unnamed " Make vim share clipboard with system
+colorscheme sol-term
 
 
 " Tab indenting
