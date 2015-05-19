@@ -6,4 +6,5 @@
   "^w" = "deleteWordBackward:";
   "~f" = "moveWordForward:";
   "~b" = "moveWordBackward:";
+  "~d" = "deleteWordForward:";
 }
