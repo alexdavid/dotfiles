@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 
 mkdir ~/Library/KeyBindings
-ln -s ../../.config/osx/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+
+git clone https://github.com/alexdavid/keybindings.git ~/Library/KeyBindings
