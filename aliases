@@ -15,6 +15,7 @@ gs    = git st
 # etc
 rs    = rails start
 t     = tmux
+v     = vim
 
 # osx crap
 airport = /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
