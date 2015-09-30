@@ -1,7 +1,5 @@
 #!/bin/bash
 
-brew tap Originate/gittown
-
 brew install \
   ack \
   automake \
