@@ -35,6 +35,9 @@ nmap <leader>L :call Resize('l', 10, '>', '<')<CR>
 nmap <leader>J :call Resize('j', 10, '+', '-')<CR>
 nmap <leader>K :call Resize('j', 10, '-', '+')<CR>
 
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
+
 " Quickfix list mappings
 autocmd BufReadPost quickfix nnoremap <buffer> s <C-W><CR><C-w>K
 autocmd BufReadPost quickfix nnoremap <buffer> v <C-w><CR><C-w>H<C-W>b<C-W>J<C-W>t
