@@ -15,6 +15,7 @@ brew install \
   openssl \
   png2ico \
   postgresql \
+  python \
   rbenv \
   reattach-to-user-namespace \
   rename \
