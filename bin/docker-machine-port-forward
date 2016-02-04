@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+MACHINE_NAME=$1
+PORT=$2
+
+ssh docker@$(docker-machine ip $MACHINE_NAME) -NL $PORT:localhost:$PORT -i ~/.docker/machine/machines/$MACHINE_NAME/id_rsa
