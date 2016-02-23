@@ -11,7 +11,6 @@
 ~/.rbenv/shims
 
 # Node.JS:
-./node_modules/.bin
 ~/.config/node/node_modules/.bin
 
 # System binaries:
@@ -21,3 +20,7 @@
 /bin
 /usr/sbin
 /sbin
+
+# Relative Paths
+./node_modules/.bin
+./bin
