@@ -8,10 +8,3 @@ Alex's super awesome dotfiles!!
 ```sh
 $ bash <(curl https://raw.githubusercontent.com/alexdavid/dotfiles/master/install)
 ```
-
-
-### Run tests
-```sh
-$ npm install
-$ npm test
-```
