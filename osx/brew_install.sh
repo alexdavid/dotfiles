@@ -9,7 +9,6 @@ brew install \
   findutils \
   fish \
   git-branch-status \
-  git-extras \
   git-town \
   heroku \
   hub \
