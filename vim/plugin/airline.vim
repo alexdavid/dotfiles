@@ -8,6 +8,8 @@ let g:airline_left_sep='⮀'
 let g:airline_right_sep='⮂'
 let g:airline_symbols = exists('g:airline_symbols') ? g:airline_symbols : {}
 let g:airline_symbols.branch = '⭠'
+let g:airline#extensions#tabline#disable_refresh=1
+
 function! InitAirlineSections()
   "call airline#parts#define_accent('red', 'red')
   let g:airline_section_b = airline#section#create(['%f','%#__accent_red#%{&modified?"*":""}'])
