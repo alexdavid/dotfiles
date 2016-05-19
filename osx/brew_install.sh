@@ -10,10 +10,8 @@ brew install \
   fish \
   git-branch-status \
   git-town \
-  heroku \
   hub \
   imagemagick \
-  mongo \
   nodejs \
   openssl \
   png2ico \
