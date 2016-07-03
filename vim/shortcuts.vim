@@ -53,6 +53,9 @@ nmap < <<
 " Consistency
 nmap Y y$
 
+" Prevent paste in visual mode from copying text
+xnoremap p "_dP
+
 " Vim diff
 fun! DiffUpdate()
   if &diff
