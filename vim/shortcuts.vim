@@ -97,11 +97,10 @@ vnoremap <C-_> :TCommentMaybeInline<CR>gv<ESC>
 inoremap <C-_> <C-o>:TComment<CR>
 
 " Tertestrial
-nnoremap <leader>f :call TertestrialFile()<cr>
-nnoremap <leader>l :call TertestrialLine()<cr>
-nnoremap <leader>o :call TertestrialRepeat()<cr>
-nnoremap <leader>a :call TertestrialToggle()<cr>
 autocmd BufWritePost * :call TertestrialFileSaved()
+nnoremap gtl :call TertestrialLine()<CR>
+nnoremap gtf :call TertestrialFile()<CR>
+nnoremap gta :call TertestrialToggle()<CR>
 
 " Hide highlight
 map <silent> <leader><space> :noh<CR>:match<CR>
