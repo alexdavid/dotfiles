@@ -11,10 +11,8 @@ brew install \
   git-branch-status \
   git-town \
   hub \
-  imagemagick \
   nodejs \
   openssl \
-  png2ico \
   postgresql \
   python \
   rbenv \
