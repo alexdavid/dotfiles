@@ -19,6 +19,8 @@ end
 # Load custom settings for current user
 set local_settings_file ~/config.fish.local
 
+set -x GOPATH ~/Development
+
 if test -f $local_settings_file
    . $local_settings_file
 end

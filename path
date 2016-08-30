@@ -13,6 +13,9 @@
 # Node.JS:
 ~/.config/node/node_modules/.bin
 
+# Golang
+~/Development/bin
+
 # System binaries:
 /usr/local/bin
 /usr/bin
