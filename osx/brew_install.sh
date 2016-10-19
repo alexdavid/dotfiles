@@ -13,6 +13,7 @@ brew install \
   postgresql \
   python \
   rbenv \
+  reattach-to-user-namespace \
   rename \
   ruby-build \
   the_silver_searcher \
