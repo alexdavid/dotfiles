@@ -8,6 +8,7 @@ brew install \
   fish \
   git-branch-status \
   git-town \
+  libevent \
   nodejs \
   openssl \
   postgresql \
