@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
 home_dir=$(echo $HOME | sed "s/\//\\\\\//g")
-cat ~/.config/path | ~/.config/bin/de-comment | sed "s/~/$home_dir/"
+for DIR in $(cat ~/.config/path | ~/.config/bin/de-comment | sed "s/~/$home_dir/"); do
+  [ -d $DIR ] || [[ $DIR == .* ]] && echo $DIR
+done
