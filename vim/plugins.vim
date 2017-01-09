@@ -4,7 +4,6 @@ call plug#begin('~/.config/vim/plug.vim/data')
 Plug 'airblade/vim-gitgutter'
 Plug 'alexdavid/nerdtree_icons'
 Plug 'alexdavid/vim-min-git-status'
-Plug 'altercation/vim-colors-solarized'
 Plug 'bruno-/vim-husk'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'digitaltoad/vim-jade'
