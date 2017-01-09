@@ -1,5 +1,10 @@
-" Use more contrasty colors for vimdiff
-let g:solarized_diffmode="high"
+if $ITERM_PROFILE == 'Dark'
+  colorscheme luna-term
+  let g:colorscheme_name = 'luna'
+else
+  colorscheme sol-term
+  let g:colorscheme_name = 'sol'
+endif
 
 " Highlight trailing whitespace
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
