@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case "$1" in
+  bottom) ARGS="-v"    ;;
+  left)   ARGS="-h -b" ;;
+  right)  ARGS="-h"    ;;
+  top)    ARGS="-v -b" ;;
+esac
+
+ACTIVE_PANE_ID=$(tmux display -p '#{pane_id}')
+NEW_PANE_ID=$(sh -c "tmux split-window -f $ARGS -P -F '#{pane_id}'")
+tmux swap-pane -s $NEW_PANE_ID -t $ACTIVE_PANE_ID
+tmux kill-pane -t $NEW_PANE_ID
