@@ -54,7 +54,8 @@ nmap < <<
 nmap Y y$
 
 " Prevent paste in visual mode from copying text
-xnoremap p "_dP
+xnoremap p "_dp
+xnoremap P "_dP
 
 " Vim diff
 fun! DiffUpdate()
