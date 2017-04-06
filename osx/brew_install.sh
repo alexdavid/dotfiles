@@ -8,6 +8,7 @@ brew install \
   fish \
   git-branch-status \
   git-town \
+  htop \
   libevent \
   nodejs \
   openssl \
