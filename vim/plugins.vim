@@ -12,6 +12,7 @@ Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
 Plug 'gkz/vim-ls'
 Plug 'godlygeek/tabular'
+Plug 'hashivim/vim-terraform'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'kchmck/vim-coffee-script'
 Plug 'kevgo/tertestrial-vim'
@@ -37,6 +38,11 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/L9'
 Plug 'wavded/vim-stylus'
 Plug 'Yggdroot/indentLine'
+
+Plug 'mxw/vim-jsx'
+Plug 'vim-scripts/vim-babel'
+Plug 'mattn/webapi-vim'
+
 
 
 if filereadable(expand('~/.vimrc.plugins'))
