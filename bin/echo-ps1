@@ -6,16 +6,16 @@ current_branch_name=$(git rev-parse --abbrev-ref HEAD 2> /dev/null)
 home_dir=$(echo $HOME | sed "s/\//\\\\\//g")
 cwd=$(pwd | sed "s/$home_dir/~/")
 
-command_color="\033[m"
-cwd_color="\033[32m"
-git_color="\033[m"
+command_color="[m"
+cwd_color="[32m"
+git_color="[m"
 
 if git rev-parse --git-dir > /dev/null 2>&1; then
   current_branch_name=" $git_color($current_branch_name)"
 fi
 
 if [ $last_status -ne 0 ]; then
-  prompt_color="\033[31m"
+  prompt_color="[31m"
 fi
 
 prompt=">"
