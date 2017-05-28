@@ -13,6 +13,7 @@
   pr = town-new-pull-request
   ship = town-ship
   sync = town-sync
+  append = town-append
 [color]
   ui = true
 [push]
