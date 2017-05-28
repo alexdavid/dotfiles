@@ -101,7 +101,9 @@ inoremap <C-_> <C-o>:TComment<CR>
 autocmd BufWritePost * :call g:TertestrialFileSaved()
 nnoremap gtl :call g:TertestrialLine()<CR>
 nnoremap gtf :call g:TertestrialFile()<CR>
-nnoremap gta :call g:TertestrialToggle()<CR>
+nnoremap gta :call g:TertestrialAll()<CR>
+nnoremap gtr :call g:TertestrialRepeat()<CR>
+nnoremap gtt :call g:TertestrialToggle()<CR>
 
 " Hide highlight
 map <silent> <leader><space> :noh<CR>:match<CR>
