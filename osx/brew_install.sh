@@ -18,6 +18,7 @@ brew install \
   reattach-to-user-namespace \
   rename \
   ruby-build \
+  shpotify \
   the_silver_searcher \
   vim \
   wget
