@@ -63,11 +63,6 @@ set foldmethod=syntax
 set foldlevel=99
 
 
-" Show Invisibles
-set list
-set listchars=tab:\ »
-
-
 " Theme Settings
 if filereadable(expand('~/.vimrc.theme'))
   source ~/.vimrc.theme
