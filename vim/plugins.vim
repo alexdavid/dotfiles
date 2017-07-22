@@ -2,7 +2,6 @@ so ~/.config/vim/plug.vim/plug.vim
 call plug#begin('~/.config/vim/plug.vim/data')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'alexdavid/nerdtree_icons'
 Plug 'alexdavid/vim-min-git-status'
 Plug 'bruno-/vim-husk'
 Plug 'christoomey/vim-tmux-navigator'
@@ -25,6 +24,7 @@ Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'quentindecock/vim-cucumber-align-pipes'
 Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
 Plug 'slim-template/vim-slim'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-abolish'
