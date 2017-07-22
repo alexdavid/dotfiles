@@ -35,6 +35,27 @@ nmap <leader>L :call Resize('l', 10, '>', '<')<CR>
 nmap <leader>J :call Resize('j', 10, '+', '-')<CR>
 nmap <leader>K :call Resize('j', 10, '-', '+')<CR>
 
+function! s:moveToPane(direction)
+  let oldnr = winnr()
+  execute 'wincmd ' . a:direction
+  if oldnr == winnr()
+    call system('select-pane ' . a:direction)
+  endif
+endfunction
+
+command! MoveToLeft call s:moveToPane('h')
+command! MoveToDown call s:moveToPane('j')
+command! MoveToUp call s:moveToPane('k')
+command! MoveToRight call s:moveToPane('l')
+nnoremap <silent> ztl :MoveToLeft<cr>
+nnoremap <silent> ztd :MoveToDown<cr>
+nnoremap <silent> ztu :MoveToUp<cr>
+nnoremap <silent> ztr :MoveToRight<cr>
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-l> <C-w>l
+
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 

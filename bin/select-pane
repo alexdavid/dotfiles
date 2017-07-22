@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+
+[ -z $TMUX ] && exit
+
+# modified from github.com/dalejung/tmux-select-pane-no-wrap
+direction=$1
+
+case "$direction" in
+  k | U) 
+    coord='top'
+    op='gt'
+    sort_flags='n'
+    direction='U'
+    ;;
+  j | D)
+    coord='bottom'
+    op='lt'
+    sort_flags='nr'
+    direction='D'
+    ;;
+  h | L)
+    coord='left'
+    op='gt'
+    sort_flags='n'
+    direction='L'
+    ;;
+  l | R)
+    coord='right'
+    op='lt'
+    sort_flags='nr'
+    direction='R'
+    ;;
+  *)
+    echo "Unknown direction: $direction"
+    exit 1
+    ;;
+esac
+
+cmd="#{pane_id}:#{pane_$coord}:#{?pane_active,_active_,_no_}"
+panes=$(tmux list-panes -F "$cmd")
+active_pane=$(echo "$panes" | grep _active_)
+active_pane_id=$(echo "$active_pane" | cut -d: -f1)
+active_coord=$(echo "$active_pane" | cut -d: -f2)
+coords=$(echo "$panes" | cut -d: -f2)
+test_coord=$(echo "$coords" | sort -$sort_flags | head -n1)
+
+if [ $active_coord -$op $test_coord ]; then
+  tmux select-pane -$direction
+fi

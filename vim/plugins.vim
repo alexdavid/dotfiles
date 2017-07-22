@@ -4,7 +4,6 @@ call plug#begin('~/.config/vim/plug.vim/data')
 Plug 'airblade/vim-gitgutter'
 Plug 'alexdavid/vim-min-git-status'
 Plug 'bruno-/vim-husk'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'digitaltoad/vim-jade'
 Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
