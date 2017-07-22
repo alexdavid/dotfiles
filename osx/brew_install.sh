@@ -10,6 +10,7 @@ brew install \
   git-branch-status \
   git-town \
   htop \
+  libevent \
   openssl \
   python \
   reattach-to-user-namespace \
