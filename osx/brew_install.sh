@@ -15,5 +15,6 @@ brew install \
   python \
   reattach-to-user-namespace \
   the_silver_searcher \
+  tmux \
   vim \
   wget
