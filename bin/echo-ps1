@@ -35,19 +35,20 @@ function section {
 }
 
 function end_sections {
-  reset_bg
+  set_bg 235
   set_fg $CURRENT_COLOR
   printf " "
+  reset_bg
   reset_fg
 }
 
 
 home_dir=$(echo $HOME | sed 's/\//\\\//g')
-section 81 $(pwd | sed "s/$home_dir/~/")
+section 5 $(pwd | sed "s/$home_dir/~/")
 
 
 if git rev-parse --git-dir > /dev/null 2>&1; then
-  section 193  $(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+  section 2  $(git rev-parse --abbrev-ref HEAD 2> /dev/null)
 fi
 
 if [ "$(id -u)" -eq 0 ]; then
