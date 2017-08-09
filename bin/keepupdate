@@ -12,7 +12,7 @@ trap before_exit SIGTERM
 
 while true; do
   clear > $TMP
-  $@ >> $TMP
+  "$@" >> $TMP
   cat $TMP
   sleep 1
 done
