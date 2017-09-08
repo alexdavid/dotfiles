@@ -5,6 +5,7 @@ let mapleader = "\<space>"
 nmap <silent> <leader>, :tabprevious<CR>
 nmap <silent> <leader>. :tabnext<CR>
 nmap <silent> <leader>n :tabnew<CR>
+nmap <silent> <leader>x :tabclose<CR>
 
 " Move tabs
 nmap <silent> <leader>< :exec 'silent! tabm ' . (tabpagenr()-2)<CR>
