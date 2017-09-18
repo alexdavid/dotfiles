@@ -115,9 +115,8 @@ let g:ctrlp_map = '<leader>o'
 let g:tcommentMapLeader1 = ''
 let g:tcommentMapLeaderOp1 = ''
 let g:tcommentMapLeaderOp2 = ''
-nnoremap <C-_> :TComment<CR>
-vnoremap <C-_> :TCommentMaybeInline<CR>gv<ESC>
-inoremap <C-_> <C-o>:TComment<CR>
+nnoremap <leader>/ :TComment<CR>
+vnoremap <leader>/ :TCommentMaybeInline<CR>gv<ESC>
 
 " Tertestrial
 autocmd BufWritePost * :call g:TertestrialFileSaved()
