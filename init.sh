@@ -3,6 +3,7 @@
 touch ~/.hushlogin
 
 ~/.config/bash/init.sh
+~/.config/docker/init.sh
 ~/.config/git/init.sh
 ~/.config/node/init.sh
 ~/.config/tmux/init.sh
