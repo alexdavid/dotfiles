@@ -7,12 +7,6 @@
 # Dotfile bin:
 ~/.config/bin
 
-# Ruby:
-~/.rbenv/shims
-
-# Node.JS:
-~/.config/node/node_modules/.bin
-
 # Golang
 ~/Development/bin
 
@@ -22,7 +16,3 @@
 /bin
 /usr/sbin
 /sbin
-
-# Relative Paths
-./node_modules/.bin
-./bin
