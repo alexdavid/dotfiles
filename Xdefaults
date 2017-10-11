@@ -1,7 +1,6 @@
+# URxvt
 URxvt.scrollBar: false
 URxvt.font: xft:Fira Code:size=12
-
-# Colors
 URxvt.foreground: #D9E6F2
 URxvt.background: #29262F
 URxvt.color0: #000000
@@ -20,3 +19,6 @@ URxvt.color12: #aaaadb
 URxvt.color13: #dbaada
 URxvt.color14: #aadadb
 URxvt.color15: #ffffff
+
+# Rofi
+rofi.matching: fuzzy
