@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Modified version of passmenu to fit my needs
+# Original can be found here:
+# https://git.zx2c4.com/password-store/tree/contrib/dmenu/passmenu
+
+prefix=${PASSWORD_STORE_DIR-~/.password-store}
+password_files=( "$prefix"/**/*.gpg )
+password_files=( "${password_files[@]#"$prefix"/}" )
+password_files=( "${password_files[@]%.gpg}" )
+
+password=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu -p "")
+
+pass show "$password" | {
+  declare -A map
+  read -r line
+  map["password"]="$line"
+
+  while true; do
+    read -r line
+    [ -z "$line" ] && break
+    IFS=':' read -r key value <<< "$line"
+    map["${key,,}"]=$(echo "${value}" | xargs)
+  done
+
+  key=$(printf "%s\n" "${!map[@]}" | rofi -dmenu -p "")
+
+  printf "${map["$key"]}" | xdotool type --clearmodifiers --file -
+}
