@@ -3,7 +3,7 @@
 set $ctrl Ctrl
 set $mod Mod4
 
-font pango:Fira Code Regular 8
+font pango:Fira Code Regular 12
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -125,4 +125,5 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position top
 }
