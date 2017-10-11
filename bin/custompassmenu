@@ -10,6 +10,7 @@ password_files=( "${password_files[@]#"$prefix"/}" )
 password_files=( "${password_files[@]%.gpg}" )
 
 password=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu -p "")
+[ -n "$password" ] || exit
 
 pass show "$password" | {
   declare -A map
@@ -24,6 +25,7 @@ pass show "$password" | {
   done
 
   key=$(printf "%s\n" "${!map[@]}" | rofi -dmenu -p "")
+  [ -n "$key" ] || exit
 
   printf "${map["$key"]}" | xdotool type --clearmodifiers --file -
 }
