@@ -19,6 +19,3 @@ URxvt.color12: #aaaadb
 URxvt.color13: #dbaada
 URxvt.color14: #aadadb
 URxvt.color15: #ffffff
-
-# Rofi
-rofi.matching: fuzzy
