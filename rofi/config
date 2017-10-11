@@ -1,15 +1,16 @@
 # Colors
 rofi.color-enabled: true
-rofi.color-window: argb:f5273238, #273238, #1e2529
-rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
-rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
-rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+rofi.color-window: argb:f5273238, #cccccc, argb:77cccccc
+rofi.color-normal: argb:00273238, #c1c1c1, argb:00273238, #394249, #ffffff
+rofi.color-active: argb:f5273238, #80cbc4, argb:f5273238, #394249, #80cbc4
+rofi.color-urgent: argb:f5273238, #ff1844, argb:f5273238, #394249, #ff1844
 
 # Style
 rofi.separator-style: solid
 rofi.padding: 50
 rofi.font: Menlo For Powerline 20
 rofi.line-margin: 30
+rofi.columns: 3
 
 # Fuzzy search
 rofi.matching: fuzzy
