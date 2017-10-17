@@ -20,6 +20,10 @@ client.focused #000000 #000000 #000000 #000000 #3788cc
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+bindsym XF86AudioRaiseVolume exec pamixer -u ; exec pamixer -i 10
+bindsym XF86AudioLowerVolume exec pamixer -u ; exec pamixer -d 10
+bindsym XF86AudioMute exec pamixer -t
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
