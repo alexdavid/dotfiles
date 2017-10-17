@@ -81,3 +81,7 @@ augroup CursorLine
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline cursorcolumn
   au WinLeave * setlocal nocursorline nocursorcolumn
 augroup END
+
+" Make cursor switch style based on insert/normal mode
+let &t_SI="\e[5 q"
+let &t_EI="\e[1 q"
