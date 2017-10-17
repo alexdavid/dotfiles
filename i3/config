@@ -3,7 +3,12 @@
 set $ctrl Ctrl
 set $mod Mod4
 
-font pango:Fira Code Regular 12
+font pango:Fira Code Regular 8
+gaps inner 14
+new_window 1pixel
+focus_wrapping false
+mouse_warping output
+client.focused #000000 #000000 #000000 #000000 #3788cc
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -118,9 +123,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+for_window [class="Pinentry"] floating enable
+
 bar {
-        status_command i3status
-        position top
+    i3bar_command i3bar -t
+    status_command i3status
+    position top
+    colors {
+      background #00000099
+    }
 }
