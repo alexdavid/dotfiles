@@ -137,3 +137,6 @@ bar {
       background #00000099
     }
 }
+
+exec xbanish
+exec compton -bc --inactive-dim 0.2
