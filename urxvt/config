@@ -1,7 +1,8 @@
 URxvt.scrollBar: false
-URxvt.font: xft:Fira Code:size=12
+URxvt.font: xft:Fira Code:size=9
 URxvt.foreground: #D9E6F2
-URxvt.background: #29262F
+URxvt.depth: 32
+URxvt.background: rgba:2900/2600/2f00/dd00
 URxvt.color0: #000000
 URxvt.color1: #c37372
 URxvt.color2: #72c373
