@@ -17,6 +17,11 @@ rs    = rails start
 t     = tmux
 v     = vim
 
-# osx crap
+# linux
+lock    = i3lock -t -i /home/alex/img.png
+pbcopy  = xclip -i -selection clipboard
+pbpaste = xclip -o -selection clipboard
+
+# macos
 airport = /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
 ql      = quicklook
