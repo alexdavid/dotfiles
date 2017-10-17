@@ -35,10 +35,9 @@ function section {
 }
 
 function end_sections {
-  set_bg 235
+  reset_bg
   set_fg $CURRENT_COLOR
   printf " "
-  reset_bg
   reset_fg
 }
 
