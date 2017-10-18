@@ -7,14 +7,20 @@
 shopt -s nullglob globstar
 
 prefix=${PASSWORD_STORE_DIR-~/.password-store}
-password_files=( "$prefix"/**/*.gpg )
-password_files=( "${password_files[@]#"$prefix"/}" )
-password_files=( "${password_files[@]%.gpg}" )
 
-password=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu -p "")
-[ -n "$password" ] || exit
+if [ "$1" != "--last" ]; then
+  password_files=( "$prefix"/**/*.gpg )
+  password_files=( "${password_files[@]#"$prefix"/}" )
+  password_files=( "${password_files[@]%.gpg}" )
+  password_name=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu -p "")
+  echo "$password_name" > "$prefix"/.last
+else
+  password_name=$(cat "$prefix"/.last)
+fi
 
-pass show "$password" | {
+[ -n "$password_name" ] || exit
+
+pass show "$password_name" | {
   declare -A map
   read -r line
   [ -n "$line" ] && map["password"]="$line"
