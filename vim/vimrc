@@ -24,6 +24,7 @@ set si " Smart indent
 " Fix indenting problems for coffee and javascript
 au FileType coffee setlocal cindent
 au FileType javascript setlocal nocindent
+au BufRead Dockerfile.* set syntax=dockerfile
 
 " Appearance
 set showtabline=2   " Always show tab bar
