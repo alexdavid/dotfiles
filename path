@@ -7,12 +7,12 @@
 # Dotfile bin:
 ~/.config/bin
 
-# Golang
-~/Development/bin
-
 # System binaries:
 /usr/local/bin
 /usr/bin
 /bin
 /usr/sbin
 /sbin
+
+# Golang
+~/Development/bin
