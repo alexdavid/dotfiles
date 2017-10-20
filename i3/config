@@ -92,4 +92,4 @@ bar {
 }
 
 exec xbanish
-exec compton -bc --inactive-dim 0.2
+exec compton -b --config ~/.config/compton/config
