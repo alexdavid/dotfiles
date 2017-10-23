@@ -35,5 +35,5 @@ pass show "$password_name" | {
   key=$(printf "%s\n" "${!map[@]}" | rofi -dmenu -p "")
   [ -n "$key" ] || exit
 
-  printf "${map["$key"]}" | xdotool type --clearmodifiers --file -
+  printf "%s" "${map["$key"]}" | xdotool type --clearmodifiers --file -
 }
