@@ -35,5 +35,11 @@ pass show "$password_name" | {
   key=$(printf "%s\n" "${!map[@]}" | rofi -dmenu -p "")
   [ -n "$key" ] || exit
 
-  printf "%s" "${map["$key"]}" | xdotool type --clearmodifiers --file -
+  if [ "$key" = "otpauth" ]; then
+    value=$(pass otp "$password_name")
+  else
+    value="${map["$key"]}"
+  fi
+
+  printf "%s" "$value" | xdotool type --clearmodifiers --delay 1ms --file -
 }
