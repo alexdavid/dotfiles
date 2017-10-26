@@ -32,6 +32,7 @@ Plug 'wavded/vim-stylus'
 Plug 'Yggdroot/indentLine'
 
 Plug 'mxw/vim-jsx'
+Plug 'hashivim/vim-terraform'
 
 
 
