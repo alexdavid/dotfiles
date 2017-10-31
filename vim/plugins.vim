@@ -28,7 +28,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/L9'
 Plug 'wavded/vim-stylus'
-Plug 'Yggdroot/indentLine'
 
 Plug 'mxw/vim-jsx'
 Plug 'hashivim/vim-terraform'
