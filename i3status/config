@@ -8,7 +8,7 @@
 
 general {
   colors = true
-    interval = 5
+  interval = 5
 }
 
 order += "disk /"
@@ -24,7 +24,7 @@ volume master {
 
 ethernet _first_ {
   format_up = ":%ip"
-    format_down = ":down"
+  format_down = ":down"
 }
 
 tztime local {
