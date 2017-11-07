@@ -41,17 +41,20 @@ function end_sections {
   reset_fg
 }
 
+if [ "$(id -u)" -eq 0 ]; then
+  section 208 $(whoami)
+fi
 
 home_dir=$(echo $HOME | sed 's/\//\\\//g')
-section 5 $(pwd | sed "s/$home_dir/~/")
+FORMATTED_DIR=$(pwd | sed "s/$home_dir/~/")
+CURRENT_DIR=$(basename $FORMATTED_DIR)
+PARENT_DIR=$(basename $(dirname $FORMATTED_DIR))
+[ "$PARENT_DIR" != "." -a "$PARENT_DIR" != "/" ] && section 6 $PARENT_DIR
+section 5 $CURRENT_DIR
 
 
 if git rev-parse --git-dir > /dev/null 2>&1; then
   section 2  $(git rev-parse --abbrev-ref HEAD 2> /dev/null)
-fi
-
-if [ "$(id -u)" -eq 0 ]; then
-  section 208 $(whoami)
 fi
 
 if [ $last_status -ne 0 ]; then
