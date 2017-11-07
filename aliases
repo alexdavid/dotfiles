@@ -19,8 +19,8 @@ v     = vim
 
 # linux
 lock    = i3lock -t -i /home/alex/img.png
-pbcopy  = xclip -i -selection clipboard
-pbpaste = xclip -o -selection clipboard
+cbc     = clipboard copy
+cbp     = clipboard paste
 
 # macos
 airport = /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport

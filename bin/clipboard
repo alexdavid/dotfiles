@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if which xclip > /dev/null; then
+  [ "$1" = copy ] && cat | xclip -i -selection clipboard
+  [ "$1" = paste ] && xclip -o -selection clipboard
+  exit 0
+fi
+
+if which pbcopy > /dev/null; then
+  [ "$1" = copy ]  && cat | pbcopy
+  [ "$1" = paste ] && pbpaste
+  exit 0
+fi
+
+exit 1
