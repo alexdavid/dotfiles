@@ -18,7 +18,6 @@ t     = tmux
 v     = vim
 
 # linux
-lock    = i3lock -t -i /home/alex/img.png
 cbc     = clipboard copy
 cbp     = clipboard paste
 
