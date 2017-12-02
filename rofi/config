@@ -1,9 +1,10 @@
 # Colors
 rofi.color-enabled: true
-rofi.color-window: argb:f5273238, #cccccc, argb:77cccccc
-rofi.color-normal: argb:00273238, #c1c1c1, argb:00273238, #394249, #ffffff
-rofi.color-active: argb:f5273238, #80cbc4, argb:f5273238, #394249, #80cbc4
-rofi.color-urgent: argb:f5273238, #ff1844, argb:f5273238, #394249, #ff1844
+rofi.color-window: #393939, #393939, #268bd2
+rofi.color-normal: #393939, #ffffff, #393939, #268bd2, #ffffff
+rofi.color-active: #393939, #268bd2, #393939, #268bd2, #205171
+rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
+
 
 # Style
 rofi.separator-style: solid
