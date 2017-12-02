@@ -7,11 +7,11 @@ rofi.color-urgent: #393939, #f3843d, #393939, #268bd2, #ffc39c
 
 
 # Style
-rofi.separator-style: solid
-rofi.padding: 50
-rofi.font: Menlo For Powerline 20
-rofi.line-margin: 30
-rofi.columns: 3
+rofi.separator-style: dash
+rofi.padding: 25
+rofi.font: Menlo For Powerline 16
+rofi.line-margin: 20
+rofi.columns: 1
 
 # Fuzzy search
 rofi.matching: fuzzy
