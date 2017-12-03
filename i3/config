@@ -13,6 +13,9 @@ floating_modifier $mod
 bindsym XF86AudioRaiseVolume exec pamixer -u ; exec pamixer -i 10
 bindsym XF86AudioLowerVolume exec pamixer -u ; exec pamixer -d 10
 bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioPlay exec mpc toggle
+bindsym XF86AudioNext exec mpc next
+bindsym XF86AudioPrev exec mpc prev
 
 bindsym $mod+Return exec i3-sensible-terminal
 
