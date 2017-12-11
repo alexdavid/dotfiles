@@ -48,14 +48,14 @@ command! MoveToLeft call s:moveToPane('h')
 command! MoveToDown call s:moveToPane('j')
 command! MoveToUp call s:moveToPane('k')
 command! MoveToRight call s:moveToPane('l')
-nnoremap <silent> ztl :MoveToLeft<cr>
-nnoremap <silent> ztd :MoveToDown<cr>
-nnoremap <silent> ztu :MoveToUp<cr>
-nnoremap <silent> ztr :MoveToRight<cr>
-nnoremap <silent> <C-h> <C-w>h
-nnoremap <silent> <C-j> <C-w>j
-nnoremap <silent> <C-k> <C-w>k
-nnoremap <silent> <C-l> <C-w>l
+nnoremap <silent> <C-h> :MoveToLeft<cr>
+nnoremap <silent> <C-j> :MoveToDown<cr>
+nnoremap <silent> <C-k> :MoveToUp<cr>
+nnoremap <silent> <C-l> :MoveToRight<cr>
+inoremap <silent> <C-h> <esc>:MoveToLeft<cr>
+inoremap <silent> <C-j> <esc>:MoveToDown<cr>
+inoremap <silent> <C-k> <esc>:MoveToUp<cr>
+inoremap <silent> <C-l> <esc>:MoveToRight<cr>
 
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
