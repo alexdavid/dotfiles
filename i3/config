@@ -16,6 +16,8 @@ bindsym XF86AudioMute exec pamixer -t
 bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
+bindsym Print exec bash -c "maim ~/Pictures/$(date +%s).png"
+bindsym Shift+Print exec bash -c "maim -s ~/Pictures/$(date +%s).png"
 
 bindsym $mod+Return exec i3-sensible-terminal
 
