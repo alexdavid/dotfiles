@@ -89,4 +89,4 @@ for_window [class="Pinentry"] floating enable
 
 exec xbanish
 exec compton -b --config ~/.config/compton/config
-exec_always killall polybar; polybar main
+exec_always set-displays

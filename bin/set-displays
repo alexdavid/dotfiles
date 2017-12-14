@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+MONITORS=$(xrandr --listactivemonitors | grep -oE '[a-zA-Z]+-[0-9]+$')
+
+killall polybar
+
+for MONITOR in $MONITORS; do
+  MONITOR=$MONITOR polybar main &
+done
