@@ -20,6 +20,8 @@ bindsym Print exec bash -c "maim ~/Pictures/$(date +%s).png"
 bindsym Shift+Print exec bash -c "maim -s ~/Pictures/$(date +%s).png"
 
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+n exec firefox
+bindsym $mod+Shift+n exec firefox-developer-edition
 
 bindsym $mod+space exec rofi -show run
 bindsym $mod+backslash exec custompassmenu
