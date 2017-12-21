@@ -47,8 +47,8 @@ fi
 
 home_dir=$(echo $HOME | sed 's/\//\\\//g')
 FORMATTED_DIR=$(pwd | sed "s/$home_dir/~/")
-CURRENT_DIR=$(basename $FORMATTED_DIR)
-PARENT_DIR=$(basename $(dirname $FORMATTED_DIR))
+CURRENT_DIR=$(basename "$FORMATTED_DIR")
+PARENT_DIR=$(basename "$(dirname "$FORMATTED_DIR")")
 [ "$PARENT_DIR" != "." -a "$PARENT_DIR" != "/" ] && section 6 $PARENT_DIR
 section 5 $CURRENT_DIR
 
