@@ -1,3 +1,19 @@
 #!/usr/bin/env sh
 
-i3lock -t -i ~/.config/wallpaper/lock.png
+EFFECT=(-filter Gaussian -resize 20% -define filter:sigma=1.5 -resize 500%)
+ICON=(~/.config/assets/lock.png -gravity center -composite)
+
+IN=$(mktemp --suffix=.png)
+OUT=$(mktemp --suffix=.png)
+
+maim "$IN"
+
+convert "$IN" "${EFFECT[@]}" "${ICON[@]}" "$OUT"
+
+i3lock \
+  --tiling \
+  --image "$OUT" \
+  --ignore-empty-password \
+  --no-unlock-indicator
+
+rm "$IN" "$OUT"
