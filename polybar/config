@@ -195,7 +195,7 @@ type = internal/network
 interface = enp0s31f6
 interval = 3.0
 
-format-connected-underline = #55aa55
+format-connected-underline = ${colors.primary}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
