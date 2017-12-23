@@ -1,4 +1,4 @@
 if has("gui_running")
-  set guifont=Menlo:h12
+  set guifont=Fira\ Code\ 12
   set guioptions=
 endif

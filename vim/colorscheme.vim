@@ -1,6 +1,10 @@
 let g:colorscheme_name = 'luna'
-colorscheme luna-term
-highlight Normal ctermbg=none
+if has("gui_running")
+  colorscheme luna
+else
+  colorscheme luna-term
+  highlight Normal ctermbg=none
+endif
 
 
 " Highlight trailing whitespace
