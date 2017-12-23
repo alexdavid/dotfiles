@@ -6,7 +6,7 @@ gaps inner 14
 new_window 1pixel
 focus_wrapping false
 mouse_warping output
-client.focused #000000 #000000 #000000 #000000 #3788cc
+client.focused #000000 #000000 #000000 #000000 #ffb52a
 
 floating_modifier $mod
 
