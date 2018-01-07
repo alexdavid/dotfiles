@@ -1,16 +1,10 @@
 #!/usr/bin/env sh
 
 IN=$(mktemp --suffix=.png)
-OUT=$(mktemp --suffix=.png)
-
 maim "$IN"
 
 i3lock -c 000000
-
-EFFECT=(-filter Gaussian -resize 20% -define filter:sigma=1.5 -resize 500%)
-ICON=(~/.config/xautolock/lock.png -gravity center -composite)
-convert "$IN" "${EFFECT[@]}" "${ICON[@]}" "$OUT"
-
+OUT=$(~/.config/xautolock/convert-image "$IN")
 killall i3lock
 
 i3lock \
