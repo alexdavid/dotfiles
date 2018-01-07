@@ -1,7 +1,7 @@
 # https://i3wm.org/docs/userguide.html for reference
 set $mod Mod4
 
-font pango:Fira Code Regular 8
+font pango:Fira Mono 13
 gaps inner 14
 new_window 1pixel
 focus_wrapping false

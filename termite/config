@@ -3,7 +3,7 @@
 #audible_bell = false
 #clickable_url = true
 #dynamic_title = true
-font = Fira Code 13
+font = Fira Mono 13
 #fullscreen = true
 #geometry = 640x480
 #icon_name = terminal
