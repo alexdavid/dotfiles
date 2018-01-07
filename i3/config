@@ -95,5 +95,6 @@ for_window [class="Pinentry"] floating enable
 exec xbanish
 exec compton -b --config ~/.config/compton/config
 exec xmodmap ~/.config/Xmodmap
+exec_always ~/.config/xautolock/start
 exec_always set-displays
 exec_always feh --bg-tile ~/.config/wallpaper/wallpaper.jpg

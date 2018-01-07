@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+xautolock -exit
+xautolock \
+  -locker ~/.config/xautolock/locker \
+  -notify 5 \
+  -time 2 \
+  ;
