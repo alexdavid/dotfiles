@@ -4,7 +4,7 @@ INPUT=$1
 OUTPUT=$(mktemp --suffix=.png)
 
 LOCK_IMAGE="$HOME/.config/xautolock/lock.png"
-EFFECT=(-level "0%,100%,0.5" -filter Gaussian -resize 20% -define filter:sigma=2.5 -resize 500%)
+EFFECT=(-modulate 70 -filter Gaussian -resize 20% -define filter:sigma=2.5 -resize 500%)
 
 LOCK_IMAGE_WIDTH=$(identify -format "%w" "$LOCK_IMAGE")
 LOCK_IMAGE_HEIGHT=$(identify -format "%h" "$LOCK_IMAGE")
