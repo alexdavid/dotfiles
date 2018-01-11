@@ -32,7 +32,7 @@ pass show "$password_name" | {
     map["${key,,}"]=$(echo "${value}" | xargs)
   done
 
-  key=$(printf "%s\n" "${!map[@]}" | rofi -dmenu -p "")
+  key=$(printf "%s\n" "${!map[@]}" | rofi -dmenu -p "$password_name: ")
   [ -n "$key" ] || exit
 
   if [ "$key" = "otpauth" ]; then
