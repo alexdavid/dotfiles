@@ -16,6 +16,7 @@ gs    = git st
 rs    = rails start
 t     = tmux
 v     = vim
+r     = ranger
 
 # linux
 cbc     = clipboard copy
