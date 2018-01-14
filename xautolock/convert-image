@@ -3,16 +3,19 @@
 INPUT=$1
 OUTPUT=$(mktemp --suffix=.png)
 
-LOCK_IMAGE="$HOME/.config/xautolock/lock.png"
 EFFECT=(-modulate 70 -filter Gaussian -resize 20% -define filter:sigma=2.5 -resize 500%)
 
-LOCK_IMAGE_WIDTH=$(identify -format "%w" "$LOCK_IMAGE")
-LOCK_IMAGE_HEIGHT=$(identify -format "%h" "$LOCK_IMAGE")
 
 while read WIDTH; do
   read HEIGHT
   read OFFSETX
   read OFFSETY
+
+  RANDOM_IMAGE=$(ls ~/.config/xautolock/images | shuf -n 1)
+  LOCK_IMAGE="$HOME/.config/xautolock/images/$RANDOM_IMAGE"
+  LOCK_IMAGE_WIDTH=$(identify -format "%w" "$LOCK_IMAGE")
+  LOCK_IMAGE_HEIGHT=$(identify -format "%h" "$LOCK_IMAGE")
+
   X=$(expr $OFFSETX + $WIDTH / 2 - $LOCK_IMAGE_WIDTH / 2)
   Y=$(expr $OFFSETY + $HEIGHT / 2 - $LOCK_IMAGE_HEIGHT / 2)
   EFFECT+=("$LOCK_IMAGE" -geometry "+$X+$Y" -composite)

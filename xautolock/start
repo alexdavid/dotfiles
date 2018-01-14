@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-xautolock -exit
+killall xautolock
 xautolock \
   -locker ~/.config/xautolock/locker \
   -notify 5 \
