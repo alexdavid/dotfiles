@@ -28,7 +28,7 @@ function section {
   set_bg $CURRENT_COLOR
   if [ $OLD_COLOR -ne 0 ]; then
     set_fg $OLD_COLOR
-    printf ""
+    [ "$TERM" == "xterm-termite" ] && printf ""
     reset_fg
   fi
   printf " $SECTION_TEXT "
@@ -37,7 +37,8 @@ function section {
 function end_sections {
   reset_bg
   set_fg $CURRENT_COLOR
-  printf " "
+  [ "$TERM" == "xterm-termite" ] && printf ""
+  printf " "
   reset_fg
 }
 
