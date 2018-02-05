@@ -4,6 +4,7 @@ user_pref("browser.search.defaultenginename", "DuckDuckGo");
 user_pref("browser.search.widget.inNavBar", true);
 user_pref("extensions.pocket.enabled", false);
 user_pref("general.warnOnAboutConfig", false);
+user_pref("signon.rememberSignons", false);
 
 // New tab page
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
