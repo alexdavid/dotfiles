@@ -12,7 +12,7 @@ if [ "$1" != "--last" ]; then
   password_files=( "$prefix"/**/*.gpg )
   password_files=( "${password_files[@]#"$prefix"/}" )
   password_files=( "${password_files[@]%.gpg}" )
-  password_name=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu -p "")
+  password_name=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu -p Password)
   echo "$password_name" > "$prefix"/.last
 else
   password_name=$(cat "$prefix"/.last)
@@ -32,7 +32,7 @@ pass show "$password_name" | {
     map["${key,,}"]=$(echo "${value}" | xargs)
   done
 
-  key=$(printf "%s\n" "${!map[@]}" | rofi -dmenu -p "$password_name: ")
+  key=$(printf "%s\n" "${!map[@]}" | rofi -dmenu -p "$password_name")
   [ -n "$key" ] || exit
 
   if [ "$key" = "otpauth" ]; then
