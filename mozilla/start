@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+cd $(dirname "$0")
+
+PROFILE_NAME=$(ls -d */ | cut -f1 -d/ | rofi -dmenu -p Profile)
+firefox --new-instance --profile "$(pwd)/$PROFILE_NAME"
