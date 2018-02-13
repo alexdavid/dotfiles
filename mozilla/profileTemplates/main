@@ -3,3 +3,6 @@ user_pref("browser.privatebrowsing.autostart", true);
 // Add search back to nav bar
 user_pref("browser.search.widget.inNavBar", true);
 user_pref("browser.uiCustomization.state", '{"placements":{"widget-overflow-fixed-list":[],"PersonalToolbar":["personal-bookmarks"],"nav-bar":["back-button","forward-button","stop-reload-button","urlbar-container","search-container","downloads-button"],"TabsToolbar":["tabbrowser-tabs","new-tab-button","alltabs-button"],"toolbar-menubar":["menubar-items"]},"seen":["developer-button"],"dirtyAreaCache":["PersonalToolbar","nav-bar","TabsToolbar","toolbar-menubar"],"currentVersion":14,"newElementCount":2}');
+
+// Reset theme for main profile
+user_pref("lightweightThemes.selectedThemeID", "firefox-compact-light@mozilla.org");

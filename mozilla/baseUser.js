@@ -19,3 +19,6 @@ user_pref("startup.homepage_welcome_url", "about:blank");
 
 // Clean up nav bar
 user_pref("browser.uiCustomization.state", '{"placements":{"widget-overflow-fixed-list":[],"PersonalToolbar":[],"nav-bar":[],"TabsToolbar":[],"toolbar-menubar":[]}}');
+
+// Use dark theme for most profiles
+user_pref("lightweightThemes.selectedThemeID", "firefox-compact-dark@mozilla.org");
