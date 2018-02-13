@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+set -e
+cd $(dirname "$0")
+MOZILLA_CONFIG_DIR=$(pwd)
+
+function outputComment {
+  echo "// $1"
+}
+
+function outputFileHeader {
+  TEXT="** $1: **"
+  PREFIX=$(printf "*%0.s" $(seq 1 ${#TEXT}))
+  printf "//%s\n//%s\n//%s\n" "$PREFIX" "$TEXT" "$PREFIX"
+}
+
+function getProfileContent {
+  PROFILE_NAME=$1
+  outputComment "This profile has been automatically generated"
+  outputComment "Modify $MOZILLA_CONFIG_DIR/profileTemplates/$PROFILE_NAME to make changes"
+  echo
+  outputFileHeader "$MOZILLA_CONFIG_DIR/baseUser.js"
+  echo
+  cat "$MOZILLA_CONFIG_DIR/baseUser.js"
+  echo
+  outputFileHeader "$MOZILLA_CONFIG_DIR/profileTemplates/$PROFILE_NAME"
+  echo
+  cat "$MOZILLA_CONFIG_DIR/profileTemplates/$PROFILE_NAME"
+  echo
+  outputComment "End"
+}
+
+function createProfile {
+  PROFILE_NAME=$1
+  rm -rf "$MOZILLA_CONFIG_DIR/profiles/$PROFILE_NAME"
+  mkdir -p "$MOZILLA_CONFIG_DIR/profiles/$PROFILE_NAME"
+  getProfileContent "$PROFILE_NAME" > "$MOZILLA_CONFIG_DIR/profiles/$PROFILE_NAME/user.js"
+}
+
+cd "$MOZILLA_CONFIG_DIR/profileTemplates"
+for PROFILE_TEMPLATE in *; do
+  createProfile "$PROFILE_TEMPLATE"
+done

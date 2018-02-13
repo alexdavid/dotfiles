@@ -1,7 +1,1 @@
-*
-
-!.gitignore
-!start
-
-!main/search.json.mozlz4
-!main/user.js
+profiles

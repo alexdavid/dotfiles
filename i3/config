@@ -23,7 +23,7 @@ bindsym Print exec bash -c "maim ~/Pictures/$(date +%s).png"
 bindsym Shift+Print exec bash -c "maim -s ~/Pictures/$(date +%s).png"
 
 bindsym $mod+Return exec termite
-bindsym $mod+n exec firefox --profile ~/.config/mozilla/main
+bindsym $mod+n exec firefox --profile ~/.config/mozilla/profiles/main
 bindsym $mod+Shift+n exec ~/.config/mozilla/start
 
 bindsym $mod+space exec rofi -show run
