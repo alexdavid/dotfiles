@@ -79,6 +79,9 @@ nmap Y y$
 xnoremap p "_dp
 xnoremap P "_dP
 
+" visual sort
+vmap s :sort<CR>
+
 " Vim diff
 fun! DiffUpdate()
   if &diff
