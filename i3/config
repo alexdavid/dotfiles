@@ -93,7 +93,6 @@ bindsym $mod+r mode "resize"
 for_window [class="Pinentry"] floating enable
 
 exec xbanish
-exec compton -b --config ~/.config/compton/config
 exec xmodmap ~/.config/Xmodmap
 exec_always ~/.config/dunst/start
 exec_always ~/.config/xautolock/start

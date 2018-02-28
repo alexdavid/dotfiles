@@ -22,3 +22,6 @@ user_pref("browser.uiCustomization.state", '{"placements":{"widget-overflow-fixe
 
 // Use dark theme for most profiles
 user_pref("lightweightThemes.selectedThemeID", "firefox-compact-dark@mozilla.org");
+
+// Fix screen tearing while scrolling
+user_pref("layers.acceleration.force-enabled", true);
