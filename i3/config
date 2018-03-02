@@ -2,7 +2,6 @@
 set $mod Mod4
 
 font pango:Fira Mono 13
-gaps inner 14
 new_window 1pixel
 focus_wrapping false
 mouse_warping output
