@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+OUTPUT=$(mktemp --suffix=.jpg)
+
+TOTAL_WIDTH=0
+TOTAL_HEIGHT=0
+
+while read WIDTH; do
+  read HEIGHT
+  read X
+  read Y
+
+  RANDOM_IMAGE=$(ls ~/.config/wallpaper/images | shuf -n 1)
+  WALLPAPER_IMAGE="$HOME/.config/wallpaper/images/$RANDOM_IMAGE"
+
+  RIGHT_COORD=$(($X + $WIDTH))
+  LEFT_COORD=$(($Y + $HEIGHT))
+  [ "$RIGHT_COORD" -gt "$TOTAL_WIDTH" ] && TOTAL_WIDTH=$RIGHT_COORD
+  [ "$LEFT_COORD" -gt "$TOTAL_HEIGHT" ] && TOTAL_HEIGHT=$LEFT_COORD
+
+  EFFECT+=("$WALLPAPER_IMAGE" -geometry "${WIDTH}x${HEIGHT}+$X+$Y!" -composite)
+done < <(xrandr --listactivemonitors | tail +2 | sed -r 's/.*? ([0-9]+)\/([0-9]+)x([0-9]+)\/([0-9]+)\+([0-9]+)\+([0-9]+).*/\1\n\3\n\5\n\6/g')
+
+convert -size "${TOTAL_WIDTH}x${TOTAL_HEIGHT}" xc:black "${EFFECT[@]}" "$OUTPUT"
+
+feh --bg-tile "$OUTPUT"
+rm "$OUTPUT"
