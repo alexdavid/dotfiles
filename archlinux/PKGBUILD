@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -33,6 +33,7 @@ w3m # adds ranger image previews
 words # /usr/share/dict/words
 xautolock
 xdg-utils # xdg-open
+xdotool
 xorg-server
 xorg-xinit
 xorg-xrandr
