@@ -3,7 +3,7 @@ pkgname=alexdavid-meta
 pkgver=1.0.0
 pkgrel=1
 arch=('any')
-url="https://github.com/alexdavid/arch"
+url="https://github.com/alexdavid/dotfiles"
 depends=(
 
 bind-tools # dig
