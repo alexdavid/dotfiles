@@ -25,7 +25,8 @@ bindsym $mod+Return exec termite
 bindsym $mod+n exec ~/.config/mozilla/start main
 bindsym $mod+Shift+n exec ~/.config/mozilla/start
 
-bindsym $mod+space exec rofi -show run
+bindsym $mod+space exec rofi -show drun -show-icons
+bindsym $mod+Shift+space exec rofi -show run
 bindsym $mod+backslash exec custompassmenu
 bindsym Mod1+Mod4+backslash exec custompassmenu --last
 
@@ -47,7 +48,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+f fullscreen toggle
 bindsym $mod+z layout stacking
 bindsym $mod+e layout toggle split
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 bindsym $mod+Tab focus mode_toggle
 bindsym $mod+a focus parent
 
