@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Lock
+GenericName=Lock screen
+Exec=lock
+Terminal=false
+Type=Application
+Icon=system-lock-screen
+NoDisplay=false
