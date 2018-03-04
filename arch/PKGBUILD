@@ -1,0 +1,44 @@
+
+pkgname=alexdavid-meta
+pkgver=1.0.0
+pkgrel=1
+arch=('any')
+url="https://github.com/alexdavid/arch"
+depends=(
+
+bind-tools # dig
+docker
+dunst
+feh
+firefox
+fish
+git-annex
+gvim # gvim has clipboard support
+i3-wm
+imagemagick
+net-tools # ifconfig
+nmap
+openbsd-netcat
+openssh
+pass
+pass-otp
+pavucontrol
+pkgfile
+pulseaudio
+pulseaudio-alsa
+ranger
+rofi
+termite
+w3m # adds ranger image previews
+words # /usr/share/dict/words
+xautolock
+xdg-utils # xdg-open
+xorg-server
+xorg-xinit
+xorg-xrandr
+
+)
+
+package() {
+  true
+}
