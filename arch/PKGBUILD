@@ -1,6 +1,5 @@
-
 pkgname=alexdavid-meta
-pkgver=1.0.0
+pkgver=1.0.1
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -20,6 +19,7 @@ net-tools # ifconfig
 nmap
 openbsd-netcat
 openssh
+pamixer # i3 config volume control shortcuts
 pass
 pass-otp
 pavucontrol
