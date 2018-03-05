@@ -2,7 +2,7 @@
 
 killall xautolock
 xautolock \
-  -locker ~/.config/xautolock/locker \
+  -locker slock \
   -notify 5 \
   -time 5 \
   ;

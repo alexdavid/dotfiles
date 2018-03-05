@@ -14,7 +14,6 @@ fish
 git-annex
 gvim # gvim has clipboard support
 i3-wm
-i3lock
 imagemagick
 net-tools # ifconfig
 nmap
@@ -29,6 +28,7 @@ pulseaudio
 pulseaudio-alsa
 ranger
 rofi
+slock
 termite
 w3m # adds ranger image previews
 words # /usr/share/dict/words
