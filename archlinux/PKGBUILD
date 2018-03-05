@@ -38,6 +38,10 @@ xorg-server
 xorg-xinit
 xorg-xrandr
 
+# Fonts
+ttf-dejavu
+ttf-fira-mono
+
 )
 
 package() {
