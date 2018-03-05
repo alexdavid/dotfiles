@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.2
+pkgver=1.0.3
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -14,6 +14,7 @@ fish
 git-annex
 gvim # gvim has clipboard support
 i3-wm
+i3lock
 imagemagick
 net-tools # ifconfig
 nmap
