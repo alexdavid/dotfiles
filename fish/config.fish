@@ -16,6 +16,7 @@ end
 set local_settings_file ~/config.fish.local
 
 set -x GOPATH ~/Development
+set -x EDITOR vim
 
 if test -f $local_settings_file
    . $local_settings_file
