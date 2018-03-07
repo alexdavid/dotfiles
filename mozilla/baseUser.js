@@ -25,3 +25,7 @@ user_pref("lightweightThemes.selectedThemeID", "firefox-compact-dark@mozilla.org
 
 // Fix screen tearing while scrolling
 user_pref("layers.acceleration.force-enabled", true);
+
+// Opt out of firefox studies/sharing
+user_pref("app.shield.optoutstudies.enabled", false);
+user_pref("datareporting.healthreport.uploadEnabled", false);
