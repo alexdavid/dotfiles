@@ -12,11 +12,11 @@ floating_modifier $mod
 bindsym XF86AudioRaiseVolume exec pamixer -u ; exec pamixer -i 10
 bindsym XF86AudioLowerVolume exec pamixer -u ; exec pamixer -d 10
 bindsym XF86AudioMute exec pamixer -t
-bindsym XF86AudioPlay exec mpc toggle
-bindsym XF86AudioNext exec mpc next
-bindsym XF86AudioPrev exec mpc prev
-bindsym XF86MonBrightnessUp exec xbacklight -inc 2
-bindsym XF86MonBrightnessDown exec xbacklight -dec 2
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 bindsym Print exec bash -c "maim ~/Pictures/$(date +%s).png"
 bindsym Shift+Print exec bash -c "maim -s ~/Pictures/$(date +%s).png"
@@ -46,7 +46,7 @@ bindsym $mod+v split h
 bindsym $mod+Shift+q kill
 
 bindsym $mod+f fullscreen toggle
-bindsym $mod+z layout stacking
+bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+f floating toggle
 bindsym $mod+Tab focus mode_toggle
