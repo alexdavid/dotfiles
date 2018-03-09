@@ -9,8 +9,8 @@ filetype plugin indent on
 
 " General
 so ~/.config/vim/colorscheme.vim
-set backspace=2       " Make backspace delete
-set clipboard=unnamed " Make vim share clipboard with system
+set backspace=2           " Make backspace delete
+set clipboard=unnamedplus " Make vim share clipboard with system
 
 
 " Tab indenting
