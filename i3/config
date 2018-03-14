@@ -92,9 +92,8 @@ bindsym $mod+r mode "resize"
 
 for_window [class="Pinentry"] floating enable
 
-exec xbanish
-exec xmodmap ~/.config/Xmodmap
-exec_always ~/.config/dunst/start
-exec_always ~/.config/xautolock/start
-exec_always set-displays
-exec_always ~/.config/wallpaper/set-wallpaper
+exec --no-startup-id xmodmap ~/.config/Xmodmap
+exec_always --no-startup-id ~/.config/dunst/start
+exec_always --no-startup-id ~/.config/xautolock/start
+exec_always --no-startup-id set-displays
+exec_always --no-startup-id ~/.config/wallpaper/set-wallpaper
