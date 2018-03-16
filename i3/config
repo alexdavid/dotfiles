@@ -10,8 +10,8 @@ client.focused #ffb52a #ffb52a #000000 #000000 #ffb52a
 
 floating_modifier $mod
 
-bindsym $mod+g gaps inner current minus 1
-bindsym $mod+shift+g gaps inner current plus 1
+bindsym $mod+shift+g gaps inner current minus 1
+bindsym $mod+g gaps inner current plus 1
 
 bindsym XF86AudioRaiseVolume exec pamixer -u ; exec pamixer -i 10
 bindsym XF86AudioLowerVolume exec pamixer -u ; exec pamixer -d 10
