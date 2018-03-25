@@ -1,14 +1,15 @@
 pkgname=alexdavid-meta
-pkgver=1.0.7
+pkgver=1.0.8
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
 depends=(
 
 bind-tools # dig
-docker
-dunst
 chromium
+docker
+docker-compose
+dunst
 feh
 firefox
 fish
