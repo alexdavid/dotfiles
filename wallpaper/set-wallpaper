@@ -5,13 +5,17 @@ OUTPUT=$(mktemp --suffix=.jpg)
 TOTAL_WIDTH=0
 TOTAL_HEIGHT=0
 
+
+RANDOM_THEME=$(ls ~/.config/wallpaper/images | shuf -n 1)
+
+
 while read WIDTH; do
   read HEIGHT
   read X
   read Y
 
-  RANDOM_IMAGE=$(ls ~/.config/wallpaper/images | shuf -n 1)
-  WALLPAPER_IMAGE="$HOME/.config/wallpaper/images/$RANDOM_IMAGE"
+  RANDOM_IMAGE=$(ls "$HOME/.config/wallpaper/images/$RANDOM_THEME" | shuf -n 1)
+  WALLPAPER_IMAGE="$HOME/.config/wallpaper/images/$RANDOM_THEME/$RANDOM_IMAGE"
 
   RIGHT_COORD=$(($X + $WIDTH))
   LEFT_COORD=$(($Y + $HEIGHT))
