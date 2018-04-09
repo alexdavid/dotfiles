@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-MONITORS=$(xrandr --listactivemonitors | grep -oE '[a-zA-Z1-9]+-?[0-9]+$')
+set -e
 
-killall polybar
+if [ -n "$1" ]; then
+  ~/.screenlayout/"$1".sh
+fi
 
-for MONITOR in $MONITORS; do
-  MONITOR=$MONITOR polybar main &
-done
+~/.config/polybar/set-polybar
+~/.config/wallpaper/set-wallpaper

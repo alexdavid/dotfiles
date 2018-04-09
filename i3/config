@@ -100,4 +100,3 @@ exec --no-startup-id xmodmap ~/.config/Xmodmap
 exec_always --no-startup-id ~/.config/dunst/start
 exec_always --no-startup-id ~/.config/xautolock/start
 exec_always --no-startup-id set-displays
-exec_always --no-startup-id ~/.config/wallpaper/set-wallpaper
