@@ -46,7 +46,7 @@ font-2 = ionicons:pixelsize=15;1
 
 modules-left = i3
 modules-center = date
-modules-right = xbacklight volume music filesystem cpu memory temperature wlan eth battery
+modules-right = xbacklight volume updates music filesystem cpu memory temperature wlan eth battery
 
 tray-position = right
 tray-padding = 2
@@ -67,9 +67,6 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
 
 [module/filesystem]
 type = internal/fs
@@ -308,6 +305,13 @@ exec = [[ $(playerctl status) && ! $(playerctl status) =~ "Paused" ]] && echo "ï
 tail = true
 interval = 1
 format-underline = ${colors.primary}
+
+
+[module/updates]
+type = custom/script
+exec = ~/.config/polybar/updates.sh
+format-underline = ${colors.primary}
+interval = 600
 
 
 [settings]
