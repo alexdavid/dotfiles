@@ -1,10 +1,11 @@
 pkgname=alexdavid-meta
-pkgver=1.0.8
+pkgver=1.0.9
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
 depends=(
 
+arandr
 bind-tools # dig
 chromium
 docker
@@ -14,9 +15,11 @@ feh
 firefox
 fish
 git-annex
+go
 gvim # gvim has clipboard support
 i3-gaps
 imagemagick
+jq
 net-tools # ifconfig
 nmap
 openbsd-netcat
@@ -26,6 +29,7 @@ pass
 pass-otp
 pavucontrol
 pkgfile
+playerctl
 pulseaudio
 pulseaudio-alsa
 ranger
