@@ -85,4 +85,4 @@ pacstrap /mnt base
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # Setup grub cryptmapper
-echo "GRUB_CMDLINE_LINUX=\"cryptdevice=${PARTITIONS[3]}:cryptroot\""
+echo "GRUB_CMDLINE_LINUX=\"cryptdevice=${PARTITIONS[3]}:cryptroot\"" >> /mnt/etc/default/grub
