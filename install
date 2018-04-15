@@ -1,5 +1,5 @@
 # This script is used to clone and install my dotfiles
-# If you already have them cloned in ~/.config then just run ~/.config/init.sh to install them
+# If you already have them cloned in ~/.config then just run init.sh in the directories of the services you use
 #
 # bash <(curl https://raw.githubusercontent.com/alexdavid/dotfiles/master/install)
 (
@@ -24,8 +24,4 @@
   echo
   echo "Cloning dotfiles"
   git clone $ORIGIN ~/.config
-  
-  echo
-  echo "Initializing"
-  ~/.config/init.sh
 )
