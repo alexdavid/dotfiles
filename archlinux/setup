@@ -68,14 +68,17 @@ fdisk -l
 confirm "Does drive partition look good"
 
 
+PARTITIONS=($(lsblk -pln -o name "$DRIVE"))
+
+
 section "FORMATTING & MOUNTING DRIVES"
-cryptsetup luksFormat --type luks "${DRIVE}3"
-cryptsetup luksOpen "${DRIVE}3" main
-mkfs.vfat -F32 "${DRIVE}1"
+cryptsetup luksFormat --type luks "${PARTITIONS[3]}"
+cryptsetup luksOpen "${PARTITIONS[3]}" main
+mkfs.vfat -F32 "${PARTITIONS[1]}"
 mkfs.ext4 -F /dev/mapper/main
 mount /dev/mapper/main /mnt
 mkdir /mnt/boot
-mount "${DRIVE}1" /mnt/boot
+mount "${PARTITIONS[1]}" /mnt/boot
 
 # Install base
 pacstrap /mnt base
