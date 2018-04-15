@@ -1,10 +1,8 @@
-Alex's super awesome dotfiles!!
+Alex's super awesome dotfiles
 ---------------------------------------------
 
-![Screenshot](https://raw.github.com/alexdavid/dotfiles/master/doc/screenshot.png)
-
-
-### How to Install
 ```sh
-$ bash <(curl https://raw.githubusercontent.com/alexdavid/dotfiles/master/install)
+$ git clone https://github.com/alexdavid/dotfiles ~/.config
 ```
+
+Then run `init.sh` in the directories of the services you use
