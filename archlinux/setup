@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+
+set -e
+
+function section {
+  echo
+  echo
+  echo
+  echo "################################################################"
+  echo "==> $1"
+  echo
+}
+
+function ask {
+  printf "%s: " "$2"
+  read $1
+}
+
+function confirm {
+  QUESTION="$1"
+  CONTINUE="nil"
+  while [ "$CONTINUE" != "yes" ]; do
+    ask CONTINUE "$1 (yes/no)"
+    if [ "$CONTINUE" == "no" ]; then
+      exit 1
+    fi
+  done
+}
+
+section "GENERATING AND UPDATING MIRROR LIST"
+curl "https://www.archlinux.org/mirrorlist/?country=US&protocol=https&ip_version=4" | sed -E 's/^#//' > /etc/pacman.d/mirrorlist
+cat /etc/pacman.d/mirrorlist
+confirm "Does this mirror list look good"
+
+
+section "PARTITIONING DRIVES"
+fdisk -l
+ask DRIVE "Select a drive"
+{
+  echo g       # make gpt partition table
+
+  echo n       # Add new partition (/boot)
+  echo         # (default 1)
+  echo         # (default 2048)
+  echo "+512M"
+
+  echo n       # Add new partition (swap)
+  echo         # (default 2)
+  echo         # (default)
+  echo "+2G"
+
+  echo n       # Add new partition (linux)
+  echo         # (default 3)
+  echo         # (default)
+  echo         # (default)
+
+  echo t       # Change partition type
+  echo 1       # Partition number 1 (/boot)
+  echo 1       # EFI System
+
+  echo t       # Change partition type
+  echo 2       # Partition number 2 (swap)
+  echo 19      # Linux swap
+
+  echo w       # write
+} | fdisk "$DRIVE"
+fdisk -l
+confirm "Does drive partition look good"
+
+
+section "FORMATTING & MOUNTING DRIVES"
+cryptsetup luksFormat --type luks "${DRIVE}3"
+cryptsetup luksOpen "${DRIVE}3" main
+mkfs.vfat -F32 "${DRIVE}1"
+mkfs.ext4 -F /dev/mapper/main
+mount /dev/mapper/main /mnt
+mkdir /mnt/boot
+mount "${DRIVE}1" /mnt/boot
+
+# Install base
+pacstrap /mnt base
+genfstab -U /mnt >> /mnt/etc/fstab
