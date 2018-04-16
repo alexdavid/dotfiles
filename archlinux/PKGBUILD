@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.9
+pkgver=1.0.10
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -8,6 +8,7 @@ depends=(
 arandr
 bind-tools # dig
 chromium
+compton
 docker
 docker-compose
 dunst
