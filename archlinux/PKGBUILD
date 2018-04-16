@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.11
+pkgver=1.0.12
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -39,6 +39,7 @@ rofi
 slock
 termite
 the_silver_searcher
+unzip
 w3m # adds ranger image previews
 words # /usr/share/dict/words
 xautolock
