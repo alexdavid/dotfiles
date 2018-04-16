@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.10
+pkgver=1.0.11
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -21,6 +21,7 @@ gvim # gvim has clipboard support
 i3-gaps
 imagemagick
 jq
+maim
 net-tools # ifconfig
 nmap
 openbsd-netcat
