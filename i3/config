@@ -3,7 +3,7 @@ set $mod Mod4
 
 font pango:Fira Mono 13
 gaps inner 10
-new_window 1pixel
+default_border pixel 5
 focus_wrapping false
 mouse_warping output
 client.focused #ffb52a #ffb52a #000000 #000000 #ffb52a
