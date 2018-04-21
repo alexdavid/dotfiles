@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.12
+pkgver=1.0.13
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -34,13 +34,11 @@ pkgfile
 playerctl
 pulseaudio
 pulseaudio-alsa
-ranger
 rofi
 slock
 termite
 the_silver_searcher
 unzip
-w3m # adds ranger image previews
 words # /usr/share/dict/words
 xautolock
 xdg-utils # xdg-open
@@ -48,6 +46,11 @@ xdotool
 xorg-server
 xorg-xinit
 xorg-xrandr
+
+# Ranger & helpers
+ffmpegthumbnailer
+ranger
+w3m
 
 # Fonts
 ttf-dejavu
