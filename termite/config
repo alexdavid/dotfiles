@@ -39,35 +39,44 @@ scrollback_lines = 10000
 #scrollbar = off
 
 [colors]
-# If both of these are unset, cursor falls back to the foreground color,
-# and cursor_foreground falls back to the background color.
+
+foreground = #d9e6f2
+background = #282a36
+highlight = #2f2f2f
 cursor = #d9e6f2
 cursor_foreground = #29262f
 
-foreground = #d9e6f2
-#foreground_bold = #ffffff
-background = rgba(41, 38, 47, 0.9)
+# black
+color0 = #4b5262
+color8 = #434a5a
 
-# If unset, will reverse foreground and background
-highlight = #2f2f2f
+# red
+color1 = #ff5555
+color9 = #ff6655
 
-# Colors from color0 to color254 can be set
-color0 = #000000
-color1 = #c37372
-color2 = #72c373
-color3 = #c2c372
-color4 = #7372c3
-color5 = #c372c2
-color6 = #72c2c3
-color7 = #d9d9d9
-color8 = #323232
-color9 = #dbaaaa
-color10 = #aadbaa
-color11 = #dadbaa
-color12 = #aaaadb
-color13 = #dbaada
-color14 = #aadadb
-color15 = #ffffff
+# green
+color10 = #50fa7b
+color2  = #c678dd
+
+# yellow
+color3  = #f1fa8c
+color11 = #ECBE7B
+
+# blue
+color4  = #61bfff
+color12 = #61bfff
+
+# magenta
+color5  = #ff79c6
+color13 = #c678dd
+
+# cyan
+color6  = #8be9fd
+color14 = #46D9FF
+
+# white
+color7  = #e5e9f0
+color15 = #d1d5dc
 
 [hints]
 #font = Monospace 12
