@@ -1,3 +1,8 @@
-configstore
+chromium/
+dconf/
+gtk-*.0/
 hub
-node_modules
+pavucontrol.ini
+pulse/
+remmina/
+spotify/
