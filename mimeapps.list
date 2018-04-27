@@ -1,4 +1,5 @@
 [Added Associations]
 application/javascript=gvim.desktop;
+image/gif=mpv.desktop;
 text/css=gvim.desktop;
 text/plain=gvim.desktop;
