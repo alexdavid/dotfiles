@@ -1,7 +1,10 @@
 chromium/
 dconf/
 gtk-*.0/
+htop/
 hub
+inkscape/
+nautilus/
 pavucontrol.ini
 pulse/
 remmina/
