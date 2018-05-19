@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 
-OUTPUT=$(mktemp --suffix=.jpg)
+TMP_DIR=$(mktemp -d)
 
 TOTAL_WIDTH=0
 TOTAL_HEIGHT=0
-
-
-RANDOM_THEME=$(ls ~/.config/wallpaper/images | shuf -n 1)
 
 
 while read WIDTH; do
@@ -14,18 +11,20 @@ while read WIDTH; do
   read X
   read Y
 
-  RANDOM_IMAGE=$(ls "$HOME/.config/wallpaper/images/$RANDOM_THEME" | shuf -n 1)
-  WALLPAPER_IMAGE="$HOME/.config/wallpaper/images/$RANDOM_THEME/$RANDOM_IMAGE"
+
+  IMG=$(mktemp --suffix=.jpg "--tmpdir=$TMP_DIR")
+  URL=$(curl "https://api.unsplash.com/photos/random?client_id=$CLIENT_ID&w=$WIDTH&h=$HEIGHT&query=rain" | jq -r .urls.full)
+  curl "$URL" > $IMG
 
   RIGHT_COORD=$(($X + $WIDTH))
-  LEFT_COORD=$(($Y + $HEIGHT))
+  BOTTOM_COORD=$(($Y + $HEIGHT))
   [ "$RIGHT_COORD" -gt "$TOTAL_WIDTH" ] && TOTAL_WIDTH=$RIGHT_COORD
-  [ "$LEFT_COORD" -gt "$TOTAL_HEIGHT" ] && TOTAL_HEIGHT=$LEFT_COORD
+  [ "$BOTTOM_COORD" -gt "$TOTAL_HEIGHT" ] && TOTAL_HEIGHT=$BOTTOM_COORD
 
-  EFFECT+=("$WALLPAPER_IMAGE" -geometry "${WIDTH}x${HEIGHT}+$X+$Y!" -composite)
+  EFFECT+=("$IMG" -geometry "${WIDTH}x${HEIGHT}+$X+$Y!" -composite)
 done < <(xrandr --listactivemonitors | tail +2 | sed -r 's/.*? ([0-9]+)\/([0-9]+)x([0-9]+)\/([0-9]+)\+([0-9]+)\+([0-9]+).*/\1\n\3\n\5\n\6/g')
 
-convert -size "${TOTAL_WIDTH}x${TOTAL_HEIGHT}" xc:black "${EFFECT[@]}" "$OUTPUT"
+convert -size "${TOTAL_WIDTH}x${TOTAL_HEIGHT}" xc:black "${EFFECT[@]}" "$TMP_DIR/out.jpg"
 
-feh --no-fehbg --bg-tile "$OUTPUT"
-rm "$OUTPUT"
+feh --no-fehbg --bg-tile "$TMP_DIR/out.jpg"
+rm -r "$TMP_DIR"
