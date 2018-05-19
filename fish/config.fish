@@ -17,6 +17,7 @@ set local_settings_file ~/config.fish.local
 
 set -x GOPATH ~/Development
 set -x EDITOR vim
+set -x PASSWORD_STORE_ENABLE_EXTENSIONS true
 
 if test -f $local_settings_file
    . $local_settings_file
