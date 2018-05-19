@@ -3,7 +3,7 @@ set $mod Mod4
 
 font pango:Fira Mono 13
 gaps inner 10
-default_border pixel 5
+default_border pixel 0
 focus_wrapping false
 mouse_warping output
 client.focused #ffb52a #ffb52a #000000 #000000 #bd93f9
@@ -58,7 +58,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+f floating toggle
-bindsym $mod+Tab focus mode_toggle
+bindsym $mod+Tab exec rofi -show window -show-icons
 bindsym $mod+a focus parent
 
 # switch to workspace

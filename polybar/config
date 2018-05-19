@@ -8,20 +8,20 @@
 ;=====================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #000
+background = #00000000
+; background = #000
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #aaa
-primary = #bd93f9
+primary = #c0c5ce
 secondary = #e60053
 alert = #bd2c40
 
 [bar/main]
 monitor = ${env:MONITOR}
 width = 100%
-height = 27
+height = 30
 radius = 0.0
 fixed-center = true
 

@@ -1,8 +1,9 @@
 backend = "glx";
-inactive-dim = 0.2;
+inactive-dim = 0.1;
 no-dnd-shadow = true;
 shadow = true;
-shadow-radius = 25;
-shadow-offset-x = -50;
-shadow-offset-y = -30;
-shadow-opacity = 0.2;
+shadow-radius = 45;
+shadow-offset-x = -60;
+shadow-offset-y = -60;
+shadow-opacity = 0.5;
+shadow-exclude = "!focused";
