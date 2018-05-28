@@ -102,6 +102,7 @@ bindsym $mod+r mode "resize"
 for_window [class="Pinentry"] floating enable
 
 exec --no-startup-id xmodmap ~/.config/Xmodmap
+exec --no-startup-id compton -b --config ~/.config/compton/config
 exec_always --no-startup-id ~/.config/dunst/start
 exec_always --no-startup-id ~/.config/xautolock/start
 exec_always --no-startup-id set-displays
