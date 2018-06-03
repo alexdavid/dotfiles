@@ -88,6 +88,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
+bindsym $mod+equal exec termite --class=popup --exec="calc -d"
+
 mode "resize" {
   bindsym h resize shrink width 10 px or 10 ppt
   bindsym j resize grow height 10 px or 10 ppt
@@ -100,6 +102,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 for_window [class="Pinentry"] floating enable
+for_window [class="popup"] floating enable
 
 exec --no-startup-id xmodmap ~/.config/Xmodmap
 exec --no-startup-id compton -b --config ~/.config/compton/config
