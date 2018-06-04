@@ -13,8 +13,9 @@ while read WIDTH; do
 
 
   IMG=$(mktemp --suffix=.jpg "--tmpdir=$TMP_DIR")
-  URL=$(curl "https://api.unsplash.com/photos/random?client_id=$CLIENT_ID&w=$WIDTH&h=$HEIGHT&query=rain" | jq -r .urls.full)
-  curl "$URL" > $IMG
+  curl -L "https://source.unsplash.com/collection/2190600/${WIDTH}x${HEIGHT}" > $IMG
+  sleep 5
+
 
   RIGHT_COORD=$(($X + $WIDTH))
   BOTTOM_COORD=$(($Y + $HEIGHT))
