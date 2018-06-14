@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-if ! sudo -n true 2>/dev/null; then
-  osascript -e 'do shell script "mkdir -p /var/db/sudo/$USER; touch /var/db/sudo/$USER" with administrator privileges' > /dev/null || exit 1
-fi
-
-sudo $@
