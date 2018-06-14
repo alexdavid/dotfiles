@@ -1,24 +1,49 @@
-# Set paths
-eval set -x PATH (~/.config/bin/get-paths)
+#########################################
+# Path
+#########################################
+set -x PATH ~/.config/bin $PATH
+set -x PATH $PATH ~/Development/bin
 
-# Set aliases
-for val in (get-aliases " ")
-  eval "alias $val"
-end
 
+#########################################
+# Aliases
+#########################################
+# cd
+alias ..  "cd .."
+alias ... "cd ../.."
+
+# git
+alias gp  "git pull"
+alias gpp "git pullpush"
+alias gs  "git st"
+
+# utilities
+alias r "ranger"
+alias t "tmux"
+alias v "vim"
+
+# clipboard
+alias cbc "clipboard copy"
+alias cbp "clipboard paste"
+
+# macos
+alias airport "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+alias ql      "quicklook"
+
+
+#########################################
+# Env
+#########################################
+set -x EDITOR vim
+set -x GOPATH ~/Development
+set -x PASSWORD_STORE_ENABLE_EXTENSIONS true
+
+
+#########################################
+# Etc
+#########################################
 set fish_greeting ""
 
 function fish_title
   prompt_pwd
-end
-
-# Load custom settings for current user
-set local_settings_file ~/config.fish.local
-
-set -x GOPATH ~/Development
-set -x EDITOR vim
-set -x PASSWORD_STORE_ENABLE_EXTENSIONS true
-
-if test -f $local_settings_file
-   . $local_settings_file
 end
