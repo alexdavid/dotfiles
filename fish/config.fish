@@ -46,4 +46,5 @@ set fish_greeting ""
 
 function fish_title
   prompt_pwd
+  echo -n " - Fish"
 end
