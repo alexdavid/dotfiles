@@ -3,3 +3,4 @@ application/javascript=gvim.desktop;
 image/gif=mpv.desktop;
 text/css=gvim.desktop;
 text/plain=gvim.desktop;
+video/mp4=mpv.desktop;
