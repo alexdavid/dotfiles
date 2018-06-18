@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-TMP_DIR=$(mktemp -d)
+OUTPUT=$(mktemp --suffix=.jpg)
 
 TOTAL_WIDTH=0
 TOTAL_HEIGHT=0
+
+
+RANDOM_THEME=$(ls ~/.config/wallpaper/images | shuf -n 1)
 
 
 while read WIDTH; do
@@ -11,21 +14,18 @@ while read WIDTH; do
   read X
   read Y
 
-
-  IMG=$(mktemp --suffix=.jpg "--tmpdir=$TMP_DIR")
-  curl -L "https://source.unsplash.com/collection/2190600/${WIDTH}x${HEIGHT}" > $IMG
-  sleep 5
-
+  RANDOM_IMAGE=$(ls "$HOME/.config/wallpaper/images/$RANDOM_THEME" | shuf -n 1)
+  WALLPAPER_IMAGE="$HOME/.config/wallpaper/images/$RANDOM_THEME/$RANDOM_IMAGE"
 
   RIGHT_COORD=$(($X + $WIDTH))
-  BOTTOM_COORD=$(($Y + $HEIGHT))
+  LEFT_COORD=$(($Y + $HEIGHT))
   [ "$RIGHT_COORD" -gt "$TOTAL_WIDTH" ] && TOTAL_WIDTH=$RIGHT_COORD
-  [ "$BOTTOM_COORD" -gt "$TOTAL_HEIGHT" ] && TOTAL_HEIGHT=$BOTTOM_COORD
+  [ "$LEFT_COORD" -gt "$TOTAL_HEIGHT" ] && TOTAL_HEIGHT=$LEFT_COORD
 
-  EFFECT+=("$IMG" -geometry "${WIDTH}x${HEIGHT}+$X+$Y!" -composite)
+  EFFECT+=("$WALLPAPER_IMAGE" -geometry "${WIDTH}x${HEIGHT}+$X+$Y!" -composite)
 done < <(xrandr --listactivemonitors | tail +2 | sed -r 's/.*? ([0-9]+)\/([0-9]+)x([0-9]+)\/([0-9]+)\+([0-9]+)\+([0-9]+).*/\1\n\3\n\5\n\6/g')
 
-convert -size "${TOTAL_WIDTH}x${TOTAL_HEIGHT}" xc:black "${EFFECT[@]}" "$TMP_DIR/out.jpg"
+convert -size "${TOTAL_WIDTH}x${TOTAL_HEIGHT}" xc:black "${EFFECT[@]}" "$OUTPUT"
 
-feh --no-fehbg --bg-tile "$TMP_DIR/out.jpg"
-rm -r "$TMP_DIR"
+feh --no-fehbg --bg-tile "$OUTPUT"
+rm "$OUTPUT"
