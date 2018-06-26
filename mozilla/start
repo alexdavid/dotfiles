@@ -8,4 +8,8 @@ if [ -z "$PROFILE_NAME" ]; then
   PROFILE_NAME=$(ls -d */ | cut -f1 -d/ | rofi -dmenu -p Profile)
 fi
 
-firefox --new-instance --profile "$(pwd)/$PROFILE_NAME"
+if [ "$PROFILE_NAME" = main ]; then
+  firefox --profile "$(pwd)/$PROFILE_NAME"
+else
+  firefox --no-remote --profile "$(pwd)/$PROFILE_NAME"
+fi
