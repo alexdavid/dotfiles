@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Remaps capslock -> ctrl in a TTY on a Thinkpad X1 Carbon
+(dumpkeys | grep keymaps; echo keycode 58 = Control) | sudo loadkeys
