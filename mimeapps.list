@@ -1,5 +1,6 @@
 [Added Associations]
 application/javascript=gvim.desktop;
+application/pdf=org.pwmt.zathura.desktop;
 image/gif=mpv.desktop;
 text/css=gvim.desktop;
 text/plain=gvim.desktop;

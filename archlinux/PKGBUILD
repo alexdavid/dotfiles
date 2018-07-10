@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.16
+pkgver=1.0.17
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -48,6 +48,7 @@ xorg-server
 xorg-xinit
 xorg-xrandr
 zathura
+zathura-pdf-mupdf
 
 # Ranger & helpers
 ffmpegthumbnailer
