@@ -27,7 +27,7 @@ bindsym Shift+Print exec bash -c "maim -s ~/Pictures/$(date +%s).png"
 
 bindsym $mod+Return exec termite
 bindsym $mod+n exec ~/.config/mozilla/start main
-bindsym $mod+Shift+n exec ~/.config/mozilla/start
+bindsym $mod+Shift+n exec ~/.config/chromium_apps/launch
 
 bindsym $mod+space exec rofi -show drun -show-icons
 bindsym $mod+Shift+space exec rofi -show run

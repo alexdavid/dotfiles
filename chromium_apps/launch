@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+cd $(dirname "$0")
+
+PROFILE_NAME=$(cat profiles.json | jq -r 'keys|join("\n")' | rofi -dmenu -i)
+[ -z "$PROFILE_NAME" ] && exit
+STRINGIFIED_PROFILE_NAME=$(echo -n "$PROFILE_NAME" | jq -R "")
+PROFILE_URL=$(cat profiles.json | jq -r ".[$STRINGIFIED_PROFILE_NAME]")
+
+chromium \
+  --app="$PROFILE_URL" \
+  --user-data-dir="$(pwd)/profiles/$PROFILE_NAME" \
+  &
