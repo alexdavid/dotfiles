@@ -8,3 +8,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
   read -sn 1
   kill ${ql_pid}) > /dev/null 2>&1
 fi
+
+if which feh; then
+  feh --title __quicklook "$@"
+fi
