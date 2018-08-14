@@ -15,8 +15,8 @@ docker run \
   --rm \
   --tty \
   --user "$(id -u):$(id -g)" \
-  --volume "$(pwd):/mnt" \
-  --workdir "/mnt" \
+  --volume "$(pwd):$(pwd)" \
+  --workdir "$(pwd)" \
   "${PORT_FORWARDS[@]}" \
   $IMAGE \
   bash
