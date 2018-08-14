@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -e
+cd $(dirname "$0")
+
+docker build .
+docker run \
+  -it \
+  -v "$(pwd):/fonts" \
+  "$(docker build -q .)"
+
+mv icons.ttf ../fonts/icons.ttf

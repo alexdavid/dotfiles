@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.17
+pkgver=1.0.20
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -19,6 +19,7 @@ git-annex
 go
 gvim # gvim has clipboard support
 i3-gaps
+i3blocks
 imagemagick
 jq
 maim

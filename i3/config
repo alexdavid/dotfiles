@@ -109,3 +109,10 @@ exec --no-startup-id compton -b --config ~/.config/compton/config
 exec_always --no-startup-id ~/.config/dunst/start
 exec_always --no-startup-id ~/.config/xautolock/start
 exec_always --no-startup-id set-displays
+
+bar {
+  i3bar_command i3bar -t
+  status_command i3blocks
+  position top
+  font pango:Fira Mono, icons 13
+}
