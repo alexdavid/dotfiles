@@ -1,6 +1,12 @@
 separator_block_width=30
 markup=none
 
+[volume]
+label=
+command=echo "$(pamixer --get-volume)%"
+interval=once
+signal=1
+
 [updates]
 label=
 command=$HOME/.config/i3blocks/updates.sh
