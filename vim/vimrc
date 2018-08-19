@@ -1,7 +1,7 @@
 set rtp+=~/.config/vim
 set shell=bash
 so ~/.config/vim/shortcuts.vim
-so ~/.config/vim/plugins.vim
+execute pathogen#infect()
 
 syntax enable " Enable syntax highlighting
 filetype plugin indent on

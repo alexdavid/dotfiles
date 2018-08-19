@@ -1,0 +1,15 @@
+{
+  "name": "vim-min-git-status-tests",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "coffee-script": "^1.10.0",
+    "cucumber": "^1.2.0",
+    "david": "^7.0.0",
+    "pty.js": "^0.3.0",
+    "tmp-promise": "^1.0.2",
+    "vt": "^0.1.1"
+  }
+}

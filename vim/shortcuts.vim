@@ -115,19 +115,10 @@ let g:NERDTreeMapOpenVSplit="v"
 let g:ctrlp_map = '<leader>o'
 
 " TComment
-let g:tcommentMapLeader1 = ''
-let g:tcommentMapLeaderOp1 = ''
-let g:tcommentMapLeaderOp2 = ''
+let g:tcomment_mapleader1 = ''
+let g:tcomment_opleader = ''
 nnoremap <leader>/ :TComment<CR>
 vnoremap <leader>/ :TCommentMaybeInline<CR>gv<ESC>
-
-" Tertestrial
-autocmd BufWritePost * :call g:TertestrialFileSaved()
-nnoremap gtl :call g:TertestrialLine()<CR>
-nnoremap gtf :call g:TertestrialFile()<CR>
-nnoremap gta :call g:TertestrialAll()<CR>
-nnoremap gtr :call g:TertestrialRepeat()<CR>
-nnoremap gtt :call g:TertestrialToggle()<CR>
 
 " Hide highlight
 map <silent> <leader><space> :noh<CR>:match<CR>
