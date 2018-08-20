@@ -43,6 +43,12 @@
       "css": "volume-up",
       "code": 59394,
       "src": "fontawesome"
+    },
+    {
+      "uid": "cd4bfdae4dc89b175ff49330ce29611a",
+      "css": "wifi",
+      "code": 61931,
+      "src": "fontawesome"
     }
   ]
 }
