@@ -15,7 +15,7 @@ bindsym $mod+g gaps inner current plus 10
 
 bindsym XF86AudioRaiseVolume exec pamixer -u ; exec pamixer -i 5 ; exec pkill -RTMIN+1 i3blocks
 bindsym XF86AudioLowerVolume exec pamixer -u ; exec pamixer -d 5 ; exec pkill -RTMIN+1 i3blocks
-bindsym XF86AudioMute exec pamixer -t
+bindsym XF86AudioMute exec pamixer -t ; exec pkill -RTMIN+1 i3blocks
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
