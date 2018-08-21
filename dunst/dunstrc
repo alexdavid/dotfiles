@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "400x5-30+40"
+    geometry = "400x5-11+39"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -61,10 +61,10 @@
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
-    frame_width = 0
+    frame_width = 1
 
     # Defines color of the frame around the notification window.
-    frame_color = "#000000"
+    frame_color = "#bd93f9"
 
     # Define a color for the separator.
     # possible values are:
@@ -123,7 +123,7 @@
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     #   %n  progress value if set without any extra characters
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "%a - %s\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -239,23 +239,22 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#c0c5ce"
-    foreground = "#000000"
+    background = "#282a36"
+    foreground = "#cfcfcf"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#c0c5ce"
-    foreground = "#000000"
+    background = "#282a36"
+    foreground = "#cfcfcf"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#bd93f9"
-    foreground = "#000000"
-    frame_color = "#ff0000"
+    background = "#282a36"
+    foreground = "#cfcfcf"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
