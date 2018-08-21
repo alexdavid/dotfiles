@@ -3,7 +3,7 @@ set $mod Mod4
 
 font pango:Fira Mono 13
 gaps inner 10
-default_border pixel 0
+default_border pixel 1
 focus_wrapping false
 mouse_warping output
 client.focused #ffb52a #ffb52a #000000 #000000 #bd93f9
@@ -106,7 +106,7 @@ for_window [class="popup"] floating enable
 for_window [title="__quicklook"] floating enable
 
 exec --no-startup-id xmodmap ~/.config/Xmodmap
-exec --no-startup-id compton -b --config ~/.config/compton/config
+exec --no-startup-id bash ~/.xsessionrc
 exec_always --no-startup-id ~/.config/dunst/start
 exec_always --no-startup-id ~/.config/xautolock/start
 exec_always --no-startup-id set-displays
