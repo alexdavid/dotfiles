@@ -1,6 +1,6 @@
 FROM node:9
 
-WORKDIR /root
+WORKDIR /mnt
 
 RUN yarn add fontello-cli
 COPY config.json config.json

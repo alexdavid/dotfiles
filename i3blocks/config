@@ -17,6 +17,10 @@ label=
 command=$HOME/.config/i3blocks/wifi.sh
 interval=25
 
+[battery]
+command=$HOME/.config/i3blocks/battery.sh
+interval=30
+
 [date]
 label=
 command=echo $(date '+%a, %b %d')
