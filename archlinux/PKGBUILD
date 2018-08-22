@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.20
+pkgver=1.0.21
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -36,6 +36,7 @@ pkgfile
 playerctl
 pulseaudio
 pulseaudio-alsa
+qutebrowser
 rofi
 slock
 termite
