@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+pamixer -u
+pamixer -d 5
+pkill -RTMIN+1 i3blocks
