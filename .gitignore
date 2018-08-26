@@ -1,6 +1,7 @@
 PairForce/
 chromium/
 dconf/
+deluge/
 gtk-*.0/
 htop/
 hub
@@ -10,3 +11,4 @@ pavucontrol.ini
 pulse/
 remmina/
 spotify/
+zoomus.conf
