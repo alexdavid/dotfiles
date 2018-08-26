@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
 xbacklight -inc 5
+pkill -RTMIN+1 i3blocks

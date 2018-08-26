@@ -1,6 +1,12 @@
 separator_block_width=30
 markup=none
 
+[brightness]
+label=
+command=$HOME/.config/i3blocks/brightness.sh
+interval=once
+signal=1
+
 [volume]
 label=
 command=$HOME/.config/i3blocks/volume.sh
