@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+infocmp -x | ssh -t "$@" "cat > '$TERM.info' && tic -x '$TERM.info'"
