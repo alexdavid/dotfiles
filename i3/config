@@ -88,7 +88,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
-bindsym $mod+equal exec termite --class=popup --exec="calc -d"
+bindsym $mod+equal exec popup-term "calc -d"
 
 mode "resize" {
   bindsym h resize shrink width 10 px or 10 ppt
