@@ -5,3 +5,10 @@ image/gif=mpv.desktop;
 text/css=gvim.desktop;
 text/plain=gvim.desktop;
 video/mp4=mpv.desktop;
+
+[Default Applications]
+text/html=qutebrowser.desktop
+x-scheme-handler/http=qutebrowser.desktop
+x-scheme-handler/https=qutebrowser.desktop
+x-scheme-handler/about=qutebrowser.desktop
+x-scheme-handler/unknown=qutebrowser.desktop
