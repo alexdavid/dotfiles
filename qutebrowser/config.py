@@ -11,4 +11,8 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'file://*')
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
+# Make :q work more like vim:
+config.set('tabs.last_close', 'close')
+config.set('aliases', {"q": "tab-close"})
+
 config.bind('m', 'hint links spawn --detach mpv {hint-url}')
