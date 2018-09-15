@@ -1,3 +1,12 @@
 #!/usr/bin/env sh
 
-termite --class=popup --exec "$@"
+GEOMETRY="$2"
+if [ -z "$GEOMETRY" ]; then
+  GEOMETRY="800x600"
+fi
+
+termite \
+  --class=popup \
+  --geometry="$GEOMETRY" \
+  --exec="$1" \
+  ;

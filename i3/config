@@ -88,7 +88,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
-bindsym $mod+equal exec popup-term "calc -d"
+bindsym $mod+equal exec popup-term "calc -d" 900x150
+bindsym $mod+w exec popup-term "sudo wifi-menu" 700x800
 
 mode "resize" {
   bindsym h resize shrink width 10 px or 10 ppt
