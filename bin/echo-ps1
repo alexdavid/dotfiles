@@ -31,6 +31,7 @@ function section {
     [ "$TERM" == "xterm-termite" ] && printf ""
     reset_fg
   fi
+  set_fg 0
   printf " $SECTION_TEXT "
 }
 
@@ -50,12 +51,12 @@ home_dir=$(echo $HOME | sed 's/\//\\\//g')
 FORMATTED_DIR=$(pwd | sed "s/$home_dir/~/")
 CURRENT_DIR=$(basename "$FORMATTED_DIR")
 PARENT_DIR=$(basename "$(dirname "$FORMATTED_DIR")")
-[ "$PARENT_DIR" != "." -a "$PARENT_DIR" != "/" ] && section 12 $PARENT_DIR
-section 4 $CURRENT_DIR
+[ "$PARENT_DIR" != "." -a "$PARENT_DIR" != "/" ] && section 15 $PARENT_DIR
+section 2 $CURRENT_DIR
 
 
 if git rev-parse --git-dir > /dev/null 2>&1; then
-  section 8  $(git rev-parse --abbrev-ref HEAD 2> /dev/null)
+  section 3  $(git rev-parse --abbrev-ref HEAD 2> /dev/null)
 fi
 
 if [ $last_status -ne 0 ]; then

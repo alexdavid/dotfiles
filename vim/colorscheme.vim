@@ -1,5 +1,5 @@
-colorscheme dracula
-let g:colorscheme_name = 'dracula'
+colorscheme onedark
+let g:colorscheme_name = 'onedark'
 if has("gui_running")
 else
   highlight Normal ctermbg=none

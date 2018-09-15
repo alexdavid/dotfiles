@@ -3,10 +3,10 @@ set $mod Mod4
 
 font pango:SFNS Display 13
 gaps inner 10
-default_border pixel 1
+default_border pixel 5
 focus_wrapping false
 mouse_warping output
-client.focused #ffb52a #ffb52a #000000 #000000 #bd93f9
+client.focused #ffb52a #ffb52a #ff0000 #e5c07b #e5c07b
 
 floating_modifier $mod
 
@@ -119,8 +119,8 @@ bar {
   height 33
   font pango:SFNS Display, icons 13
   colors {
-    background #282a36
-    focused_workspace #282a36dd #282a36dd #ffffff
-    inactive_workspace #282a36dd #282a36dd #555555
+    background #282c34
+    focused_workspace #2b3a42 #282a36 #c1bfbf
+    inactive_workspace #2b3a42 #282a36 #555555
   }
 }
