@@ -15,4 +15,5 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 config.set('tabs.last_close', 'close')
 config.set('aliases', {"q": "tab-close"})
 
+config.bind('d', None)
 config.bind('m', 'hint links spawn --detach mpv {hint-url}')
