@@ -17,3 +17,4 @@ config.set('aliases', {"q": "tab-close"})
 
 config.bind('d', None)
 config.bind('m', 'hint links spawn --detach mpv {hint-url}')
+config.bind('we', 'edit-url')
