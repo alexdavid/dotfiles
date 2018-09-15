@@ -1,4 +1,5 @@
-separator_block_width=30
+separator_block_width=25
+separator=false
 markup=none
 
 [brightness]
@@ -27,12 +28,6 @@ interval=25
 command=$HOME/.config/i3blocks/battery.sh
 interval=30
 
-[date]
-label=
-command=echo $(date '+%a, %b %d')
-interval=600
-
 [time]
-label=
-command=echo $(date '+%l:%M%P')
+command=echo "$(date '+%a, %b %d %l:%M%P')    "
 interval=10
