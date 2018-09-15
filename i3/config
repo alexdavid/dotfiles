@@ -13,14 +13,14 @@ floating_modifier $mod
 bindsym $mod+shift+g gaps inner current minus 10
 bindsym $mod+g gaps inner current plus 10
 
-bindsym XF86AudioRaiseVolume exec ~/.config/i3/volume-up
-bindsym XF86AudioLowerVolume exec ~/.config/i3/volume-down
-bindsym XF86AudioMute exec pamixer -t ; exec pkill -RTMIN+1 i3blocks
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-bindsym XF86MonBrightnessUp exec ~/.config/i3/brightness-up
-bindsym XF86MonBrightnessDown exec ~/.config/i3/brightness-down
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/volume-up
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/volume-down
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/volume-mute
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/brightness-up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/brightness-down
 
 bindsym Print exec bash -c "maim ~/Pictures/$(date +%s).png"
 bindsym Shift+Print exec bash -c "maim -s ~/Pictures/$(date +%s).png"

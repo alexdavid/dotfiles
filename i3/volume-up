@@ -2,4 +2,5 @@
 
 pamixer -u
 pamixer -i 5
+pacat --file-format=aiff ~/.config/i3/volume.aiff &
 pkill -RTMIN+1 i3blocks
