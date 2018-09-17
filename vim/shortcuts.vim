@@ -76,8 +76,8 @@ nmap < <<
 nmap Y y$
 
 " Prevent paste in visual mode from copying text
-xnoremap p "_dp
-xnoremap P "_dP
+xnoremap p pgvy
+xnoremap P Pgvy
 
 " visual sort
 vmap s :sort<CR>
