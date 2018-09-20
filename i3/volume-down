@@ -2,5 +2,5 @@
 
 pamixer -u
 pamixer -d 5
-pacat --file-format=aiff ~/.config/i3/volume.aiff &
+pacat --file-format=wav ~/.config/i3/sounds/volume.wav &
 pkill -RTMIN+1 i3blocks

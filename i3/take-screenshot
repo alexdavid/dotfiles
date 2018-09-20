@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+set -e
+
+mkdir -p ~/Pictures
+if [ "$1" = -s ]; then
+  maim -s --hidecursor ~/Pictures/$(date +%s).png
+else
+  maim --hidecursor ~/Pictures/$(date +%s).png
+fi
+pacat --file-format=wav ~/.config/i3/sounds/screenshot.wav

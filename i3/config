@@ -1,5 +1,6 @@
 # https://i3wm.org/docs/userguide.html for reference
 set $mod Mod4
+set $alt Mod1
 
 font pango:SFNS Display 13
 gaps inner 10
@@ -22,8 +23,10 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/brightness-up
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/brightness-down
 
-bindsym Print exec bash -c "maim ~/Pictures/$(date +%s).png"
-bindsym Shift+Print exec bash -c "maim -s ~/Pictures/$(date +%s).png"
+bindsym Print exec --no-startup-id ~/.config/i3/take-screenshot
+bindsym $mod+$alt+3 exec --no-startup-id ~/.config/i3/take-screenshot
+bindsym Shift+Print exec --no-startup-id ~/.config/i3/take-screenshot -s
+bindsym $mod+$alt+4 exec --no-startup-id ~/.config/i3/take-screenshot -s
 
 bindsym $mod+Return exec termite
 bindsym $mod+n exec qutebrowser
@@ -32,7 +35,7 @@ bindsym $mod+Shift+n exec ~/.config/chromium_apps/launch
 bindsym $mod+space exec rofi -show drun -show-icons
 bindsym $mod+Shift+space exec rofi -show run
 bindsym $mod+backslash exec custompassmenu
-bindsym Mod1+Mod4+backslash exec custompassmenu --last
+bindsym $alt+Mod4+backslash exec custompassmenu --last
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
