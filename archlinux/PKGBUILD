@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.23
+pkgver=1.0.24
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -60,6 +60,13 @@ w3m
 # Fonts
 ttf-dejavu
 ttf-fira-mono
+
+)
+optdepends=(
+
+# Laptop deps
+wpa_actiond
+xorg-xbacklight
 
 )
 
