@@ -91,7 +91,6 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 bindsym $mod+equal exec popup-term "calc -d" 900x150
-bindsym $mod+w exec popup-term "sudo wifi-menu" 700x800
 
 mode "resize" {
   bindsym h resize shrink width 10 px or 10 ppt
@@ -122,7 +121,7 @@ bar {
   font pango:SFNS Display, icons 18px
   colors {
     background #282c34
-    focused_workspace #282c34 #98c379 #282c34
+    focused_workspace #282c34 #282c34 #98c379
     active_workspace #282c34 #282a36 #c1bfbf
     inactive_workspace #282c34 #282a36 #555555
   }
