@@ -12,4 +12,8 @@ else
   WORKSPACE=$(echo "$WORKSPACES" | jq -er "map(select(.output == \"$FOCUSED_OUTPUT\"))[$IDX - 1].name")
 fi
 
-i3-msg workspace "$WORKSPACE"
+if [ "$2" = "move" ]; then
+  i3-msg move container to workspace "$WORKSPACE"
+else
+  i3-msg workspace "$WORKSPACE"
+fi
