@@ -61,20 +61,19 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+Shift+f floating toggle
-bindsym $mod+Tab exec rofi -show window -show-icons
+bindsym $mod+Tab exec --no-startup-id ~/.config/i3/actions/switch-workspace
 bindsym $mod+a focus parent
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 exec --no-startup-id ~/.config/i3/actions/switch-workspace 1
+bindsym $mod+2 exec --no-startup-id ~/.config/i3/actions/switch-workspace 2
+bindsym $mod+3 exec --no-startup-id ~/.config/i3/actions/switch-workspace 3
+bindsym $mod+4 exec --no-startup-id ~/.config/i3/actions/switch-workspace 4
+bindsym $mod+5 exec --no-startup-id ~/.config/i3/actions/switch-workspace 5
+bindsym $mod+6 exec --no-startup-id ~/.config/i3/actions/switch-workspace 6
+bindsym $mod+7 exec --no-startup-id ~/.config/i3/actions/switch-workspace 7
+bindsym $mod+8 exec --no-startup-id ~/.config/i3/actions/switch-workspace 8
+bindsym $mod+9 exec --no-startup-id ~/.config/i3/actions/switch-workspace 9
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
