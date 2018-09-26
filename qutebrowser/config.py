@@ -15,6 +15,12 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 config.set('tabs.last_close', 'close')
 config.set('aliases', {"q": "tab-close"})
 
+# Privacy
+config.set('content.webrtc_public_interfaces_only', True)
+
+# Key bindings
 config.bind('d', None)
 config.bind('m', 'hint links spawn --detach mpv {hint-url}')
+config.bind('o', 'set-cmd-text -s :open -s')
+config.bind('O', 'set-cmd-text -s :open -st')
 config.bind('we', 'edit-url')
