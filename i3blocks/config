@@ -14,6 +14,11 @@ command=$HOME/.config/i3blocks/volume.sh
 interval=once
 signal=1
 
+[xautolock]
+command=$HOME/.config/i3blocks/xautolock.sh
+interval=once
+signal=1
+
 [updates]
 label=
 command=$HOME/.config/i3blocks/updates.sh

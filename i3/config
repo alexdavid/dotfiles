@@ -28,6 +28,8 @@ bindsym $mod+$alt+3 exec --no-startup-id ~/.config/i3/actions/take-screenshot
 bindsym Shift+Print exec --no-startup-id ~/.config/i3/actions/take-screenshot -s
 bindsym $mod+$alt+4 exec --no-startup-id ~/.config/i3/actions/take-screenshot -s
 
+bindsym $mod+x exec --no-startup-id ~/.config/i3/actions/toggle-locker
+
 bindsym $mod+Return exec termite
 bindsym $mod+n exec qutebrowser
 bindsym $mod+Shift+n exec ~/.config/chromium_apps/launch
@@ -109,8 +111,8 @@ for_window [title="__quicklook"] floating enable
 
 exec --no-startup-id xmodmap ~/.config/Xmodmap
 exec --no-startup-id bash ~/.xsessionrc
+exec --no-startup-id ~/.config/xautolock/start
 exec_always --no-startup-id ~/.config/dunst/start
-exec_always --no-startup-id ~/.config/xautolock/start
 exec_always --no-startup-id set-displays
 
 bar {

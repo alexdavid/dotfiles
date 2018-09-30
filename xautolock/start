@@ -6,4 +6,5 @@ xautolock \
   -notify 5 \
   -notifier "notify-send -i computer-lock 'Locking in 5s..." \
   -time 5 \
-  ;
+  &
+disown
