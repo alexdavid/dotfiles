@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.25
+pkgver=1.0.26
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -7,6 +7,7 @@ depends=(
 
 arandr
 bind-tools # dig
+calc
 chromium
 compton
 docker
@@ -17,9 +18,11 @@ firefox
 fish
 go
 gvim # gvim has clipboard support
+htop
 i3-gaps
 i3blocks
 imagemagick
+iputils
 jq
 maim
 mpv
@@ -42,6 +45,7 @@ slock
 termite
 the_silver_searcher
 unzip
+whois
 words # /usr/share/dict/words
 xdg-utils # xdg-open
 xdotool
