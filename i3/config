@@ -111,7 +111,7 @@ for_window [title="__quicklook"] floating enable
 
 exec --no-startup-id xmodmap ~/.config/Xmodmap
 exec --no-startup-id bash ~/.xsessionrc
-exec --no-startup-id ~/.config/xautolock/start
+exec --no-startup-id ~/.config/xss-lock/start
 exec_always --no-startup-id ~/.config/dunst/start
 exec_always --no-startup-id set-displays
 

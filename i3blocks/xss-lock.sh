@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if ps -e | grep xautolock > /dev/null; then
+if ps -e | grep xss-lock > /dev/null; then
   echo ""
 else
   echo ""

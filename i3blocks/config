@@ -14,8 +14,8 @@ command=$HOME/.config/i3blocks/volume.sh
 interval=once
 signal=1
 
-[xautolock]
-command=$HOME/.config/i3blocks/xautolock.sh
+[xss-lock]
+command=$HOME/.config/i3blocks/xss-lock.sh
 interval=once
 signal=1
 

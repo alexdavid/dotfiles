@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-if ps -e | grep xautolock > /dev/null; then
-  ~/.config/xautolock/stop
+if ps -e | grep xss-lock > /dev/null; then
+  ~/.config/xss-lock/stop
 else
-  ~/.config/xautolock/start
+  ~/.config/xss-lock/start
 fi
 pkill -RTMIN+1 i3blocks

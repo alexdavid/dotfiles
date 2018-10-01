@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.24
+pkgver=1.0.25
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -43,12 +43,12 @@ termite
 the_silver_searcher
 unzip
 words # /usr/share/dict/words
-xautolock
 xdg-utils # xdg-open
 xdotool
 xorg-server
 xorg-xinit
 xorg-xrandr
+xss-lock
 zathura
 zathura-pdf-mupdf
 
