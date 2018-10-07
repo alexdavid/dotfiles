@@ -69,6 +69,7 @@ ttf-fira-mono
 optdepends=(
 
 # Laptop deps
+acpi
 wpa_actiond
 xorg-xbacklight
 
