@@ -4,6 +4,8 @@ c.content.javascript.enabled = False
 c.editor.command = ['popup-term', 'vim {file} -c "normal {line}G{column0}l"']
 c.editor.encoding = 'utf-8'
 
+config.set('tabs.max_width', 250)
+
 config.set('content.javascript.enabled', True, 'chrome://*/*')
 config.set('content.javascript.enabled', True, 'file://*')
 config.set('content.javascript.enabled', True, 'http://localhost/*')
@@ -16,7 +18,7 @@ config.set('tabs.last_close', 'close')
 config.set('aliases', {"q": "tab-close"})
 
 # Privacy
-config.set('content.webrtc_public_interfaces_only', True)
+config.set('content.webrtc_ip_handling_policy', 'default-public-interface-only')
 
 # Key bindings
 config.bind('d', None)
