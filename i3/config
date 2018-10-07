@@ -5,6 +5,7 @@ set $alt Mod1
 font pango:SFNS Display 13
 gaps inner 10
 default_border pixel 4
+for_window [class="^.*"] border pixel 4
 focus_wrapping false
 mouse_warping output
 client.focused #ffb52a #ffb52a #ff0000 #e5c07b #e5c07b
