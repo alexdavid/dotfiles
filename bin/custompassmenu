@@ -4,6 +4,11 @@
 # Original can be found here:
 # https://git.zx2c4.com/password-store/tree/contrib/dmenu/passmenu
 
+# Warp mouse to top left corner of active window since i3 will change
+# the active window when rofi closes if the mouse was over it
+eval "$(xdotool getwindowgeometry --shell "$(xdotool getactivewindow)")"
+xdotool mousemove "$X" "$Y"
+
 shopt -s nullglob globstar
 
 prefix=${PASSWORD_STORE_DIR-~/.password-store}
