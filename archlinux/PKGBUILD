@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.28
+pkgver=1.0.29
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -43,6 +43,7 @@ pulseaudio-alsa
 qutebrowser
 rofi
 slock
+sxiv
 termite
 the_silver_searcher
 unzip
