@@ -7,6 +7,5 @@ fi
 
 termite \
   --class=popup \
-  --geometry="$GEOMETRY" \
   --exec="$1" \
   ;
