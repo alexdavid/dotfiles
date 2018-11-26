@@ -1,7 +1,8 @@
 [Added Associations]
 application/javascript=gvim.desktop;
 application/pdf=org.pwmt.zathura.desktop;
-image/gif=mpv.desktop;
+image/gif=sxiv.desktop;
+image/jpeg=sxiv.desktop;
 text/css=gvim.desktop;
 text/plain=gvim.desktop;
 video/mp4=mpv.desktop;
