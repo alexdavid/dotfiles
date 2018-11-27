@@ -10,4 +10,4 @@ docker run \
   -v "$(pwd):/fonts" \
   "$(docker build -q .)"
 
-mv icons.ttf ../fonts/icons.ttf
+mv icons.ttf ../dist/icons.ttf
