@@ -67,28 +67,26 @@ bindsym $mod+Shift+f floating toggle
 bindsym $mod+a focus parent
 
 # switch to workspace
-bindsym $mod+Tab exec --no-startup-id ~/.config/i3/actions/switch-workspace
-bindsym $mod+1 exec --no-startup-id ~/.config/i3/actions/switch-workspace 1
-bindsym $mod+2 exec --no-startup-id ~/.config/i3/actions/switch-workspace 2
-bindsym $mod+3 exec --no-startup-id ~/.config/i3/actions/switch-workspace 3
-bindsym $mod+4 exec --no-startup-id ~/.config/i3/actions/switch-workspace 4
-bindsym $mod+5 exec --no-startup-id ~/.config/i3/actions/switch-workspace 5
-bindsym $mod+6 exec --no-startup-id ~/.config/i3/actions/switch-workspace 6
-bindsym $mod+7 exec --no-startup-id ~/.config/i3/actions/switch-workspace 7
-bindsym $mod+8 exec --no-startup-id ~/.config/i3/actions/switch-workspace 8
-bindsym $mod+9 exec --no-startup-id ~/.config/i3/actions/switch-workspace 9
+bindsym $mod+1 workspace 1:I
+bindsym $mod+2 workspace 2:II
+bindsym $mod+3 workspace 3:III
+bindsym $mod+4 workspace 4:IV
+bindsym $mod+5 workspace 5:V
+bindsym $mod+6 workspace 6:VI
+bindsym $mod+7 workspace 7:VII
+bindsym $mod+8 workspace 8:VIII
+bindsym $mod+9 workspace 9:IX
 
 # move focused container to workspace
-bindsym $mod+Shift+Tab exec --no-startup-id ~/.config/i3/actions/switch-workspace "" move
-bindsym $mod+Shift+1 exec --no-startup-id ~/.config/i3/actions/switch-workspace 1 move
-bindsym $mod+Shift+2 exec --no-startup-id ~/.config/i3/actions/switch-workspace 2 move
-bindsym $mod+Shift+3 exec --no-startup-id ~/.config/i3/actions/switch-workspace 3 move
-bindsym $mod+Shift+4 exec --no-startup-id ~/.config/i3/actions/switch-workspace 4 move
-bindsym $mod+Shift+5 exec --no-startup-id ~/.config/i3/actions/switch-workspace 5 move
-bindsym $mod+Shift+6 exec --no-startup-id ~/.config/i3/actions/switch-workspace 6 move
-bindsym $mod+Shift+7 exec --no-startup-id ~/.config/i3/actions/switch-workspace 7 move
-bindsym $mod+Shift+8 exec --no-startup-id ~/.config/i3/actions/switch-workspace 8 move
-bindsym $mod+Shift+9 exec --no-startup-id ~/.config/i3/actions/switch-workspace 9 move
+bindsym $mod+Shift+1 move container to workspace 1:I
+bindsym $mod+Shift+2 move container to workspace 2:II
+bindsym $mod+Shift+3 move container to workspace 3:III
+bindsym $mod+Shift+4 move container to workspace 4:IV
+bindsym $mod+Shift+5 move container to workspace 5:V
+bindsym $mod+Shift+6 move container to workspace 6:VI
+bindsym $mod+Shift+7 move container to workspace 7:VII
+bindsym $mod+Shift+8 move container to workspace 8:VIII
+bindsym $mod+Shift+9 move container to workspace 9:IX
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
@@ -120,6 +118,7 @@ bar {
   i3bar_command i3bar -t
   status_command i3blocks
   position top
+  strip_workspace_numbers yes
   height 34
   font pango:SFNS Display, icons 18px
   colors {
