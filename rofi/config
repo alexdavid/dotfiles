@@ -7,12 +7,14 @@ rofi.color-urgent: #282c34, #f3843d, #282c34, #ffb52a, #ffc39c
 
 
 # Style
-rofi.separator-style: none
-rofi.padding: 25
+rofi.columns: 1
 rofi.font: SFNS Display 14
-rofi.line-margin: 5
-rofi.line-padding: 10
-rofi.columns: 2
+rofi.line-margin: 10
+rofi.line-padding: 15
+rofi.lines: 6
+rofi.padding: 40
+rofi.separator-style: none
+rofi.width: 35
 
 # Fuzzy search
 rofi.matching: fuzzy
