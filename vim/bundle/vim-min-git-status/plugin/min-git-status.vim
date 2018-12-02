@@ -40,14 +40,24 @@ function! Get_file_path()
   if Current_line_is_comment()
     return ''
   endif
-  return split(getline('.'))[1]
+  let line = getline('.')[3:]
+  if Current_line_has_staged_rename()
+    return Unescape_file_name(split(line, ' -> ')[0])
+  endif
+  return Unescape_file_name(line)
 endfunction
 
 
 function! Get_file2_path()
-  return split(getline('.'))[3]
+  return Unescape_file_name(split(getline('.'), ' -> ')[1])
 endfunction
 
+function Unescape_file_name(n)
+  if a:n[0] == '"'
+    return a:n[1:-2]
+  endif
+  return a:n
+endfunction
 
 function! Open_file(cmd)
   let file_path = Current_line_has_staged_rename() ? Get_file2_path() : Get_file_path()
@@ -57,17 +67,17 @@ function! Open_file(cmd)
   windo if &diff | quit | endif
 
   execute a:cmd
-  execute 'edit ' . Get_git_top_level() . '/' . file_path
+  execute 'edit ' . fnameescape(Get_git_top_level() . '/' . file_path)
 endfunction
 
 
 function! Run_git_command(cmd)
-  call system('git -C ' . Get_git_top_level() . ' ' . a:cmd)
+  call system('git -C ' . shellescape(Get_git_top_level()) . ' ' . a:cmd)
 endfunction
 
 
 function! Run_git_command_in_terminal(cmd)
-  execute '!git -C ' . Get_git_top_level() . ' ' . a:cmd
+  execute '!git -C ' . shellescape(Get_git_top_level()) . ' ' . a:cmd
 endfunction
 
 
@@ -75,22 +85,22 @@ function! Stage_file()
   let file_path = Current_line_has_staged_rename() ? Get_file2_path() : Get_file_path()
 
   if Current_line_has_unstaged_modification() || Current_line_is_untracked()
-    call Run_git_command('add ' . file_path)
+    call Run_git_command('add ' . shellescape(file_path))
 
   elseif Current_line_has_staged_changes()
-    call Run_git_command('reset -- ' . file_path)
+    call Run_git_command('reset -- ' . shellescape(file_path))
     if Current_line_has_staged_rename()
-      call Run_git_command('reset -- ' . Get_file_path())
+      call Run_git_command('reset -- ' . shellescape(Get_file_path()))
     endif
 
   elseif Current_line_has_unstaged_delete()
-    call Run_git_command('rm ' . file_path)
+    call Run_git_command('rm ' . shellescape(file_path))
 
   elseif Current_line_has_unmerged_modifications()
-    call Run_git_command('add '. file_path)
+    call Run_git_command('add '. shellescape(file_path))
 
   else
-    echo "Sorry, I don't know how to stage '" . file_path . "'"
+    echo "Sorry, I don't know how to stage " . shellescape(file_path)
     return
   endif
   call Refresh()
@@ -101,17 +111,17 @@ function! Patch_file()
   let file_path = Get_file_path()
 
   if Current_line_has_unstaged_modification()
-    call Run_git_command_in_terminal('add --patch ' . file_path)
+    call Run_git_command_in_terminal('add --patch ' . shellescape(file_path))
 
   elseif Current_line_is_untracked()
     call Run_git_command('add -N ' . file_path)
-    call Run_git_command_in_terminal('add --patch ' . file_path)
+    call Run_git_command_in_terminal('add --patch ' . shellescape(file_path))
 
   elseif Current_line_has_staged_changes()
-    call Run_git_command_in_terminal('reset --patch -- ' . file_path)
+    call Run_git_command_in_terminal('reset --patch -- ' . shellescape(file_path))
 
   else
-    echo "Sorry, I don't know how to patch '" . file_path . "'"
+    echo "Sorry, I don't know how to patch " . shellescape(file_path)
   endif
 endfunction
 
