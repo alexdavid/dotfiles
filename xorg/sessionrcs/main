@@ -1,16 +1,3 @@
-TRACKPAD_NAME="Synaptics TM3289-002"
-
-# Enable tap to click
-xinput set-prop "$TRACKPAD_NAME" "libinput Tapping Enabled" 1
-# Disable tap to drag
-xinput set-prop "$TRACKPAD_NAME" "libinput Tapping Drag Enabled" 0
-# Set right click to 2 finger
-xinput set-prop "$TRACKPAD_NAME" "libinput Click Method Enabled" {0 1}
-# Set natural scroll
-xinput set-prop "$TRACKPAD_NAME" "libinput Natural Scrolling Enabled" 1
-
-
-
 TRACKPAD_NAME="Apple Inc. Magic Trackpad 2"
 
 # Enable tap to click
