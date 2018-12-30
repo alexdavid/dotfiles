@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.29
+pkgver=1.0.30
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -53,6 +53,7 @@ xdg-utils # xdg-open
 xdotool
 xorg-server
 xorg-xinit
+xorg-xinput
 xorg-xrandr
 xss-lock
 youtube-viewer
