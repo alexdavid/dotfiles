@@ -12,11 +12,12 @@ HOOKS="base udev autodetect block encrypt filesystems keyboard fsck"
 
 ```shell
 mkinitcpio -p linux
+pacman -S wget sudo git binutils
 wget https://raw.githubusercontent.com/alexdavid/dotfiles/master/archlinux/setup/chroot
 bash chroot
 
 # optional if wifi-menu is needed after reboot:
-pacman -S sudo dialog wpa_supplicant
+pacman -S dialog wpa_supplicant
 
 exit
 umount /mnt/boot
