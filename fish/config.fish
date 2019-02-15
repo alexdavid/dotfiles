@@ -20,7 +20,7 @@ alias gs  "git st"
 # utilities
 alias r "ranger"
 alias t "tmux"
-alias v "vim"
+alias v "nvim"
 
 # clipboard
 alias cbc "clipboard copy"
@@ -47,4 +47,8 @@ set fish_greeting ""
 function fish_title
   prompt_pwd
   echo -n " - Fish"
+end
+
+if [ (tty) = "/dev/tty1" ]
+  startx
 end
