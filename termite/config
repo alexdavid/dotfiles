@@ -1,7 +1,7 @@
 [options]
 #allow_bold = true
 #audible_bell = false
-#clickable_url = true
+clickable_url = false
 #dynamic_title = true
 font = Fira Mono 13
 #fullscreen = true
