@@ -2,7 +2,7 @@
 set $mod Mod4
 set $alt Mod1
 
-font pango:SFNS Display 13
+font pango:SF Pro Display 22
 gaps inner 10
 default_border pixel 1
 for_window [class="^.*"] border pixel 1
@@ -116,7 +116,6 @@ exec_always --no-startup-id ~/.config/dunst/start
 exec_always --no-startup-id set-displays
 
 bar {
-  i3bar_command i3bar -t
   status_command i3blocks
   position top
   strip_workspace_numbers yes
@@ -128,4 +127,11 @@ bar {
     active_workspace #282c34 #282a36 #c1bfbf
     inactive_workspace #282c34 #282a36 #555555
   }
+}
+
+input * {
+  natural_scroll enabled
+  tap enabled
+  repeat_delay 200
+  xkb_options ctrl:nocaps
 }

@@ -50,5 +50,5 @@ function fish_title
 end
 
 if [ (tty) = "/dev/tty1" ]
-  startx
+  sway
 end

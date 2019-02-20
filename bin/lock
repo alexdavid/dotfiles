@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-slock
+swaylock -c 000000
