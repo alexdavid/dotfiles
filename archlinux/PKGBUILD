@@ -12,7 +12,6 @@ chromium
 compton
 docker
 docker-compose
-dunst
 feh
 firefox
 fish
@@ -75,7 +74,7 @@ optdepends=(
 # Laptop deps
 acpi
 wpa_actiond
-xorg-xbacklight
+light
 
 )
 
