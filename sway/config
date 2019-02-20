@@ -108,11 +108,7 @@ for_window [class="Pinentry"] floating enable
 for_window [class="popup"] floating enable
 for_window [title="__quicklook"] floating enable
 
-exec --no-startup-id xmodmap ~/.config/xorg/xmodmap
 exec --no-startup-id ~/.config/xss-lock/start
-exec_always --no-startup-id bash ~/.config/xorg/xsessionrc
-exec_always --no-startup-id ~/.config/dunst/start
-exec_always --no-startup-id set-displays
 
 bar {
   status_command i3blocks
