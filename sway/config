@@ -109,6 +109,7 @@ for_window [class="popup"] floating enable
 for_window [title="__quicklook"] floating enable
 
 exec --no-startup-id ~/.config/xss-lock/start
+exec_always --no-startup-id ~/.config/wallpaper/set-wallpaper
 
 bar {
   status_command i3blocks
@@ -127,6 +128,7 @@ bar {
 input * {
   natural_scroll enabled
   tap enabled
+  drag disabled
   repeat_delay 200
   xkb_options ctrl:nocaps
 }
