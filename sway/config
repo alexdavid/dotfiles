@@ -16,21 +16,21 @@ floating_modifier $mod
 bindsym $mod+shift+g gaps inner current minus 10
 bindsym $mod+g gaps inner current plus 10
 
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/actions/volume-up
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/actions/volume-down
-bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/actions/volume-mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/sway/actions/volume-up
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/sway/actions/volume-down
+bindsym XF86AudioMute exec --no-startup-id ~/.config/sway/actions/volume-mute
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/actions/brightness-up
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/actions/brightness-down
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/sway/actions/brightness-up
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/sway/actions/brightness-down
 
-bindsym Print exec --no-startup-id ~/.config/i3/actions/take-screenshot
-bindsym $mod+$alt+3 exec --no-startup-id ~/.config/i3/actions/take-screenshot
-bindsym Shift+Print exec --no-startup-id ~/.config/i3/actions/take-screenshot -s
-bindsym $mod+$alt+4 exec --no-startup-id ~/.config/i3/actions/take-screenshot -s
+bindsym Print exec --no-startup-id ~/.config/sway/actions/take-screenshot
+bindsym $mod+$alt+3 exec --no-startup-id ~/.config/sway/actions/take-screenshot
+bindsym Shift+Print exec --no-startup-id ~/.config/sway/actions/take-screenshot -s
+bindsym $mod+$alt+4 exec --no-startup-id ~/.config/sway/actions/take-screenshot -s
 
-bindsym $mod+x exec --no-startup-id ~/.config/i3/actions/toggle-locker
+bindsym $mod+x exec --no-startup-id ~/.config/sway/actions/toggle-locker
 
 bindsym $mod+Return exec termite
 bindsym $mod+n exec sh -c 'cd /tmp && qutebrowser'
@@ -89,8 +89,7 @@ bindsym $mod+Shift+7 move container to workspace 7:VII
 bindsym $mod+Shift+8 move container to workspace 8:VIII
 bindsym $mod+Shift+9 move container to workspace 9:IX
 
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+r reload
 
 bindsym $mod+equal exec popup-term "calc -d" 900x150
 

@@ -2,5 +2,5 @@
 
 pamixer -u
 pamixer -i 5
-pacat --file-format=wav ~/.config/i3/sounds/volume.wav &
+pacat --file-format=wav ~/.config/sway/sounds/volume.wav &
 pkill -RTMIN+1 i3blocks
