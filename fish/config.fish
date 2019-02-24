@@ -18,7 +18,7 @@ alias gpp "git pullpush"
 alias gs  "git st"
 
 # utilities
-alias r "ranger"
+alias f "vifm"
 alias t "tmux"
 alias v "nvim"
 
