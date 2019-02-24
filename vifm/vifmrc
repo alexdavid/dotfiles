@@ -1,9 +1,8 @@
 " vim: filetype=vifm :
-" Sample configuration file for vifm (last updated: 20 July, 2018)
-" You can edit this file by hand.
-" The " character at the beginning of a line comments out the line.
-" Blank lines are ignored.
-" The basic format for each item is shown with an example.
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 
 " ------------------------------------------------------------------------------
 
