@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.30
+pkgver=1.0.31
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -46,6 +46,7 @@ sxiv
 termite
 the_silver_searcher
 unzip
+vifm
 whois
 words # /usr/share/dict/words
 xdg-utils # xdg-open
@@ -58,11 +59,6 @@ xss-lock
 youtube-viewer
 zathura
 zathura-pdf-mupdf
-
-# Ranger & helpers
-ffmpegthumbnailer
-ranger
-w3m
 
 # Fonts
 ttf-dejavu
