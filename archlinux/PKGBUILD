@@ -5,14 +5,11 @@ arch=('any')
 url="https://github.com/alexdavid/dotfiles"
 depends=(
 
-arandr
 bind-tools # dig
 calc
 chromium
-compton
 docker
 docker-compose
-feh
 firefox
 fish
 go
@@ -41,7 +38,6 @@ pulseaudio
 pulseaudio-alsa
 qutebrowser
 rofi
-slock
 sxiv
 termite
 the_silver_searcher
@@ -51,10 +47,6 @@ whois
 words # /usr/share/dict/words
 xdg-utils # xdg-open
 xdotool
-xorg-server
-xorg-xinit
-xorg-xinput
-xorg-xrandr
 xss-lock
 youtube-viewer
 zathura
