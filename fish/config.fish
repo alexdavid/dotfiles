@@ -52,3 +52,7 @@ end
 if [ (tty) = "/dev/tty1" ]
   startx
 end
+
+function g
+  cd (find ~/Development/src -maxdepth 3 -type d | fzf)
+end
