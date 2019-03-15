@@ -2,7 +2,7 @@
 set $mod Mod4
 set $alt Mod1
 
-font pango:SF Pro Display 22
+font pango:SF Pro Display 12
 gaps inner 10
 default_border pixel 1
 for_window [class="^.*"] border pixel 1
@@ -130,5 +130,6 @@ input * {
   tap enabled
   drag disabled
   repeat_delay 200
+  repeat_rate 40
   xkb_options ctrl:nocaps
 }
