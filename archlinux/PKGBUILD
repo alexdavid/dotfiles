@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.31
+pkgver=1.0.32
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -17,7 +17,6 @@ feh
 firefox
 fish
 go
-gvim # gvim has clipboard support
 htop
 i3-gaps
 i3blocks
@@ -27,6 +26,7 @@ jq
 lsof
 maim
 mpv
+neovim
 net-tools # ifconfig
 nmap
 openbsd-netcat
