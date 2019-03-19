@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-ln -s .config/vim/vimrc ~/.vimrc
+ln -s .config/nvim/init.vim ~/.vimrc
