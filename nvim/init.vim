@@ -1,6 +1,6 @@
-set rtp+=~/.config/vim
+set rtp+=~/.config/nvim
 set shell=bash
-so ~/.config/vim/shortcuts.vim
+so ~/.config/nvim/shortcuts.vim
 execute pathogen#infect()
 
 syntax enable " Enable syntax highlighting
@@ -8,7 +8,7 @@ filetype plugin indent on
 
 
 " General
-so ~/.config/vim/colorscheme.vim
+so ~/.config/nvim/colorscheme.vim
 set backspace=2           " Make backspace delete
 set clipboard=unnamedplus " Make vim share clipboard with system
 
@@ -35,13 +35,6 @@ set title           " Display filename in title bar
 set cursorline      " Adds highlighted line on current line
 set cursorcolumn    " Adds highlighted line on current column
 set scrolloff=1     " set minimum space between the cursor and window
-
-
-" Keep temp files out of CWD
-set backupdir=~/.config/vim/tmp/backup
-set directory=~/.config/vim/tmp/swp
-set undodir=~/.config/vim/tmp/undo
-
 
 " Searching
 set hlsearch   " Highlight found searches
