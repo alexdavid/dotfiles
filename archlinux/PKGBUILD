@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.32
+pkgver=1.0.33
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -57,6 +57,7 @@ xorg-xinit
 xorg-xinput
 xorg-xrandr
 xss-lock
+youtube-dl
 youtube-viewer
 zathura
 zathura-pdf-mupdf
