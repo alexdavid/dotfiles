@@ -1,5 +1,5 @@
-pkgname=alexdavid-meta
-pkgver=1.0.34
+pkgname=alexdavid-shared-meta
+pkgver=1.0.0
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -65,15 +65,6 @@ zathura-pdf-mupdf
 # Fonts
 ttf-dejavu
 ttf-fira-mono
-
-)
-optdepends=(
-
-# Laptop deps
-acpi
-wireless_tools # iwgetid (in i3blocks script)
-wpa_actiond
-xorg-xbacklight
 
 )
 

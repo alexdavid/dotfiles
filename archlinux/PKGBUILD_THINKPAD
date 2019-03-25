@@ -1,0 +1,17 @@
+pkgname=alexdavid-thinkpad-meta
+pkgver=1.0.0
+pkgrel=1
+arch=('any')
+url="https://github.com/alexdavid/dotfiles"
+depends=(
+
+acpi
+wireless_tools # iwgetid (in i3blocks script)
+wpa_actiond
+xorg-xbacklight
+
+)
+
+package() {
+  true
+}
