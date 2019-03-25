@@ -1,5 +1,5 @@
 pkgname=alexdavid-meta
-pkgver=1.0.33
+pkgver=1.0.34
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -71,6 +71,7 @@ optdepends=(
 
 # Laptop deps
 acpi
+wireless_tools # iwgetid (in i3blocks script)
 wpa_actiond
 xorg-xbacklight
 
