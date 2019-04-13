@@ -43,6 +43,8 @@ function end_sections {
   reset_fg
 }
 
+section 4 $(hostname)
+
 if [ "$(id -u)" -eq 0 ]; then
   section 208 $(whoami)
 fi
