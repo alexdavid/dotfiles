@@ -32,16 +32,14 @@ QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }
 
 #------------------------------------------------------------------------
 
-echo "$(iwgetid -r)" # full text
-echo $QUALITY% # short text
-
-# color
 if [[ $QUALITY -ge 80 ]]; then
-    echo "#FFFFFF"
+    printf ""
 elif [[ $QUALITY -ge 60 ]]; then
-    echo "#FFF600"
+    printf ""
 elif [[ $QUALITY -ge 40 ]]; then
-    echo "#FFAE00"
+    printf ""
 else
-    echo "#FF0000"
+    printf ""
 fi
+
+echo " $(iwgetid -r)"

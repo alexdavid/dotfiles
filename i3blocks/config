@@ -25,7 +25,6 @@ command=$HOME/.config/i3blocks/updates.sh
 interval=600
 
 [wifi]
-label=
 command=$HOME/.config/i3blocks/wifi.sh
 interval=25
 
