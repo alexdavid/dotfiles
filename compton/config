@@ -1,8 +1,0 @@
-backend = "glx";
-inactive-dim = 0.1;
-no-dnd-shadow = true;
-shadow = true;
-shadow-radius = 16;
-shadow-offset-x = -20;
-shadow-offset-y = -20;
-shadow-opacity = 0.5;
