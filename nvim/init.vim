@@ -21,9 +21,6 @@ set softtabstop=2
 set ai " Autoindent
 set si " Smart indent
 
-" Fix indenting problems for coffee and javascript
-au FileType coffee setlocal cindent
-au FileType javascript setlocal nocindent
 au BufRead Dockerfile.* set syntax=dockerfile
 
 " Appearance
@@ -55,18 +52,6 @@ set diffopt+=vertical " Force vimdiff to always open vertically
 " Folding
 set foldmethod=syntax
 set foldlevel=99
-
-
-" Theme Settings
-if filereadable(expand('~/.vimrc.theme'))
-  source ~/.vimrc.theme
-endif
-
-
-" Local Ovverides
-if filereadable(expand('~/.vimrc.local'))
-  source ~/.vimrc.local
-endif
 
 " Only display cursorline on active pane
 " From: http://stackoverflow.com/questions/12017331/how-can-i-make-vim-highlight-the-current-line-on-only-the-active-buffer
