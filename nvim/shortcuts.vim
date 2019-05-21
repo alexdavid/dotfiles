@@ -52,10 +52,6 @@ nnoremap <silent> <C-h> :MoveToLeft<cr>
 nnoremap <silent> <C-j> :MoveToDown<cr>
 nnoremap <silent> <C-k> :MoveToUp<cr>
 nnoremap <silent> <C-l> :MoveToRight<cr>
-inoremap <silent> <C-h> <esc>:MoveToLeft<cr>
-inoremap <silent> <C-j> <esc>:MoveToDown<cr>
-inoremap <silent> <C-k> <esc>:MoveToUp<cr>
-inoremap <silent> <C-l> <esc>:MoveToRight<cr>
 
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
