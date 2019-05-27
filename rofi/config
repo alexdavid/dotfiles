@@ -8,13 +8,13 @@ rofi.color-urgent: #282c34, #f3843d, #282c34, #ffb52a, #ffc39c
 
 # Style
 rofi.columns: 1
-rofi.font: SFNS Display 14
-rofi.line-margin: 10
-rofi.line-padding: 15
+rofi.font: SFNS Display 12
+rofi.line-margin: 0
+rofi.line-padding: 12
 rofi.lines: 6
-rofi.padding: 40
+rofi.padding: 36
 rofi.separator-style: none
-rofi.width: 35
+rofi.width: 36
 
 # Fuzzy search
 rofi.matching: fuzzy
