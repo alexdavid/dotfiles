@@ -2,6 +2,11 @@ separator_block_width=25
 separator=false
 markup=none
 
+[music]
+label=
+command=$HOME/.config/i3blocks/mpd.sh
+signal=1
+
 [brightness]
 label=
 command=$HOME/.config/i3blocks/brightness.sh
