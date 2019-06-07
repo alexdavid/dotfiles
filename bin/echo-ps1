@@ -43,11 +43,20 @@ function end_sections {
   reset_fg
 }
 
+function repo_needs_sync {
+  REPO=$1
+  [ -n "$(git -C "$REPO" status --porcelain)" ] && return 0
+  UPSTREAM=$(git -C "$REPO" rev-parse --abbrev-ref --symbolic-full-name '@{u}')
+  [ "$(git -C "$REPO" rev-parse HEAD)" != "$(git -C "$REPO" rev-parse "$UPSTREAM")" ] && return 0
+  return 1
+}
+
 section 4 $(hostname)
 
-if [ "$(id -u)" -eq 0 ]; then
-  section 208 $(whoami)
-fi
+repo_needs_sync ~/.config && section 5 "Dotfiles"
+repo_needs_sync ~/.password-store && section 5 "Pass"
+
+[ "$(id -u)" -eq 0 ] && section 208 $(whoami)
 
 home_dir=$(echo $HOME | sed 's/\//\\\//g')
 FORMATTED_DIR=$(pwd | sed "s/$home_dir/~/")
