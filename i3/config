@@ -34,7 +34,6 @@ bindsym $mod+x exec --no-startup-id ~/.config/i3/actions/toggle-locker
 
 bindsym $mod+Return exec termite
 bindsym $mod+n exec firefox
-bindsym $mod+Shift+n exec ~/.config/chromium_apps/launch
 
 bindsym $mod+space exec rofi -show drun -show-icons
 bindsym $mod+Shift+space exec rofi -show run
