@@ -2,10 +2,10 @@
 
 set -e
 
-mkdir -p ~/Pictures
+mkdir -p ~/Desktop
 if [ "$1" = -s ]; then
-  maim -s --hidecursor ~/Pictures/$(date +%s).png
+  maim -s --hidecursor ~/Desktop/$(date +%s).png
 else
-  maim --hidecursor ~/Pictures/$(date +%s).png
+  maim --hidecursor ~/Desktop/$(date +%s).png
 fi
 pacat --file-format=wav ~/.config/i3/sounds/screenshot.wav
