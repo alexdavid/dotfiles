@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 if [ -e ~/.config/mpd/host ]; then
   MPD_HOST=$(cat ~/.config/mpd/host)
@@ -6,4 +6,5 @@ else
   MPD_HOST="localhost"
 fi
 
-mpc -h "$MPD_HOST" current
+mpc -h "$MPD_HOST" "$1"
+pkill -RTMIN+1 i3blocks
