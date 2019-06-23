@@ -6,4 +6,6 @@ else
   MPD_HOST="localhost"
 fi
 
-mpc -h "$MPD_HOST" current
+if mpc -h "$MPD_HOST" status | grep playing > /dev/null; then
+  mpc -h "$MPD_HOST" current
+fi
