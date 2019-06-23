@@ -45,6 +45,7 @@ function end_sections {
 
 function repo_needs_sync {
   REPO=$1
+  [ ! -d "$REPO" ] && return 1
   [ -n "$(git -C "$REPO" status --porcelain)" ] && return 0
   UPSTREAM=$(git -C "$REPO" rev-parse --abbrev-ref --symbolic-full-name '@{u}')
   [ "$(git -C "$REPO" rev-parse HEAD)" != "$(git -C "$REPO" rev-parse "$UPSTREAM")" ] && return 0
