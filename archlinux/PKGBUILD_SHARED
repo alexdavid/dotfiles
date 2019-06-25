@@ -1,0 +1,64 @@
+pkgname=alexdavid-shared-meta
+pkgver=1.0.0
+pkgrel=1
+arch=('any')
+url="https://github.com/alexdavid/dotfiles"
+depends=(
+
+bind-tools # dig
+calc
+chromium
+docker
+docker-compose
+firefox
+fish
+go
+htop
+i3-gaps
+i3blocks
+imagemagick
+iputils
+jq
+lsof
+maim
+mpv
+neovim
+net-tools # ifconfig
+nmap
+openbsd-netcat
+openssh
+pacman-contrib # checkupdates
+pamixer # i3 config volume control shortcuts
+pass
+pass-otp
+pavucontrol
+pkgfile
+playerctl
+pulseaudio
+pulseaudio-alsa
+qutebrowser
+rofi
+sxiv
+termite
+the_silver_searcher
+unzip
+vifm
+whois
+words # /usr/share/dict/words
+xdg-utils # xdg-open
+xdotool
+xss-lock
+youtube-dl
+youtube-viewer
+zathura
+zathura-pdf-mupdf
+
+# Fonts
+ttf-dejavu
+ttf-fira-mono
+
+)
+
+package() {
+  true
+}

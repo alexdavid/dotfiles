@@ -1,0 +1,10 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: alexdavid/vim-min-git-status-test
+    steps:
+      - checkout
+      - run: cd test && yarn
+      - run: cd test && yarn test

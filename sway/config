@@ -19,9 +19,9 @@ bindsym $mod+g gaps inner current plus 10
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/sway/actions/volume-up
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/sway/actions/volume-down
 bindsym XF86AudioMute exec --no-startup-id ~/.config/sway/actions/volume-mute
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id ~/.config/sway/actions/music toggle
+bindsym XF86AudioNext exec --no-startup-id ~/.config/sway/actions/music next
+bindsym XF86AudioPrev exec --no-startup-id ~/.config/sway/actions/music prev
 bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/sway/actions/brightness-up
 bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/sway/actions/brightness-down
 
@@ -33,13 +33,14 @@ bindsym $mod+$alt+4 exec --no-startup-id ~/.config/sway/actions/take-screenshot 
 bindsym $mod+x exec --no-startup-id ~/.config/sway/actions/toggle-locker
 
 bindsym $mod+Return exec termite
-bindsym $mod+n exec sh -c 'cd /tmp && qutebrowser'
-bindsym $mod+Shift+n exec ~/.config/chromium_apps/launch
+bindsym $mod+n exec firefox
 
 bindsym $mod+space exec rofi -show drun -show-icons
 bindsym $mod+Shift+space exec rofi -show run
 bindsym $mod+backslash exec custompassmenu
 bindsym $alt+Mod4+backslash exec custompassmenu --last
+
+bindsym $mod+Tab focus mode_toggle
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down

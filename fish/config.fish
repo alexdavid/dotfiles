@@ -18,7 +18,7 @@ alias gpp "git pullpush"
 alias gs  "git st"
 
 # utilities
-alias f "vifm"
+alias f "vifm ."
 alias t "tmux"
 alias v "nvim"
 
@@ -34,7 +34,7 @@ alias ql      "quicklook"
 #########################################
 # Env
 #########################################
-set -x EDITOR vim
+set -x EDITOR nvim
 set -x GOPATH ~/Development
 set -x PASSWORD_STORE_ENABLE_EXTENSIONS true
 
@@ -51,4 +51,8 @@ end
 
 if [ (tty) = "/dev/tty1" ]
   sway
+end
+
+function g
+  cd (find ~/Development/src -maxdepth 3 -type d | fzf)
 end

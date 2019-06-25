@@ -1,10 +1,10 @@
 [Added Associations]
-application/javascript=gvim.desktop;
+application/javascript=nvim.desktop;
 application/pdf=org.pwmt.zathura.desktop;
 image/gif=sxiv.desktop;
 image/jpeg=sxiv.desktop;
-text/css=gvim.desktop;
-text/plain=gvim.desktop;
+text/css=nvim.desktop;
+text/plain=nvim.desktop;
 video/mp4=mpv.desktop;
 
 [Default Applications]

@@ -1,6 +1,6 @@
 [core]
   excludesfile = ~/.config/git/gitignore_global
-  editor = vim
+  editor = nvim
 [alias]
   st = status --short --branch
   bs = branch-status
