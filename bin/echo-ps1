@@ -52,7 +52,7 @@ function repo_needs_sync {
   return 1
 }
 
-section 4 $(hostname)
+[ -n "$SSH_CLIENT" -o -n "$SSH_TTY" ] && section 4 $(hostname)
 
 repo_needs_sync ~/.config && section 5 "Dotfiles"
 repo_needs_sync ~/.password-store && section 5 "Pass"
