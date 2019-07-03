@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.0.0
+pkgver=1.0.1
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -12,6 +12,7 @@ docker
 docker-compose
 firefox
 fish
+fzf
 go
 htop
 i3-gaps
@@ -21,7 +22,10 @@ iputils
 jq
 lsof
 maim
+mpc
+mpd
 mpv
+ncmpcpp
 neovim
 net-tools # ifconfig
 nmap
@@ -38,6 +42,9 @@ pulseaudio
 pulseaudio-alsa
 qutebrowser
 rofi
+rsync
+rustup
+sshfs
 sxiv
 termite
 the_silver_searcher
