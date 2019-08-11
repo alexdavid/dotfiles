@@ -1,7 +1,6 @@
-c.content.private_browsing = True
 c.content.javascript.enabled = False
 
-c.editor.command = ['popup-term', 'vim {file} -c "normal {line}G{column0}l"']
+c.editor.command = ['popup-term', 'nvim {file} -c "normal {line}G{column0}l"']
 c.editor.encoding = 'utf-8'
 
 config.set('tabs.max_width', 250)
