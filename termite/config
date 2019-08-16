@@ -42,7 +42,7 @@ scrollback_lines = -1
 
 foreground  = #abb2bf
 cursor      = #abb2bf
-background  = rgba(40, 44, 52, 0.8)
+background  = rgba(40, 44, 52, 0.9)
 
 # black
 color0  = #282c34
