@@ -2,7 +2,7 @@
 # Path
 #########################################
 set -x PATH ~/.config/bin $PATH
-set -x PATH $PATH ~/Development/bin
+set -x PATH $PATH ~/Development/go/bin
 
 
 #########################################
