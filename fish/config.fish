@@ -54,5 +54,5 @@ if [ (tty) = "/dev/tty1" ]
 end
 
 function g
-  cd (find ~/Development/src -maxdepth 3 -type d | fzf)
+  cd (find-project)
 end
