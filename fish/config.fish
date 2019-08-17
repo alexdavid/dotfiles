@@ -35,7 +35,7 @@ alias ql      "quicklook"
 # Env
 #########################################
 set -x EDITOR nvim
-set -x GOPATH ~/Development
+set -x GOPATH ~/Development/go
 set -x PASSWORD_STORE_ENABLE_EXTENSIONS true
 
 
