@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+if which wl-copy > /dev/null; then
+  [ "$1" = copy ] && cat | wl-copy
+  [ "$1" = paste ] && wl-paste
+  exit 0
+fi
+
 if which xclip > /dev/null; then
   [ "$1" = copy ] && cat | xclip -i -selection clipboard
   [ "$1" = paste ] && xclip -o -selection clipboard

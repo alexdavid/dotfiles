@@ -6,9 +6,6 @@
 
 # Warp mouse to top left corner of active window since i3 will change
 # the active window when rofi closes if the mouse was over it
-eval "$(xdotool getwindowgeometry --shell "$(xdotool getactivewindow)")"
-xdotool mousemove "$X" "$Y"
-
 shopt -s nullglob globstar
 
 prefix=${PASSWORD_STORE_DIR-~/.password-store}
@@ -46,5 +43,5 @@ pass show "$password_name" | {
     value="${map["$key"]}"
   fi
 
-  printf "%s" "$value" | xdotool type --clearmodifiers --delay 1ms --file -
+  printf "%s" "$value" | wl-copy --paste-once
 }
