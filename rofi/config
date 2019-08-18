@@ -1,10 +1,9 @@
 # Colors
 rofi.color-enabled: true
-rofi.color-window: #282c34, #000000, #000000
-rofi.color-normal: #282c34, #ffffff, #282c34, #98c379, #282c34
+rofi.color-window: #282c34, #ffffff, #000000
+rofi.color-normal: #282c34, #ffffff, #282c34, #ffffff, #282c34
 rofi.color-active: #282c34, #ffb52a, #282c34, #ffb52a, #205171
 rofi.color-urgent: #282c34, #f3843d, #282c34, #ffb52a, #ffc39c
-
 
 # Style
 rofi.columns: 1
