@@ -43,5 +43,9 @@ pass show "$password_name" | {
     value="${map["$key"]}"
   fi
 
-  printf "%s" "$value" | wl-copy --paste-once
+  printf "%s" "$value" | wl-copy
+  sleep 10
+  if [[ "$(wl-paste --no-newline)" = "$value" ]]; then
+    wl-copy --clear
+  fi
 }
