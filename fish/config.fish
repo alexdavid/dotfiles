@@ -2,7 +2,7 @@
 # Path
 #########################################
 set -x PATH ~/.config/bin $PATH
-set -x PATH $PATH ~/Development/bin
+set -x PATH $PATH ~/Development/go/bin
 
 
 #########################################
@@ -35,7 +35,7 @@ alias ql      "quicklook"
 # Env
 #########################################
 set -x EDITOR nvim
-set -x GOPATH ~/Development
+set -x GOPATH ~/Development/go
 set -x PASSWORD_STORE_ENABLE_EXTENSIONS true
 
 
@@ -54,5 +54,5 @@ if [ (tty) = "/dev/tty1" ]
 end
 
 function g
-  cd (find ~/Development/src -maxdepth 3 -type d | fzf)
+  cd (find-project)
 end
