@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-
-killall xss-lock
-xss-lock -- slock &
-disown
