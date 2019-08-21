@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.0.3
+pkgver=1.0.4
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -55,6 +55,7 @@ whois
 wl-clipboard
 words # /usr/share/dict/words
 xdg-utils # xdg-open
+xorg-server-xwayland
 youtube-dl
 youtube-viewer
 zathura
