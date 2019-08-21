@@ -121,7 +121,7 @@ bar {
   colors {
     background #282c3499
     focused_workspace #ffffff #ffffff #282a36
-    active_workspace #ffffff #282a36 #282a36
+    active_workspace #282a36 #282a36 #ffffff
     inactive_workspace #282c3499 #282a3699 #999999
   }
 }
