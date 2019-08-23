@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.0.4
+pkgver=1.0.6
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -46,6 +46,9 @@ rofi
 rsync
 rustup
 sshfs
+sway
+swayidle
+swaylock
 sxiv
 termite
 the_silver_searcher
