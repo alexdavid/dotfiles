@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.0.7
+pkgver=1.0.8
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -14,9 +14,8 @@ firefox
 fish
 fzf
 go
-grim
+grim # screenshots
 htop
-i3-gaps
 i3blocks
 imagemagick
 iputils
@@ -38,14 +37,13 @@ pass
 pass-otp
 pavucontrol
 pkgfile
-playerctl
 pulseaudio
 pulseaudio-alsa
 qutebrowser
 rofi
 rsync
 rustup
-slurp
+slurp # geometry for grim
 sshfs
 sway
 swayidle
@@ -61,7 +59,6 @@ words # /usr/share/dict/words
 xdg-utils # xdg-open
 xorg-server-xwayland
 youtube-dl
-youtube-viewer
 zathura
 zathura-pdf-mupdf
 
