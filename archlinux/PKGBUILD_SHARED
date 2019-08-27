@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.0.6
+pkgver=1.0.7
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -14,6 +14,7 @@ firefox
 fish
 fzf
 go
+grim
 htop
 i3-gaps
 i3blocks
@@ -21,7 +22,6 @@ imagemagick
 iputils
 jq
 lsof
-maim
 mako
 mpc
 mpd
@@ -45,6 +45,7 @@ qutebrowser
 rofi
 rsync
 rustup
+slurp
 sshfs
 sway
 swayidle
