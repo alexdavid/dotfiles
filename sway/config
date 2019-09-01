@@ -34,7 +34,7 @@ bindsym $mod+$alt+5 exec --no-startup-id ~/.config/sway/actions/take-screenshot 
 bindsym $mod+x exec --no-startup-id ~/.config/sway/actions/toggle-locker
 
 bindsym $mod+Return exec termite
-bindsym $mod+n exec qutebrowser
+bindsym $mod+n exec firefox
 
 bindsym $mod+space exec rofi -show drun -show-icons
 bindsym $mod+Shift+space exec rofi -show run
