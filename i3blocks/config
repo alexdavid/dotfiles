@@ -2,6 +2,10 @@ separator_block_width=25
 separator=false
 markup=none
 
+[calendar]
+command=$HOME/.config/i3blocks/calendar.sh
+interval=600
+
 [music]
 command=$HOME/.config/i3blocks/mpd.sh
 signal=1
