@@ -5,4 +5,4 @@ if pamixer --get-mute > /dev/null; then
   exit 0
 fi
 
-echo "$(pamixer --get-volume)%"
+echo " $(pamixer --get-volume)%"

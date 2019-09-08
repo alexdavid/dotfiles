@@ -3,24 +3,20 @@ separator=false
 markup=none
 
 [music]
-label=
 command=$HOME/.config/i3blocks/mpd.sh
 signal=1
 
 [brightness]
-label=
 command=$HOME/.config/i3blocks/brightness.sh
 interval=once
 signal=1
 
 [volume]
-label=
 command=$HOME/.config/i3blocks/volume.sh
 interval=once
 signal=1
 
 [updates]
-label=
 command=$HOME/.config/i3blocks/updates.sh
 interval=600
 
