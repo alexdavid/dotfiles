@@ -1,0 +1,19 @@
+[general]
+Status_path = "~/.cache/vdirsyncer/status/"
+
+[storage cal_remote]
+type = "caldav"
+url = "https://caldav.messagingengine.com/"
+username.fetch = ["command", "pass", "vdirsyncer/calendar.username"]
+password.fetch = ["command", "pass", "vdirsyncer/calendar.password"]
+
+[storage cal_local]
+type = "filesystem"
+path = "~/.calendars/"
+fileext = ".ics"
+
+[pair cal]
+a = "cal_local"
+b = "cal_remote"
+collections = ["from a", "from b"]
+metadata = ["color", "displayname"]
