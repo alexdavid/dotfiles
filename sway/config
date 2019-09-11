@@ -113,8 +113,8 @@ for_window [title="__quicklook"] floating enable
 exec --no-startup-id mako
 exec_always --no-startup-id ~/.config/wallpaper/set-wallpaper
 exec swayidle -w \
-      timeout 300  'swaylock -f -c 33333388' \
-      timeout 600  'swaymsg "output * dpms off"' \
+      timeout 900  'swaylock -f -c 33333388' \
+      timeout 300  'swaymsg "output * dpms off"' \
       resume       'swaymsg "output * dpms on"' \
       before-sleep 'swaylock -f -c 000000' \
       lock         'swaylock -f -c 006d7aee'
