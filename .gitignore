@@ -1,5 +1,6 @@
 GIMP/
 PairForce/
+autostart/
 chromium/
 dconf/
 deluge/
@@ -7,6 +8,7 @@ eog/
 htop/
 hub
 inkscape/
+keybase/
 liferea/
 mpd/
 nautilus/
