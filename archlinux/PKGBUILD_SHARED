@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.0.9
+pkgver=1.0.10
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -13,9 +13,11 @@ docker-compose
 firefox
 fish
 fzf
+git
 go
 grim # screenshots
 htop
+httpie
 i3blocks
 imagemagick
 iputils
