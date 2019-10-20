@@ -1,71 +1,89 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.0.10
+pkgver=1.0.11
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
 depends=(
 
-bind-tools # dig
-calc
+###################
+#- Applications
 chromium
+firefox
+mpv
+qutebrowser
+sxiv
+termite
+zathura
+zathura-pdf-mupdf
+
+###################
+#- Development
 docker
 docker-compose
-firefox
 fish
-fzf
 git
 go
+neovim
+rustup
+
+###################
+#- Desktop Environment (sway/i3block scripts dependencies)
 grim # screenshots
+i3blocks
+mako # notifications
+pacman-contrib # checkupdates
+pamixer # sway config volume control shortcuts
+pavucontrol
+pulseaudio
+pulseaudio-alsa
+rofi
+slurp # geometry for grim
+sway
+swayidle
+swaylock
+xdg-utils # xdg-open
+xorg-server-xwayland
+
+###################
+#- Fonts
+ttf-dejavu
+ttf-fira-mono
+
+###################
+#- Music
+mpc
+mpd
+ncmpcpp
+
+###################
+#- Utilities
+bind-tools # dig
+calc
+fzf
 htop
 httpie
-i3blocks
 imagemagick
 iputils
 jq
 lsof
-mako
-mpc
-mpd
-mpv
-ncmpcpp
-neovim
 net-tools # ifconfig
 nmap
 openbsd-netcat
 openssh
-pacman-contrib # checkupdates
-pamixer # i3 config volume control shortcuts
 pass
 pass-otp
-pavucontrol
 pkgfile
-pulseaudio
-pulseaudio-alsa
-qutebrowser
-rofi
 rsync
-rustup
-slurp # geometry for grim
-sshfs
-sway
-swayidle
-swaylock
-sxiv
-termite
 the_silver_searcher
 unzip
 vifm
 whois
-words # /usr/share/dict/words
-xdg-utils # xdg-open
-xorg-server-xwayland
 youtube-dl
-zathura
-zathura-pdf-mupdf
 
-# Fonts
-ttf-dejavu
-ttf-fira-mono
+###################
+#- Misc
+sshfs
+words # /usr/share/dict/words
 
 )
 
