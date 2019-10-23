@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-which khal || exit
+which khal > /dev/null || exit
 
 event="$(khal list --day-format '' --format '{title} @ {start-time}' now eod)"
 if [ "$event" != "No events" ]; then
