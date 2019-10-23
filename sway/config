@@ -9,7 +9,7 @@ for_window [class="^.*"] border pixel 1
 focus_wrapping false
 focus_follows_mouse no
 mouse_warping output
-client.focused #ffb52a #ffb52a #ff0000 #e5c07b #e5c07b
+client.focused #dddddd #eeeeee #000000 #cccccc #ffffff
 
 floating_modifier $mod
 
