@@ -136,6 +136,7 @@ bar {
 
 input * {
   natural_scroll enabled
+  scroll_factor 0.25
   tap enabled
   drag disabled
   repeat_delay 200
