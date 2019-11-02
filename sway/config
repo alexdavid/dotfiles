@@ -110,6 +110,7 @@ for_window [title="__quicklook"] floating enable
 
 exec --no-startup-id mako
 exec_always --no-startup-id ~/.config/wallpaper/set-wallpaper
+exec_always --no-startup-id ~/.config/sway/screen-layouts/restore
 exec swayidle -w \
       timeout 900  'swaylock -f -c 33333388' \
       timeout 300  'swaymsg "output * dpms off"' \

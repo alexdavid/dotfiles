@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+swaymsg output DP-1 pos 0 0
+swaymsg output DP-2 pos 3840 0

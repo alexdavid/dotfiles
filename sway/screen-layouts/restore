@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+set -e
+
+# This script generates a unique name for the displays currently plugged in
+# and executes a saved configuration for them if found
+
+CONFIG_NAME=$(swaymsg -t get_outputs | jq -r 'map(.name+":"+.serial)|sort|join(".")')
+CONFIG_DIR="$HOME/.config/sway/screen-layouts"
+
+if [ -e "$CONFIG_DIR"/"$CONFIG_NAME" ]; then
+  "$CONFIG_DIR"/"$CONFIG_NAME"
+fi
