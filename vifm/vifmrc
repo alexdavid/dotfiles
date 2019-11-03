@@ -405,3 +405,26 @@ nnoremap <f8> :delete<cr>
 "     vifm --server-name "$VIFM_SERVER_NAME" --remote +"cd '$PWD'"
 "
 " let $VIFM_SERVER_NAME = v:servername
+
+" ------------------------------------------------------------------------------
+" Icons
+set classify=' :dir:/'
+set classify+=' :reg:'
+set classify+=' :exe:'
+set classify+='⤤ :link:'
+
+set classify+=' ::*.py,,*.pyc::'
+set classify+=' ::*.js,,*.jsx::'
+set classify+=' ::*.c,,*.cc,,*.cpp::'
+set classify+=' ::*.go,,go.mod,,go.sum::'
+set classify+=' ::*.ts,,*.tsx::'
+set classify+=' ::*.rs,,Cargo.lock,,Cargo.toml::'
+
+set classify+=' ::*.md::'
+set classify+=' ::*.json::'
+set classify+=' ::*.htm,,*.html,,*.jade,,*.slim,,*.ejs::'
+set classify+=' ::*.conf,,*.ini,,*.yml,,*.yaml,,*.toml,,.gitignore::'
+set classify+=' ::*.sql,,*.dump,,*.db::'
+
+set classify+='♫ ::*.mp3,,*.m4a,,*.flac,,*.wav::'
+set classify+=' ::*.gif,,*.png,,*.ico,,*.jpg,,*.jpeg,,*.bmp,,*.svg::'
