@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+swaymsg output DP-4 pos 0 0
+swaymsg output eDP-1 pos 1920 0
+swaymsg output DP-3 pos 4480 0
