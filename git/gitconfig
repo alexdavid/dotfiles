@@ -6,14 +6,7 @@
   bs = branch-status
   co = checkout
   cob = checkout -b
-  a = add
   k = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --graph --all
-  ignore = !echo >> .gitignore
-  h = town-hack
-  pr = town-new-pull-request
-  ship = town-ship
-  sync = town-sync
-  append = town-append
 [color]
   ui = true
 [push]
