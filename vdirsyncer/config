@@ -4,8 +4,8 @@ Status_path = "~/.cache/vdirsyncer/status/"
 [storage cal_remote]
 type = "caldav"
 url = "https://caldav.messagingengine.com/"
-username.fetch = ["command", "pass", "vdirsyncer/calendar.username"]
-password.fetch = ["command", "pass", "vdirsyncer/calendar.password"]
+username.fetch = ["command", "pass", "apps/vdirsyncer/calendar.username"]
+password.fetch = ["command", "pass", "apps/vdirsyncer/calendar.password"]
 
 [storage cal_local]
 type = "filesystem"
