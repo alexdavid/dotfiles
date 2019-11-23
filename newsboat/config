@@ -1,0 +1,19 @@
+# Keys
+bind-key G end
+bind-key g home
+bind-key h quit
+bind-key j next
+bind-key k prev
+bind-key l open
+bind-key q hard-quit
+
+# Inoreader
+urls-source "inoreader"
+inoreader-passwordeval "pass apps/newsboat/inoreader.password"
+inoreader-show-special-feeds no
+
+# Misc
+browser ~/.config/bin/browser
+feed-sort-order title
+notify-program "notify-send"
+refresh-on-startup yes

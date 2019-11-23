@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.0.11
+pkgver=1.0.12
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -10,6 +10,7 @@ depends=(
 chromium
 firefox
 mpv
+newsboat
 qutebrowser
 sxiv
 termite
