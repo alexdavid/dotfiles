@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.0.12
+pkgver=1.0.14
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -9,6 +9,7 @@ depends=(
 #- Applications
 chromium
 firefox
+gtk-vnc
 mpv
 newsboat
 qutebrowser
@@ -42,6 +43,7 @@ slurp # geometry for grim
 sway
 swayidle
 swaylock
+wl-clipboard
 xdg-utils # xdg-open
 xorg-server-xwayland
 
@@ -60,6 +62,7 @@ ncmpcpp
 #- Utilities
 bind-tools # dig
 calc
+firejail
 fzf
 htop
 httpie
@@ -75,7 +78,9 @@ pass
 pass-otp
 pkgfile
 rsync
+sudo
 the_silver_searcher
+units
 unzip
 vifm
 whois
