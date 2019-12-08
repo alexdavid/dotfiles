@@ -53,7 +53,7 @@ function fish_title
 end
 
 if [ (tty) = "/dev/tty1" ]
-  sway
+  sway -Dnoatomic
 end
 
 function g
