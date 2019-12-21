@@ -1,11 +1,12 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.0.0
+pkgver=1.1.0
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
 depends=(
 
 # DE Stuff (dependencies for sway, i3block scripts, etc)
+bemenu
 grim # screenshots
 i3blocks
 mako # notifications

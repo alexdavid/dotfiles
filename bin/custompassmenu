@@ -3,10 +3,20 @@
 # Modified version of passmenu to fit my needs
 # Original can be found here:
 # https://git.zx2c4.com/password-store/tree/contrib/dmenu/passmenu
-
-# Warp mouse to top left corner of active window since i3 will change
-# the active window when rofi closes if the mouse was over it
 shopt -s nullglob globstar
+
+function menu {
+  printf '%s\n' "${@:2}" | bemenu \
+    --list 10 \
+    --prompt "$1" \
+    --tb "#abb2bf" \
+    --tf "#282c34" \
+    --fn "SFNS Display 14" \
+    --nb "#333333" \
+    --hb "#abb2bf" \
+    --hf "#282c34" \
+    ;
+}
 
 prefix=${PASSWORD_STORE_DIR-~/.password-store}
 
@@ -14,7 +24,7 @@ if [ "$1" != "--last" ]; then
   password_files=( "$prefix"/**/*.gpg )
   password_files=( "${password_files[@]#"$prefix"/}" )
   password_files=( "${password_files[@]%.gpg}" )
-  password_name=$(printf '%s\n' "${password_files[@]}" | rofi -dmenu -p Password)
+  password_name=$(menu Password "${password_files[@]}")
   echo "$password_name" > "$prefix"/.last
 else
   password_name=$(cat "$prefix"/.last)
@@ -34,7 +44,7 @@ pass show "$password_name" | {
     map["${key,,}"]=$(echo "${value}" | xargs)
   done
 
-  key=$(printf "%s\n" "${!map[@]}" | rofi -dmenu -p "$password_name")
+  key=$(menu "$password_name" "${!map[@]}")
   [ -n "$key" ] || exit
 
   if [ "$key" = "otpauth" ]; then
