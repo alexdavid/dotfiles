@@ -1,0 +1,46 @@
+pkgname=alexdavid-desktop-meta
+pkgver=1.0.0
+pkgrel=1
+arch=('any')
+url="https://github.com/alexdavid/dotfiles"
+depends=(
+
+# DE Stuff (dependencies for sway, i3block scripts, etc)
+grim # screenshots
+i3blocks
+mako # notifications
+pacman-contrib # checkupdates
+pamixer # sway config volume control shortcuts
+pavucontrol
+pulseaudio
+pulseaudio-alsa
+rofi
+slurp # geometry for grim
+sway
+swayidle
+swaylock
+wl-clipboard
+xdg-utils # xdg-open
+xorg-server-xwayland
+
+# Applications
+chromium
+firefox
+gtk-vnc
+mpv
+newsboat
+qutebrowser
+sxiv
+termite
+zathura
+zathura-pdf-mupdf
+
+# Fonts
+ttf-dejavu
+ttf-fira-mono
+
+)
+
+package() {
+  true
+}

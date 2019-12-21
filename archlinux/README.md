@@ -13,6 +13,6 @@ Initial setup scripts are in the [setup](setup) directory
 
 For example:
 ```shell
-$ ./init.sh SHARED
+$ ./init.sh shared
 ```
-will install all dependencies in the PKGBUILD_SHARED file.
+will install all dependencies in the PKGBUILD-shared file.

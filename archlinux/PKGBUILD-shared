@@ -1,0 +1,40 @@
+pkgname=alexdavid-shared-meta
+pkgver=1.1.0
+pkgrel=1
+arch=('any')
+url="https://github.com/alexdavid/dotfiles"
+depends=(
+
+bind-tools # dig
+calc
+firejail
+fzf
+htop
+httpie
+imagemagick
+iputils
+jq
+lsof
+net-tools # ifconfig
+nmap
+openbsd-netcat
+openssh
+pass
+pass-otp
+pkgfile
+rsync
+sshfs
+sudo
+the_silver_searcher
+units
+unzip
+vifm
+whois
+words # /usr/share/dict/words
+youtube-dl
+
+)
+
+package() {
+  true
+}
