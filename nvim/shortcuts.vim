@@ -1,15 +1,16 @@
 let mapleader = "\<space>"
 
-
-" Tabs
+" Tab management
 nmap <silent> <leader>, :tabprevious<CR>
 nmap <silent> <leader>. :tabnext<CR>
-nmap <silent> <leader>n :tabnew<CR>
-nmap <silent> <leader>x :tabclose<CR>
-
-" Move tabs
+nmap <silent> <leader>t :tabnew<CR>
 nmap <silent> <leader>< :exec 'silent! tabm ' . (tabpagenr()-2)<CR>
 nmap <silent> <leader>> :exec 'silent! tabm ' . tabpagenr()<CR>
+
+" Buffer/Split management
+nmap <silent> <leader>s :new<CR>
+nmap <silent> <leader>v :vnew<CR>
+nmap <silent> <leader>x :bd<CR>
 
 " Function Resize - resizes split panes like tmux does:
 " When focus is on the last pane it reverses resizing
@@ -97,15 +98,8 @@ nmap git :Git
 " Find merge conflicts
 nmap gmc /\v^[<=>\|]{7}.*$<CR>
 
-" Toggle Spell Checking
-map <silent> <leader>s :set spell!<CR>
-
-" NERDTree
-map <silent> <leader>t :NERDTreeTabsToggle<CR>
-let g:NERDTreeMapJumpNextSibling="<C-n>"
-let g:NERDTreeMapJumpPrevSibling="<C-p>"
-let g:NERDTreeMapOpenSplit="s"
-let g:NERDTreeMapOpenVSplit="v"
+" Netrw
+map <silent> <leader>n :E<CR>
 
 " Ctrl-p
 let g:ctrlp_map = '<leader>o'
