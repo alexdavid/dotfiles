@@ -114,7 +114,7 @@ vnoremap <leader>/ :TCommentMaybeInline<CR>gv<ESC>
 map <silent> <leader><space> :noh<CR>:match<CR>
 
 " Mark line
-nmap <silent> m' m':execute 'match Search /\%'.line('.').'l/'<CR>
+nmap <silent> mm mm:execute 'match Search /\%'.line('.').'l/'<CR>
 
 " Run q macro
 map <silent> <leader>q @q
