@@ -27,15 +27,15 @@ fun! Resize(direction, scalar, notLastCommand, lastCommand)
   endif
 endfun
 
-nmap <leader>h :call Resize('l', 1, '<', '>')<CR>
-nmap <leader>l :call Resize('l', 1, '>', '<')<CR>
-nmap <leader>j :call Resize('j', 1, '+', '-')<CR>
-nmap <leader>k :call Resize('j', 1, '-', '+')<CR>
+nmap <silent> <leader>h :call Resize('l', 1, '<', '>')<CR>
+nmap <silent> <leader>l :call Resize('l', 1, '>', '<')<CR>
+nmap <silent> <leader>j :call Resize('j', 1, '+', '-')<CR>
+nmap <silent> <leader>k :call Resize('j', 1, '-', '+')<CR>
 
-nmap <leader>H :call Resize('l', 10, '<', '>')<CR>
-nmap <leader>L :call Resize('l', 10, '>', '<')<CR>
-nmap <leader>J :call Resize('j', 10, '+', '-')<CR>
-nmap <leader>K :call Resize('j', 10, '-', '+')<CR>
+nmap <silent> <leader>H :call Resize('l', 10, '<', '>')<CR>
+nmap <silent> <leader>L :call Resize('l', 10, '>', '<')<CR>
+nmap <silent> <leader>J :call Resize('j', 10, '+', '-')<CR>
+nmap <silent> <leader>K :call Resize('j', 10, '-', '+')<CR>
 
 function! s:moveToPane(direction)
   let oldnr = winnr()
