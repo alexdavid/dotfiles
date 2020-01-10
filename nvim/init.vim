@@ -40,6 +40,11 @@ set smartcase  " Don't ignore case if searching with caps
 set incsearch  " Incrementally search
 
 
+" Splitting
+set splitright
+set splitbelow
+
+
 " Misc
 set nobackup          " Don't create backup files
 set spelllang=en_us   " Set spell check language
