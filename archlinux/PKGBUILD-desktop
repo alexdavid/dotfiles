@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.0
+pkgver=1.1.1
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -10,6 +10,7 @@ bemenu
 grim # screenshots
 i3blocks
 mako # notifications
+mpc
 pacman-contrib # checkupdates
 pamixer # sway config volume control shortcuts
 pavucontrol
@@ -29,6 +30,7 @@ chromium
 firefox
 gtk-vnc
 mpv
+ncmpcpp
 newsboat
 qutebrowser
 sxiv
