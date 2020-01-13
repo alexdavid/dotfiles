@@ -8,7 +8,7 @@
   "glyphs": [
     {
       "uid": "1",
-      "css": "test",
+      "css": "space",
       "code": 32,
       "src": "custom_icons",
       "selected": true,
@@ -22,8 +22,8 @@
     },
     {
       "uid": "2",
-      "css": "_461",
-      "code": 61931,
+      "css": "wifi-low",
+      "code": 59386,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -33,8 +33,8 @@
     },
     {
       "uid": "3",
-      "css": "_461",
-      "code": 61932,
+      "css": "wifi-med",
+      "code": 59387,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -44,8 +44,8 @@
     },
     {
       "uid": "4",
-      "css": "_461",
-      "code": 61933,
+      "css": "wifi-high",
+      "code": 59388,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -55,8 +55,8 @@
     },
     {
       "uid": "5",
-      "css": "_461",
-      "code": 61934,
+      "css": "wifi-max",
+      "code": 59389,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -67,7 +67,7 @@
     {
       "uid": "6",
       "css": "music",
-      "code": 61935,
+      "code": 59390,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -78,7 +78,7 @@
     {
       "uid": "7",
       "css": "calendar",
-      "code": 61936,
+      "code": 59391,
       "src": "custom_icons",
       "selected": true,
       "svg": {

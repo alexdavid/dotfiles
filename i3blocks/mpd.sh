@@ -7,6 +7,6 @@ else
 fi
 
 if mpc -h "$MPD_HOST" status | grep playing > /dev/null; then
-  printf " "
+  printf " "
   mpc -h "$MPD_HOST" current
 fi
