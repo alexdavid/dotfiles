@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.1
+pkgver=1.1.2
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -9,6 +9,7 @@ depends=(
 bemenu
 grim # screenshots
 i3blocks
+khal
 mako # notifications
 mpc
 pacman-contrib # checkupdates
@@ -21,6 +22,7 @@ slurp # geometry for grim
 sway
 swayidle
 swaylock
+vdirsyncer
 wl-clipboard
 xdg-utils # xdg-open
 xorg-server-xwayland
