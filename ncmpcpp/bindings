@@ -152,16 +152,37 @@
 #def_key "mouse"
 #  mouse_event
 
+def_key "j"
+ scroll_down
+
 def_key "k"
  scroll_up
+
+def_key "ctrl-u"
+ page_up
+
+def_key "ctrl-d"
+ page_down
+
+def_key "g"
+ move_home
+
+def_key "G"
+ move_end
+
+def_key "l"
+ enter_directory
+
+def_key "h"
+ jump_to_parent_directory
+
+def_key "ctrl-l"
+ show_lyrics
 
 #def_key "shift-up"
 #  select_item
 #  scroll_up
-
-def_key "j"
- scroll_down
-
+#
 #def_key "shift-down"
 #  select_item
 #  scroll_down
@@ -178,24 +199,9 @@ def_key "j"
 #def_key "}"
 #  scroll_down_artist
 #
-def_key "ctrl-u"
- page_up
-
-def_key "ctrl-d"
- page_down
-
-def_key "g"
- move_home
-
-def_key "G"
- move_end
-
 #def_key "insert"
 #  select_item
-
-def_key "l"
- enter_directory
-
+#
 #def_key "enter"
 #  toggle_output
 #
@@ -309,10 +315,7 @@ def_key "l"
 #
 #def_key "<"
 #  previous
-
-def_key "h"
- jump_to_parent_directory
-
+#
 #def_key "ctrl-h"
 #  replay_song
 #
@@ -435,9 +438,6 @@ def_key "h"
 #
 #def_key "g"
 #  jump_to_position_in_song
-#
-#def_key "l"
-#  show_lyrics
 #
 #def_key "ctrl-v"
 #  select_range
