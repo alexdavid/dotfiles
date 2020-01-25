@@ -9,7 +9,7 @@ password.fetch = ["command", "pass", "apps/vdirsyncer/calendar.password"]
 
 [storage cal_local]
 type = "filesystem"
-path = "~/.calendars/"
+path = "~/.local/share/calendars/"
 fileext = ".ics"
 
 [pair cal]

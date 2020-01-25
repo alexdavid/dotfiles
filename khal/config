@@ -1,7 +1,7 @@
 [calendars]
 
 [[cal_local]]
-path = ~/.calendars/*
+path = ~/.local/share/calendars/*
 type = discover
 
 [locale]
