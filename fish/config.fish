@@ -57,5 +57,5 @@ if [ (tty) = "/dev/tty1" ]
 end
 
 function g
-  cd (find-project)
+  cd (find-project "$argv")
 end

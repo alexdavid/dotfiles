@@ -3,4 +3,4 @@
 {
   find ~/Development/ -maxdepth 1 -type d;
   find ~/Development/go/src -maxdepth 3 -type d;
-} | fzf
+} | fzf --query "$1" --preview 'tree -L 2 {}'
