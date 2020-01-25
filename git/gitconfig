@@ -6,7 +6,7 @@
   bs = branch-status
   co = checkout
   cob = checkout -b
-  k = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --graph --all
+  k = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --graph
 [color]
   ui = true
 [push]
