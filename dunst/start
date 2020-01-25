@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-killall dunst
-
-dunst \
-  -icon_path ~/.config/dunst/icons
