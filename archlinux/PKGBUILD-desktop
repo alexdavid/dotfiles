@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.2
+pkgver=1.1.3
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -22,6 +22,7 @@ slurp # geometry for grim
 sway
 swayidle
 swaylock
+todoman
 vdirsyncer
 wl-clipboard
 xdg-utils # xdg-open
