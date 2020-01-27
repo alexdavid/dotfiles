@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+swaymsg output eDP-1 scale 1
