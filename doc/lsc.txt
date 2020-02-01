@@ -1,0 +1,584 @@
+*lsc*  Language Server Client
+
+INTRODUCTION                                    *lsc-intro*
+
+vim-lsc communicates with a server following the Language Server Protocol and
+adds autocomplete, diagnostic highlighting, and reference searching.
+
+vim-lsc does not have any built-in support for any language, all features are
+enabled through language specific servers and should work with any server
+following the protocol. Each feature is dependent on support in the configured
+server.
+
+https://github.com/natebosch/vim-lsc
+
+SETUP                                           *lsc-setup*
+                                                *g:lsc_server_commands*
+
+There is no install step for vim-lsc. Configure the filetypes that are tracked
+by installed language servers in the variable "g:lsc_server_commands". Each
+value in this dict should be a string which corresponds to either an
+executable in your "$PATH", an absolute path to an executable, or a
+"host:port" pair. If multiple filetypes are tracked by the same server they
+should be entered as separate keys with the same value. The value may also be
+a `dict` to allow for additional configuration. See |lsc-server-customization|
+for allowed keys. `'command'` is required and matches the command above when a
+dict is not used.
+
+For example:
+
+>
+ let g:lsc_server_commands = {
+     \ 'dart': 'dart_language_server',
+     \ 'html': 'dart_language_server',
+     \ 'typescript': 'localhost:8000',
+     \ 'lua': {
+     \   'name': 'lua',
+     \   'command': 'lua-ls',
+     \   'enabled': v:false,
+     \ },
+     \}
+<
+
+lsc will communicate with each server following the LSP protocol. If the
+command was an executable communication happens over stdin/stdout. If the
+command was a "host:port" part communication happens over a TCP channel. When
+using TCP the server should already be running before starting vim.
+
+COMMANDS                                        *lsc-commands*
+
+                                                *:LSClientGoToDefinition*
+Jump to the location defining the element under the cursor. Sends a
+"textDocument/definition" request with the location set to the cursor's
+position. If the cursor is not in the same position when the server responds
+the jump will be canceled. With |lsc-default-map| this command is bound to
+`<c-]>`.
+
+If this version of vim supports |settagstack| the tag stack will also be
+updated to include this jump. Jump back with `<c-t>` or |:pop|, it is not
+possible to jump forward in the taglist when navigating with this client. The
+jump will always be present in the |jumplist|, jump back with `<c-o>` or
+forward with `<c-i>`.
+
+                                                *:LSClientGoToDefinitionSplit*
+Like |LSClientGoToDefinition|, except go to the location in a split,
+respecting the 'switchbuf' option. With |lsc-default-map| this command is
+bound to `<c-w>]` and `<c-w><c-]>`.
+
+You can use this command with |mods|, for example, >
+
+    :vertical LSClientGoToDefinitionSplit
+<
+will default to opening a vertical split, while >
+
+    :tab LSClientGoToDefinitionSplit
+<
+will prefer a new tab.
+
+                                                *:LSClientFindReferences*
+Populate the |quickfix| with a list of location which reference the element
+under the cursor, including it's definition. Sends a "textDocument/references"
+request with the location set to the cursor's position. With
+|lsc-default-map| this command is bound to "gr".
+
+                                                *:LSClientNextReference*
+                                                *:LSClientPreviousReference*
+If there are reference highlights for the current buffer and the cursor is on
+an element with references, jump to the next/previous reference to that
+element. With |lsc-default-map| these are bound to "<c-n>" and "<c-p>"
+respectively.
+
+                                                *:LSClientFindImplementations*
+Populate the |quickfix| with a list of location where there are
+implementations of the element under the cursor, including it's definition.
+Sends a "textDocument/implementation" request with the location set to the
+cursor's position. With |lsc-default-map| this command is bound to "gI".
+
+                                                *:LSClientDocumentSymbol*
+Populate the |quickfix| with a list of the symbols defined in the current
+buffer. Sends a "textDocument/documentSymbol" request. With |lsc-default-map|
+this command is bound to "go".
+
+                                                *:LSClientWorkspaceSymbol*
+Populate the |quickfix| with a list of the symbols matching a search string.
+Sends a "workspace/symbol" request. With no arguments this will prompt for a
+search string, with one string argument it will search matching the argument.
+With |lsc-default-map| this command is bound to "gS".
+
+                                                *:LSClientShowHover*
+Open a |popup-window| or |preview| window with hover information corresponding
+to the element under the cursor. Sends a "textDocument/hover" request with the
+location set to the cursor's position. If there is no hover information will
+show a message without opening a window. With |lsc-default-map| the |keywordprg|
+is set to invoke this command, and by default this is bound to `K`.
+
+If the editor has support for floating windows (|popup-window| in vim or
+|api-floatwin| in nvim) and popups have not been disabled with
+|g:lsc_hover_popup| the hover information is shown in a floating window.
+Invoking `:LSClientShowHover` again without moving the cursor will close the
+floating window and open a preview window with the same information. The preview
+window can be freely resized, moved, or scrolled which can make more of the
+hover information available.
+
+When opening with the preview window, if the preview was already visible it will
+reuse it and maintain layout, resizing it only if it is smaller than both
+|previewheight| and the size of The new hover information.
+
+If the preview window is not visible it will |split| the window and size it no
+bigger than |previewheight|. Override the direction of the split by setting
+|g:lsc_preview_split_direction| to either |above| or |below|.
+
+See the help for the |preview-window| for more information. It can be quickly
+closed with `<c-w><c-z>` without switching to that buffer.
+
+                                                *:LSClientFindCodeActions*
+Check for available actions at the cursor's position and display them in a
+menu. Sends a "textDocument/codeAction" request to get the available choices,
+and if one is selected sends a "workspace/executeCommand". With
+|lsc-default-map| this command is bound to "ga". If no arguments are given a
+menu is displayed with matching actions. If an argument is given it must be a
+pattern, each action's `title` will be compared against this pattern. If
+exactly one action matches the pattern it will be run automatically, if
+multiple actions match the matching actions will be shown in a menu. The
+comparison is done with |=~| which honors the users |ignorecase| and |magic|
+settings, so it is recommended that the pattern start with one of the |\v| and
+|\c| choices to make it resiliant against these settings.
+
+                                                *:LSClientRename*
+Request to rename the symbol under the cursor. Sends a "textDocument/rename"
+request. If an argument is given it must be a String and will be used as the
+replacement name. If no argument is given a prompt will ask for the new name.
+With |lsc-default-map| this command is bount to "gR". This comand will not
+exist if |g:lsc_enable_apply_edit| is set to `v:false`.
+
+                                                *:LSClientAllDiagnostics*
+Popupate the quickfix list with all diagnostics that have been sent by the
+server, spanning all files. Depending on the server implementation this may
+show all diagnostics for open files, or also diagnostics for files that have
+not yet been opened. After running this command the quickfix list will be
+updated any time diagnostics change, until the quickfix list is set by some
+other command.
+
+                                                *:LSClientLineDiagnostics*
+Echo the full text of all diagnostics on the current line. Useful when a
+diagnostic has been truncated or there are multiple diagnostics on a line and
+otherwise only the diagnostic closest to the cursor is shown.
+
+                                                *:LSClientRestartServer*
+Sends requests to the server for the current filetype to "shutdown" and
+"exit", and after the process exits, restarts it. If the server is
+unresponsive to these requests it will need to be killed manually.
+
+                                                *:LSClientDisable*
+Sends requests to the server for the current filetype to "shutdown" and
+"exit", and ignores further changes in these files.
+
+                                                *:LSClientEnable*
+If the server was previously disabled, restart the server and re-enable change
+tracking for the current filetype.
+
+FUNCTIONS                                       *lsc-functions*
+
+                                                *LSCServerStatus()*
+Returns a string representing the status of the language server for the
+current filetype. If there is no configured command for this filetype returns
+an empty string. The possible statuses are:
+
+- "starting": The command has been started but the initialize call has not
+  completed.
+- "running": The command has been started and initialized and is running
+  normally.
+- "exiting": Exit was requested but the process has not yet finished.
+- "restoring": Exit was requested and the server will be started again after
+  the process finishes.
+- "exited": Process has finished after a requested exit.
+- "unexpected exit": Process has finished but no exit was requested.
+- "failed": Process finished before initialization was complete. This could
+  indicate that the command cannot be run at all.
+
+CONFIGURATION                                   *lsc-configure*
+
+                                                *lsc-configure-trace*
+                                                *g:lsc_trace_level*
+Set the "trace" field sent to the server during initialization using the
+"g:lsc_trace_level". Valid values are "off", "messages", or "verbose".
+Defaults to "off". Generally this field configures logging in the server.
+
+                                                *lsc-configure-complete*
+                                                *g:lsc_enable_autocomplete*
+To disable the built-in autocompletion set "g:lsc_enable_autocomplete" to
+"v:false". Requests for completions will only be sent if completion is
+triggered manually with the completion function. Set |completefunc| or
+|omnifunc| to "lsc#complete#complete" or have it set automatically for mapped
+file types with |g:lsc_auto_map|. With manual completion the editor may
+"hang" for up to 5 seconds while it waits for completion results to become
+available.
+
+Note: By default |completeopt| includes "preview" which will open the preview
+window to show more details for selected completion items. Close the window
+after completion with CTRL_W-z or disable with "set completeopt-=preview". To
+automatically close the preview window after completion use the following:
+>
+ autocmd CompleteDone * silent! pclose
+<
+
+                                                *lsc-configure-completeopt*
+                                                *g:lsc_auto_completeopt*
+When using autocomplete this plugin will modify the buffer local setting
+|completeopt| which may interfere with other plugins. These modifications are
+recommended for a typical autocomplete experience and help to avoid the plugin
+from making changes without a specific user action. Leave
+`g:lsc_auto_completeopt` set to `v:true` (the default) for the recommended
+values.
+
+It is recommended to avoid other plugins which are attempting to perform
+autocomplete in the same buffer as `vim-lsc`, but if they are used there may
+be cases where they modify completeopt repeatedly and cause the options to get
+repeated values added to it. In this case you may either:
+
+1.  Set `g:lsc_auto_completeopt` to a String representing the options you'd
+    like them set to on each completion occurrence (rather than appending).
+    This may interfere with other plugins if they require different options,
+    which aren't repeatedly set. For example:
+>
+ let g:lsc_auto_completeopt='menu,menuone,noinsert,noselect'
+>
+2.  Set `g:lsc_auto_completeopt` to `v:false` to indicate the `vim-lsc` should
+    never attempt to change it. It is assumed that it will be set manually by
+    the user to a compatible value and that it won't be changed by other
+    plugins.
+
+                                                *lsc-configure-complete-length*
+                                                *g:lsc_autocomplete_length*
+By default autocomplete attempts are started after typing any character the
+server indicates is a "trigger" character, or after 3 word characters in a
+row. Set `g:lsc_autocomplete_length` to start autocompelte attempts after a
+different number of word characters. Set to `0` or `v:false` to disable
+autocomplete following word characters and to use exclusively trigger
+characters instead.
+
+                                                *lsc-configure-complete-timeout*
+                                                *g:lsc_complete_timeout*
+When used as a manually invoked `completefunc` the results are expected
+synchronously and the editor will be unresponsive. By default the client will
+wait up to 5 seconds for results. The timeout can be adjusted by setting a
+global variable `g;lsc_complete_timeout` to the number of seconds to wait. For
+example:
+>
+ let g:lsc_complete_timeout = 0.5 " Wait up to a half second
+<
+
+                                                *lsc-configure-diagnostics*
+                                                *g:lsc_enable_diagnostics*
+Diagnostics highlighting and location list updating is enabled by default. To
+disable diagnostic tracking set `g:lsc_enable_diagnostics` to `v:false`. With
+diagnostics disabled |:LSClientAllDiagnostics| will never surface any results.
+The server may communicate diagnostics but they will be ignored. Changing this
+configuration while a server is running may have unexpected results, if it is
+changed use |:LSClientRestartServer|.
+
+                                                *lsc-configure-hover*
+                                                *g:lsc_preview_split_direction*
+By default the `:LSClientShowHover` command splits the window following
+the setting |splitbelow|. Override the direction that the hover preview splits
+with "g:lsc_preview_split_direction" set to either |above| or |below|. This
+configuration will not impact the preview window which may open during
+completion.
+
+                                                *g:lsc_hover_popup*
+When the Vim |popup-window| or Neovim |api-floatwin| feature is available it
+will be used for `:LSClientShowHover` by default. Restore the old behavior of
+using the |preview-window| by setting `g:lsc_hover_popup` to `v:false`. While
+the popup is visible performing another request for hover information will move
+it to the preview window.
+
+                                                *lsc-configure-highlight*
+vim-lsc uses highlight groups "lscDiagnosticError", "lscDiagnosticWarning",
+"lscDiagnosticInfo", "lscDiagnosticHint", "lscReference", and
+"lscCurrentParameter". By default "Error" is linked to |hl-Error|, "Warning" is
+linked to |hl-SpllBad|, and "Info" and "Hint" are linked to |hl-SpellCap|.
+"Reference" and "CurrentParameter" are linked to |hl-CursorColumn|. Override
+this by setting or linking any of these highlight groups. For example:
+>
+ highlight lscDiagnosticError ctermbg=160
+ highlight link lscDiagnosticWarning SpellCap
+<
+
+                                                *lsc-configure-key-map*
+                                                *g:lsc_auto_map*
+If you want to overload keymaps to operate specifically when vim-lsc is
+enabled for a buffer set the variable "g:lsc_auto_map". Set the value to
+"v:true" to use the defaults |lsc-default-map|, or set to a dict to use
+other keys, or to only map a subset of the commands. Most keys correspond to
+command names, for instance the key "GoToDefinition" creates a mapping for the
+command "LSClientGoToDefinition".
+
+The key "Completion" can choose a completefunc to set to the vim-lsc
+completion function. By default this is |completefunc| but it can also be set
+to |omnifunc| or have no completeion function set with an empty value.
+
+The key "ShowHover" may have a string with a keymap like most other commands,
+or it may be set to `v:true` to set `keywordprg` instead. The default is to
+set `keywordprg`.
+
+To override or unset only a subest of the defaults set the key "defaults" to
+`v:true`. Any keys which have an empty value will not have keys mapped. For
+instance to omit any mapping for |:LSClientFindImplementations| but use the
+other defaults set this to:
+>
+ let g:lsc_auto_map = {'defaults': v:true, 'FindImplementations': ''}
+<
+
+                                                *lsc-default-map*
+The default mapping for keys, if you've opted in to "g:lsc_auto_map" are:
+
+<C-]>                   |:LSClientGoToDefinition|
+<C-W>], <C-W><C-]>      |:LSClientGoToDefinitionSplit|
+gr                      |:LSClientFindReferences|
+<C-n>                   |:LSClientNextReference|
+<C-p>                   |:LSClientPreviousReference|
+gI                      |:LSClientFindImplementations|
+go                      |:LSClientDocumentSymbol|
+gS                      |:LSClientWorkspaceSymbol|
+ga                      |:LSClientFindCodeActions|
+gR                      |:LSClientRename|
+gm                      |:LSClientSignatureHelp|
+|K| (via |keywordprg|)      |:LSClientShowHover|
+
+
+By default the |completefunc| is set to the vim-lsc manual completion
+function.
+
+                                                *lsc-configure-sync*
+                                                *g:lsc_enable_incremental_sync*
+By default the client will sync documents by sending the incremental diffs to
+the servers which indicate support for this method. Disable incremental sync
+for all servers by setting `g:lsc_enable_incremental_sync` to `v:false`.
+
+Using incremental sync causes the client to store an extra copy of each synced
+buffer in memory to allow diffing against previous versions.
+
+The diff algorithm will match the longest possible prefix and suffix against
+the old content and send a single change for the content in between. Certain
+edits which simultaneously change content near the beginning and end of the
+buffer can cause large changes to be sent, but in most cases the messages will
+be smaller than with full syncs.
+
+                                                *lsc-configure-edits*
+                                                *g:lsc_enable_apply_edit*
+By default the client will modify buffers in response to `workspace/applyEdit`
+messages. To disable edits set `g:lsc_enable_apply_edit` to `v:false`.
+
+                                                *lsc-snippet-support*
+                                                *g:lsc_enable_snippet_support*
+By default the client disables support for snippets as insert text. If set to
+`v:true` and supported by the server, insert text may contain snippets.
+
+Autocompletion of snippets requires a plugin that can complete using
+`user_data` on `CompleteDone`, such as neosnippet.vim
+
+                                                *lsc-configure-references*
+                                                *g:lsc_reference_highlights*
+By default the client will highlight references to the element under the
+cursor whenver the server has support. Disable these highlights by setting
+`g:lsc_reference_highlights` to `v:false`. Configure highlighting with the
+`lscReference` highlight group. See |lsc-configure-highlight|.
+
+                                                *lsc-configure-action-menu*
+                                                *g:LSC_action_menu*
+By default vim-lsc will use a numbered menu for selecting a "code action". To
+replace this menu assign `g:LSC_action_menu` to a function that takes as input
+the actions to run (see the LSP spec for format, each action will have at least
+a `title` field) and the callback to invoke an action after it is chosen. If no
+action should be run, skip the call to the passed callback. This may be used,
+for example, to add in fuzzy finding of actions instead of a numbered selection.
+
+                                                *g:lsc_enable_popup_syntax*
+By default vim-lsc will syntax highlight content displayed in popups, for
+example when invoking |:LSClientShowHover|. To disable such syntax highlighting
+please set `g:lsc_popup_syntax` to `v:false`.
+
+AUTOCMDS                                        *lsc-autocmds*
+
+                                                *autocmd-LSCAutocomplete*
+Fires before triggering completion in auto-complete mode. Does not fire if
+|g:lsc_enable_autocomplete| is false. For example, if windows normally split
+above (set |nosplitbelow|) but the completion-menu preview window should split
+below:
+>
+ augroup completsplitbelow
+   autocmd User LSCAutocomplete setlocal splitbelow
+   autocmd CompleteDone * setlocal nosplitbelow
+ augroup END
+<
+                                                *autocmd-LSCDiagnosticsChange*
+Fires when LSC receives new diagnostics for any file in the workspace. Never
+fires if |g:lsc_enable_diagnostics| is set to `v:false`.
+
+                                                *autocmd-LSCShowPreview*
+Fires when LSC opens a new preview window during `:LSClientShowHover` or
+`LSClientSignatureHelp`. Does not fire if an exist preview window was reused.
+For example if the hover information should display full-height, 80 columns
+wide, at the left of the screen instead of as a horizontal split:
+>
+ autocmd User LSCShowPreview wincmd H | vertical resize 80
+<
+                                                *autocmd-LSCOnChangesFlushed*
+Fires after LSC sends a `textDocument/didOpen` or `textDocument/didChange`
+request.
+
+SERVER CUSTOMIZATION                            *lsc-server-customization*
+
+When the server configuration is a `dict` (see |lsc-setup|) the following
+advanced behavior can be configured.
+
+                                                *lsc-server-command*
+`'command'`: (Required). The command to run or a "host:port" pair. See
+|lsc-setup|.
+
+                                                *lsc-server-name*
+`'name'`: A friendly name for the server. Only the first configuration with a
+given name is used. Defaults to the same value as `'command'`. Filetypes which
+are configured with the same name use the same server.
+
+                                                *lsc-server-enabled*
+`'enabled'`: Set to `v:false` to avoid starting the server until
+|:LSClientEnable| is called.
+
+                                                *lsc-server-log_level*
+`'log_level'`: May be one of `'Error'`, `'Warning'`, `'Info'`, or `'Log'`.
+Default `'Info'`. Messages through `window/logMessage` will only be echoed
+if they are at this level or above. With the default value of `'Info'`
+only `'Log'` messages are suppressed. Set to `-1` to disable echo for any
+message.
+
+                                                *lsc-server-suppress_stderr*
+`'suppress_stderr'`: Set to `v:true` to suppress stderr output which is
+received after the server has been initialized. Stderr output before
+initialization still is shown in an error message. Use this if the server uses
+stderr for noisy status or logging.
+
+                                                *lsc-server-message_hooks*
+`'message_hooks'`: Set to a dictionary where the keys are LSP method names and
+the values are either |funcref|s which may modify '`params`' for the call, or
+dicts of values to merge in to the '`params`'. If the value is a dict then
+each value within the dict should be either a value that can be translated
+into json (including nested dicts) or a |funcref| which will return a value
+for that key. Functions must take two arguments, the method name being called
+(for example `'textDocument/didOpen'`) and the parameters dict. For requests
+which take no parameters the second value may be `v:null`. The modified or new
+params should be returned by the function.
+
+If the returned value is specifically the return from `lsc#config#skip()` then
+the call will not be made.
+
+For example:
+>
+ let g:lsc_server_commands = {
+     \ 'c': {
+     \    'command': 'clangd',
+     \    'message_hooks': {
+     \        'initialize': {
+     \            'initializationOptions': {'foo': 'bar'},
+     \            'rootUri': {method, params ->
+     \                          lsc#uri#documentUri(FindProjectRoot())},
+     \        },
+     \        'textDocument/didOpen': {'metadata': {'extraFlags': ['-Wall']}},
+     \    },
+     \  },
+     \}
+<
+                                                *lsc-server-response_hooks*
+`'response_hooks'`: Set to a dictionary where the keys are LSP method names and
+the values are |funcref|s which may modify the response to a call. The
+modified or new response should be returned by the function. This can be used
+if a server sends a response in a way that is not compatible with this client,
+but the response can be translated into a compatible version.
+
+For example:
+>
+ let g:lsc_server_commands = {
+     \ 'java': {
+     \    'command': 'run_java_server.sh',
+     \    'response_hooks': {
+     \        'textDocument/codeAction': function('<SID>fixEdits'),
+     \    },
+     \  },
+     \}
+
+ " Turn the invalid java.apply.workspaceEdit commands into an edit
+ " action which complies with the LSP spec
+ function! s:fixEdits(actions) abort
+   return map(a:actions, function('<SID>fixEdit'))
+ endfunction
+
+ function! s:fixEdit(idx, maybeEdit) abort
+   if !has_key(a:maybeEdit, 'command') ||
+       \ !has_key(a:maybEdit.command, 'command') ||
+       \ a:maybeEdit.command.command !=# 'java.apply.workspaceEdit'
+         return a:maybeEdit
+   endif
+   return {
+       \ 'edit': a:maybeEdit.command.arguments[0],
+       \ 'title': a:maybeEdit.command.title}
+ endfunction
+<
+                                                *lsc-server-notifications*
+`notifications`: Set to a dictionary where the keys are LSP notification
+methods and the values are |funcref|s to be invoked when those notifications
+arrive. The callback should take two arguments, the first is the `method` for
+the notification, the second is the `params`. The method will start with `$`.
+This can be used to hook in to server specific functionality that isn't part
+of the LSP spec.
+
+For example:
+>
+ let g:lsc_server_commands = {
+     \ 'dart': {
+     \    'command': 'dart_language_server',
+     \    'notifications': {
+     \        '$/analyzerStatus': function('<SID>HandleStatus'),
+     \    },
+     \  },
+     \}
+
+ function! s:HandleStatus(method, params) abort
+   " Used in statusline to show when server is busy
+   let g:dart_server_status = a:params.isAnalyzing
+ endfunction
+
+<
+
+                                                *lsc-server-workspace_config*
+`workspace_config`: Set to any json encodable value which will be sent to the
+server after startup as the `settings` in a `workspace/didChangeConfiguration`
+notificaiton. See the documentation for your server for what values are accepted
+in this notification.
+
+For example:
+>
+ let g:lsc_server_commands = {
+     \ 'rust': {
+     \    'command': 'rls',
+     \    'workspace_config': {
+     \        'clippy_preference': 'on',
+     \    },
+     \  },
+     \}
+<
+
+DEBUGGING TIPS                                  *lsc-debugging*
+
+If you are having difficulty with integration with a particular language
+server, you can spy into the communication with the server by wrapping it in a
+script to log stdin and stdout. For example if the server is normally started
+with "my_language_server", write a script like "my_language_server_logged.sh"
+and point |g:lsc_server_commands| at this script.
+>
+ #!/bin/bash
+ tee in.log | my_language_server | tee out.log
+<
+If a language server is following the protocol but does not work with vim-lsc,
+file an issue at https://github.com/natebosch/vim-lsc/issues
+
+ vim:tw=78:sw=4:ts=8:ft=help:norl:
