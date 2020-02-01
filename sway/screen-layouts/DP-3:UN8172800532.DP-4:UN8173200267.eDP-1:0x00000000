@@ -1,7 +1,9 @@
 #!/usr/bin/env sh
 
 swaymsg output DP-4 pos 0 0
-swaymsg output eDP-1 pos 1920 0
-swaymsg output DP-3 pos 4480 0
+swaymsg output DP-4 transform 90
 
 swaymsg output eDP-1 scale 1
+swaymsg output eDP-1 pos 1080 400
+
+swaymsg output DP-3 pos 3640 300
