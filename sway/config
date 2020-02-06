@@ -115,7 +115,7 @@ exec swayidle -w \
       timeout 900  'swaylock -f -c 33333388' \
       timeout 300  'swaymsg "output * dpms off"' \
       resume       'swaymsg "output * dpms on"' \
-      before-sleep 'swaylock -f -c 000000' \
+      before-sleep 'swaylock -f -c 000000 && sleep 1' \
       lock         'swaylock -f -c 006d7aee'
 
 bindswitch lid:on exec ~/.config/sway/actions/lid-close
