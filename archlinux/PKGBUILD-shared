@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.1.1
+pkgver=1.1.2
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -7,32 +7,39 @@ depends=(
 
 atool
 bind-tools # dig
-calc
 firejail
+fish
 fzf
 htop
-httpie
 imagemagick
 iputils
 jq
 lsof
+neovim
 net-tools # ifconfig
+netctl
 nmap
 openbsd-netcat
 openssh
-pass
-pass-otp
 pkgfile
 rsync
 sshfs
 sudo
 the_silver_searcher
+time
 units
 unzip
 vifm
+which
 whois
 words # /usr/share/dict/words
-youtube-dl
+
+# Packages to keep `pacman -Qt` clean
+base
+logrotate
+make
+man-db
+man-pages
 
 )
 
