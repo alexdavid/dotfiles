@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.1.2
+pkgver=1.1.3
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -25,6 +25,7 @@ pkgfile
 rsync
 sshfs
 sudo
+termite-terminfo
 the_silver_searcher
 time
 units
