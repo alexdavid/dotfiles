@@ -26,3 +26,11 @@
 #window-controls {
   visibility: collapse !important;
 }
+
+#main-window {
+  background-color: rgba(40, 44, 52, 0.8) !important;
+}
+
+#nav-bar {
+  background: transparent !important;
+}
