@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+IPC_SOCKET="/tmp/mpv-singleton"
+
+if [ ! -e "$IPC_SOCKET" ]; then
+  {
+    mpv --player-operation-mode=pseudo-gui --input-ipc-server="$IPC_SOCKET"
+    rm "$IPC_SOCKET"
+  } &
+  while [ ! -S "$IPC_SOCKET" ]; do sleep 0.1; done
+fi
+
+echo '{"command": ["loadfile", '$(echo $1 | jq -R)']}' | socat - "$IPC_SOCKET"

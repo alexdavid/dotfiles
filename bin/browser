@@ -5,10 +5,10 @@ set -e
 ff="env GDK_BACKEND=wayland firefox"
 
 case "$1" in
-  https://twitch.tv/*)       mpv "$1"          ;;
-  https://vimeo.com/*)       mpv "$1"          ;;
-  https://youtube.com/*)     mpv "$1"          ;;
-  https://www.youtube.com/*) mpv "$1"          ;;
-  https://youtu.be/*)        mpv "$1"          ;;
+  https://twitch.tv/*)       mpvsingleton "$1"          ;;
+  https://vimeo.com/*)       mpvsingleton "$1"          ;;
+  https://youtube.com/*)     mpvsingleton "$1"          ;;
+  https://www.youtube.com/*) mpvsingleton "$1"          ;;
+  https://youtu.be/*)        mpvsingleton "$1"          ;;
   https://*)                 $ff "$1"          ;;
 esac
