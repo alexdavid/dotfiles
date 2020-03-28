@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.1.3
+pkgver=1.1.4
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -11,14 +11,12 @@ firejail
 fish
 fzf
 htop
-imagemagick
 iputils
 jq
 lsof
 neovim
 net-tools # ifconfig
 netctl
-nmap
 openbsd-netcat
 openssh
 pkgfile
@@ -28,8 +26,6 @@ sudo
 termite-terminfo
 the_silver_searcher
 time
-units
-unzip
 vifm
 which
 whois

@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.4
+pkgver=1.1.6
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -10,6 +10,7 @@ bemenu
 grim # screenshots
 i3blocks
 khal
+libnotify # notify-send
 mako # notifications
 mpc
 pacman-contrib # checkupdates
@@ -19,6 +20,7 @@ pulseaudio
 pulseaudio-alsa
 rofi
 slurp # geometry for grim
+socat # mpvsingleton
 sway
 swayidle
 swaylock
@@ -33,14 +35,16 @@ calc
 chromium
 firefox
 gtk-vnc
+imv
 mpv
 ncmpcpp
 newsboat
+nmap
 pass
 pass-otp
 qutebrowser
-sxiv
 termite
+units
 youtube-dl
 zathura
 zathura-pdf-mupdf
