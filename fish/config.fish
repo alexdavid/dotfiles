@@ -53,10 +53,6 @@ function fish_title
   echo -n " - Fish"
 end
 
-if [ (tty) = "/dev/tty1" ]
-  sway -Dnoatomic
-end
-
 function g
   cd (find-project "$argv")
 end
@@ -79,4 +75,8 @@ if ! git_repo_is_clean ~/.password-store
   set_color -b brred black -o
   echo ' * Pass needs sync * '
   set_color normal
+end
+
+if [ (tty) = "/dev/tty1" ]
+  exec sway -Dnoatomic
 end
