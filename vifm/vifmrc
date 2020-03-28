@@ -226,8 +226,8 @@ fileviewer *.[1-8] man ./%c | col -b
 
 " Images
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
-        \ {View in sxiv}
-        \ sxiv %f,
+        \ {View in imv}
+        \ imv %f,
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
          \ convert -identify %f -verbose /dev/null
 
