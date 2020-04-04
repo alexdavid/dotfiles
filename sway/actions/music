@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-
-mpc "$1"
-pkill -RTMIN+1 i3blocks

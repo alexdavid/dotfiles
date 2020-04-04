@@ -2,7 +2,11 @@
 
 which mpc &> /dev/null || exit 0
 
-if mpc status | grep playing > /dev/null; then
-  printf " "
-  mpc current
-fi
+while true; do
+  if mpc status | grep playing > /dev/null; then
+    echo " $(mpc current)"
+  else
+    echo
+  fi
+  mpc idle > /dev/null
+done

@@ -8,7 +8,7 @@ interval=600
 
 [music]
 command=$HOME/.config/i3blocks/mpd.sh
-signal=1
+interval=persist
 
 [brightness]
 command=$HOME/.config/i3blocks/brightness.sh
