@@ -1,14 +1,19 @@
 #!/bin/bash
 
-# Quicklook from the terminal in OSX
+if which imv; then
+  exec imv "$@"
+fi
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  (qlmanage -p "$@" > /dev/null 2>&1 &
-  local ql_pid=$!
-  read -sn 1
-  kill ${ql_pid}) > /dev/null 2>&1
+if which sxiv; then
+  exec sxiv "$@"
 fi
 
 if which feh; then
-  feh --title __quicklook "$@"
+  exec feh "$@"
 fi
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  exec qlmanage -p "$@"
+fi
+
+exit 1
