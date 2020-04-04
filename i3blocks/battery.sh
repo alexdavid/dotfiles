@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-which acpi > /dev/null || exit 0
+which acpi &> /dev/null || exit 0
 
 PERCENT=$(acpi -b | sed -E 's/.+, ([0-9]+)%.*/\1/')
 STATUS=$(acpi -b | sed -E 's/.+: (\w+),.+/\1/')
