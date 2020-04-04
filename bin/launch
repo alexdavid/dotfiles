@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+DESKTOP_FILES=(~/.local/share/applications/*.desktop /usr/share/applications/*.desktop)
+RESULT=$(
+  printf "%s\n" "${DESKTOP_FILES[@]}" \
+  | xargs -I{} basename {} \
+  | bemenu \
+      --list 10 \
+      --prompt "Launch" \
+      --tb "#abb2bf" \
+      --tf "#282c34" \
+      --fn "SFNS Display 14" \
+      --nb "#333333" \
+      --hb "#abb2bf" \
+      --hf "#282c34"
+)
+[ -n "$RESULT" ] && gtk-launch "$RESULT"
