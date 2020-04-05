@@ -1,10 +1,11 @@
-FROM node:9
+FROM ubuntu:18.04
 
 WORKDIR /mnt
 
-RUN yarn add fontello-cli
-COPY config.json config.json
-RUN yarn run fontello-cli install
-RUN mv fontello-* fontello
+RUN apt-get update && apt-get install -y python-fontforge fontforge
 
-CMD cp fontello/font/fontello.ttf /fonts/icons.ttf
+COPY icons icons
+COPY generate.py generate.py
+RUN python generate.py
+
+CMD cp icons.ttf /fonts/icons.ttf
