@@ -4,12 +4,13 @@ set $alt Mod1
 
 font pango:SF Pro Display 12
 gaps inner 10
-default_border pixel 1
+default_border pixel 4
 for_window [class="^.*"] border pixel 1
 focus_wrapping false
 focus_follows_mouse no
 mouse_warping output
-client.focused #dddddd #eeeeee #000000 #cccccc #ffffff
+client.focused #dddddd #eeeeee #000000 #cccccc #eeeeeee5
+client.unfocused #dddddd #eeeeee #000000 #cccccc #282c34e5
 
 floating_modifier $mod
 
