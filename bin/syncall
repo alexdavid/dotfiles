@@ -2,6 +2,8 @@
 
 set -x
 
-git -C ~/.config fetch
-pass git fetch
-vdirsyncer sync
+git -C ~/.config fetch &
+pass git fetch &
+vdirsyncer sync &
+
+wait
