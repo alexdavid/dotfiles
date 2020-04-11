@@ -17,3 +17,17 @@ a = "cal_local"
 b = "cal_remote"
 collections = ["from a", "from b"]
 metadata = ["color", "displayname"]
+
+[storage work_cal_remote]
+type = "http"
+url.fetch = ["command", "pass", "apps/vdirsyncer/work.calendar.url"]
+
+[storage work_cal_local]
+type = "filesystem"
+path = "~/.local/share/calendars/work"
+fileext = ".ics"
+
+[pair work_cal]
+a = "work_cal_local"
+b = "work_cal_remote"
+collections = null
