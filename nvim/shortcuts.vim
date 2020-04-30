@@ -98,8 +98,8 @@ nmap git :Git
 " Find merge conflicts
 nmap gmc /\v^[<=>\|]{7}.*$<CR>
 
-" Netrw
-map <silent> <leader>n :E<CR>
+" Netrw directory of current file and position cursor over current file
+map <silent> <leader>n :exec 'E ' . fnameescape(expand('%:h')) . ' \| call search("^' . escape(expand('%:t'), '\"') . '$", "cw")'<CR>
 
 " Ctrl-p
 let g:ctrlp_map = '<leader>o'
