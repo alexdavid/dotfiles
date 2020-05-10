@@ -8,8 +8,10 @@ nmap <silent> <leader>< :exec 'silent! tabm ' . (tabpagenr()-2)<CR>
 nmap <silent> <leader>> :exec 'silent! tabm ' . tabpagenr()<CR>
 
 " Buffer/Split management
-nmap <silent> <leader>s :new<CR>
-nmap <silent> <leader>v :vnew<CR>
+nmap <silent> <leader>s :split<CR>
+nmap <silent> <leader>v :vsplit<CR>
+nmap <silent> <leader>S :new<CR>
+nmap <silent> <leader>V :vnew<CR>
 nmap <silent> <leader>x :bd<CR>
 
 " Function Resize - resizes split panes like tmux does:
