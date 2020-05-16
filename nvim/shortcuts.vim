@@ -96,7 +96,7 @@ nmap gd :Gdiff<CR>
 nmap g3d :Gdiff HEAD<CR><C-W>l:Gdiff<CR>
 nmap gs :Gministatus<CR>:wincmd K<CR>
 nmap gc :Gcommit<CR>:set spell<CR><C-W>Ki
-nmap git :Git 
+nmap git :!git<Space>
 " Find merge conflicts
 nmap gmc /\v^[<=>\|]{7}.*$<CR>
 
