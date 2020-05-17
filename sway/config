@@ -125,7 +125,7 @@ bar {
   position top
   strip_workspace_numbers yes
   height 34
-  font pango:SFNS Display, icons 18px
+  font pango:SFNS Display, SystemIcons Bold 18px
   colors {
     background #282c3499
     focused_workspace #ffffff #ffffff #282a36

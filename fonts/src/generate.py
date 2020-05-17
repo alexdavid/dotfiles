@@ -14,4 +14,8 @@ for fileName in listdir(iconDir):
     c.left_side_bearing = 15
     c.right_side_bearing = 15
 
+font.fullname = "SystemIcons Bold"
+font.familyname = "SystemIcons"
+font.fontname = "SystemIcons-Bold"
+
 font.generate("icons.ttf")
