@@ -1,8 +1,9 @@
 [Added Associations]
 application/javascript=nvim.desktop;
 application/pdf=org.pwmt.zathura.desktop;
-image/gif=sxiv.desktop;
-image/jpeg=sxiv.desktop;
+image/gif=imv.desktop;
+image/jpeg=imv.desktop;
+image/png=imv.desktop;
 text/css=nvim.desktop;
 text/plain=nvim.desktop;
 video/mp4=mpv.desktop;
