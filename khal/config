@@ -1,8 +1,11 @@
 [calendars]
+  [[personal]]
+  path = ~/.local/share/calendars/personal/*
+  type = discover
 
-[[cal_local]]
-path = ~/.local/share/calendars/*
-type = discover
+  [[work]]
+  path = ~/.local/share/calendars/work
+  type = discover
 
 [locale]
 timeformat = %l:%M
