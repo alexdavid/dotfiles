@@ -32,11 +32,11 @@ QUALITY=$(grep $INTERFACE /proc/net/wireless | awk '{ print int($3 * 100 / 70) }
 
 #------------------------------------------------------------------------
 
-if [[ $QUALITY -ge 80 ]]; then
+if [[ $QUALITY -ge 70 ]]; then
     printf ""
-elif [[ $QUALITY -ge 60 ]]; then
+elif [[ $QUALITY -ge 50 ]]; then
     printf ""
-elif [[ $QUALITY -ge 40 ]]; then
+elif [[ $QUALITY -ge 30 ]]; then
     printf ""
 else
     printf ""
