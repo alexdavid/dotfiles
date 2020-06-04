@@ -44,23 +44,14 @@ ask DRIVE "Select a drive"
   echo         # (default 2048)
   echo "+512M"
 
-  echo n       # Add new partition (swap)
-  echo         # (default 2)
-  echo         # (default)
-  echo "+2G"
-
   echo n       # Add new partition (linux)
-  echo         # (default 3)
+  echo         # (default 2)
   echo         # (default)
   echo         # (default)
 
   echo t       # Change partition type
   echo 1       # Partition number 1 (/boot)
   echo 1       # EFI System
-
-  echo t       # Change partition type
-  echo 2       # Partition number 2 (swap)
-  echo 19      # Linux swap
 
   echo w       # write
 } | fdisk "$DRIVE"
@@ -72,17 +63,44 @@ PARTITIONS=($(lsblk -pln -o name "$DRIVE"))
 
 
 section "FORMATTING & MOUNTING DRIVES"
-cryptsetup luksFormat --type luks "${PARTITIONS[3]}"
-cryptsetup luksOpen "${PARTITIONS[3]}" main
+cryptsetup luksFormat --type luks "${PARTITIONS[2]}"
+cryptsetup luksOpen "${PARTITIONS[2]}" main
 mkfs.vfat -F32 "${PARTITIONS[1]}"
 mkfs.ext4 -F /dev/mapper/main
 mount /dev/mapper/main /mnt
 mkdir /mnt/boot
 mount "${PARTITIONS[1]}" /mnt/boot
 
-# Install base
-pacstrap /mnt base
-genfstab -U /mnt >> /mnt/etc/fstab
+section "CREATING SWAPFILE"
+ask SWAPSIZE "Swapfile size (e.g. 4G)"
+mkdir /mnt/var
+fallocate -l "$SWAPSIZE" /mnt/var/swap
+chmod 600 /mnt/var/swap
+mkswap /mnt/var/swap
 
-# Setup grub cryptmapper
-echo "GRUB_CMDLINE_LINUX=\"cryptdevice=${PARTITIONS[3]}:cryptroot\"" >> /mnt/etc/default/grub
+section "INSTALLING BASE"
+pacstrap /mnt base linux linux-firmware
+genfstab -U /mnt >> /mnt/etc/fstab
+echo "/var/swap none swap defaults 0 0" >> /mnt/etc/fstab
+
+section "KICKING OFF CHROOT SCRIPT"
+mv chroot /mnt/chroot
+arch-chroot /mnt bash /chroot
+rm /mnt/chroot
+
+section "CREATING EFISTUB BOOT ENTRY"
+ask EFILABEL "EFI label"
+PARTUUID=$(lsblk -dno PARTUUID ${PARTITIONS[2]})
+efibootmgr \
+  --disk "$DRIVE" \
+  --create \
+  --label "$EFILABEL" \
+  --loader /vmlinuz-linux \
+  --unicode "cryptdevice=PARTUUID=$PARTUUID:root root=/dev/mapper/root rw initrd=\\initramfs-linux.img" \
+  --verbose \
+  ;
+
+section "CLEANING UP"
+umount /mnt/boot
+umount /mnt
+cryptsetup close main

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 function section {
   echo
   echo
@@ -14,6 +16,19 @@ function ask {
   read $1
 }
 
+section "INSTALLING PACKAGES NEEDED AFTER REBOOT"
+ask WIFI "Install wifi-menu? (yes/no)"
+[ "$WIFI" == "yes" ] && pacman -S dialog wpa_supplicant
+pacman -S \
+  dhcpcd \
+  netctl \
+  sudo \
+  vi \
+  ;
+
+section "ADDING ENCRYPT TO MKINITCPIO"
+vi /etc/mkinitcpio.conf
+mkinitcpio -p linux
 
 section "SETTING LOCALE"
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
@@ -24,22 +39,13 @@ ln -f -s /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
 ask HOSTNAME "Hostname"
 echo "$HOSTNAME" > /etc/hostname
 
-
 section "SETTING ROOT PASSWORD"
 passwd
-
 
 section "CREATING MAIN USER"
 ask USERNAME "Username"
 useradd -m -g users -G wheel "$USERNAME"
 passwd "$USERNAME"
-
-
-section "INSTALLING GRUB"
-pacman -S grub efibootmgr
-grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
-grub-mkconfig -o /boot/grub/grub.cfg
-
 
 section "SETTING UP SIMPLE FIREWALL"
 cp /etc/iptables/simple_firewall.rules /etc/iptables/iptables.rules
