@@ -10,11 +10,6 @@ interval=600
 command=$HOME/.config/i3blocks/mpd.sh
 interval=persist
 
-[brightness]
-command=$HOME/.config/i3blocks/brightness.sh
-interval=once
-signal=1
-
 [volume]
 command=$HOME/.config/i3blocks/volume.sh
 interval=once
