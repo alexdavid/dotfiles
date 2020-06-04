@@ -6,15 +6,8 @@ if pamixer --get-mute > /dev/null; then
 fi
 
 VOL=$(pamixer --get-volume)
-if [ "$VOL" -lt 25 ]; then
-  ICON=""
-elif [ "$VOL" -lt 40 ]; then
-  ICON=""
-elif [ "$VOL" -lt 70 ]; then
-  ICON=""
-else
-  ICON=""
+if [ "$VOL" -lt 25 ]; then echo ""
+elif [ "$VOL" -lt 40 ]; then echo ""
+elif [ "$VOL" -lt 70 ]; then echo ""
+else echo ""
 fi
-
-echo "$ICON $VOL%"
-echo "$ICON"
