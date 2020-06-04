@@ -5,23 +5,25 @@ which acpi &> /dev/null || exit 0
 PERCENT=$(acpi -b | sed -E 's/.+, ([0-9]+)%.*/\1/')
 STATUS=$(acpi -b | sed -E 's/.+: (\w+),.+/\1/')
 
-if [ "$STATUS" = Charging ]; then
-  ICON=""
-  COLOR="#FFFFFF"
-elif [ "$PERCENT" -lt 28 ]; then
-  ICON=""
+COLOR="#FFFFFF"
+if [ "$PERCENT" -lt 5 ]; then
+  notify-send "  Low Battery!" "$PERCENT% Battery remaining"
   COLOR="#FF0000"
-elif [ "$PERCENT" -lt 56 ]; then
-  ICON=""
-  COLOR="#FFFFFF"
-elif [ "$PERCENT" -lt 84 ]; then
-  ICON=""
-  COLOR="#FFFFFF"
-else
-  ICON=""
-  COLOR="#FFFFFF"
 fi
 
-echo "$ICON $PERCENT%"
+if [ "$STATUS" = Charging ]; then ICON=""
+elif [ "$PERCENT" -lt 10 ]; then ICON=""
+elif [ "$PERCENT" -lt 20 ]; then ICON=""
+elif [ "$PERCENT" -lt 30 ]; then ICON=""
+elif [ "$PERCENT" -lt 40 ]; then ICON=""
+elif [ "$PERCENT" -lt 50 ]; then ICON=""
+elif [ "$PERCENT" -lt 60 ]; then ICON=""
+elif [ "$PERCENT" -lt 70 ]; then ICON=""
+elif [ "$PERCENT" -lt 80 ]; then ICON=""
+elif [ "$PERCENT" -lt 90 ]; then ICON=""
+else ICON=""
+fi
+
+echo "$ICON"
 echo "$ICON"
 echo "$COLOR"
