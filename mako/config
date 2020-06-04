@@ -9,3 +9,4 @@ padding=15
 text-color=#282a36
 width=400
 default-timeout=5000
+layer=overlay
