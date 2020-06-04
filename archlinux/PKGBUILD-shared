@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.1.5
+pkgver=1.1.6
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -8,6 +8,7 @@ depends=(
 atool
 bind-tools # dig
 binutils # required for makepkg
+dhcpcd
 firejail
 fish
 fzf
@@ -34,6 +35,8 @@ words # /usr/share/dict/words
 
 # Packages to keep `pacman -Qt` clean
 base
+linux
+linux-firmware
 logrotate
 make
 man-db

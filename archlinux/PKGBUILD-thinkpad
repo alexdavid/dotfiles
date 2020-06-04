@@ -1,14 +1,16 @@
 pkgname=alexdavid-thinkpad-meta
-pkgver=1.1.2
+pkgver=1.1.3
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
 depends=(
 
 acpi
+dialog
 fwupd
 light
 wireless_tools # iwgetid (in i3blocks script)
+wpa_supplicant
 
 )
 
