@@ -2,7 +2,7 @@ pkgname=alexdavid-shared-meta
 pkgver=1.1.6
 pkgrel=1
 arch=('any')
-url="https://github.com/alexdavid/dotfiles"
+url="https://git.sr.ht/~alexdavid/dotfiles/"
 depends=(
 
 atool
