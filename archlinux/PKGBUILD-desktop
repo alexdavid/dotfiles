@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.10
+pkgver=1.1.11
 pkgrel=1
 arch=('any')
 url="https://github.com/alexdavid/dotfiles"
@@ -42,7 +42,6 @@ newsboat
 nmap
 pass
 pass-otp
-qutebrowser
 termite
 units
 youtube-dl
