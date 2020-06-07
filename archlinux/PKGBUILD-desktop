@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.11
+pkgver=1.1.12
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -32,7 +32,6 @@ xorg-server-xwayland
 
 # Applications
 calc
-chromium
 firefox
 gtk-vnc
 imv
