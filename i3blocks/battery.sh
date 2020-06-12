@@ -24,6 +24,8 @@ elif [ "$PERCENT" -lt 90 ]; then ICON=""
 else ICON=""
 fi
 
+printf "​"
+
 echo "$ICON"
 echo "$ICON"
 echo "$COLOR"

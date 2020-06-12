@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+printf "​"
+
 if pamixer --get-mute > /dev/null; then
   echo ""
   exit 0
