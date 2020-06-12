@@ -9,3 +9,7 @@
 #nav-bar {
   background: transparent !important;
 }
+
+#webrtcIndicator {
+  display: none !important;
+}
