@@ -7,7 +7,7 @@ STATUS=$(acpi -b | sed -E 's/.+: (\w+),.+/\1/')
 
 COLOR="#FFFFFF"
 if [ "$PERCENT" -lt 5 ]; then
-  notify-send "  Low Battery!" "$PERCENT% Battery remaining"
+  [ "$STATUS" != Charging ] && notify-send "  Low Battery!" "$PERCENT% Battery remaining"
   COLOR="#FF0000"
 fi
 
