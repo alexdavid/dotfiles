@@ -72,9 +72,9 @@ mkdir /mnt/boot
 mount "${PARTITIONS[1]}" /mnt/boot
 
 section "CREATING SWAPFILE"
-ask SWAPSIZE "Swapfile size (e.g. 4G)"
+ask SWAPSIZE "Swapfile size in MB (e.g. 4000)"
 mkdir /mnt/var
-fallocate -l "$SWAPSIZE" /mnt/var/swap
+dd if=/dev/zero of=/mnt/var/swap count="$SWAPSIZE" bs=1MiB
 chmod 600 /mnt/var/swap
 mkswap /mnt/var/swap
 
