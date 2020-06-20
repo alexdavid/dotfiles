@@ -6,16 +6,7 @@
 shopt -s nullglob globstar
 
 function menu {
-  printf '%s\n' "${@:2}" | bemenu \
-    --list 10 \
-    --prompt "$1" \
-    --tb "#abb2bf" \
-    --tf "#282c34" \
-    --fn "SFNS Display 14" \
-    --nb "#333333" \
-    --hb "#abb2bf" \
-    --hf "#282c34" \
-    ;
+  printf '%s\n' "${@:2}" | bemenu --prompt "$1"
 }
 
 prefix=${PASSWORD_STORE_DIR-~/.password-store}
