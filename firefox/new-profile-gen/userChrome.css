@@ -6,6 +6,18 @@
   background-color: rgba(40, 44, 52, 0.9) !important;
 }
 
+#main-window:after {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  content: "$PROFILE_NAME";
+  color: #fff;
+  background: $PROFILE_COLOR;
+  padding: 1px 7px;
+  border-radius: 5px;
+  font-weight: 800;
+}
+
 #nav-bar {
   background: transparent !important;
 }

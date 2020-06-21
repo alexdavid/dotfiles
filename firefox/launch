@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+PROFILES_DIR=~/.local/share/firefox-profiles
+
+mkdir -p "$PROFILES_DIR"
+
+function launchff {
+  if [ -d "$1" ]; then
+    exec firefox --profile "$1"
+  else
+    exec swaynag -m "No such profile '$1'"
+  fi
+}
+
+SELECTED_PROFILE=$({
+  ls "$PROFILES_DIR"
+  echo
+  echo New Profile
+  echo New Temporary Profile
+} | bemenu -i --prompt "Profile")
+
+if [ "$SELECTED_PROFILE" = "New Profile" ]; then
+  NEW_PROFILE_NAME=$(echo | bemenu --prompt "Enter name:" | sed -e 's/^ *\| *$//g')
+  [ -z "$NEW_PROFILE_NAME" ] && exit
+  ~/.config/firefox/new-profile-gen/generate "$PROFILES_DIR/$NEW_PROFILE_NAME" "$NEW_PROFILE_NAME"
+  launchff "$PROFILES_DIR/$NEW_PROFILE_NAME"
+elif [ "$SELECTED_PROFILE" = "New Temporary Profile" ]; then
+  PROFILE="$(mktemp -d /tmp/firefox.XXXXXXXXXX)"
+  ~/.config/firefox/new-profile-gen/generate "$PROFILE" "$PROFILE"
+  launchff "$PROFILE"
+elif [ -n "$SELECTED_PROFILE" ]; then
+  launchff "$PROFILES_DIR/$SELECTED_PROFILE"
+fi

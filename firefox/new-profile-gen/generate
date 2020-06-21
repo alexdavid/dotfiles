@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -e
+cd "$(dirname "$0")"
+
+export PROFILE_DIR=$1
+export PROFILE_NAME=$2
+export PROFILE_COLOR="#$(echo "$PROFILE_NAME" | md5sum | cut -c1-6)"
+
+mkdir -p "$PROFILE_DIR/chrome"
+
+envsubst < userChrome.css > "$PROFILE_DIR/chrome/userChrome.css"
+cp user.js "$PROFILE_DIR/user.js"
+cp search.json.mozlz4 "$PROFILE_DIR/search.json.mozlz4"
