@@ -1,0 +1,50 @@
+font:
+  normal:
+    family: FuraMono Nerd Font Mono
+    style: Regular
+
+  bold:
+    family: Fira Mono
+    style: Bold
+
+  size: 13.0
+
+colors:
+  primary:
+    background: '0x282c34'
+    foreground: '0xabb2bf'
+
+  normal:
+    black: '0x282c34'
+    red: '0xe06c75'
+    green: '0x98c379'
+    yellow: '0xe5c07b'
+    blue: '0x61afef'
+    magenta: '0xc678dd'
+    cyan: '0x56b6c2'
+    white: '0xabb2bf'
+
+  bright:
+    black: '0x3e4452'
+    red: '0xbe5046'
+    green: '0x98c379'
+    yellow: '0xd19a66'
+    blue: '0x61afef'
+    magenta: '0xc678dd'
+    cyan: '0x56b6c2'
+    white: '0x5c6370'
+
+background_opacity: 0.9
+
+scrolling:
+  multiplier: 40
+
+key_bindings:
+  - { key: C,      mods: Alt, action: Copy             }
+  - { key: V,      mods: Alt, action: Paste            }
+  - { key: K,      mods: Alt, action: ClearHistory     }
+  - { key: K,      mods: Alt, chars: "\x0c"            }
+  - { key: Equals, mods: Alt, action: IncreaseFontSize }
+  - { key: Key0,   mods: Alt, action: ResetFontSize    }
+  - { key: Minus,  mods: Alt, action: DecreaseFontSize }
+  - { key: N,      mods: Alt, action: SpawnNewInstance }

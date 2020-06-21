@@ -32,7 +32,7 @@ bindsym $mod+$alt+3 exec ~/.config/sway/actions/take-screenshot entire-screen
 bindsym $mod+$alt+4 exec ~/.config/sway/actions/take-screenshot box
 bindsym $mod+$alt+5 exec ~/.config/sway/actions/take-screenshot window
 
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec alacritty
 bindsym $mod+n exec firefox
 bindsym $mod+Shift+n exec ~/.config/firefox/launch
 

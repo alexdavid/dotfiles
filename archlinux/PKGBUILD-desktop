@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.12
+pkgver=1.1.13
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -31,6 +31,7 @@ xdg-utils # xdg-open
 xorg-server-xwayland
 
 # Applications
+alacritty
 calc
 firefox
 gtk-vnc
@@ -41,7 +42,6 @@ newsboat
 nmap
 pass
 pass-otp
-termite
 units
 youtube-dl
 zathura
