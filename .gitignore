@@ -3,15 +3,11 @@ MuseScore/
 QtProject.conf
 autostart/
 blender/
-chromium/
 dconf/
 htop/
-hub
 inkscape/
-keybase/
-liferea/
+libreoffice/
 mpd/
 pavucontrol.ini
 pulse/
 systemd/
-zoomus.conf
