@@ -1,11 +1,6 @@
 #!/usr/bin/env sh
 
-GEOMETRY="$2"
-if [ -z "$GEOMETRY" ]; then
-  GEOMETRY="800x600"
-fi
-
-termite \
-  --class=popup \
-  --exec="$1" \
-  ;
+alacritty \
+  --title=popupterm \
+  --dimensions 100 8 \
+  --command $1

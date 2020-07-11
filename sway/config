@@ -106,7 +106,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 for_window [class="Pinentry"] floating enable
-for_window [class="popup"] floating enable
+for_window [title="popupterm"] floating enable
 
 exec mako
 exec_always ~/.config/wallpaper/set-wallpaper
