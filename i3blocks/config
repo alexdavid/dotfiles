@@ -12,7 +12,7 @@ interval=persist
 
 [updates]
 command=$HOME/.config/i3blocks/updates.sh
-interval=600
+interval=1500
 
 [wifi]
 command=$HOME/.config/i3blocks/wifi.sh
