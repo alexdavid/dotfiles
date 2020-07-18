@@ -16,4 +16,4 @@
 [include]
   path = ~/.config/git/gitconfig_user
 [pull]
-	rebase = false
+  rebase = false
