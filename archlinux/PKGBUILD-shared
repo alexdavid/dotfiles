@@ -1,12 +1,12 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.1.8
+pkgver=1.1.9
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
 depends=(
 
 atool
-bind-tools # dig
+bind # dig
 binutils # required for makepkg
 dhcpcd
 firejail
