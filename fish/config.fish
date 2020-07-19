@@ -79,5 +79,5 @@ if ! git_repo_is_clean ~/.password-store
 end
 
 if [ (tty) = "/dev/tty1" ]
-  exec sway -Dnoatomic
+  exec sway
 end
