@@ -119,7 +119,8 @@ map <silent> <leader><space> :noh<CR>:match<CR>
 nmap <silent> mm mm:execute 'match Search /\%'.line('.').'l/'<CR>
 
 " Run q macro
-map <silent> <leader>q @q
+nmap <silent> <leader>q @q
+vmap <silent> <leader>q :norm! @q<CR>
 
 " Use vim keybindings when running a command
 nmap <silent> <leader>; q:i
