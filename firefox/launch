@@ -12,12 +12,15 @@ function launchff {
   fi
 }
 
-SELECTED_PROFILE=$({
-  ls "$PROFILES_DIR"
-  echo
-  echo New Profile
-  echo New Temporary Profile
-} | bemenu -i --prompt "Profile")
+SELECTED_PROFILE=$1
+if [ -z "$SELECTED_PROFILE" ]; then
+  SELECTED_PROFILE=$({
+    ls "$PROFILES_DIR"
+    echo
+    echo New Profile
+    echo New Temporary Profile
+  } | bemenu -i --prompt "Profile")
+fi
 
 if [ "$SELECTED_PROFILE" = "New Profile" ]; then
   NEW_PROFILE_NAME=$(echo | bemenu --prompt "Enter name:" | sed -e 's/^ *\| *$//g')
