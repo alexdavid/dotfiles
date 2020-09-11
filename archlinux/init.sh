@@ -4,4 +4,4 @@ set -e
 cd $(dirname $0)
 
 makepkg -si -p "PKGBUILD-$1"
-rm *.pkg.tar.xz
+rm *.pkg.tar.zst
