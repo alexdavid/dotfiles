@@ -21,6 +21,7 @@ ask WIFI "Install wifi-menu? (yes/no)"
 [ "$WIFI" == "yes" ] && pacman -S dialog wpa_supplicant
 pacman -S \
   dhcpcd \
+  intel-ucode \
   netctl \
   sudo \
   vi \
