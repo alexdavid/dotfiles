@@ -128,7 +128,7 @@ bar {
   height 34
   font pango:SFNS Display, SystemIcons Bold 18px
   colors {
-    background #282c3499
+    background #00000000
     focused_workspace #ffffff #ffffff #282a36
     active_workspace #282a36 #282a36 #ffffff
     inactive_workspace #282c3499 #282a3699 #999999
