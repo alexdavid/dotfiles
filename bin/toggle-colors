@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [ -f ~/.config/isdark ]; then
+  rm ~/.config/isdark
+  swaymsg 'bar bar-0 colors statusline #000000'
+  cp ~/.config/alacritty/light.yml  ~/.config/alacritty/alacritty.yml
+else
+  touch ~/.config/isdark
+  swaymsg 'bar bar-0 colors statusline #ffffff'
+  cp ~/.config/alacritty/dark.yml  ~/.config/alacritty/alacritty.yml
+fi
+
+~/.config/wallpaper/set-wallpaper &
+killall -s SIGUSR1 nvim
