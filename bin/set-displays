@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-set -e
-
-if [ -n "$1" ]; then
-  ~/.screenlayout/"$1".sh
-fi
-
-~/.config/wallpaper/set-wallpaper
