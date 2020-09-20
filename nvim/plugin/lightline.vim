@@ -5,7 +5,7 @@ function! LightlineGitBranch()
 endfunction
 
 let g:lightline = {
-      \   'colorscheme': 'seoul256',
+      \   'colorscheme': 'PaperColor',
       \   'active': {
       \     'left': [
       \        [ 'mode' ],

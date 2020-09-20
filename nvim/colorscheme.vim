@@ -1,5 +1,4 @@
-colorscheme onedark
-let g:colorscheme_name = 'onedark'
+colorscheme pencil
 if has("gui_running")
 else
   highlight Normal ctermbg=none
