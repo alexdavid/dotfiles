@@ -3,4 +3,4 @@
 alacritty \
   --title=popupterm \
   --dimensions 100 8 \
-  --command $1
+  --command sh -c "$1"
