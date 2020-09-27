@@ -13,4 +13,9 @@ else
 fi
 
 ~/.config/wallpaper/set-wallpaper &
-killall -s SIGUSR1 nvim
+killall -s SIGUSR1 nvim || true
+
+_ipc_socket="${XDG_RUNTIME_DIR}/qutebrowser/ipc-$(echo -n "$USER" | md5sum | cut -d' ' -f1)"
+
+printf '{"args": [":config-source"], "target_arg": null, "version": "1.0.4", "protocol_version": 1, "cwd": "%s"}\n' \
+       "${PWD}" | socat - UNIX-CONNECT:"${_ipc_socket}" 2>/dev/null

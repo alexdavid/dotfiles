@@ -1,0 +1,13 @@
+body:before {
+  content: "Originate";
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 2px 5px;
+  font-family: SFNS Display;
+  font-weight: bold;
+  font-size: 15px;
+  z-index: 99999;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom-left-radius: 5px;
+}
