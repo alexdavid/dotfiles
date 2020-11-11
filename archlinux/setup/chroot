@@ -17,13 +17,10 @@ function ask {
 }
 
 section "INSTALLING PACKAGES NEEDED AFTER REBOOT"
-ask WIFI "Install wifi-menu? (yes/no)"
-[ "$WIFI" == "yes" ] && pacman -S dialog wpa_supplicant
 pacman -S \
-  dhcpcd \
   fakeroot binutils \
   intel-ucode \
-  netctl \
+  networkmanager \
   sudo \
   vi \
   ;
@@ -52,3 +49,7 @@ passwd "$USERNAME"
 section "SETTING UP SIMPLE FIREWALL"
 cp /etc/iptables/simple_firewall.rules /etc/iptables/iptables.rules
 systemctl enable iptables.service
+
+section "ENABLE SERVICES"
+systemctl enable NetworkManager
+systemctl enable systemd-timesyncd

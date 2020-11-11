@@ -6,11 +6,9 @@ url="https://git.sr.ht/~alexdavid/dotfiles/"
 depends=(
 
 acpi
-dialog
 fwupd
 light
 wireless_tools # iwgetid (in i3blocks script)
-wpa_supplicant
 
 )
 

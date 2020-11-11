@@ -8,7 +8,6 @@ depends=(
 atool
 bind # dig
 binutils # required for makepkg
-dhcpcd
 firejail
 fish
 fzf
@@ -17,7 +16,6 @@ iputils
 jq
 lsof
 neovim
-net-tools # ifconfig
 openbsd-netcat
 openssh
 pkgfile
