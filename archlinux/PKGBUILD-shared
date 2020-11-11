@@ -16,6 +16,7 @@ iputils
 jq
 lsof
 neovim
+networkmanager
 openbsd-netcat
 openssh
 pkgfile
