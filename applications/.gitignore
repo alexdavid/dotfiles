@@ -2,3 +2,4 @@
 *.desktop
 
 !lock.desktop
+!toggle-colors.desktop

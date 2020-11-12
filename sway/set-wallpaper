@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if [ -f ~/.config/isdark ]; then
+  THEME_NAME=dark
+else
+  THEME_NAME=light
+fi
+
+THEME=$(jq ".$THEME_NAME" < "$HOME/.config/sway/themes.json")
+
+while read ID; do
+  swaymsg "output $ID bg $HOME/.local/share/wallpapers/$(jq -r .wallpaper <<< "$THEME") fill"
+  swaymsg "bar bar-0 colors statusline $(jq -r .barColor <<< "$THEME")"
+done < <(swaymsg -t get_outputs | jq -r 'map(.name) | join("\n")')

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+set -e
+
+if [ -f ~/.config/isdark ]; then
+  rm ~/.config/isdark
+  cp ~/.config/alacritty/light.yml  ~/.config/alacritty/alacritty.yml
+else
+  touch ~/.config/isdark
+  cp ~/.config/alacritty/dark.yml  ~/.config/alacritty/alacritty.yml
+fi
+
+~/.config/sway/set-wallpaper

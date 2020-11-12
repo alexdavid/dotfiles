@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Toggle Colors
+GenericName=Toggle Colors
+Exec=toggle-colors
+Terminal=false
+Type=Application
+NoDisplay=false

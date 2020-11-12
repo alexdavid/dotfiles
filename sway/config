@@ -109,7 +109,7 @@ for_window [class="Pinentry"] floating enable
 for_window [title="popupterm"] floating enable
 
 exec mako
-exec_always ~/.config/wallpaper/set-wallpaper
+exec_always ~/.config/sway/set-wallpaper
 exec_always ~/.config/sway/screen-layouts/restore
 exec swayidle -w \
       timeout 900  'swaylock -f -c 33333388' \

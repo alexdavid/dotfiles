@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-RANDOM_THEME=$(ls ~/.config/wallpaper/images | shuf -n 1)
-
-while read ID; do
-  RANDOM_IMAGE=$(ls "$HOME/.config/wallpaper/images/$RANDOM_THEME" | shuf -n 1)
-  WALLPAPER_IMAGE="$HOME/.config/wallpaper/images/$RANDOM_THEME/$RANDOM_IMAGE"
-  swaymsg "output $ID bg $WALLPAPER_IMAGE fill"
-done < <(swaymsg -t get_outputs | jq -r 'map(.name) | join("\n")')

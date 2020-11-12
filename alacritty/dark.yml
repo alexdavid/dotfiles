@@ -18,8 +18,8 @@ font:
 
 colors:
   primary:
-    background: '0xf1f1f1'
-    foreground: '0x282c34'
+    background: '0x282c34'
+    foreground: '0xf1f1f1'
 
   normal:
     black: '0x212121'
