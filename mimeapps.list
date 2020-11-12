@@ -1,16 +1,14 @@
-[Added Associations]
+[Default Applications]
 application/javascript=nvim.desktop;
 application/pdf=org.pwmt.zathura.desktop;
 image/gif=imv.desktop;
 image/jpeg=imv.desktop;
 image/png=imv.desktop;
 text/css=nvim.desktop;
+text/html=qutebrowser.desktop
 text/plain=nvim.desktop;
 video/mp4=mpv.desktop;
-
-[Default Applications]
-text/html=firefox.desktop
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
-x-scheme-handler/about=firefox.desktop
-x-scheme-handler/unknown=firefox.desktop
+x-scheme-handler/about=qutebrowser.desktop
+x-scheme-handler/http=qutebrowser.desktop
+x-scheme-handler/https=qutebrowser.desktop
+x-scheme-handler/unknown=qutebrowser.desktop
