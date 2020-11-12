@@ -10,4 +10,5 @@ else
   cp ~/.config/alacritty/dark.yml  ~/.config/alacritty/alacritty.yml
 fi
 
-~/.config/sway/set-wallpaper
+~/.config/sway/set-wallpaper &
+killall -s SIGUSR1 nvim || true
