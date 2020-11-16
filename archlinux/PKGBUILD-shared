@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.1.10
+pkgver=1.1.11
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -32,9 +32,11 @@ words # /usr/share/dict/words
 
 # Packages to keep `pacman -Qt` clean
 base
+binutils
+fakeroot
+intel-ucode
 linux
 linux-firmware
-logrotate
 man-db
 man-pages
 
