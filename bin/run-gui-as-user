@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+USER="$1"
+CMD="$2"
+
+# This script makes it easy to run a GUI app as another user while another user is currently logged in on an XOrg/Wayland session
+#
+# To allow audio:
+# * Add `default-server = 127.0.0.1` to ~/.config/pulse/client.conf for the user running the app
+# * Add `load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1` to `~/.config/pulse/default.pa for the user running the X/Wayland session
+
+xhost +si:localuser:"$USER"
+sudo su - "$USER" --whitelist-environment=DISPLAY --command "$CMD"
+xhost -si:localuser:"$USER"
