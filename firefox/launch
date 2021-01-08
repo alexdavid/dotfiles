@@ -6,6 +6,7 @@ mkdir -p "$PROFILES_DIR"
 
 function launchff {
   if [ -d "$1" ]; then
+    export MOZ_ENABLE_WAYLAND=1
     exec firefox --profile "$1"
   else
     exec swaynag -m "No such profile '$1'"
