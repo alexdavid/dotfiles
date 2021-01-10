@@ -16,14 +16,15 @@ user_pref("browser.aboutConfig.showWarning", false);
 
 // Set toolbar
 user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-fixed-list\":[],\"nav-bar\":[\"back-button\",\"forward-button\",\"stop-reload-button\",\"urlbar-container\",\"downloads-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"new-tab-button\",\"alltabs-button\"],\"PersonalToolbar\":[\"personal-bookmarks\"]},\"seen\":[\"developer-button\"],\"dirtyAreaCache\":[\"nav-bar\"],\"currentVersion\":16,\"newElementCount\":3}");
+user_pref("browser.toolbars.bookmarks.visibility", "never");
 
 // Enable userchrome
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Set dark theme
-// user_pref("extensions.activeThemeID", "firefox-compact-dark@mozilla.org");
-// user_pref("ui.systemUsesDarkTheme", 1);
-// user_pref("devtools.theme", "dark");
+user_pref("extensions.activeThemeID", "firefox-compact-light@mozilla.org");
+user_pref("ui.systemUsesDarkTheme", 0);
+user_pref("devtools.theme", "light");
 
 // Disable new-tab page garbage
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
@@ -37,9 +38,14 @@ user_pref("browser.rights.3.shown", true);
 // Opt out of telemetry
 user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
+user_pref("datareporting.policy.dataSubmissionEnabled", false); // Stop nagbar
 
 // Fixes rendering issues with transparent window elements
 user_pref("layers.acceleration.force-enabled", true);
 
 // Disable privacy tab from opening on new profiles
 user_pref("datareporting.policy.firstRunURL", "");
+
+// Disable require extension signature
+user_pref("xpinstall.signatures.required", false);
+user_pref("extensions.langpacks.signatures.required", false);
