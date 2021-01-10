@@ -3,7 +3,7 @@
 }
 
 #main-window {
-  background-color: rgba(40, 44, 52, 0.9) !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
 }
 
 #main-window:after {
@@ -18,9 +18,9 @@
   font-weight: 800;
 }
 
-#nav-bar {
-  background: transparent !important;
-}
+/* #nav-bar { */
+/*   background: transparent !important; */
+/* } */
 
 #webrtcIndicator {
   display: none !important;
