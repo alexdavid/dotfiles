@@ -38,7 +38,7 @@ bindsym $mod+$alt+4 exec ~/.config/sway/actions/take-screenshot box
 bindsym $mod+$alt+5 exec ~/.config/sway/actions/take-screenshot window
 
 bindsym $mod+Return exec alacritty
-bindsym $mod+n exec env XDG_SESSION_TYPE=wayland qutebrowser
+bindsym $mod+n exec ~/.config/firefox/launch "New Temporary Profile"
 bindsym $mod+Shift+n exec ~/.config/firefox/launch
 
 bindsym $mod+space exec launch
