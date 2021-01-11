@@ -2,15 +2,20 @@
 set $mod Mod4
 set $alt Mod1
 
+# Colors
+set $primary #005F87
+set $inactive #00000033
+
 font pango:SF Pro Display 12
 gaps inner 10
 default_border pixel 4
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border normal 1
 focus_wrapping false
 focus_follows_mouse no
 mouse_warping output
-client.focused #dddddd #eeeeee #000000 #cccccc #eeeeeee5
-client.unfocused #dddddd #eeeeee #000000 #cccccc #282c34e5
+client.focused $primary $primary #ffffff $primary $primary
+client.unfocused $inactive $inactive #ffffff $inactive $inactive
+client.focused_inactive $inactive $inactive #ffffff $inactive $inactive
 
 floating_modifier $mod
 
