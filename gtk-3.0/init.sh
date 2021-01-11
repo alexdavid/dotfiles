@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-gsettings set org.gnome.desktop.interface gtk-key-theme Emacs
+gsettings set org.gnome.desktop.interface cursor-size 50
