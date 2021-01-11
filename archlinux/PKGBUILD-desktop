@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.14
+pkgver=1.1.15
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -42,7 +42,6 @@ newsboat
 nmap
 pass
 pass-otp
-qutebrowser qt5-wayland
 units
 youtube-dl
 zathura
