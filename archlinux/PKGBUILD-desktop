@@ -33,7 +33,7 @@ xorg-server-xwayland
 # Applications
 alacritty
 calc
-firefox
+firefox-developer-edition
 gtk-vnc
 imv
 mpv

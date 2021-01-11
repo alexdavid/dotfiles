@@ -7,7 +7,7 @@ mkdir -p "$PROFILES_DIR"
 function launchff {
   if [ -d "$1" ]; then
     export MOZ_ENABLE_WAYLAND=1
-    exec firefox --profile "$1"
+    firefox-developer-edition --profile "$1"
   else
     exec swaynag -m "No such profile '$1'"
   fi
@@ -32,6 +32,7 @@ elif [ "$SELECTED_PROFILE" = "New Temporary Profile" ]; then
   PROFILE="$(mktemp -d /tmp/firefox.XXXXXXXXXX)"
   ~/.config/firefox/new-profile-gen/generate "$PROFILE" "$PROFILE"
   launchff "$PROFILE"
+  rm -rf "$PROFILE"
 elif [ -n "$SELECTED_PROFILE" ]; then
   launchff "$PROFILES_DIR/$SELECTED_PROFILE"
 fi
