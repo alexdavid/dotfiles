@@ -49,3 +49,6 @@ user_pref("datareporting.policy.firstRunURL", "");
 // Disable require extension signature
 user_pref("xpinstall.signatures.required", false);
 user_pref("extensions.langpacks.signatures.required", false);
+
+// Disable pocket
+user_pref("extensions.pocket.enabled", false);
