@@ -2,8 +2,43 @@
   visibility: collapse !important;
 }
 
-#main-window {
-  background-color: rgba(255, 255, 255, 0.6) !important;
+@media (prefers-color-scheme: light) {
+  #main-window { background-color: rgba(255, 255, 255, 0.6) !important; }
+}
+
+@media (prefers-color-scheme: dark) {
+  #main-window  {
+    background-color: rgba(0, 0, 0, 0.6) !important;
+  }
+  #main-window body {
+    --lwt-accent-color:rgb(12, 12, 13);
+    --lwt-text-color:rgba(249, 249, 250) !important;
+    --lwt-tab-text:rgba(249, 249, 250);
+    --toolbar-color:rgba(249, 249, 250);
+    --arrowpanel-background:rgb(74, 74, 79);
+    --panel-disabled-color:rgba(249, 249, 250, 0.5);
+    --panel-description-color:rgba(249, 249, 250, 0.65);
+    --arrowpanel-color:rgba(249, 249, 250, 1);
+    --arrowpanel-border-color:rgb(39, 39, 43);
+    --lwt-toolbar-field-background-color:rgb(71, 71, 73);
+    --lwt-toolbar-field-color:rgba(249, 249, 250, 1);
+    --lwt-toolbar-field-border-color:rgba(249, 249, 250, 0.20000000298023224);
+    --lwt-toolbar-field-focus:rgba(71, 71, 73, 1);
+    --lwt-toolbar-field-focus-color:rgba(249, 249, 250, 1);
+    --toolbar-bgcolor:rgb(50, 50, 52);
+    --chrome-content-separator-color:rgb(12, 12, 13);
+    --lwt-toolbarbutton-icon-fill:rgba(249, 249, 250, 0.699999988079071);
+    --autocomplete-popup-background:rgb(74, 74, 79);
+    --autocomplete-popup-color:rgb(249, 249, 250);
+    --urlbar-separator-color:rgb(95, 102, 112);
+    --newtab-background-color:rgba(42, 42, 46, 1);
+  }
+  #titlebar {
+    color: white !important;
+  }
+  #toolbar-menubar {
+    color: white !important;
+  }
 }
 
 #main-window:after {

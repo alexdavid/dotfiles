@@ -21,10 +21,10 @@ user_pref("browser.toolbars.bookmarks.visibility", "never");
 // Enable userchrome
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
-// Set dark theme
+// Set theme
 user_pref("extensions.activeThemeID", "firefox-compact-light@mozilla.org");
-user_pref("ui.systemUsesDarkTheme", 0);
 user_pref("devtools.theme", "light");
+// user_pref("ui.systemUsesDarkTheme", 0);
 
 // Disable new-tab page garbage
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
