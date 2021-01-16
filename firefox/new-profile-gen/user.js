@@ -52,3 +52,9 @@ user_pref("extensions.langpacks.signatures.required", false);
 
 // Disable pocket
 user_pref("extensions.pocket.enabled", false);
+
+// Open devtools in separate window
+user_pref("devtools.toolbox.host", "window");
+
+// Set Highlight All when finding
+user_pref("findbar.highlightAll", true);
