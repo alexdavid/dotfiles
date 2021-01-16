@@ -4,18 +4,22 @@ PROFILES_DIR=~/.local/share/firefox-profiles
 
 mkdir -p "$PROFILES_DIR"
 
+SELECTED_PROFILE="$1"
 URL="$2"
 
 function launchff {
   if [ -d "$1" ]; then
     export MOZ_ENABLE_WAYLAND=1
-    firefox-developer-edition --profile "$1" "$URL"
+    if [ -n "$URL" ]; then
+      firefox-developer-edition --profile "$1" "$URL"
+    else
+      firefox-developer-edition --profile "$1"
+    fi
   else
     exec swaynag -m "No such profile '$1'"
   fi
 }
 
-SELECTED_PROFILE=$1
 if [ -z "$SELECTED_PROFILE" ]; then
   SELECTED_PROFILE=$({
     ls "$PROFILES_DIR"
