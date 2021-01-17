@@ -8,7 +8,7 @@ fi
 
 THEME=$(jq ".$THEME_NAME" < "$HOME/.config/sway/themes.json")
 
+swaymsg "output * bg $HOME/.local/share/wallpapers/$(jq -r .wallpaper <<< "$THEME") fill"
 while read ID; do
-  swaymsg "output $ID bg $HOME/.local/share/wallpapers/$(jq -r .wallpaper <<< "$THEME") fill"
   swaymsg "bar bar-0 colors statusline $(jq -r .barColor <<< "$THEME")"
 done < <(swaymsg -t get_outputs | jq -r 'map(.name) | join("\n")')
