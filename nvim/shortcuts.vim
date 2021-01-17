@@ -14,30 +14,15 @@ nmap <silent> <leader>S :new<CR>
 nmap <silent> <leader>V :vnew<CR>
 nmap <silent> <leader>x :bd<CR>
 
-" Function Resize - resizes split panes like tmux does:
-" When focus is on the last pane it reverses resizing
-fun! Resize(direction, scalar, notLastCommand, lastCommand)
-  let startWinnr = winnr()
-  exec "normal! " . a:direction
-  if winnr() == startWinnr
-    " We are on the last pane use lastCommand
-    exec "normal! " . a:scalar . "" . a:lastCommand
-  else
-    exec startWinnr . "wincmd w"
-    " We are not on the last pane use notLastCommand
-    exec "normal! " . a:scalar . "" . a:notLastCommand
-  endif
-endfun
+nmap <silent> <leader>h <C-w><
+nmap <silent> <leader>l <C-w>>
+nmap <silent> <leader>j <C-w>+
+nmap <silent> <leader>k <C-w>-
 
-nmap <silent> <leader>h :call Resize('l', 1, '<', '>')<CR>
-nmap <silent> <leader>l :call Resize('l', 1, '>', '<')<CR>
-nmap <silent> <leader>j :call Resize('j', 1, '+', '-')<CR>
-nmap <silent> <leader>k :call Resize('j', 1, '-', '+')<CR>
-
-nmap <silent> <leader>H :call Resize('l', 10, '<', '>')<CR>
-nmap <silent> <leader>L :call Resize('l', 10, '>', '<')<CR>
-nmap <silent> <leader>J :call Resize('j', 10, '+', '-')<CR>
-nmap <silent> <leader>K :call Resize('j', 10, '-', '+')<CR>
+nmap <silent> <leader>H 10<C-w><
+nmap <silent> <leader>L 10<C-w>>
+nmap <silent> <leader>J 10<C-w>+
+nmap <silent> <leader>K 10<C-w>-
 
 function! s:moveToPane(direction)
   let oldnr = winnr()
@@ -56,8 +41,17 @@ nnoremap <silent> <C-j> :MoveToDown<cr>
 nnoremap <silent> <C-k> :MoveToUp<cr>
 nnoremap <silent> <C-l> :MoveToRight<cr>
 
-map <ScrollWheelUp> <C-Y>
-map <ScrollWheelDown> <C-E>
+function! s:toggle_zoom()
+  if exists('t:winrestcmd')
+    exec t:winrestcmd
+    unlet t:winrestcmd
+  else
+    let t:winrestcmd = winrestcmd()
+    vert resize | resize
+  end
+endfunction
+command! Zoom call s:toggle_zoom()
+nnoremap <silent> <leader><enter> :Zoom<cr>
 
 " Quickfix list mappings
 autocmd BufReadPost quickfix nnoremap <buffer> s <C-W><CR><C-w>K
@@ -124,14 +118,3 @@ vmap <silent> <leader>q :norm! @q<CR>
 
 " Use vim keybindings when running a command
 nmap <silent> <leader>; q:i
-
-" Tab number shortcuts
-nnoremap <silent> <Leader>1        :tabnext 1<CR>
-nnoremap <silent> <Leader>2        :tabnext 2<CR>
-nnoremap <silent> <Leader>3        :tabnext 3<CR>
-nnoremap <silent> <Leader>4        :tabnext 4<CR>
-nnoremap <silent> <Leader>5        :tabnext 5<CR>
-nnoremap <silent> <Leader>6        :tabnext 6<CR>
-nnoremap <silent> <Leader>7        :tabnext 7<CR>
-nnoremap <silent> <Leader>8        :tabnext 8<CR>
-nnoremap <silent> <Leader>9        :tabnext 9<CR>
