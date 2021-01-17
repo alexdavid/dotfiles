@@ -1,21 +1,3 @@
-# Will be available in the next version of alacritty
-# which will prevent needing to duplicate the entire
-# config file for light/dark swap:
-#
-# import:
-#   - $HOME/.config/alacritty/colors.yml
-
-font:
-  normal:
-    family: FuraMono Nerd Font Mono
-    style: Regular
-
-  bold:
-    family: Fira Mono
-    style: Bold
-
-  size: 13.0
-
 colors:
   primary:
     background: '0x282c34'
@@ -40,18 +22,3 @@ colors:
     magenta: '0x6855DE'
     cyan: '0x4FB8CC'
     white: '0xf1f1f1'
-
-background_opacity: 0.9
-
-scrolling:
-  multiplier: 40
-
-key_bindings:
-  - { key: C,      mods: Alt, action: Copy             }
-  - { key: V,      mods: Alt, action: Paste            }
-  - { key: K,      mods: Alt, action: ClearHistory     }
-  - { key: K,      mods: Alt, chars: "\x0c"            }
-  - { key: Equals, mods: Alt, action: IncreaseFontSize }
-  - { key: Key0,   mods: Alt, action: ResetFontSize    }
-  - { key: Minus,  mods: Alt, action: DecreaseFontSize }
-  - { key: N,      mods: Alt, action: SpawnNewInstance }

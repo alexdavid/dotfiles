@@ -4,13 +4,14 @@ set -e
 
 if [ -f ~/.config/isdark ]; then
   rm ~/.config/isdark
-  cp ~/.config/alacritty/light.yml  ~/.config/alacritty/alacritty.yml
+  cp ~/.config/alacritty/light.yml  ~/.config/alacritty/current-theme.yml
   gsettings set org.gnome.desktop.interface gtk-theme Arc
 else
   touch ~/.config/isdark
-  cp ~/.config/alacritty/dark.yml  ~/.config/alacritty/alacritty.yml
+  cp ~/.config/alacritty/dark.yml  ~/.config/alacritty/current-theme.yml
   gsettings set org.gnome.desktop.interface gtk-theme Arc-Dark
 fi
 
+touch ~/.config/alacritty/alacritty.yml
 ~/.config/sway/set-wallpaper &
 killall -s SIGUSR1 nvim || true

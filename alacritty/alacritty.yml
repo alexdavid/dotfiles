@@ -1,9 +1,5 @@
-# Will be available in the next version of alacritty
-# which will prevent needing to duplicate the entire
-# config file for light/dark swap:
-#
-# import:
-#   - $HOME/.config/alacritty/colors.yml
+import:
+  - ~/.config/alacritty/current-theme.yml
 
 font:
   normal:
@@ -15,31 +11,6 @@ font:
     style: Bold
 
   size: 13.0
-
-colors:
-  primary:
-    background: '0xf1f1f1'
-    foreground: '0x282c34'
-
-  normal:
-    black: '0x212121'
-    red: '0xc30771'
-    green: '0x10A778'
-    yellow: '0xA89C14'
-    blue: '0x008EC4'
-    magenta: '0x523C79'
-    cyan: '0x20A5BA'
-    white: '0xd9d9d9'
-
-  bright:
-    black: '0x424242'
-    red: '0xfb007a'
-    green: '0x5FD7AF'
-    yellow: '0xF3E430'
-    blue: '0x20BBFC'
-    magenta: '0x6855DE'
-    cyan: '0x4FB8CC'
-    white: '0xf1f1f1'
 
 background_opacity: 0.9
 
