@@ -58,6 +58,8 @@ autocmd BufReadPost quickfix nnoremap <buffer> s <C-W><CR><C-w>K
 autocmd BufReadPost quickfix nnoremap <buffer> v <C-w><CR><C-w>H<C-W>b<C-W>J<C-W>t
 autocmd BufReadPost quickfix nnoremap <buffer> t <C-w><CR><C-w>T
 autocmd BufReadPost quickfix nnoremap <buffer> T <C-w><CR><C-w>TgT<C-W><C-W>
+nnoremap <silent> cn :cnext<cr>
+nnoremap <silent> cp :cprevious<cr>
 
 " Indenting
 vmap < <gv
