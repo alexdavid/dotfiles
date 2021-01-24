@@ -2,5 +2,6 @@
 
 alacritty \
   --title=popupterm \
-  --dimensions 100 8 \
+  --option window.dimensions.columns=100 \
+  --option window.dimensions.lines=8 \
   --command sh -c "$1"
