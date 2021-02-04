@@ -21,7 +21,7 @@ key_bindings:
   - { key: C,      mods: Alt, action: Copy             }
   - { key: V,      mods: Alt, action: Paste            }
   - { key: K,      mods: Alt, action: ClearHistory     }
-  - { key: K,      mods: Alt, chars: "\x0c"            }
+  - { key: K,      mods: Alt, command: ".config/alacritty/clear-grid" }
   - { key: Equals, mods: Alt, action: IncreaseFontSize }
   - { key: Key0,   mods: Alt, action: ResetFontSize    }
   - { key: Minus,  mods: Alt, action: DecreaseFontSize }
