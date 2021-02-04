@@ -12,7 +12,7 @@ interval=persist
 
 [updates]
 command=$HOME/.config/i3blocks/updates.sh
-interval=1500
+interval=2550
 
 [wifi]
 command=$HOME/.config/i3blocks/wifi.sh
@@ -29,4 +29,4 @@ interval=30
 
 [time]
 command=echo "$(date '+%a, %b %d %l:%M%P')    "
-interval=10
+interval=11
