@@ -58,3 +58,6 @@ user_pref("devtools.toolbox.host", "window");
 
 // Set Highlight All when finding
 user_pref("findbar.highlightAll", true);
+
+// Make picture in picture button less obnoxious
+user_pref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
