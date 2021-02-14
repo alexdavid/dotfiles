@@ -3,10 +3,10 @@
 set -e
 
 case "$1" in
-  https://twitch.tv/*)       mpvsingleton "$1"          ;;
-  https://vimeo.com/*)       mpvsingleton "$1"          ;;
-  https://youtube.com/*)     mpvsingleton "$1"          ;;
-  https://www.youtube.com/*) mpvsingleton "$1"          ;;
-  https://youtu.be/*)        mpvsingleton "$1"          ;;
-  https://*)                 ~/.config/firefox/launch "New Temporary Profile" "$1" ;;
+  https://twitch.tv/*)       exec mpvsingleton "$1" ;;
+  https://vimeo.com/*)       exec mpvsingleton "$1" ;;
+  https://youtube.com/*)     exec mpvsingleton "$1" ;;
+  https://www.youtube.com/*) exec mpvsingleton "$1" ;;
+  https://youtu.be/*)        exec mpvsingleton "$1" ;;
+  *)                         exec ~/.config/firefox/launch "New Temporary Profile" "$1" ;;
 esac
