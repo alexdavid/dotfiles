@@ -39,6 +39,7 @@ alias dcub "docker-compose up --build"
 # Env
 #########################################
 set -x EDITOR nvim
+set -x BROWSER ~/.config/bin/browser
 set -x GOPATH ~/Development/go
 set -x PASSWORD_STORE_ENABLE_EXTENSIONS true
 set -x BEMENU_OPTS "--ignorecase --list=10 --tb=#abb2bf --tf=#282c34 '--fn=SFNS Display 14' --nb=#333333 --hb=#abb2bf --hf=#282c34 --monitor=all"
