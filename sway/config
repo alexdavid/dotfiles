@@ -41,7 +41,6 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+n exec ~/.config/firefox/launch "New Temporary Profile"
 bindsym $mod+Shift+n exec ~/.config/firefox/launch
 
-bindsym $mod+space exec launch
 bindsym $mod+backslash exec custompassmenu
 bindsym $alt+Mod4+backslash exec custompassmenu --last
 
