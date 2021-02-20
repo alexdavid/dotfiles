@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.15
+pkgver=1.1.16
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -27,6 +27,7 @@ swaylock
 todoman
 vdirsyncer
 wl-clipboard
+wtype
 xdg-utils # xdg-open
 xorg-server-xwayland
 
