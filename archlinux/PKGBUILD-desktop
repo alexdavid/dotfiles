@@ -1,11 +1,12 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.16
+pkgver=1.1.17
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
 depends=(
 
 # DE Stuff (dependencies for sway, i3block scripts, etc)
+arc-gtk-theme
 bemenu
 gcr # dep for gtk3 pinentry
 grim # screenshots
