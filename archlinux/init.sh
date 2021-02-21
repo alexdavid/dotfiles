@@ -5,7 +5,7 @@ cd $(dirname $0)
 
 for PKGBUILD in "$@"; do
   echo "Installing $PKGBUILD"
-  makepkg -si -p "$PKGBUILD"
+  makepkg -sic -p "$PKGBUILD"
 done
 
 rm *.pkg.tar.zst
