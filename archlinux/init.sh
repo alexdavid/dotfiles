@@ -3,5 +3,9 @@
 set -e
 cd $(dirname $0)
 
-makepkg -si -p "PKGBUILD-$1"
+for PKGBUILD in "$@"; do
+  echo "Installing $PKGBUILD"
+  makepkg -si -p "$PKGBUILD"
+done
+
 rm *.pkg.tar.zst

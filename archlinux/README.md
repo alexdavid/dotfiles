@@ -9,10 +9,10 @@ that I use to get all the base tools I need to get up and running on a new insta
 Initial setup scripts are in the [setup](setup) directory
 
 ## Init
-[The init script](init.sh) takes a suffix of the PKGBUILD file to run
+[The init script](init.sh) takes a list of PKGBUILD files to install
 
 For example:
 ```shell
-$ ./init.sh shared
+$ ./init.sh PKGBUILD-shared PKGBUILD-desktop
 ```
-will install all dependencies in the PKGBUILD-shared file.
+will install all dependencies in the PKGBUILD-shared & PKGBUILD-desktop files.
