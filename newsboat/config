@@ -7,12 +7,7 @@ bind-key k prev
 bind-key l open
 bind-key q hard-quit
 
-# Inoreader
-urls-source "inoreader"
-inoreader-passwordeval "pass apps/newsboat/inoreader.password"
-inoreader-app-id 999999533
-inoreader-app-key UXbilNGmGZ0zu1uM0sJNMkREdKJxXujW
-inoreader-show-special-feeds no
+include ~/.local/share/newsboat/credentials
 
 # Misc
 browser ~/.config/bin/browser
