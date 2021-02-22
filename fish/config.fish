@@ -1,8 +1,12 @@
 #########################################
 # Path
 #########################################
-set -x PATH ~/.config/bin $PATH
-set -x PATH $PATH ~/Development/go/bin
+set -x PATH \
+  ~/.config/jail/bin \
+  ~/.config/bin \
+  /usr/local/sbin \
+  /usr/local/bin \
+  /usr/bin
 
 
 #########################################
