@@ -9,14 +9,18 @@ URL="$2"
 
 function launchff {
   if [ -d "$1" ]; then
-    export MOZ_ENABLE_WAYLAND=1
-    EXEC=(firejail --whitelist="$1" firefox-developer-edition --profile "$1")
+    source ~/.config/jail/init
+    gui
+    gpu
+    network
+    read_write "$1"
 
     if [ -n "$URL" ]; then
-      EXEC+=("$URL")
+      run_jail_raw -- firefox-developer-edition --profile "$1" "$URL"
+    else
+      run_jail_raw -- firefox-developer-edition --profile "$1"
     fi
 
-    exec ${EXEC[*]}
   else
     exec swaynag -m "No such profile '$1'"
   fi

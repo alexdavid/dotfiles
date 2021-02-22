@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.1.11
+pkgver=1.1.12
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -8,7 +8,7 @@ depends=(
 atool
 bind # dig
 binutils # required for makepkg
-firejail
+bubblewrap
 fish
 fzf
 htop
