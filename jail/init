@@ -14,6 +14,7 @@ BWRAP_ARGS=(
   --new-session
   --proc /proc
   --ro-bind /bin/sh /bin/sh
+  --ro-bind /bin/bash /bin/bash
   --ro-bind /usr /usr
   --symlink usr/lib /lib
   --symlink usr/lib64 /lib64
@@ -35,6 +36,22 @@ function mount_cwd {
     exit 1
   fi
   read_write "$PWD"
+}
+
+function read_only_all {
+  for MAYBE_PATH in "$@"; do
+    if [ -e "$MAYBE_PATH" ]; then
+      read_only "$(realpath "$MAYBE_PATH")"
+    fi
+  done
+}
+
+function read_write_all {
+  for MAYBE_PATH in "$@"; do
+    if [ -e "$MAYBE_PATH" ]; then
+      read_write "$(realpath "$MAYBE_PATH")"
+    fi
+  done
 }
 
 function network {

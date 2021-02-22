@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+gui
+gpu
+read_only_all "$@"
+
+run_jail

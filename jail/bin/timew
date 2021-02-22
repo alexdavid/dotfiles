@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+mkdir -p ~/.local/share/timewarrior
+
+bind ~/.local/share/timewarrior ~/.timewarrior
+read_only /usr/share/zoneinfo
+read_only /etc/localtime
+
+run_jail
