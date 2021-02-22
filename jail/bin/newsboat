@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+read_only ~/.config/newsboat
+read_write ~/.local/share/newsboat
+network
+
+run_jail

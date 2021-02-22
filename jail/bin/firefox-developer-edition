@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+camera
+gpu
+gui
+network
+
+run_jail

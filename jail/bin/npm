@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+mkdir -p ~/.local/share/nodejs/npm
+touch ~/.local/share/nodejs/npmrc
+
+append_path ./node_modules/.bin
+bind ~/.local/share/nodejs/npm ~/.npm
+bind ~/.local/share/nodejs/npmrc ~/.npmrc
+mount_cwd
+network
+
+run_jail

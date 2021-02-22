@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+mkdir -p ~/.local/share/nodejs/yarn
+touch ~/.local/share/nodejs/npmrc
+
+append_path ./node_modules/.bin
+bind ~/.local/share/nodejs/npmrc ~/.npmrc
+bind ~/.local/share/nodejs/yarn ~/.cache/yarn
+mount_cwd
+network
+
+run_jail

@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+set -e
+
+EXECUTABLE=$(basename "$0")
+ARGV=("$@")
+
+BWRAP_PATH="/usr/bin"
+
+BWRAP_ARGS=(
+  --dev /dev
+  --die-with-parent
+  --dir "/run/user/$(id -u)"
+  --new-session
+  --proc /proc
+  --ro-bind /bin/sh /bin/sh
+  --ro-bind /usr /usr
+  --symlink usr/lib /lib
+  --symlink usr/lib64 /lib64
+  --tmpfs /home/$USER
+  --tmpfs /tmp
+  --unshare-all
+)
+
+function append_path { BWRAP_PATH+=":$1" ; }
+function bind { BWRAP_ARGS+=(--bind "$1" "$2") ; }
+function camera { BWRAP_ARGS+=(--dev-bind /dev/video0 /dev/video0) ; }
+function read_only { BWRAP_ARGS+=(--ro-bind "$1" "$1") ; }
+function read_write { BWRAP_ARGS+=(--bind "$1" "$1") ; }
+function ro_bind { BWRAP_ARGS+=(--ro-bind "$1" "$2") ; }
+
+function mount_cwd {
+  if [[ "$PWD" != "$HOME"/* ]]; then
+    echo "bindcwd cannot be called in $PWD"
+    exit 1
+  fi
+  read_write "$PWD"
+}
+
+function network {
+  BWRAP_ARGS+=(
+    --ro-bind /etc/ssl /etc/ssl
+    --ro-bind /etc/ca-certificates /etc/ca-certificates
+    --ro-bind /etc/resolv.conf /etc/resolv.conf
+    --share-net
+    --hostname RESTRICTED
+  )
+}
+
+function gui {
+  BWRAP_ARGS+=(
+    --ro-bind /etc/fonts /etc/fonts
+    --ro-bind /run/user/"$(id -u)"/wayland-0 /run/user/"$(id -u)"/wayland-0
+    --ro-bind /run/user/"$(id -u)"/pulse /run/user/"$(id -u)"/pulse
+    --ro-bind "$HOME/.config/dconf" "$HOME/.config/dconf"
+  )
+}
+
+function gpu {
+  BWRAP_ARGS+=(
+    --dev-bind /dev/dri /dev/dri
+    --ro-bind /sys /sys
+  )
+}
+
+
+function dbus {
+  BWRAP_ARGS+=(
+    --ro-bind /run/user/"$(id -u)"/bus /run/user/"$(id -u)"/bus
+  )
+}
+
+function run_jail {
+  BWRAP_ARGS+=(--setenv PATH "$BWRAP_PATH")
+  exec bwrap "${BWRAP_ARGS[@]}" -- "$EXECUTABLE" "${ARGV[@]}"
+}
+
+function run_jail_raw {
+  BWRAP_ARGS+=(--setenv PATH "$BWRAP_PATH")
+  exec bwrap "${BWRAP_ARGS[@]}" "$@"
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+read_only ~/.config/todoman
+read_write ~/.local/share/calendars
+
+run_jail

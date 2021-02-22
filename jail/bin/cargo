@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+mkdir -p ~/.local/share/{rustup,cargo}
+
+bind ~/.local/share/cargo ~/.cargo
+bind ~/.local/share/rustup ~/.rustup
+gpu
+gui
+mount_cwd
+network
+
+run_jail
