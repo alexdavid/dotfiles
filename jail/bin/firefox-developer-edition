@@ -5,5 +5,6 @@ camera
 gpu
 gui
 network
+read_write ~/Downloads
 
 run_jail

@@ -13,6 +13,7 @@ function launchff {
     gui
     gpu
     network
+    read_write ~/Downloads
     read_write "$1"
 
     if [ -n "$URL" ]; then
