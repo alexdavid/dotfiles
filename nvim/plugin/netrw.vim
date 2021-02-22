@@ -9,6 +9,9 @@ function! CustomNetrwMap()
   nmap <silent> <buffer> <C-l> :MoveToRight<CR>
 endfunction
 
+" Disable left click opens files in netrw
+let g:netrw_mousemaps=0
+
 augroup FILETYPES
   autocmd FileType netrw call CustomNetrwMap()
 augroup END
