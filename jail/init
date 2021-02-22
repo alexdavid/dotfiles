@@ -13,9 +13,8 @@ BWRAP_ARGS=(
   --dir "/run/user/$(id -u)"
   --new-session
   --proc /proc
-  --ro-bind /bin/sh /bin/sh
-  --ro-bind /bin/bash /bin/bash
   --ro-bind /usr /usr
+  --symlink /usr/bin /bin
   --symlink usr/lib /lib
   --symlink usr/lib64 /lib64
   --tmpfs /home/$USER
@@ -25,10 +24,15 @@ BWRAP_ARGS=(
 
 function append_path { BWRAP_PATH+=":$1" ; }
 function bind { BWRAP_ARGS+=(--bind "$1" "$2") ; }
-function camera { BWRAP_ARGS+=(--dev-bind /dev/video0 /dev/video0) ; }
 function read_only { BWRAP_ARGS+=(--ro-bind "$1" "$1") ; }
 function read_write { BWRAP_ARGS+=(--bind "$1" "$1") ; }
 function ro_bind { BWRAP_ARGS+=(--ro-bind "$1" "$2") ; }
+
+function camera {
+  if [ -e /dev/video0 ]; then
+    BWRAP_ARGS+=(--dev-bind /dev/video0 /dev/video0) 
+  fi
+}
 
 function mount_cwd {
   if [[ "$PWD" != "$HOME"/* ]]; then
