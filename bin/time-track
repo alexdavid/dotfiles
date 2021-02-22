@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if timew; then
+  timew stop
+  git -C ~/.timewarrior commit -am "Time track"
+else
+  TAG=$(timew tags | tail -n+4 | head -n-1 | awk '{ print $1 }' | bemenu)
+  [ -n "$TAG" ] && timew start "$TAG"
+fi
+pkill -RTMIN+1 i3blocks

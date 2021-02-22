@@ -2,6 +2,11 @@ separator_block_width=20
 separator=false
 markup=none
 
+[timew]
+command=$HOME/.config/i3blocks/timew.sh
+interval=5
+signal=1
+
 [calendar]
 command=$HOME/.config/i3blocks/calendar.sh
 interval=600
