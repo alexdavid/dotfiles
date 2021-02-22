@@ -10,12 +10,12 @@ let g:lsc_server_commands = {
 \    'suppress_stderr': v:true,
 \  },
 \  'typescript': {
-\    'command': 'docker run --rm -i -v $PWD:$PWD alexdavid/ts-lsp',
+\    'command': 'typescript-language-server --stdio',
 \    'log_level': -1,
 \    'suppress_stderr': v:true,
 \  },
 \  'typescript.tsx': {
-\    'command': 'docker run --rm -i -v $PWD:$PWD alexdavid/ts-lsp',
+\    'command': 'typescript-language-server --stdio',
 \    'log_level': -1,
 \    'suppress_stderr': v:true,
 \  },

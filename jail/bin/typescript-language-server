@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+mount_cwd
+read_only ~/.local/share/nodejs/node_modules
+
+run_jail_raw -- ~/.local/share/nodejs/node_modules/.bin/typescript-language-server "$@"
