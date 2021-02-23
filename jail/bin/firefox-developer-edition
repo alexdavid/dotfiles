@@ -6,5 +6,12 @@ gpu
 gui
 network
 read_write ~/Downloads
+read_only /usr/share/zoneinfo
+read_only /etc/localtime
+
+# From ~/.config/firefox/launch
+if [ -n "$FF_MOUNT_PROFILE" ]; then
+  read_write "$FF_MOUNT_PROFILE"
+fi
 
 run_jail

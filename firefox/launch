@@ -9,17 +9,10 @@ URL="$2"
 
 function launchff {
   if [ -d "$1" ]; then
-    source ~/.config/jail/init
-    gui
-    gpu
-    network
-    read_write ~/Downloads
-    read_write "$1"
-
     if [ -n "$URL" ]; then
-      run_jail_raw -- firefox-developer-edition --profile "$1" "$URL"
+      FF_MOUNT_PROFILE="$1" firefox-developer-edition --profile "$1" "$URL"
     else
-      run_jail_raw -- firefox-developer-edition --profile "$1"
+      FF_MOUNT_PROFILE="$1" firefox-developer-edition --profile "$1"
     fi
 
   else
