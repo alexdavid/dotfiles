@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IPC_SOCKET="/tmp/mpv-singleton"
+IPC_SOCKET="/tmp/mpv-singleton/sock"
 
 if [ ! -e "$IPC_SOCKET" ]; then
   {

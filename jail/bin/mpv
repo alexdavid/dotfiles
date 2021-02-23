@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+mkdir -p /tmp/mpv-singleton
+
+gui
+gpu
+read_only_all "$@"
+read_write /tmp/mpv-singleton
+network
+
+run_jail
