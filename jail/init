@@ -6,10 +6,10 @@ EXECUTABLE=$(basename "$0")
 ARGV=("$@")
 
 BWRAP_PATH="/usr/bin"
+DIE_WITH_PARENT=1
 
 BWRAP_ARGS=(
   --dev /dev
-  --die-with-parent
   --dir "/run/user/$(id -u)"
   --new-session
   --proc /proc
@@ -84,6 +84,16 @@ function gpu {
   )
 }
 
+function audio {
+  BWRAP_ARGS+=(
+    --ro-bind /run/user/"$(id -u)"/pulse /run/user/"$(id -u)"/pulse
+  )
+}
+
+function daemon {
+  DIE_WITH_PARENT=0
+}
+
 
 function dbus {
   BWRAP_ARGS+=(
@@ -91,12 +101,19 @@ function dbus {
   )
 }
 
-function run_jail {
+function finalize_args {
   BWRAP_ARGS+=(--setenv PATH "$BWRAP_PATH")
+  if [ $DIE_WITH_PARENT -eq 1 ]; then
+    BWRAP_ARGS+=(--die-with-parent)
+  fi
+}
+
+function run_jail {
+  finalize_args
   exec bwrap "${BWRAP_ARGS[@]}" -- "$EXECUTABLE" "${ARGV[@]}"
 }
 
 function run_jail_raw {
-  BWRAP_ARGS+=(--setenv PATH "$BWRAP_PATH")
+  finalize_args
   exec bwrap "${BWRAP_ARGS[@]}" "$@"
 }

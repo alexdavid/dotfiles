@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+audio
+daemon
+network
+read_only /etc/mpd.conf
+read_only ~/.config/mpd
+read_only ~/Music
+read_write ~/.local/share/mpd
+
+run_jail
