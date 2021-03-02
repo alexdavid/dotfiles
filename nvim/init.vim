@@ -11,6 +11,7 @@ filetype plugin indent on
 so ~/.config/nvim/colorscheme.vim
 set backspace=2           " Make backspace delete
 set clipboard=unnamedplus " Make vim share clipboard with system
+set linebreak
 
 
 " Tab indenting
