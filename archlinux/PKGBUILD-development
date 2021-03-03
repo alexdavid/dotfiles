@@ -1,5 +1,5 @@
 pkgname=alexdavid-development-meta
-pkgver=1.0.3
+pkgver=1.0.4
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -9,10 +9,20 @@ docker
 docker-compose
 gcc
 git
+make
+
+# Golang
 go
 go-tools
-make
+gopls
+
+# Rust
 rustup
+
+# NodeJS
+nodejs
+npm
+yarn
 
 )
 
