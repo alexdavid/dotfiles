@@ -44,5 +44,5 @@ pass show "$password_name" | {
     value="${map["$key"]}"
   fi
 
-  printf "%s" "$value" | wtype -
+  printf "%s" "$value" | wtype -s 500 - &
 }
