@@ -6,6 +6,7 @@ mkdir -p /tmp/mpv-singleton
 gui
 gpu
 read_only_all "$@"
+read_only ~/.config/mpv
 read_write /tmp/mpv-singleton
 network
 
