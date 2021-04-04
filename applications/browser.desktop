@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Browser
+GenericName=Web Browser
+Exec=browser %u
+Icon=firefox
+Terminal=false
+Type=Application
+NoDisplay=false

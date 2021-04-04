@@ -1,5 +1,6 @@
 *.cache
 *.desktop
 
+!browser.desktop
 !lock.desktop
 !toggle-colors.desktop
