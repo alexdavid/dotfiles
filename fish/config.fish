@@ -15,6 +15,7 @@ set -x PATH \
 # cd
 alias ..  "cd .."
 alias ... "cd ../.."
+alias sl ls
 
 # git
 alias gp  "git pull"
