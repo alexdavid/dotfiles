@@ -22,9 +22,8 @@ user_pref("browser.toolbars.bookmarks.visibility", "never");
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Set theme
-user_pref("extensions.activeThemeID", "firefox-compact-light@mozilla.org");
+user_pref("extensions.activeThemeID", "default-theme@mozilla.org");
 user_pref("devtools.theme", "light");
-// user_pref("ui.systemUsesDarkTheme", 0);
 
 // Disable new-tab page garbage
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
@@ -41,7 +40,7 @@ user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("datareporting.policy.dataSubmissionEnabled", false); // Stop nagbar
 
 // Fixes rendering issues with transparent window elements
-user_pref("layers.acceleration.force-enabled", true);
+// user_pref("layers.acceleration.force-enabled", true);
 
 // Disable privacy tab from opening on new profiles
 user_pref("datareporting.policy.firstRunURL", "");
