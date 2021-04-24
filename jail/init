@@ -14,6 +14,7 @@ BWRAP_ARGS=(
   --new-session
   --proc /proc
   --ro-bind /usr /usr
+  --setenv BROWSER ''
   --symlink /usr/bin /bin
   --symlink usr/lib /lib
   --symlink usr/lib64 /lib64
