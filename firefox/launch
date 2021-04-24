@@ -10,9 +10,9 @@ URL="$2"
 function launchff {
   if [ -d "$1" ]; then
     if [ -n "$URL" ]; then
-      FF_MOUNT_PROFILE="$1" firefox-developer-edition --profile "$1" "$URL"
+      firefox-developer-edition --profile "$1" "$URL"
     else
-      FF_MOUNT_PROFILE="$1" firefox-developer-edition --profile "$1"
+      firefox-developer-edition --profile "$1"
     fi
 
   else
