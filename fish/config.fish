@@ -53,6 +53,8 @@ set -x BEMENU_OPTS "--ignorecase --list=10 --tb=#abb2bf --tf=#282c34 '--fn=SFNS 
 #########################################
 # Etc
 #########################################
+bind \cw backward-kill-word
+
 set fish_greeting ""
 
 function fish_title
