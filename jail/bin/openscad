@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+gui
+gpu
+mount_cwd
+
+run_jail
