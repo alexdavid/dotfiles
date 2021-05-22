@@ -1,1 +1,11 @@
 progressbar_look = "━━━"
+
+song_list_format = "$5{%A}|{%a} $4:: $3%t {$R%l $4}"
+main_window_color = 5
+
+header_visibility = "no"
+playlist_display_mode = "classic"
+user_interface = "alternative"
+
+current_item_prefix = "$(5_251)"
+current_item_suffix = "$0"
