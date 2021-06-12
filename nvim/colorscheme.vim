@@ -1,3 +1,6 @@
+highlight! link LspDiagnosticsUnderlineError SpellBad
+highlight! link LspDiagnosticsSignError Error
+
 colorscheme pencil
 if has("gui_running")
 else

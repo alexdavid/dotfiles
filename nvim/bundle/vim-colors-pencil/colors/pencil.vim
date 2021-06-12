@@ -29,8 +29,6 @@
 " SyntaxButton    #363738
 " SearchHighlight #F3E430  yellow
 
-hi clear
-
 if exists('syntax on')
     syntax reset
 endif

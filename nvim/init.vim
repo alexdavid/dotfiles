@@ -2,13 +2,14 @@ set rtp+=~/.config/nvim
 set shell=bash
 so ~/.config/nvim/shortcuts.vim
 execute pathogen#infect()
+so ~/.config/nvim/lsp.vim
+so ~/.config/nvim/colorscheme.vim
 
 syntax enable " Enable syntax highlighting
 filetype plugin indent on
 
 
 " General
-so ~/.config/nvim/colorscheme.vim
 set backspace=2           " Make backspace delete
 set clipboard=unnamedplus " Make vim share clipboard with system
 set linebreak
