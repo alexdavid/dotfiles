@@ -73,10 +73,10 @@ function gui {
   BWRAP_ARGS+=(
     --ro-bind ~/.fonts ~/.fonts
     --ro-bind /etc/fonts /etc/fonts
-    --ro-bind /run/user/"$(id -u)"/wayland-0 /run/user/"$(id -u)"/wayland-0
     --ro-bind /run/user/"$(id -u)"/pulse /run/user/"$(id -u)"/pulse
     --ro-bind "$HOME/.config/dconf" "$HOME/.config/dconf"
   )
+  read_only_all /run/user/"$(id -u)"/wayland-*
 }
 
 function gpu {
