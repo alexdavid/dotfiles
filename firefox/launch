@@ -9,6 +9,7 @@ URL="$2"
 
 function launchff {
   if [ -d "$1" ]; then
+    export MOZ_ENABLE_WAYLAND=1
     if [ -n "$URL" ]; then
       firefox-developer-edition --profile "$1" "$URL"
     else
