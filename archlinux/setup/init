@@ -28,7 +28,7 @@ function confirm {
 }
 
 section "GENERATING AND UPDATING MIRROR LIST"
-curl "https://www.archlinux.org/mirrorlist/?country=US&protocol=https&ip_version=4" | sed -E 's/^#//' > /etc/pacman.d/mirrorlist
+curl "https://archlinux.org/mirrorlist/?country=US&protocol=https&ip_version=4" | sed -E 's/^#//' > /etc/pacman.d/mirrorlist
 cat /etc/pacman.d/mirrorlist
 confirm "Does this mirror list look good"
 
