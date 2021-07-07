@@ -13,6 +13,7 @@ filetype plugin indent on
 set backspace=2           " Make backspace delete
 set clipboard=unnamedplus " Make vim share clipboard with system
 set linebreak
+set startofline
 
 
 " Tab indenting
