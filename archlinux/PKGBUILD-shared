@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.1.12
+pkgver=1.1.13
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -34,7 +34,6 @@ words # /usr/share/dict/words
 base
 binutils
 fakeroot
-intel-ucode
 linux
 linux-firmware
 man-db
