@@ -60,3 +60,6 @@ user_pref("findbar.highlightAll", true);
 
 // Make picture in picture button less obnoxious
 user_pref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
+
+// Don't search on localdomain subdomains
+user_pref("browser.fixup.domainsuffixwhitelist.localdomain", true);
