@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 source ~/.config/jail/init
 
+mkdir -p ~/Development/go
+
 read_write ~/Development/go
 mount_cwd
 network
