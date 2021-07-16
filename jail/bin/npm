@@ -7,6 +7,7 @@ touch ~/.local/share/nodejs/npmrc
 append_path ./node_modules/.bin
 bind ~/.local/share/nodejs/npm ~/.npm
 bind ~/.local/share/nodejs/npmrc ~/.npmrc
+bind ~/.local/share/nodejs/.cache ~/.cache
 read_only ~/.config/git
 mount_cwd
 network
