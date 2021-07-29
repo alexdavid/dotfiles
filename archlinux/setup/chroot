@@ -19,7 +19,6 @@ function ask {
 section "INSTALLING PACKAGES NEEDED AFTER REBOOT"
 pacman -S \
   fakeroot binutils \
-  intel-ucode \
   networkmanager \
   sudo \
   vi \

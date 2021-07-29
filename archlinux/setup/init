@@ -78,8 +78,14 @@ dd if=/dev/zero of=/mnt/var/swap count="$SWAPSIZE" bs=1MiB
 chmod 600 /mnt/var/swap
 mkswap /mnt/var/swap
 
+
+CPU_TYPE=""
+while [ "$CPU_TYPE" != intel -a "$CPU_TYPE" != amd ]; do
+  ask CPU_TYPE "Processor type? (intel/amd)"
+done
+
 section "INSTALLING BASE"
-pacstrap /mnt base linux linux-firmware
+pacstrap /mnt base linux linux-firmware "$CPU_TYPE"-ucode
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "/var/swap none swap defaults 0 0" >> /mnt/etc/fstab
 
@@ -98,7 +104,7 @@ efibootmgr \
   --create \
   --label "$EFILABEL" \
   --loader /vmlinuz-linux \
-  --unicode "cryptdevice=PARTUUID=$PARTUUID:root root=/dev/mapper/root rw initrd=\\intel-ucode.img initrd=\\initramfs-linux.img resume=UUID=$RESUME_UUID resume_offset=$RESUME_OFFSET" \
+  --unicode "cryptdevice=PARTUUID=$PARTUUID:root root=/dev/mapper/root rw initrd=\\$CPU_TYPE-ucode.img initrd=\\initramfs-linux.img resume=UUID=$RESUME_UUID resume_offset=$RESUME_OFFSET" \
   --verbose \
   ;
 
