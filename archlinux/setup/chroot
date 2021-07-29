@@ -26,7 +26,12 @@ pacman -S \
   ;
 
 section "ADDING ENCRYPT TO MKINITCPIO"
-vi /etc/mkinitcpio.conf
+echo << EOF >> /etc/mkinitcpio.conf
+MODULES=()
+BINARIES=()
+FILES=()
+HOOKS=(base udev autodetect modconf block encrypt filesystems keyboard fsck)
+EOF
 mkinitcpio -p linux
 
 section "SETTING LOCALE"
