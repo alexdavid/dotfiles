@@ -11,6 +11,9 @@ user_pref("browser.formfill.enable", false);
 // Enable first-party isolation
 user_pref("privacy.firstparty.isolate", true);
 
+// Resist Fingerprinting
+user_pref("privacy.resistFingerprinting", true);
+
 // Disable about:config warning
 user_pref("browser.aboutConfig.showWarning", false);
 
