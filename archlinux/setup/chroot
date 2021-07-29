@@ -30,7 +30,7 @@ echo << EOF >> /etc/mkinitcpio.conf
 MODULES=()
 BINARIES=()
 FILES=()
-HOOKS=(base udev autodetect modconf block encrypt filesystems keyboard fsck)
+HOOKS=(base udev autodetect modconf block encrypt filesystems resume keyboard fsck)
 EOF
 mkinitcpio -p linux
 

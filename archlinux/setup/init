@@ -91,12 +91,14 @@ rm /mnt/chroot
 section "CREATING EFISTUB BOOT ENTRY"
 ask EFILABEL "EFI label"
 PARTUUID=$(lsblk -dno PARTUUID ${PARTITIONS[2]})
+RESUME_UUID=$(findmnt -no UUID -T /mnt/var/swap)
+RESUME_OFFSET=$(filefrag -v /mnt/var/swap | awk '{ if($1=="0:"){print substr($4, 1, length($4)-2)} }')
 efibootmgr \
   --disk "$DRIVE" \
   --create \
   --label "$EFILABEL" \
   --loader /vmlinuz-linux \
-  --unicode "cryptdevice=PARTUUID=$PARTUUID:root root=/dev/mapper/root rw initrd=\\intel-ucode.img initrd=\\initramfs-linux.img" \
+  --unicode "cryptdevice=PARTUUID=$PARTUUID:root root=/dev/mapper/root rw initrd=\\intel-ucode.img initrd=\\initramfs-linux.img resume=UUID=$RESUME_UUID resume_offset=$RESUME_OFFSET" \
   --verbose \
   ;
 
