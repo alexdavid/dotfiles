@@ -40,7 +40,7 @@ bindsym $mod+$alt+5 exec ~/.config/sway/actions/take-screenshot window
 bindsym $mod+Return exec alacritty
 bindsym $mod+n exec ~/.config/firefox/launch "New Temporary Profile"
 bindsym $mod+Shift+n exec ~/.config/firefox/launch
-bindsym $mod+t exec ~/.config/bin/time-track
+bindsym $mod+t exec ~/.config/bin/toggle-colors
 
 bindsym $mod+backslash exec custompassmenu
 bindsym $alt+Mod4+backslash exec custompassmenu --last
