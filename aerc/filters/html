@@ -1,0 +1,10 @@
+#!/bin/sh
+
+source ~/.config/jail/init
+
+run_jail_raw w3m \
+	-T text/html \
+	-cols $(tput cols) \
+	-dump \
+	-o display_image=false \
+	-o display_link_number=true
