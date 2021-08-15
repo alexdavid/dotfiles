@@ -1,4 +1,4 @@
 {
-  "light": { "wallpaper": "light.jpg", "barColor": "#ffffff" },
+  "light": { "wallpaper": "light.jpg", "barColor": "#000000" },
   "dark": { "wallpaper": "dark.jpg", "barColor": "#ffffff" }
 }
