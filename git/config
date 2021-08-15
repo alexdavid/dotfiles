@@ -7,6 +7,7 @@
   co = checkout
   cob = checkout -b
   k = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an/%cn]" --decorate --graph
+  kd = k --date-order
 [color]
   ui = true
 [push]
