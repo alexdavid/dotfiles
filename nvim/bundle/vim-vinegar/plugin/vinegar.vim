@@ -118,6 +118,7 @@ function! s:setup_vinegar() abort
   nnoremap <buffer> . :<C-U> <C-R>=<SID>escaped(line('.'), line('.') - 1 + v:count1)<CR><Home>
   xnoremap <buffer> . <Esc>: <C-R>=<SID>escaped(line("'<"), line("'>"))<CR><Home>
   nnoremap <buffer> M :<C-U>!mv <C-R>=<SID>escaped(line('.'), line('.') - 1 + v:count1)<CR> <C-R>=<SID>escaped(line('.'), line('.') - 1 + v:count1)<CR>
+  nnoremap <buffer> C :<C-U>!cp <C-R>=<SID>escaped(line('.'), line('.') - 1 + v:count1)<CR> <C-R>=<SID>escaped(line('.'), line('.') - 1 + v:count1)<CR>
   if empty(mapcheck('y.', 'n'))
     nnoremap <silent><buffer> y. :<C-U>call setreg(v:register, join(<SID>absolutes(line('.'), line('.') - 1 + v:count1), "\n")."\n")<CR>
   endif
