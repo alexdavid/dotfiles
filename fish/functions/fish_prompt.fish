@@ -19,7 +19,7 @@ function fish_prompt
   set cmd_status $status
   set __last_color black
   if test -n "$SSH_CLIENT" -o -n "$SSH_TTY" -o "$HOME" != "/home/$USER"
-    __prompt_section blue black (whoami)@(hostname)
+    __prompt_section blue black (whoami)@(cat /etc/hostname)
   end
 
   set cwd (prompt_pwd)
