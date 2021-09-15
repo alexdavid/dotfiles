@@ -1,0 +1,4 @@
+[screencast]
+chooser_type=simple
+exec_before=~/.config/xdg-desktop-portal-wlr/before.sh
+chooser_cmd=~/.config/xdg-desktop-portal-wlr/chooser.sh

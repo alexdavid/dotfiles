@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.17
+pkgver=1.1.19
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -18,8 +18,8 @@ mpc
 pacman-contrib # checkupdates
 pamixer # sway config volume control shortcuts
 pavucontrol
-pulseaudio
-pulseaudio-alsa
+pipewire
+pipewire-pulse
 slurp # geometry for grim
 socat # mpvsingleton
 sway
@@ -29,6 +29,8 @@ todoman
 vdirsyncer
 wl-clipboard
 wtype
+xdg-desktop-portal
+xdg-desktop-portal-wlr
 xdg-utils # xdg-open
 xorg-server-xwayland
 

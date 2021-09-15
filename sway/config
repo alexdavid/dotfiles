@@ -117,7 +117,7 @@ bindsym $mod+r mode "resize"
 for_window [class="Pinentry"] floating enable
 for_window [title="popupterm"] floating enable
 
-exec dbus-update-activation-environment --all
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec mako
 exec_always ~/.config/sway/set-wallpaper
 exec_always ~/.config/sway/screen-layouts/restore

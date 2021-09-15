@@ -2,6 +2,11 @@ separator_block_width=20
 separator=false
 markup=none
 
+[screenshare]
+command=$HOME/.config/i3blocks/screenshare.sh
+interval=once
+signal=1
+
 [timew]
 command=$HOME/.config/i3blocks/timew.sh
 interval=5
