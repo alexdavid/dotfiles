@@ -1,8 +1,10 @@
 #!/usr/bin/env sh
 source ~/.config/jail/init
 
+mkdir -p ~/.local/share/{rustup,cargo}
+
 bind ~/.local/share/cargo ~/.cargo
 bind ~/.local/share/rustup ~/.rustup
 mount_cwd
 
-run_jail
+run_jail_raw ~/.cargo/bin/wasm-pack "$@"
