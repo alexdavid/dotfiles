@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+mkdir -p ~/.local/share/aws/.aws
+bind ~/.local/share/aws/.aws ~/.aws
+
+mount_cwd
+network
+
+run_jail
