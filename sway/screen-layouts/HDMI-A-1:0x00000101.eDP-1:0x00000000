@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+swaymsg output eDP-1 scale 1
+swaymsg output HDMI-A-1 mode '1920x1080'
