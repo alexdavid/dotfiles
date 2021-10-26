@@ -54,6 +54,8 @@ set -x BEMENU_OPTS "--ignorecase --list=10 --tb=#abb2bf --tf=#282c34 '--fn=SFNS 
 # Etc
 #########################################
 bind \cw backward-kill-word
+bind \eg "commandline -i (git branch -a | sed -e 's/\*\? *//' | fzf)"
+bind \ep "commandline -i (fzf)"
 
 set fish_greeting ""
 
