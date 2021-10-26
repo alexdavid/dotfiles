@@ -7,8 +7,8 @@ CMD="$2"
 #
 # To allow audio:
 # * Add `default-server = 127.0.0.1` to ~/.config/pulse/client.conf for the user running the app
-# * Add `load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1` to `~/.config/pulse/default.pa for the user running the X/Wayland session
 
+pactl load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1
 xhost +si:localuser:"$USER"
 sudo su - "$USER" --whitelist-environment=DISPLAY --command "$CMD"
 xhost -si:localuser:"$USER"
