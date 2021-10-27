@@ -25,7 +25,7 @@ pacman -S \
   ;
 
 section "ADDING ENCRYPT TO MKINITCPIO"
-echo << EOF >> /etc/mkinitcpio.conf
+cat << EOF > /etc/mkinitcpio.conf
 MODULES=()
 BINARIES=()
 FILES=()
