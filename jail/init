@@ -66,6 +66,7 @@ function read_write_all {
 function network {
   BWRAP_ARGS+=(
     --ro-bind /etc/ssl /etc/ssl
+    --ro-bind /etc/hosts /etc/hosts
     --ro-bind /etc/ca-certificates /etc/ca-certificates
     --ro-bind /etc/resolv.conf /etc/resolv.conf
     --share-net
