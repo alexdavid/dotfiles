@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+swaymsg output eDP-1 scale 1
+swaymsg output eDP-1 pos 0 360
+
+swaymsg output DP-2 pos 2560 0
