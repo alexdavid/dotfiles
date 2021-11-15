@@ -19,6 +19,8 @@ client.focused_inactive $inactive $inactive #ffffff $inactive $inactive
 
 floating_modifier $mod
 
+for_window [app_id="Alacritty"] title_format "  %title"
+for_window [app_id="firefoxdeveloperedition"] title_format "  %title"
 bindsym $mod+shift+g gaps inner current minus 10
 bindsym $mod+g gaps inner current plus 10
 
