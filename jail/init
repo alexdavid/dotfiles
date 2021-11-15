@@ -29,6 +29,10 @@ function read_only { BWRAP_ARGS+=(--ro-bind "$1" "$1") ; }
 function read_write { BWRAP_ARGS+=(--bind "$1" "$1") ; }
 function ro_bind { BWRAP_ARGS+=(--ro-bind "$1" "$2") ; }
 
+function env {
+    BWRAP_ARGS+=(--setenv "$1" "$2") 
+}
+
 function camera {
   if [ -e /dev/video0 ]; then
     BWRAP_ARGS+=(--dev-bind /dev/video0 /dev/video0) 
