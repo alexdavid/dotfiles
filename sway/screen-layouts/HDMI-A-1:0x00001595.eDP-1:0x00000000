@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+swaymsg output eDP-1 scale 1
+swaymsg output eDP-1 pos 640 2160
+
+swaymsg output HDMI-A-1 pos 0 0
