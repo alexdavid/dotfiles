@@ -1,0 +1,27 @@
+pkgname=alexdavid-games-meta
+pkgver=1.0.0
+pkgrel=1
+arch=('any')
+url="https://git.sr.ht/~alexdavid/dotfiles/"
+depends=(
+
+lutris
+steam
+wine
+
+lib32-alsa-plugins
+lib32-gnutls
+lib32-libgpg-error
+lib32-libldap
+lib32-libpulse
+lib32-mesa
+lib32-sqlite
+lib32-vulkan-icd-loader
+lib32-vulkan-radeon vulkan-icd-loader
+vulkan-radeon
+
+)
+
+package() {
+  true
+}
