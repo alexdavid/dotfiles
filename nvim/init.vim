@@ -14,6 +14,12 @@ set backspace=2           " Make backspace delete
 set clipboard=unnamedplus " Make vim share clipboard with system
 set linebreak
 set startofline
+set list
+let &listchars='tab:» ,nbsp:␣,trail:·,precedes:←,extends:→'
+let &showbreak='↪ '
+
+highlight nonascii guibg=Red ctermbg=1 term=standout
+au BufReadPost * syntax match nonascii "[^\u0000-\u007F]"
 
 
 " Tab indenting
