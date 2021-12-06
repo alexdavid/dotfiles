@@ -2,6 +2,7 @@
 source ~/.config/jail/init
 
 mkdir -p ~/.local/share/nodejs/npm
+mkdir -p ~/.local/share/nodejs/.cache
 touch ~/.local/share/nodejs/npmrc
 
 append_path ./node_modules/.bin
