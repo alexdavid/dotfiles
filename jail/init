@@ -47,6 +47,18 @@ function mount_cwd {
   read_write "$PWD"
 }
 
+function mount_nearest_parent_with_dir {
+  TARGET="$(pwd)"
+  until [ -d "$TARGET/$1" ]; do
+    TARGET="$(realpath "$TARGET/..")"
+    if [[ "$TARGET" != "$HOME"/* ]]; then
+      echo "mount_nearest_parent_with_dir cannot be called in $PWD"
+      exit 1
+    fi
+  done
+  read_write "$TARGET"
+}
+
 function read_only_all {
   for MAYBE_PATH in "$@"; do
     if [ -e "$MAYBE_PATH" ]; then

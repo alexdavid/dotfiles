@@ -2,6 +2,6 @@
 source ~/.config/jail/init
 
 read_write ~/Development/go
-mount_cwd
+mount_nearest_parent_with_dir .git
 
 run_jail

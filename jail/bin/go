@@ -4,7 +4,7 @@ source ~/.config/jail/init
 mkdir -p ~/Development/go
 
 read_write ~/Development/go
-mount_cwd
+mount_nearest_parent_with_dir .git
 network
 
 run_jail

@@ -10,7 +10,7 @@ bind ~/.local/share/nodejs/npm ~/.npm
 bind ~/.local/share/nodejs/npmrc ~/.npmrc
 bind ~/.local/share/nodejs/.cache ~/.cache
 read_only ~/.config/git
-mount_cwd
+mount_nearest_parent_with_dir .git
 network
 
 run_jail

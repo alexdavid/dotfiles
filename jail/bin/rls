@@ -3,6 +3,6 @@ source ~/.config/jail/init
 
 bind ~/.local/share/cargo ~/.cargo
 bind ~/.local/share/rustup ~/.rustup
-mount_cwd
+mount_nearest_parent_with_dir .git
 
 run_jail
