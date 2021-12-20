@@ -1,5 +1,5 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.1.13
+pkgver=1.1.14
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -9,13 +9,15 @@ atool
 bind # dig
 binutils # required for makepkg
 bubblewrap
+entr
+fd
 fish
 fzf
 htop
 iputils
 jq
-lsof
 neovim
+net-tools # netstat
 networkmanager
 openbsd-netcat
 openssh
