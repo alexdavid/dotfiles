@@ -2,13 +2,25 @@ import:
   - ~/.config/alacritty/current-theme.yml
 
 font:
+  offset:
+    y: 1
+    x: 0
+
   normal:
-    family: FuraMono Nerd Font Mono
+    family: Source Code Pro
     style: Regular
 
   bold:
-    family: Fira Mono
-    style: Bold
+    family: Source Code Pro
+    style: Black
+
+  italic:
+    family: Source Code Pro
+    style: Italic
+
+  bold_italic:
+    family: Source Code Pro
+    style: Black Italic
 
   size: 13.0
 
