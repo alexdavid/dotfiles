@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-alacritty \
+exec alacritty \
   --title=popupterm \
   --option window.dimensions.columns=100 \
   --option window.dimensions.lines=8 \

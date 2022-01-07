@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -z "$3" ]; then
-  openssl s_client -connect "$1:$2"
+  exec openssl s_client -connect "$1:$2"
 else
-  openssl s_client -connect "$1:$2" -servername "$3"
+  exec openssl s_client -connect "$1:$2" -servername "$3"
 fi
