@@ -8,11 +8,11 @@ user_pref("network.security.esni.enabled", true);
 user_pref("signon.rememberSignons", false);
 user_pref("browser.formfill.enable", false);
 
-// Enable first-party isolation
-user_pref("privacy.firstparty.isolate", true);
+// Enable ETP Strict mode
+user_pref("browser.contentblocking.category", "strict");
 
 // Resist Fingerprinting
-user_pref("privacy.resistFingerprinting", true);
+// user_pref("privacy.resistFingerprinting", true);
 
 // Disable about:config warning
 user_pref("browser.aboutConfig.showWarning", false);
@@ -64,5 +64,5 @@ user_pref("findbar.highlightAll", true);
 // Make picture in picture button less obnoxious
 user_pref("media.videocontrols.picture-in-picture.video-toggle.has-used", true);
 
-// Don't search on localdomain subdomains
-user_pref("browser.fixup.domainsuffixwhitelist.localdomain", true);
+// Enable spellcheck even on single line inputs
+user_pref("layout.spellcheckDefault", 2);
