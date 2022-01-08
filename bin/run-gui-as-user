@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 USER="$1"
-CMD="$2"
+shift
+CMD="$@"
 
 # This script makes it easy to run a GUI app as another user while another user is currently logged in on an XOrg/Wayland session
 #
