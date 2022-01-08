@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 source ~/.config/jail/init
 
-read_write_all "$@"
+mount_nearest_parent_with_dir .git
+read_only ~/Development/go
 
 run_jail
