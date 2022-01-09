@@ -22,3 +22,7 @@ autocmd Signal SIGUSR1 call UpdateBackground()
 " Highlight trailing whitespace
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * match ExtraWhitespace /\s\+\%#\@<!$/
+
+" Highlight non-ascii
+highlight nonascii guibg=Red ctermbg=1 term=standout
+au BufReadPost * syntax match nonascii "[^\u0000-\u007F]"

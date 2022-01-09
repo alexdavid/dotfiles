@@ -8,7 +8,6 @@ so ~/.config/nvim/colorscheme.vim
 syntax enable " Enable syntax highlighting
 filetype plugin indent on
 
-
 " General
 set backspace=2           " Make backspace delete
 set clipboard=unnamedplus " Make vim share clipboard with system
@@ -18,19 +17,13 @@ set list
 let &listchars='tab:» ,nbsp:␣,trail:·,precedes:←,extends:→'
 let &showbreak='↪ '
 
-highlight nonascii guibg=Red ctermbg=1 term=standout
-au BufReadPost * syntax match nonascii "[^\u0000-\u007F]"
-
-
 " Tab indenting
 set tabstop=2
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-set ai " Autoindent
-set si " Smart indent
-
-au BufRead Dockerfile.* set syntax=dockerfile
+set autoindent
+set smartindent
 
 " Appearance
 set showtabline=2   " Always show tab bar
@@ -48,11 +41,9 @@ set ignorecase " Ignore case in searched
 set smartcase  " Don't ignore case if searching with caps
 set incsearch  " Incrementally search
 
-
 " Splitting
 set splitright
 set splitbelow
-
 
 " Misc
 set nobackup          " Don't create backup files
@@ -61,7 +52,6 @@ set nowrap            " Disable line wrapping
 set ttyfast
 set autoread          " Read changes on a file when it is changed
 set diffopt+=vertical " Force vimdiff to always open vertically
-
 
 " Folding
 set foldmethod=syntax
@@ -74,7 +64,3 @@ augroup CursorLine
   au VimEnter,WinEnter,BufWinEnter * setlocal cursorline cursorcolumn
   au WinLeave * setlocal nocursorline nocursorcolumn
 augroup END
-
-" Make cursor switch style based on insert/normal mode
-let &t_SI="\e[5 q"
-let &t_EI="\e[1 q"
