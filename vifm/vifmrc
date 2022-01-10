@@ -1,6 +1,6 @@
 " vim: filetype=vifm :
 
-nnoremap <C-h> <C-w>h
+nnoremap <BS> <C-w>h
 nnoremap <C-l> <C-w>l
 
 
