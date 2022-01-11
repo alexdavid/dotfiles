@@ -21,3 +21,14 @@ let g:lightline = {
       \     'gitbranch': 'LightlineGitBranch'
       \   },
       \ }
+
+function! LightlineUpdate()
+  if lightline#colorscheme#background() ==# 'light'
+    let g:lightline#colorscheme#PaperColor#palette = g:lightline#colorscheme#PaperColor_light#palette
+  else
+    let g:lightline#colorscheme#PaperColor#palette = g:lightline#colorscheme#PaperColor_dark#palette
+  endif
+  call lightline#enable()
+  redraw
+endfunction
+autocmd Signal SIGUSR1 call LightlineUpdate()
