@@ -27,11 +27,17 @@ bindsym $mod+g gaps inner current plus 10
 bindsym --locked XF86AudioRaiseVolume exec ~/.config/sway/actions/volume-up
 bindsym --locked XF86AudioLowerVolume exec ~/.config/sway/actions/volume-down
 bindsym --locked XF86AudioMute exec ~/.config/sway/actions/volume-mute
-bindsym --locked XF86AudioPlay exec mpc toggle
-bindsym --locked XF86AudioNext exec mpc next
-bindsym --locked XF86AudioPrev exec mpc prev
 bindsym --locked XF86MonBrightnessUp exec ~/.config/sway/actions/brightness-up
 bindsym --locked XF86MonBrightnessDown exec ~/.config/sway/actions/brightness-down
+
+bindsym --locked XF86AudioPrev exec mpc prev
+bindsym --locked XF86AudioPlay exec mpc toggle
+bindsym --locked XF86AudioNext exec mpc next
+
+# Use X1 carbon F10-F12 for media keys
+bindsym --locked XF86Bluetooth exec mpc prev
+bindsym --locked XF86Keyboard exec mpc toggle
+bindsym --locked XF86Favorites exec mpc next
 
 bindsym Print exec ~/.config/sway/actions/take-screenshot entire-screen
 bindsym Shift+Print exec ~/.config/sway/actions/take-screenshot box
