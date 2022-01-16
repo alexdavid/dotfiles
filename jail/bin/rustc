@@ -1,8 +1,11 @@
 #!/usr/bin/env sh
 source ~/.config/jail/init
 
-bind ~/.local/share/cargo ~/.cargo
-bind ~/.local/share/rustup ~/.rustup
+mkdir -p ~/.local/share/rust/{rustup,cargo,cache}
+
+bind ~/.local/share/rust/cargo ~/.cargo
+bind ~/.local/share/rust/rustup ~/.rustup
+bind ~/.local/share/rust/cache ~/.cache
 mount_nearest_parent_with_dir .git
 
 run_jail

@@ -1,10 +1,12 @@
 #!/usr/bin/env sh
 source ~/.config/jail/init
 
-mkdir -p ~/.local/share/{rustup,cargo}
+mkdir -p ~/.local/share/rust/{rustup,cargo,cache}
 
-bind ~/.local/share/cargo ~/.cargo
-bind ~/.local/share/rustup ~/.rustup
+bind ~/.local/share/rust/cargo ~/.cargo
+bind ~/.local/share/rust/rustup ~/.rustup
+bind ~/.local/share/rust/cache ~/.cache
 mount_cwd
+network
 
 run_jail_raw ~/.cargo/bin/wasm-pack "$@"

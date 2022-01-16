@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 source ~/.config/jail/init
 
-mkdir -p ~/.local/share/rustup
+mkdir -p ~/.local/share/rust/rustup
 
-bind ~/.local/share/rustup ~/.rustup
+bind ~/.local/share/rust/rustup ~/.rustup
 network
 
 run_jail
