@@ -1,0 +1,15 @@
+hints:
+  alphabet: "abcdefghijklmnopqrstuvwxyz;,."
+  enabled:
+    - regex: "[a-z]+://\\S+"
+      action: Select
+      binding:
+        mode: Vi
+        mods: Alt
+        key: U
+    - regex: "[a-z.]([a-z/._-]+)"
+      action: Select
+      binding:
+        mode: Vi
+        mods: Alt
+        key: P

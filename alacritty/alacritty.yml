@@ -1,5 +1,6 @@
 import:
   - ~/.config/alacritty/current-theme.yml
+  - ~/.config/alacritty/hints.yml
 
 font:
   offset:
