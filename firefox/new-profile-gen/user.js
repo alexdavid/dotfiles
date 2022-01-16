@@ -34,7 +34,7 @@ user_pref("browser.newtabpage.activity-stream.feeds.section.topstories", false);
 user_pref("browser.newtabpage.activity-stream.feeds.snippets", false);
 user_pref("browser.newtabpage.activity-stream.feeds.topsites", false);
 user_pref("browser.newtabpage.activity-stream.asrouter.providers.onboarding", "{\"enabled\":false}");
-user_pref("browser.startup.homepage_override.mstone","ignore");
+user_pref("browser.startup.homepage_override.mstone", "ignore");
 user_pref("browser.rights.3.shown", true);
 
 // Opt out of telemetry
@@ -42,15 +42,22 @@ user_pref("app.shield.optoutstudies.enabled", false);
 user_pref("datareporting.healthreport.uploadEnabled", false);
 user_pref("datareporting.policy.dataSubmissionEnabled", false); // Stop nagbar
 
+// Disable captive portal detection
+user_pref("network.captive-portal-service.enabled", false);
+
+// Disable firefox suggest
+user_pref("browser.urlbar.groupLabels.enabled", false);
+user_pref("browser.urlbar.quicksuggest.enabled", false);
+
 // Fixes rendering issues with transparent window elements
 // user_pref("layers.acceleration.force-enabled", true);
 
 // Disable privacy tab from opening on new profiles
 user_pref("datareporting.policy.firstRunURL", "");
 
-// Disable require extension signature
-user_pref("xpinstall.signatures.required", false);
-user_pref("extensions.langpacks.signatures.required", false);
+// Allow custom extension to be used
+user_pref("xpinstall.signatures.required", false); // Disable checking signature
+user_pref("extensions.autoDisableScopes", 14); // Allow use of extensions without user intervention
 
 // Disable pocket
 user_pref("extensions.pocket.enabled", false);
