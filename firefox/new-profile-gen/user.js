@@ -26,7 +26,8 @@ user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 // Set theme
 user_pref("extensions.activeThemeID", "default-theme@mozilla.org");
-user_pref("devtools.theme", "light");
+user_pref("devtools.theme", "auto");
+user_pref("devtools.theme.show-auto-theme-info", false); // Hide notice about auto theme in dev-tools
 
 // Disable new-tab page garbage
 user_pref("browser.newtabpage.activity-stream.feeds.section.highlights", false);
