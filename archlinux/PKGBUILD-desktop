@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.20
+pkgver=1.1.21
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -16,8 +16,7 @@ libnotify # notify-send
 mako # notifications
 mpc
 pacman-contrib # checkupdates
-pamixer # sway config volume control shortcuts
-pavucontrol
+pulsemixer
 slurp # geometry for grim
 socat # mpvsingleton
 sway
