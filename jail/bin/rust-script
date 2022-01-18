@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+source ~/.config/jail/lib/rust
+
+bind ~/.cache/rust-script ~/.cache/rust-script
+read_only "$(realpath "$1")"
+network
+
+run_jail
