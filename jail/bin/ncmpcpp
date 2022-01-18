@@ -3,5 +3,6 @@ source ~/.config/jail/init
 
 read_only ~/.config/ncmpcpp
 network
+no_new_session
 
 run_jail

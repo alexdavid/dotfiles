@@ -7,17 +7,17 @@ ARGV=("$@")
 
 BWRAP_PATH="/usr/bin"
 DIE_WITH_PARENT=1
+NEW_SESSION=1
 
 BWRAP_ARGS=(
   --dev /dev
   --dir "/run/user/$(id -u)"
-  --new-session
   --proc /proc
   --ro-bind /usr /usr
   --setenv BROWSER ''
   --symlink /usr/bin /bin
-  --symlink usr/lib /lib
-  --symlink usr/lib64 /lib64
+  --symlink /usr/lib /lib
+  --symlink /usr/lib64 /lib64
   --tmpfs /home/$USER
   --tmpfs /tmp
   --unshare-all
@@ -114,6 +114,10 @@ function daemon {
   DIE_WITH_PARENT=0
 }
 
+function no_new_session {
+  NEW_SESSION=0
+}
+
 
 function dbus {
   BWRAP_ARGS+=(
@@ -125,6 +129,9 @@ function finalize_args {
   BWRAP_ARGS+=(--setenv PATH "$BWRAP_PATH")
   if [ $DIE_WITH_PARENT -eq 1 ]; then
     BWRAP_ARGS+=(--die-with-parent)
+  fi
+  if [ $NEW_SESSION -eq 1 ]; then
+    BWRAP_ARGS+=(--new-session)
   fi
 }
 

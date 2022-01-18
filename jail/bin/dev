@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+
+mkdir -p ~/.local/share/rust/{rustup,cargo,cache}
+
+bind ~/.local/share/rust/cargo ~/.cargo
+bind ~/.local/share/rust/rustup ~/.rustup
+bind ~/.local/share/rust/cache ~/.cache
+
+read_write ~/dev/go
+
+# read_only /var/run/docker.sock
+network
+mount_cwd
+no_new_session
+
+run_jail_raw -- fish
