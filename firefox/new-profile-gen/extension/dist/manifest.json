@@ -1,0 +1,28 @@
+{
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ext@alexdav.id"
+    }
+  },
+  "manifest_version": 2,
+  "name": "Alex's Extension",
+  "author": "",
+  "version": "0.1",
+  "description": "",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "commands",
+    "storage"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js" ],
+      "css": ["style.css"]
+    }
+  ]
+}

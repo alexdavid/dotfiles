@@ -2,12 +2,20 @@
 
 set -e
 cd "$(dirname "$0")"
+BASE_DIR="$(pwd)"
 
 export PROFILE_DIR=$1
 export PROFILE_NAME=$2
 export PROFILE_COLOR="#$(echo "$PROFILE_NAME" | md5sum | cut -c1-6)"
 
-mkdir -p "$PROFILE_DIR/chrome"
+mkdir -p "$PROFILE_DIR/chrome" "$PROFILE_DIR/extensions"
 
 envsubst < userChrome.css > "$PROFILE_DIR/chrome/userChrome.css"
 cp ~/.config/firefox/new-profile-gen/user.js "$PROFILE_DIR/user.js"
+
+mkdir -p _build
+for EXT in *.xpi; do
+  [ ! -e "_build/$EXT" ] && (cd "$EXT" && zip -r "$BASE_DIR/_build/$EXT" *)
+done
+ln -s ~/.config/firefox/new-profile-gen/_build/* "$PROFILE_DIR/extensions"
+ln -s /usr/lib/firefox/browser/extensions/* "$PROFILE_DIR/extensions"

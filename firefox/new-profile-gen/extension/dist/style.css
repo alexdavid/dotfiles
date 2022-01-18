@@ -1,0 +1,19 @@
+.--ext-alexdavid--hint {
+  position: absolute;
+  padding: 1px 5px;
+  z-index: 2147483647;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background: #fff;
+  text-transform: uppercase;
+  font-family: monospace;
+  font-size: 14px;
+  box-shadow: 0 0 5px 0 #0005;
+}
+
+.--ext-alexdavid--matched {
+  color: #777;
+}
+
+.--ext-alexdavid--unmatched {
+}

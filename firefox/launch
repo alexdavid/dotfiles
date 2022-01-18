@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 PROFILES_DIR=~/.local/share/firefox-profiles
 
 mkdir -p "$PROFILES_DIR"
