@@ -52,6 +52,7 @@ set nowrap            " Disable line wrapping
 set ttyfast
 set autoread          " Read changes on a file when it is changed
 set diffopt+=vertical " Force vimdiff to always open vertically
+set completeopt=menu
 
 " Folding
 set foldmethod=syntax
