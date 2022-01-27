@@ -117,8 +117,12 @@ mode "resize" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
+
+mode "passthrough" {
+  bindsym $mod+shift+p mode "default"
+}
+bindsym $mod+shift+p mode "passthrough"
 
 for_window [class="Pinentry"] floating enable
 for_window [title="popupterm"] floating enable
