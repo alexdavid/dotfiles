@@ -25,7 +25,8 @@ font:
 
   size: 13.0
 
-background_opacity: 0.9
+window:
+  opacity: 0.9
 
 scrolling:
   multiplier: 40
