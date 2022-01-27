@@ -70,7 +70,7 @@ end
 
 function git_repo_is_clean
   if test ! -d $argv; return 0; end
-  if ! git -C $argv diff-files --quiet; return 1; end
+  if test (git -C $argv status -uno --porcelain | string collect); return 1; end
   set UPSTREAM (git -C $argv rev-parse --abbrev-ref --symbolic-full-name '@{u}')
   if test (git -C $argv rev-parse HEAD) = (git -C $argv rev-parse $UPSTREAM); return 0; end
   return 1
