@@ -159,11 +159,14 @@ seat * {
   xcursor_theme default 50
 }
 
-input * {
+input type:touchpad {
   natural_scroll enabled
   scroll_factor 0.25
   tap enabled
   drag disabled
+}
+
+input type:keyboard {
   repeat_delay 200
   repeat_rate 40
   xkb_options ctrl:nocaps,compose:ralt
