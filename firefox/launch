@@ -37,7 +37,7 @@ if [ "$SELECTED_PROFILE" = "New Profile" ]; then
   launchff "$PROFILES_DIR/$NEW_PROFILE_NAME"
 elif [ "$SELECTED_PROFILE" = "New Temporary Profile" ]; then
   PROFILE="$(mktemp -d /tmp/firefox.XXXXXXXXXX)"
-  ~/.config/firefox/new-profile-gen/generate "$PROFILE" "$PROFILE"
+  ~/.config/firefox/new-profile-gen/generate "$PROFILE" "$(basename "$PROFILE")"
   launchff "$PROFILE"
   rm -rf "$PROFILE"
 elif [ -n "$SELECTED_PROFILE" ]; then
