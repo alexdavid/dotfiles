@@ -2,6 +2,6 @@
 source ~/.config/jail/init
 
 mount_nearest_parent_with_dir .git
-read_only ~/Development/go
+read_only ~/dev/go
 
 run_jail

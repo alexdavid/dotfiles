@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 {
-  find ~/Development/ -maxdepth 1 -type d;
-  find ~/Development/go/src -maxdepth 3 -type d;
+  find ~/dev/ -maxdepth 1 -type d;
+  find ~/dev/go/src -maxdepth 3 -type d;
 } | fzf --query "$1" --preview 'tree -L 2 {}'

@@ -2,9 +2,9 @@
 
 set -e
 
-mkdir -p ~/Desktop
+mkdir -p ~/tmp
 
-FILENAME=~/Desktop/"$(date --rfc-3339=seconds)".png
+FILENAME=~/tmp/"$(date --rfc-3339=seconds)".png
 
 case "$1" in
 entire-screen)

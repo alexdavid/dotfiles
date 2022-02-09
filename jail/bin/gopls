@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 source ~/.config/jail/init
 
-read_write ~/Development/go
+read_write ~/dev/go
 mount_nearest_parent_with_dir .git
 
 run_jail
