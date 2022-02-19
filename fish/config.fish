@@ -37,8 +37,8 @@ alias airport "/System/Library/PrivateFrameworks/Apple80211.framework/Versions/C
 alias ql      "quicklook"
 
 # docker
-alias dc   "docker-compose"
-alias dcub "docker-compose up --build"
+alias dc   "docker compose"
+alias dcub "docker compose up --build"
 
 #########################################
 # Env
