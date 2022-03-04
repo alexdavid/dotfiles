@@ -81,28 +81,38 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+f floating toggle
 bindsym $mod+a focus parent
 
+set $w1 1:ⅰ
+set $w2 2:ⅱ
+set $w3 3:ⅲ
+set $w4 4:ⅳ
+set $w5 5:ⅴ
+set $w6 6:ⅵ
+set $w7 7:ⅶ
+set $w8 8:ⅷ
+set $w9 9:ⅸ
+
 # switch to workspace
-bindsym $mod+1 workspace 1:I
-bindsym $mod+2 workspace 2:II
-bindsym $mod+3 workspace 3:III
-bindsym $mod+4 workspace 4:IV
-bindsym $mod+5 workspace 5:V
-bindsym $mod+6 workspace 6:VI
-bindsym $mod+7 workspace 7:VII
-bindsym $mod+8 workspace 8:VIII
-bindsym $mod+9 workspace 9:IX
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+5 workspace $w5
+bindsym $mod+6 workspace $w6
+bindsym $mod+7 workspace $w7
+bindsym $mod+8 workspace $w8
+bindsym $mod+9 workspace $w9
 bindsym $mod+0 scratchpad show
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1:I
-bindsym $mod+Shift+2 move container to workspace 2:II
-bindsym $mod+Shift+3 move container to workspace 3:III
-bindsym $mod+Shift+4 move container to workspace 4:IV
-bindsym $mod+Shift+5 move container to workspace 5:V
-bindsym $mod+Shift+6 move container to workspace 6:VI
-bindsym $mod+Shift+7 move container to workspace 7:VII
-bindsym $mod+Shift+8 move container to workspace 8:VIII
-bindsym $mod+Shift+9 move container to workspace 9:IX
+bindsym $mod+Shift+1 move container to workspace $w1
+bindsym $mod+Shift+2 move container to workspace $w2
+bindsym $mod+Shift+3 move container to workspace $w3
+bindsym $mod+Shift+4 move container to workspace $w4
+bindsym $mod+Shift+5 move container to workspace $w5
+bindsym $mod+Shift+6 move container to workspace $w6
+bindsym $mod+Shift+7 move container to workspace $w7
+bindsym $mod+Shift+8 move container to workspace $w8
+bindsym $mod+Shift+9 move container to workspace $w9
 bindsym $mod+Shift+0 move container to scratchpad
 
 bindsym $mod+Shift+r reload
@@ -146,7 +156,7 @@ bar {
   position top
   strip_workspace_numbers yes
   height 34
-  font pango:SFNS Display, SystemIcons Bold 18px
+  font pango:SFNS Display 18px
   colors {
     background #00000000
     focused_workspace #ffffff #ffffff #282a36
