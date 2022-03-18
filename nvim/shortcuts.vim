@@ -86,6 +86,14 @@ endfun
 autocmd InsertLeave * call DiffUpdate()
 noremap <leader>g :diffget \| diffupdate<CR>
 noremap <leader>p :diffput \| diffupdate<CR>
+fun! ToggleDiffWhiteSpace()
+  if &diffopt =~ 'iwhite'
+    set diffopt-=iwhite
+  else
+    set diffopt+=iwhite
+  endif
+endfun
+noremap <leader>w :call ToggleDiffWhiteSpace()<CR>
 
 " Git/fugitive shortcuts
 nmap gd :Gdiff<CR>
