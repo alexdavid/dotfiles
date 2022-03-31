@@ -1,18 +1,17 @@
 let mapleader = "\<space>"
 
-" Tab management
-nmap <silent> <leader>, :tabprevious<CR>
-nmap <silent> <leader>. :tabnext<CR>
-nmap <silent> <leader>t :tabnew<CR>
-nmap <silent> <leader>< :exec 'silent! tabm ' . (tabpagenr()-2)<CR>
-nmap <silent> <leader>> :exec 'silent! tabm ' . tabpagenr()<CR>
-
-" Buffer/Split management
+" Buffer/Split/Tab management
+nmap <silent> <leader>t :tab split<CR>
 nmap <silent> <leader>s :split<CR>
 nmap <silent> <leader>v :vsplit<CR>
+nmap <silent> <leader>T :tabnew<CR>
 nmap <silent> <leader>S :new<CR>
 nmap <silent> <leader>V :vnew<CR>
 nmap <silent> <leader>x :bd<CR>
+nmap <silent> <leader>, :tabprevious<CR>
+nmap <silent> <leader>. :tabnext<CR>
+nmap <silent> <leader>< :exec 'silent! tabm ' . (tabpagenr()-2)<CR>
+nmap <silent> <leader>> :exec 'silent! tabm ' . tabpagenr()<CR>
 
 nmap <silent> <leader>h <C-w><
 nmap <silent> <leader>l <C-w>>
