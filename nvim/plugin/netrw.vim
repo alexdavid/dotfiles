@@ -1,3 +1,16 @@
+" Netrw directory of current file and position cursor over current file
+function! FileBrowser()
+  let parentDir = fnameescape(expand('%:h'))
+  if parentDir == ''
+    let parentDir = getcwd()
+  endif
+  let parentDir = parentDir . '/'
+  let fileName = escape(expand('%:t'), '\"')
+  exec 'E ' . parentDir
+  call search('^' . fileName . '\*\?$', 'cw')
+endfunction
+map <silent> <leader>n :call FileBrowser()<CR>
+
 function! CustomNetrwMap()
   nmap <buffer> h -
   nmap <buffer> l <CR>

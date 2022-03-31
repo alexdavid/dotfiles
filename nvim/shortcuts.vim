@@ -102,28 +102,6 @@ nmap git :!git<Space>
 " Find merge conflicts
 nmap gmc /\v^[<=>\|]{7}.*$<CR>
 
-" Netrw directory of current file and position cursor over current file
-function! FileBrowser()
-  let parentDir = fnameescape(expand('%:h'))
-  if parentDir == ''
-    let parentDir = getcwd()
-  endif
-  let parentDir = parentDir . '/'
-  let fileName = escape(expand('%:t'), '\"')
-  exec 'E ' . parentDir
-  call search('^' . fileName . '\*\?$', 'cw')
-endfunction
-map <silent> <leader>n :call FileBrowser()<CR>
-
-" Ctrl-p
-let g:ctrlp_map = '<leader>o'
-
-" TComment
-let g:tcomment_mapleader1 = ''
-let g:tcomment_opleader = ''
-nnoremap <leader>/ :TComment<CR>
-vnoremap <leader>/ :TCommentMaybeInline<CR>gv<ESC>
-
 " Hide highlight
 map <silent> <leader><space> :noh<CR>:match<CR>
 
