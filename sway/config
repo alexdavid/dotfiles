@@ -24,6 +24,9 @@ for_window [app_id="firefoxdeveloperedition"] title_format "  %title"
 bindsym $mod+shift+g gaps inner current minus 10
 bindsym $mod+g gaps inner current plus 10
 
+bindsym $mod+q exec wtype -k XF86Back
+bindsym $mod+w exec wtype -k XF86Forward
+
 bindsym --locked XF86AudioRaiseVolume exec ~/.config/sway/actions/volume-up
 bindsym --locked XF86AudioLowerVolume exec ~/.config/sway/actions/volume-down
 bindsym --locked XF86AudioMute exec ~/.config/sway/actions/volume-mute
