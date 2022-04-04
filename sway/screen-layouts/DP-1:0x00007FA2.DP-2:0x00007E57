@@ -2,3 +2,6 @@
 
 swaymsg output DP-1 pos 0 0
 swaymsg output DP-2 pos 3840 0
+
+swaymsg output DP-1 mode '3840x2160'
+swaymsg output DP-2 mode '3840x2160'
