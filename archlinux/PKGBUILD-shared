@@ -1,11 +1,10 @@
 pkgname=alexdavid-shared-meta
-pkgver=1.1.14
+pkgver=1.1.15
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
 depends=(
 
-atool
 bind # dig
 binutils # required for makepkg
 bubblewrap
@@ -27,6 +26,7 @@ sshfs
 sudo
 the_silver_searcher
 time
+unp
 vifm
 which
 whois
