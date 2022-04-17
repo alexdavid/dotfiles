@@ -1,7 +1,8 @@
-#TabsToolbar::after {
+/* Add firefox profile name & color to URL bar */
+#urlbar-input-container::after {
   position: absolute;
-  top: 10px;
-  right: 5px;
+  top: 4px;
+  right: 30px;
   content: "$PROFILE_NAME";
   color: #fff;
   background: $PROFILE_COLOR;
@@ -13,44 +14,89 @@
   pointer-events: none;
   z-index: 999;
 }
-#TabsToolbar:hover::after {
-  opacity: 0;
+
+/* Move address and tab bar to the bottom */
+#browser {
+	-moz-box-ordinal-group: 0 !important;
+}
+#urlbar[breakout][breakout-extend] {
+  top: auto !important;
+  bottom: 0;
+  display: flex !important;
+  flex-direction: column-reverse;
 }
 
-#webrtcIndicator {
-  display: none !important;
+/* Hide tab bar if only single tab is open:
+ * Copied from github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/hide_tabs_with_one_tab.css
+ *
+ * Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/hide_tabs_with_one_tab.css made available under Mozilla Public License v. 2.0
+ * See the above repository for updates as well as full license text.
+ *
+ * Makes tabs toolbar items zero-height initially and sets enlarge them to fill up space equal to tab-min-height set on tabs. Optionally use privatemode_indicator_as_menu_button.css to replace main menu icon with private browsing indicator while tabs are hidden.
+ *
+ * This style causes CSD window controls to disappear on linux, but you can kind of work around that by using window_control_fallback_for_custom_windows_theme.css */
+:root[sizemode="normal"] #nav-bar{ --uc-window-drag-space-width: 20px }
+
+#titlebar{ -moz-appearance: none !important; }
+#TabsToolbar{ min-height: 0px !important }
+
+#tabbrowser-tabs,
+#tabbrowser-arrowscrollbox{ min-height: 0 !important; }
+
+:root:not([customizing]) #tabs-newtab-button,
+:root:not([customizing]) #TabsToolbar-customization-target > .toolbarbutton-1,
+:root:not([customizing]) #TabsToolbar .titlebar-button{
+  -moz-appearance: none !important;
+  height: 0px;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  -moz-box-align: stretch;
+  margin: 0 !important;
 }
 
+.accessibility-indicator,
+.private-browsing-indicator{ 
+  height: unset !important;
+}
+.accessibility-indicator > hbox{ padding-block: 0 !important }
 
-.browserContainer > findbar {
-  -moz-box-ordinal-group: 0;
+.tabbrowser-tab{
+  height: calc(var(--tab-min-height) + 2 * var(--tab-block-margin,0px));
 }
 
-/* transparent title bar */
-#main-window {
-  -moz-appearance: toolbox !important;
+.tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
+  visibility: collapse !important;
+  /* These seem unnecessary, but they achieve compatibility with hide_tabs_with_one_tab.css */
+  min-height: 0 !important;
+  height: 0;
 }
 
-#TabsToolbar {
-  -moz-appearance: toolbox !important;
+/* Button re-styling */
+#tabs-newtab-button{ transform: scale(0.8); }
+#tabs-newtab-button:hover{
+  background-color: var(--toolbarbutton-hover-background);
+  border-radius: var(--tab-border-radius);
 }
 
-#toolbar {
-  appearance: toolbox !important;
-  -moz-appearance: toolbox !important;
-  background: transparent !important;
+#tabs-newtab-button > .toolbarbutton-icon{
+  padding: 0 !important;
+  transform: scale(0.5);
+  background-color: transparent !important;
 }
-
-#navigator-toolbox {
-  background: rgba(240, 240, 240, 0.6) !important;
+/* Fix window controls not being clickable */
+:root[tabsintitlebar] #toolbar-menubar[autohide="true"][inactive]{
+  transition: height 0ms steps(1) 80ms;
 }
-
-@media (prefers-color-scheme: dark) {
-  #nav-bar {
-    background: rgba(0, 0, 0, 0.8) !important;
+:where(#nav-bar){
+  border-inline: var(--uc-window-drag-space-width,0) solid var(--toolbar-bgcolor);
+}
+@media (-moz-platform: linux){
+  #TabsToolbar .titlebar-buttonbox{
+    -moz-box-align: stretch !important;
   }
-
-  #navigator-toolbox {
-    background: rgba(0, 0, 0, 0.4) !important;
+  #TabsToolbar > .titlebar-buttonbox-container > .titlebar-buttonbox > .titlebar-button{
+    transform: scale(0.8);
+    margin-inline: -3px !important;
   }
+  #TabsToolbar .titlebar-button > .toolbarbutton-icon{ padding: 0 13px !important }
 }
