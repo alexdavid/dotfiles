@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+for PROFILE_DIR in ~/.local/share/firefox-profiles/*; do
+  PROFILE_NAME="$(basename "$PROFILE_DIR")"
+  echo "Updating $PROFILE_NAME"
+  ~/.config/firefox/new-profile-gen/generate "$PROFILE_DIR" "$PROFILE_NAME"
+done
