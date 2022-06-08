@@ -5,13 +5,9 @@ set -e
 IMAGE=$1
 ARGV=("$@")
 
-PORT_FORWARDS=()
-for PORT in "${ARGV[@]:1}"; do
-  PORT_FORWARDS+=("--publish=$PORT:$PORT")
-done
-
 docker run \
   --interactive \
+  --net host \
   --rm \
   --tty \
   --user "$(id -u):$(id -g)" \
@@ -19,4 +15,4 @@ docker run \
   --workdir "$(pwd)" \
   "${PORT_FORWARDS[@]}" \
   $IMAGE \
-  bash
+  "${ARGV[@]:1}"
