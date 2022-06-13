@@ -11,7 +11,7 @@
 [color]
   ui = true
 [push]
-  default = current
+	default = simple
 [merge]
   conflictstyle = diff3
 [include]
