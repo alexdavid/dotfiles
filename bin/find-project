@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-{
-  find ~/dev/ -maxdepth 1 -type d;
-  find ~/dev/go/src -maxdepth 3 -type d;
-} | fzf --query "$1" --preview 'tree -L 2 {}'
+cd ~/dev
+printf "$(pwd)/"
+find * -mindepth 1 -maxdepth 1 -type d | fzf --query "$1" --preview 'tree -L 2 {}'
