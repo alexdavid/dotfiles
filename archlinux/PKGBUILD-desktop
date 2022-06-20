@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.21
+pkgver=1.1.23
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -20,6 +20,7 @@ pulsemixer
 slurp # geometry for grim
 socat # mpvsingleton
 sway
+swaybg
 swayidle
 swaylock
 todoman
@@ -41,11 +42,9 @@ wireplumber
 alacritty
 calc
 firefox-developer-edition
-gtk-vnc
 imv
 mpv
 ncmpcpp
-newsboat
 nmap
 pass
 pass-otp
