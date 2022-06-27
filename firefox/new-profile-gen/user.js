@@ -78,3 +78,6 @@ user_pref("layout.spellcheckDefault", 2);
 // Disable webrtc indicator
 user_pref("privacy.webrtc.hideGlobalIndicator", true);
 user_pref("privacy.webrtc.legacyGlobalIndicator", false);
+
+// Disable hiding toolbar on fullscreen
+user_pref("browser.fullscreen.autohide", false);
