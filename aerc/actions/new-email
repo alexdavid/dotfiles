@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# Some temporary sound/icon from oxygen-icons and oxygen-sounds package for now
+# to catch my attention on new email. Eventually I want to find better
+# alternatives and a good way of distributing/syncing icons & sounds across my
+# environments without needing to commit them into my dotfiles
+notify-send -i /usr/share/icons/oxygen/base/128x128/apps/internet-mail.png "$1" "$2"
+exec pacat --file-format=ogg -p /usr/share/sounds/Oxygen-Im-Irc-Event.ogg
