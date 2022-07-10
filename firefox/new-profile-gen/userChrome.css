@@ -1,21 +1,26 @@
-/* Add firefox profile name & color to URL bar */
-#urlbar-input-container::after {
-  position: absolute;
-  top: 4px;
-  right: 30px;
+/***********************************************
+ * Add firefox profile name & color to URL bar *
+ ***********************************************/
+#page-action-buttons {
+  border-right: 1px solid transparent;
+}
+#page-action-buttons::after {
+  display: -moz-box;
+  margin-block: calc((var(--urlbar-min-height) - 20px) / 2 - 1px - var(--urlbar-container-padding));
   content: "$PROFILE_NAME";
   color: #fff;
   background: $PROFILE_COLOR;
   padding: 1px 7px;
+  margin-left: 4px;
+  margin-right: 4px;
   border-radius: 5px;
   font-weight: 800;
   opacity: 1;
-  transition: opacity 200ms;
-  pointer-events: none;
-  z-index: 999;
 }
 
-/* Move address and tab bar to the bottom */
+/******************************************
+ * Move address and tab bar to the bottom *
+ ******************************************/
 #browser {
 	-moz-box-ordinal-group: 0 !important;
 }
@@ -25,9 +30,39 @@
   display: flex !important;
   flex-direction: column-reverse;
 }
+/* Reverse tab/nav bar */
+#nav-bar {
+  -moz-box-ordinal-group: 0;
+}
 
-/* Hide tab bar if only single tab is open:
- * Copied from github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/hide_tabs_with_one_tab.css
+/****************
+ * Misc theming *
+ ****************/
+#nav-bar {
+  background: transparent !important;
+}
+
+#urlbar:not([focused]) #urlbar-background {
+  background: rgba(0, 0, 0, 0.08) !important;
+  border: none !important;
+}
+
+#TabsToolbar {
+  appearance: none !important;
+}
+
+#nav-bar {
+  box-shadow: none !important;
+}
+
+#navigator-toolbox-background {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/*******************************************
+ * Hide tab bar if only single tab is open *
+ *******************************************/
+/* Copied from github.com/MrOtherGuy/firefox-csshacks/blob/master/chrome/hide_tabs_with_one_tab.css
  *
  * Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/hide_tabs_with_one_tab.css made available under Mozilla Public License v. 2.0
  * See the above repository for updates as well as full license text.
