@@ -81,3 +81,7 @@ user_pref("privacy.webrtc.legacyGlobalIndicator", false);
 
 // Disable hiding toolbar on fullscreen
 user_pref("browser.fullscreen.autohide", false);
+
+// Remove topsites
+user_pref("browser.topsites.useRemoteSetting", false);
+user_pref("browser.newtabpage.activity-stream.default.sites", "");
