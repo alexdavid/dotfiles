@@ -11,4 +11,5 @@ mkdir -p "$PROFILE_DIR/chrome"
 
 envsubst < userChrome.css > "$PROFILE_DIR/chrome/userChrome.css"
 cp ~/.config/firefox/new-profile-gen/user.js "$PROFILE_DIR/user.js"
-cp search.json.mozlz4 "$PROFILE_DIR/search.json.mozlz4"
+[ ! -e "search/search.json.mozlz4" ] && ( cd search && python update-search.py )
+cp search/search.json.mozlz4 "$PROFILE_DIR/search.json.mozlz4"
