@@ -38,5 +38,5 @@ command=$HOME/.config/i3blocks/battery.sh
 interval=30
 
 [time]
-command=echo "$(date '+%a, %b %d %l:%M%P')    "
+command=echo "$(date '+%a, %b %d %k:%M')    "
 interval=11
