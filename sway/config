@@ -120,7 +120,7 @@ bindsym $mod+Shift+0 move container to scratchpad
 
 bindsym $mod+Shift+r reload
 
-bindsym $mod+equal exec popup-term "calc -d" 900x150
+bindsym $mod+equal exec popup-term calc -d
 
 mode "resize" {
   bindsym h resize shrink width 10 px or 10 ppt
