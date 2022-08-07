@@ -1,0 +1,3 @@
+#!/bin/sh
+
+fmt -p '>' -s -w 70 | fmt -s -w 80 | awk -f /usr/share/aerc/filters/plaintext
