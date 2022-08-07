@@ -7,7 +7,7 @@ hints:
         mode: Vi
         mods: Alt
         key: U
-    - regex: "[a-z.]([a-z/._-]+)"
+    - regex: "[a-z0-9.]([a-z0-9/._-]+)"
       action: Select
       binding:
         mode: Vi
