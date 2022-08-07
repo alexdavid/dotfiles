@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.23
+pkgver=1.1.25
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -17,6 +17,7 @@ mako # notifications
 mpc
 pacman-contrib # checkupdates
 pulsemixer
+python-lz4 # Firefox search.json.mozlz4 generation
 slurp # geometry for grim
 socat # mpvsingleton
 sway
@@ -49,7 +50,7 @@ nmap
 pass
 pass-otp
 units
-youtube-dl
+yt-dlp
 zathura
 zathura-pdf-mupdf
 
