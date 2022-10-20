@@ -8,7 +8,7 @@
   type = discover
 
 [locale]
-timeformat = %l:%M
+timeformat = %H:%M
 dateformat = %Y-%m-%d
 longdateformat = %Y-%m-%d
 datetimeformat = %Y-%m-%d %H:%M
