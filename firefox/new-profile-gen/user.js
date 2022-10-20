@@ -85,3 +85,9 @@ user_pref("browser.fullscreen.autohide", false);
 // Remove topsites
 user_pref("browser.topsites.useRemoteSetting", false);
 user_pref("browser.newtabpage.activity-stream.default.sites", "");
+
+// Disable firefox view
+user_pref("browser.tabs.firefox-view", false);
+
+// Use system font for emoji instead of firefox's fallback font
+user_pref("font.name-list.emoji", "JoyPixels");
