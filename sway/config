@@ -55,6 +55,8 @@ bindsym $mod+t exec ~/.config/bin/toggle-colors
 bindsym $mod+backslash exec custompassmenu
 bindsym $alt+Mod4+backslash exec custompassmenu --last
 
+bindsym $mod+$alt+e exec ~/.config/sway/actions/insert-emoji
+
 bindsym $mod+Tab focus mode_toggle
 
 bindsym $mod+h focus left
