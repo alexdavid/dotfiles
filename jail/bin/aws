@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 source ~/.config/jail/init
 
-mkdir -p ~/.local/share/aws/.aws
-bind ~/.local/share/aws/.aws ~/.aws
+mkdir -p ~/.local/share/aws
+bind ~/.local/share/aws ~/.aws
 
 mount_cwd
 network
