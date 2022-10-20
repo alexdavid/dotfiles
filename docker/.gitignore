@@ -1,1 +1,5 @@
-.buildNodeID
+*
+!.gitignore
+!README.md
+!config.json
+!init.sh
