@@ -27,7 +27,7 @@ function! s:moveToPane(direction)
   let oldnr = winnr()
   execute 'wincmd ' . a:direction
   if oldnr == winnr()
-    call system('select-pane ' . a:direction)
+    call system('~/.config/tmux/scripts/select-pane ' . a:direction)
   endif
 endfunction
 
