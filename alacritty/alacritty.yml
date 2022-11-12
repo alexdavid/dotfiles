@@ -3,10 +3,6 @@ import:
   - ~/.config/alacritty/hints.yml
 
 font:
-  offset:
-    y: 1
-    x: 0
-
   normal:
     family: Source Code Pro
     style: Regular
