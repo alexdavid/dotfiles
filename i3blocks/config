@@ -7,11 +7,6 @@ command=$HOME/.config/i3blocks/screenshare.sh
 interval=once
 signal=1
 
-[timew]
-command=$HOME/.config/i3blocks/timew.sh
-interval=5
-signal=1
-
 [calendar]
 command=$HOME/.config/i3blocks/calendar.sh
 interval=600
