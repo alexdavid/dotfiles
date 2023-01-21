@@ -1,0 +1,96 @@
+{
+  "policies": {
+    "SearchEngines": {
+      "Default": "DDG",
+      "Remove": [
+        "Amazon.com",
+        "Bing",
+        "DuckDuckGo",
+        "Google",
+        "Wikipedia (en)",
+        "eBay"
+      ],
+      "Add": [{
+        "Name": "DDG",
+        "Alias": "!ddg",
+        "URLTemplate": "https://start.duckduckgo.com/?q={searchTerms}"
+      }, {
+        "Name": "Wikipedia",
+        "Alias": "!w",
+        "URLTemplate": "https://www.wikipedia.org/search-redirect.php?family=Wikipedia&language=en&search={searchTerms}"
+      }, {
+        "Name": "OpenStreetMap",
+        "Alias": "!osm",
+        "URLTemplate": "https://www.openstreetmap.org/search?query={searchTerms}"
+      },
+
+      {
+        "Name": "Rust Std Docs",
+        "Alias": "!rust",
+        "URLTemplate": "https://doc.rust-lang.org/std/?search={searchTerms}"
+      }, {
+        "Name": "Rust Crates",
+        "Alias": "!crates",
+        "URLTemplate": "https://crates.io/search?q={searchTerms}"
+      }, {
+        "Name": "Go",
+        "Alias": "!go",
+        "URLTemplate": "https://pkg.go.dev/search?q={searchTerms}"
+      }, {
+        "Name": "NPM",
+        "Alias": "!npm",
+        "URLTemplate": "https://www.npmjs.com/search?q={searchTerms}"
+      }, {
+        "Name": "Node Std Docs",
+        "Alias": "!node",
+        "URLTemplate": "https://nodejs.org/api/{searchTerms}.html"
+      }, {
+        "Name": "MDN",
+        "Alias": "!mdn",
+        "URLTemplate": "https://developer.mozilla.org/en-US/search?q={searchTerms}"
+      },
+
+      {
+        "Name": "Archlinux Packages",
+        "Alias": "!pkg",
+        "URLTemplate": "https://archlinux.org/packages/?q={searchTerms}"
+      }, {
+        "Name": "Archlinux AUR",
+        "Alias": "!aur",
+        "URLTemplate": "https://aur.archlinux.org/packages?O=0&K={searchTerms}"
+      }, {
+        "Name": "ArchWiki",
+        "Alias": "!aw",
+        "URLTemplate": "https://wiki.archlinux.org/index.php?search={searchTerms}"
+      }, {
+        "Name": "Alpine Packages",
+        "Alias": "!apk",
+        "URLTemplate": "https://pkgs.alpinelinux.org/packages?name={searchTerms}"
+      },
+
+      {
+        "Name": "HackerNews",
+        "Alias": "!hn",
+        "URLTemplate": "https://hn.algolia.com/?q={searchTerms}"
+      }, {
+        "Name": "YouTube",
+        "Alias": "!yt",
+        "URLTemplate": "https://www.youtube.com/results?search_query={searchTerms}"
+      },
+
+      {
+        "Name": "Google Search",
+        "Alias": "!g",
+        "URLTemplate": "https://www.google.com/search?q={searchTerms}"
+      }, {
+        "Name": "Google Maps",
+        "Alias": "!gm",
+        "URLTemplate": "https://www.google.com/maps/search/{searchTerms}"
+      }, {
+        "Name": "Apple Maps (via DDG)",
+        "Alias": "!am",
+        "URLTemplate": "https://duckduckgo.com/?q={searchTerms}&t=ffab&ia=web&iaxm=about"
+      }]
+    }
+  }
+}
