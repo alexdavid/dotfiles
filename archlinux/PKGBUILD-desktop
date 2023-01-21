@@ -1,5 +1,5 @@
 pkgname=alexdavid-desktop-meta
-pkgver=1.1.26
+pkgver=1.1.27
 pkgrel=1
 arch=('any')
 url="https://git.sr.ht/~alexdavid/dotfiles/"
@@ -42,6 +42,7 @@ wireplumber
 alacritty
 calc
 firefox-developer-edition
+firefox-ublock-origin
 imv
 mpv
 ncmpcpp
