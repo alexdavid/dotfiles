@@ -91,3 +91,6 @@ user_pref("browser.tabs.firefox-view", false);
 
 // Use system font for emoji instead of firefox's fallback font
 user_pref("font.name-list.emoji", "JoyPixels");
+
+// Disable hiding url for search
+user_pref("browser.urlbar.showSearchTerms.enabled", false);
