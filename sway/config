@@ -9,7 +9,6 @@ set $inactive #00000033
 font pango:SF Pro Display 12
 gaps inner 10
 default_border pixel 4
-for_window [class="^.*"] border normal 1
 focus_wrapping false
 focus_follows_mouse no
 mouse_warping output
