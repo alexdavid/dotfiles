@@ -22,13 +22,22 @@ font:
   size: 13.0
 
 window:
-  opacity: 0.9
+  opacity: 0.95
 
 scrolling:
   multiplier: 40
 
 env:
   TERM: xterm-256color
+
+mouse:
+  hide_when_typing: true
+
+bell:
+  duration: 50
+  command:
+    program: sh
+    args: ["-c", "pacat --file-format=wav -p ~/.config/alacritty/err.wav"]
 
 key_bindings:
   - { key: C,      mods: Alt, action: Copy             }

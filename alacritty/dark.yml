@@ -1,3 +1,6 @@
+bell:
+  color: '0x000000'
+
 colors:
   primary:
     background: '0x282c34'

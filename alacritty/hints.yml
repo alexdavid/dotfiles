@@ -1,15 +1,18 @@
 hints:
-  alphabet: "abcdefghijklmnopqrstuvwxyz;,."
+  alphabet: "jfkdls;ahgurieowpq"
   enabled:
-    - regex: "[a-z]+://\\S+"
+    - regex: "(https?://|mailto:)[a-zA-Z0-9.-_/%]+[a-zA-Z0-9/]"
       action: Select
       binding:
-        mode: Vi
-        mods: Alt
+        mode: Vi|~Search
         key: U
-    - regex: "[a-z0-9.]([a-z0-9/._-]+)"
+    - regex: "[a-z0-9.][a-z0-9/._-]+"
       action: Select
       binding:
-        mode: Vi
-        mods: Alt
+        mode: Vi|~Search
         key: P
+    - regex: "\\w"
+      action: MoveViModeCursor
+      binding:
+        mode: Vi|~Search
+        key: F
