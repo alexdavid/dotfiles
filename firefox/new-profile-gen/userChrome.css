@@ -80,7 +80,7 @@
   display: none !important;
 }
 
-.tabbrowser-tab[first-visible-tab="true"][last-visible-tab="true"]{
+.tabbrowser-tab:first-child:nth-last-child(2) {
   visibility: collapse !important;
   /* These seem unnecessary, but they achieve compatibility with hide_tabs_with_one_tab.css */
   min-height: 0 !important;
