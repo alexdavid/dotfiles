@@ -14,6 +14,7 @@ set clipboard=unnamedplus " Make vim share clipboard with system
 set linebreak
 set startofline
 set list
+set belloff=
 let &listchars='tab:» ,nbsp:␣,trail:·,precedes:←,extends:→'
 let &showbreak='↪ '
 
