@@ -76,6 +76,10 @@
         "Name": "YouTube",
         "Alias": "!yt",
         "URLTemplate": "https://www.youtube.com/results?search_query={searchTerms}"
+      }, {
+        "Name": "IMDB",
+        "Alias": "!imdb",
+        "URLTemplate": "https://www.imdb.com/find/?q={searchTerms}"
       },
 
       {
