@@ -34,6 +34,11 @@
 #nav-bar {
   -moz-box-ordinal-group: 0;
 }
+/* Fix gUM Popups */
+#notification-popup {
+  margin-top: -99vh !important;
+}
+
 
 /****************
  * Misc theming *
