@@ -8,5 +8,5 @@ case "$1" in
   https://youtube.com/*)     exec mpvsingleton "$1" ;;
   https://www.youtube.com/*) exec mpvsingleton "$1" ;;
   https://youtu.be/*)        exec mpvsingleton "$1" ;;
-  *)                         exec ~/.config/firefox/launch "New Temporary Profile" "$1" ;;
+  *)                         exec ~/.config/firefox/launch "scratch" "$1" ;;
 esac
