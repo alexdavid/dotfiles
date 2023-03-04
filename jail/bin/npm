@@ -1,14 +1,8 @@
 #!/usr/bin/env sh
 source ~/.config/jail/init
-
-mkdir -p ~/.local/share/nodejs/npm
-mkdir -p ~/.local/share/nodejs/.cache
-touch ~/.local/share/nodejs/npmrc
+source ~/.config/jail/lib/node
 
 append_path ./node_modules/.bin
-bind ~/.local/share/nodejs/npm ~/.npm
-bind ~/.local/share/nodejs/npmrc ~/.npmrc
-bind ~/.local/share/nodejs/.cache ~/.cache
 read_only ~/.config/git
 mount_nearest_parent_with_dir .git
 network

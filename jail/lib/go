@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+mkdir -p ~/dev/go
+
+read_write ~/dev/go

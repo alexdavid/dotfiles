@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+mkdir -p ~/.local/share/nodejs/{.cache,npm}
+touch ~/.local/share/nodejs/npmrc
+
+bind ~/.local/share/nodejs/.cache ~/.cache
+bind ~/.local/share/nodejs/npm ~/.npm
+bind ~/.local/share/nodejs/npmrc ~/.npmrc

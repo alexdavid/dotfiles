@@ -1,9 +1,7 @@
 #!/usr/bin/env sh
 source ~/.config/jail/init
+source ~/.config/jail/lib/go
 
-mkdir -p ~/dev/go
-
-read_write ~/dev/go
 mount_nearest_parent_with_dir .git
 network
 

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+mkdir -p ~/.local/share/rust/{rustup,cargo,cache}
+
+bind ~/.local/share/rust/cargo ~/.cargo
+bind ~/.local/share/rust/rustup ~/.rustup
+bind ~/.local/share/rust/cache ~/.cache
