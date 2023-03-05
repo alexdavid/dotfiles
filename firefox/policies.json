@@ -48,6 +48,10 @@
         "Name": "MDN",
         "Alias": "!mdn",
         "URLTemplate": "https://developer.mozilla.org/en-US/search?q={searchTerms}"
+      }, {
+        "Name": "Docker Hub",
+        "Alias": "!dh",
+        "URLTemplate": "https://hub.docker.com/search/?q={searchTerms}"
       },
 
       {
