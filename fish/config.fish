@@ -26,7 +26,6 @@ alias gs  "git st"
 alias f "vifm ."
 alias t "tmux"
 alias v "nvim"
-alias todol "todo list --sort priority,-due"
 
 # clipboard
 alias cbc "clipboard copy"
