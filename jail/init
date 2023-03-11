@@ -144,3 +144,8 @@ function run_jail_raw {
   finalize_args
   exec bwrap "${BWRAP_ARGS[@]}" "$@"
 }
+
+function run_jail_raw_no_exec {
+  finalize_args
+  bwrap "${BWRAP_ARGS[@]}" "$@"
+}

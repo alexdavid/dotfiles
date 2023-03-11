@@ -1,0 +1,14 @@
+[colors]
+
+[global]
+strict_mode = true
+fields = "pri,done,due,subject,rec"
+sort = "pri,due"
+
+[ranges]
+
+[[fields]]
+name = "rec"
+title = "Rec"
+kind = "duration"
+width = 5

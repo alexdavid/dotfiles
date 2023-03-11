@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+source ~/.config/jail/init
+source ~/.config/jail/lib/rust
+
+TODO_PATH="xdata/todo"
+DIR="$(mktemp -d)"
+pass "$TODO_PATH" > "$DIR/todo.txt"
+cp "$DIR/todo.txt" "$DIR/orig.txt"
+
+read_write "$DIR"
+read_only ~/.config/ttdl
+env TTDL_FILENAME "$DIR/todo.txt"
+
+# cargo install ttdl
+run_jail_raw_no_exec ~/.cargo/bin/ttdl --syntax "$@"
+
+if ! diff "$DIR/todo.txt" "$DIR/orig.txt" > /dev/null; then
+  cat "$DIR/todo.txt" | sort | pass insert -m "$TODO_PATH"
+fi
+rm -rf "$DIR"
