@@ -103,7 +103,8 @@ mkswap /mnt/var/swap
 ask-valid CPU_TYPE "Processor type?" intel amd
 
 section "INSTALLING BASE"
-pacstrap /mnt base linux linux-firmware "$CPU_TYPE"-ucode
+ask-valid KERNEL "Kernel?" linux linux-lts linux-hardened linux-rt linux-rt-lts
+pacstrap /mnt base "$KERNEL" linux-firmware "$CPU_TYPE"-ucode
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "/var/swap none swap defaults 0 0" >> /mnt/etc/fstab
 
@@ -126,8 +127,8 @@ efibootmgr \
   --disk "$DRIVE" \
   --create \
   --label "$EFILABEL" \
-  --loader /vmlinuz-linux \
-  --unicode "$FS_KERNEL_PARAMS initrd=\\$CPU_TYPE-ucode.img initrd=\\initramfs-linux.img resume=UUID=$RESUME_UUID resume_offset=$RESUME_OFFSET" \
+  --loader "/vmlinuz-$KERNEL" \
+  --unicode "$FS_KERNEL_PARAMS initrd=\\$CPU_TYPE-ucode.img initrd=\\initramfs-$KERNEL.img resume=UUID=$RESUME_UUID resume_offset=$RESUME_OFFSET" \
   --verbose \
   ;
 

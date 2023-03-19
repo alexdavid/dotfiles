@@ -32,7 +32,7 @@ BINARIES=()
 FILES=()
 HOOKS=(base udev autodetect modconf block encrypt filesystems resume keyboard fsck)
 EOF
-  mkinitcpio -p linux
+  mkinitcpio -p "$KERNEL"
 fi
 
 section "SETTING LOCALE"
