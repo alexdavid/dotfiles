@@ -25,13 +25,15 @@ pacman -S \
   ;
 
 section "ADDING ENCRYPT TO MKINITCPIO"
-cat << EOF > /etc/mkinitcpio.conf
+if [ "$ENCRYPT" = yes ]; then
+  cat << EOF > /etc/mkinitcpio.conf
 MODULES=()
 BINARIES=()
 FILES=()
 HOOKS=(base udev autodetect modconf block encrypt filesystems resume keyboard fsck)
 EOF
-mkinitcpio -p linux
+  mkinitcpio -p linux
+fi
 
 section "SETTING LOCALE"
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen

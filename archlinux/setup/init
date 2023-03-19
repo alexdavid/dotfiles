@@ -16,15 +16,30 @@ function ask {
   read $1
 }
 
-function confirm {
-  QUESTION="$1"
-  CONTINUE="nil"
-  while [ "$CONTINUE" != "yes" ]; do
-    ask CONTINUE "$1 (yes/no)"
-    if [ "$CONTINUE" == "no" ]; then
-      exit 1
-    fi
+function ask-valid {
+  VAR_NAME="$1"
+  shift
+  PROMPT="$1"
+  shift
+  ANSWER="nil"
+  OPTIONS="$(printf ", %s" "$@")"
+  while true; do
+    ask ANSWER "$PROMPT (${OPTIONS:2})"
+    for VALID in "$@"; do
+      if [ "$VALID" = "$ANSWER" ]; then
+        export "$VAR_NAME"="$ANSWER"
+        return
+      fi
+    done
+    echo "Must be one of: ${OPTIONS:2}"
   done
+}
+
+function confirm {
+  ask-valid CONTINUE "$1" yes no
+  if [ "$CONTINUE" == no ]; then
+    exit 1
+  fi
 }
 
 section "GENERATING AND UPDATING MIRROR LIST"
@@ -34,7 +49,7 @@ confirm "Does this mirror list look good"
 
 
 section "PARTITIONING DRIVES"
-fdisk -l
+lsblk
 ask DRIVE "Select a drive"
 {
   echo g       # make gpt partition table
@@ -63,11 +78,17 @@ PARTITIONS=($(lsblk -pln -o name "$DRIVE"))
 
 
 section "FORMATTING & MOUNTING DRIVES"
-cryptsetup luksFormat --type luks "${PARTITIONS[2]}"
-cryptsetup luksOpen "${PARTITIONS[2]}" main
+ask-valid ENCRYPT "Full disk encryption?" yes no
+if [ "$ENCRYPT" = yes ]; then
+  cryptsetup luksFormat --type luks "${PARTITIONS[2]}"
+  cryptsetup luksOpen "${PARTITIONS[2]}" main
+  MAIN_PARTITION="/dev/mapper/main"
+else
+  MAIN_PARTITION="${PARTITIONS[2]}"
+fi
 mkfs.vfat -F32 "${PARTITIONS[1]}"
-mkfs.ext4 -F /dev/mapper/main
-mount /dev/mapper/main /mnt
+mkfs.ext4 -F "$MAIN_PARTITION"
+mount "$MAIN_PARTITION" /mnt
 mkdir /mnt/boot
 mount "${PARTITIONS[1]}" /mnt/boot
 
@@ -79,10 +100,7 @@ chmod 600 /mnt/var/swap
 mkswap /mnt/var/swap
 
 
-CPU_TYPE=""
-while [ "$CPU_TYPE" != intel -a "$CPU_TYPE" != amd ]; do
-  ask CPU_TYPE "Processor type? (intel/amd)"
-done
+ask-valid CPU_TYPE "Processor type?" intel amd
 
 section "INSTALLING BASE"
 pacstrap /mnt base linux linux-firmware "$CPU_TYPE"-ucode
@@ -99,16 +117,23 @@ ask EFILABEL "EFI label"
 PARTUUID=$(lsblk -dno PARTUUID ${PARTITIONS[2]})
 RESUME_UUID=$(findmnt -no UUID -T /mnt/var/swap)
 RESUME_OFFSET=$(filefrag -v /mnt/var/swap | awk '{ if($1=="0:"){print substr($4, 1, length($4)-2)} }')
+if [ "$ENCRYPT" = yes ]; then
+  FS_KERNEL_PARAMS="cryptdevice=PARTUUID=$PARTUUID:root root=/dev/mapper/root rw"
+else
+  FS_KERNEL_PARAMS="root=PARTUUID=$PARTUUID rw"
+fi
 efibootmgr \
   --disk "$DRIVE" \
   --create \
   --label "$EFILABEL" \
   --loader /vmlinuz-linux \
-  --unicode "cryptdevice=PARTUUID=$PARTUUID:root root=/dev/mapper/root rw initrd=\\$CPU_TYPE-ucode.img initrd=\\initramfs-linux.img resume=UUID=$RESUME_UUID resume_offset=$RESUME_OFFSET" \
+  --unicode "$FS_KERNEL_PARAMS initrd=\\$CPU_TYPE-ucode.img initrd=\\initramfs-linux.img resume=UUID=$RESUME_UUID resume_offset=$RESUME_OFFSET" \
   --verbose \
   ;
 
 section "CLEANING UP"
 umount /mnt/boot
 umount /mnt
-cryptsetup close main
+if [ "$ENCRYPT" = yes ]; then
+  cryptsetup close main
+fi
